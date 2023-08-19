@@ -3,11 +3,11 @@
 # Vaishnav Friendss
 This github repository summarizes me. Quick links:
 
-- [Hi Frirnds](#hi-frirnds)
+- [Hi Frirnds](#hi-frirnd)
 
 
 
-## Hi Frirnds
+## Hi Frirnd
 <details>
  <summary> Summary </summary>
 	
