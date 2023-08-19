@@ -5,7 +5,7 @@ This github repository summarizes me. Quick links:
 
 - [Hi Frirnds](#hi-frirnds)
 
-
+dfd
 10. That no structural additions or alterations shall be made by the Tenant in the premises without the prior written consent of the Owner but the Tenant can install air-conditioners in the space provided and other electrical gadgets and make such changes for the purposes as may be necessary, at his own cost. On termination of the tenancy or earlier, the Tenant will be entitled to remove such equipment and restore the changes made, if any, to the original state.
 11. That the Owner shall hold the right to visit in person or through his authorized agent(s), servants, workmen etc., to enter upon the demised premises for inspection (not exceeding once in a month) or to carry out repairs / construction, as and when required.
 12. That the Tenant shall comply with all the rules and regulations of the local authority applicable to the demised premises. The premises will be used only for residential purposes of its employees, families and guests.
