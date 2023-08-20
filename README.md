@@ -9,7 +9,6 @@ This github repository summarizes the progress made in the Samsung PD training. 
 ## Day0_Installation
  <summary> Summary </summary>
 Invoking the tools mentioned below:
- <details>
   
 - [IC2 Compiler (icc2).](#1.IC2_Compiler)
 
@@ -22,8 +21,6 @@ Invoking the tools mentioned below:
 - [Icarus Verilog (iverilog).](#5.Icarus_Verilog)
     
 - [Yosys (yosys).](#6.Yosys)
-    
-  </details>
   
 1.IC2_Compiler
 <details>
