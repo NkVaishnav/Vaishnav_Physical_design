@@ -17,7 +17,7 @@ Invoking the tools mentioned below:
 4. [Primetime (pt).](#Primetime)
 5. [Icarus Verilog (iverilog).](#Icarus_Verilog)
 6. [Yosys.](#Yosys)
-
+</details>
 ## IC2_Compiler
 <details>
 ICC2 is a cutting-edge tool developed by Synopsys, a leading electronic design automation company. It stands as an integral part of the digital design process, specializing in place-and-route optimization for complex integrated circuits. ICC2 leverages advanced algorithms to achieve high-performance, low-power, and area-efficient designs. With its intuitive interface, it empowers semiconductor engineers to streamline the physical implementation process, delivering faster time-to-market for innovative chip designs. Synopsys' ICC2 tool plays a pivotal role in shaping the future of semiconductor design by enhancing efficiency and enabling the creation of intricate, high-performance electronic devices.
@@ -42,4 +42,4 @@ Icarus Verilog is an open-source hardware description language (HDL) compiler an
 <details>
 Yosys is a powerful open-source framework for Verilog RTL synthesis and formal verification. It's widely utilized in digital design automation to convert RTL descriptions into optimized gate-level representations. Yosys stands out for its versatility, offering a range of synthesis and optimization algorithms to enhance circuit performance, reduce area utilization, and minimize power consumption. Beyond synthesis, Yosys also integrates formal verification capabilities, enabling engineers to rigorously verify the correctness of their designs. Its open nature and active community make Yosys a valuable resource for advancing digital circuit design and verification practices.
 </details>
-</details>
+
