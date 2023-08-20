@@ -178,7 +178,6 @@ Below is the screenshot the image that shows the the output of the above command
 
 <img width="1085" alt="iverilog1" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a59cefef-9ab6-4efa-8a41-f138be2ab50b">
 
-
 ```
 ./a.out 
 ```
@@ -193,6 +192,10 @@ Below is the screenshot the image that shows the the output of the above command
 gtkwave tb_main.vcd
 ```
  The above command opens the graphical window for us to view the changes in the value of the Design
+ 
+Below is the screenshot the image that shows the the output of the above command 
+
+<img width="1085" alt="iverilog3" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f3284ff4-5aeb-43b6-98d8-e218d9a2b745">
 
  Here is the list of all the commands together :
  
@@ -202,8 +205,6 @@ iverilog main.v tb_main.v
 gtkwave tb_main.vcd
 ```
  
- Below is the screenshot the image that shows the the output of the above command 
- ![iverilog_good_mux_working](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f3284ff4-5aeb-43b6-98d8-e218d9a2b745)
 </details>	
 
 </details>
