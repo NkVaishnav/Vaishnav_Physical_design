@@ -12,11 +12,17 @@ Invoking the tools mentioned below:
  <details>
   
 1. [IC2 Compiler (icc2).](#1.IC2_Compiler)
-2. [Design Compiler (dc).](#2.DC_Compiler)
-3. [Library Compiler (lc).](#3.Library_Compiler)
-4. [Primetime (pt).](#4.Primetime)
-5. [Icarus Verilog (iverilog).](#5.Icarus_Verilog)
-6. [Yosys (yosys).](#6.Yosys)
+   
+3. [Design Compiler (dc).](#2.DC_Compiler)
+   
+5. [Library Compiler (lc).](#3.Library_Compiler)
+   
+7. [Primetime (pt).](#4.Primetime)
+   
+9. [Icarus Verilog (iverilog).](#5.Icarus_Verilog)
+    
+11. [Yosys (yosys).](#6.Yosys)
+    
   </details>
   
 1.IC2_Compiler
