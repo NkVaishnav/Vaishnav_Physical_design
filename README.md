@@ -290,10 +290,12 @@ write_verilog -noattr main_netlist.v
 ```
 This command writes out the netlist and the image after the execution is mentioned below
 
-  Here is the list of all the commands together :
+ 
 
   ![yosys6](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c88d063d-4a26-48fe-a1f1-ccab85314f2b)
- 
+
+  Here is the list of all the commands together :
+  
  ```
 read_liberty -lib /Pathtolib
 read_verilog main.v
@@ -303,10 +305,6 @@ show
 write_verilog -noattr main_netlist.v
 ```
 	
-
-
-
-</details>
  </details>
 
 
