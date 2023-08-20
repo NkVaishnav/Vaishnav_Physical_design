@@ -176,7 +176,6 @@ The above command is used to call the top verilog and its respective testbench a
 
 Below is the screenshot the image that shows the the output of the above command 
 
-![iverilog_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a59cefef-9ab6-4efa-8a41-f138be2ab50b)
 <img width="1085" alt="iverilog1" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a59cefef-9ab6-4efa-8a41-f138be2ab50b">
 
 
