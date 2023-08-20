@@ -38,8 +38,11 @@ icc2_shell
 ```
 
 Below is the screenshot showing successful launch:
+![icc2_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/bdde7302-8767-483e-be55-30c340129b24)
 
-<img width="1085" alt="iverilog" src="https://github.com/alwinshaju08/Alwin_iiitb_asic_class/assets/69166205/e2e0ae1e-ef20-4b91-a21a-2d82768702f5">
+
+
+
 
 </details>
 
