@@ -250,7 +250,6 @@ By automating these processes, Yosys empowers designers to create efficient gate
 
 The image below shows the flow, inputs and the outputs of the Yosys tool:
 
-
 ![Yosys_workflow](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2eb86b55-ca32-4283-84d0-9095f0e1bd3c)
 
 Commands that were used to get the netlist are mentioned below :
@@ -259,38 +258,41 @@ Commands that were used to get the netlist are mentioned below :
 read_liberty -lib /Pathtolib
 ```
 This command is used to get the path to the library and respective image after the execution of the code is given below
+
 ![yosys1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/be6bf5a3-0c92-40a9-bcfc-6442b42e47fc)
 
 ```
 read_verilog main.v
 ```
 This command is used to read teh verilog file and the image after the execution of this step is mentioned below
+
 ![yosys2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/aea119b9-c3fb-4d4c-84ff-a2732b58a3a6)
 
 ```
 synth -top good_mux
 ```
 This command is used to mention the top module of the design and the image after the execution is mentioned below
+
 ![yosys3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/e153f189-8026-4c1f-abda-6ccc295e4481)
 
 ```
 abc -liberty /Pathtolib
 ```
 This command is used to map the cells in design to the cells in the library and the image after the execution is mentioned below
+
 ![yosys4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/9e249d8f-3d03-444f-814c-33c483558b74)
 
 ```
 show
 ```
 This command shows the view of which cells have been used in the design and the image after the execution is mentioned below
+
 ![yosys5](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/240cb576-f347-4101-a6d4-bf94a94e854c)
 
 ```
 write_verilog -noattr main_netlist.v
 ```
 This command writes out the netlist and the image after the execution is mentioned below
-
- 
 
   ![yosys6](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c88d063d-4a26-48fe-a1f1-ccab85314f2b)
 
