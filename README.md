@@ -11,17 +11,17 @@ This github repository summarizes the progress made in the Samsung PD training. 
  <summary> Summary </summary>
 Invoking the tools mentioned below:
   
-- [IC2 Compiler (icc2).]
+- IC2 Compiler (icc2).
 
-- [Design Compiler (dc).]
+- Design Compiler (dc).
 
-- [Library Compiler (lc).]
+- Library Compiler (lc).
    
-- [Primetime (pt).]
+- Primetime (pt).
    
-- [Icarus Verilog (iverilog).]
+- Icarus Verilog (iverilog).
     
-- [Yosys (yosys).]
+- Yosys (yosys).
 </details>
 
 <details>
