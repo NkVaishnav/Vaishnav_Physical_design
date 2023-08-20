@@ -171,14 +171,21 @@ The commands that were used to run the simulation of the Icarus Verilog are ment
 iverilog main.v tb_main.v 
 ```
 The above command is used to call the top verilog and its respective testbench and generated an a.out file
+
+Below is the screenshot the image that shows the the output of the above command 
+![iverilog_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a59cefef-9ab6-4efa-8a41-f138be2ab50b)
 ```
 ./a.out 
 ```
 The above command is used to call the generated a.out file which in turn generates the .vcd file
+Below is the screenshot the image that shows the the output of the above command 
+![iverilog_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/339db2cf-1222-48eb-bf6b-773e726a3ca3)
 ```
 gtkwave tb_main.vcd
 ```
- The abovee command opens the graphical window for us to view the changes in the value of the Design
+ The above command opens the graphical window for us to view the changes in the value of the Design
+ Below is the screenshot the image that shows the the output of the above command 
+ ![iverilog_good_mux_working](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f3284ff4-5aeb-43b6-98d8-e218d9a2b745)
 </details>	
 
 </details>
