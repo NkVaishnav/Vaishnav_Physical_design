@@ -139,20 +139,27 @@ Below is the screenshot showing the successful launch:
 
 
 ## Day 1 : Introduction to Verilog RTL design and Synthesis
+
 <details>
  <summary> Summary </summary>
-Day0 summarises the information about the tool and how to invoke the tool with the respective commands and screenshots used:
-  
-- IC Compiler II (icc2).
+Day 1 summarises the information about the working of the Icarus Verilog with GTKwave, and Yosys tool, and examples are given with images of trial runs being fired:
 
-- Design Compiler (dc).
-
-- Library Compiler (lc).
-   
-- Primetime (pt).
-   
-- Icarus Verilog (iverilog).
-    
-- Yosys (yosys).
 </details>
+	
+ <details>
+ <summary> iverilog and GTKwave </summary>
 
+
+Top Verilog File (Design): The top Verilog file contains the RTL description of the digital design you want to simulate. This file defines the structure and functionality of your design's modules and their interconnections.
+
+1. Test Bench File: The test bench file is another Verilog file that you create to simulate and test your design. It includes stimuli generators, monitors, and assertions to simulate real-world scenarios and verify the correctness of your design.
+
+2. Integration: In Iverilog, you use the iverilog command to compile both the top Verilog file and the test bench file together. This command compiles your design's Verilog files into a simulation executable.
+
+3. Simulation Execution: Once compiled, you execute the simulation using the generated executable. The test bench file generates input stimuli and monitors the output behavior of your design during the simulation.
+
+4. Results and Analysis: After the simulation completes, you can analyze the simulation results to verify that your design behaves as expected. Waveform viewers, like GTKWave, can help visualize the signal behavior over time, showing inputs, outputs, and internal signals.
+
+</details>	
+
+</details>
