@@ -4,7 +4,7 @@
 This github repository summarizes the progress made in the Samsung PD training. Quick links:
 
 - [Day0_Installation](#Day-0-Installation)
-- [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1--Introduction-to-Verilog-RTL-design-and-Synthesis)
+- [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1-Introduction-to-Verilog-RTL-design-and-Synthesis)
 
 ## Day 0: Installation
 <details>
