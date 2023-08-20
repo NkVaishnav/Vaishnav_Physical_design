@@ -6,7 +6,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day0_Installation](#Day-0-Installation)
 - [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1--Introduction-to-Verilog-RTL-design-and-Synthesis)
 
-## Day 0 : Installation
+## Day 0: Installation
 <details>
  <summary> Summary </summary>
 Day0 summarises the information about the tool and how to invoke the tool with the respective commands and screenshots used:
@@ -107,7 +107,6 @@ Icarus Verilog is an open-source hardware description language (HDL) compiler an
 I invoked the DC Compiler with the following command:
 
 ```
-
 iverilog
 ```
 
@@ -128,19 +127,17 @@ Yosys is a powerful open-source framework for Verilog RTL synthesis and formal v
 I invoked the DC Compiler with the following command:
 
 ```
-
 yosys
 ```
 
 Below is the screenshot showing the successful launch:
-![Yosys_snapshot]()
-<img width="1085" alt="yosys" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/455d39b9-0825-4c4b-9b1c-a540e192c426">
 
+<img width="1085" alt="yosys" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/455d39b9-0825-4c4b-9b1c-a540e192c426">
 
 </details>
 
 
-## Day 1 : Introduction to Verilog RTL design and Synthesis
+## Day 1: Introduction to Verilog RTL design and Synthesis
 
 <details>
  <summary> Summary </summary>
@@ -207,4 +204,4 @@ gtkwave tb_main.vcd
  
 </details>	
 
-</details>
+
