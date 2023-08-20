@@ -38,6 +38,7 @@ icc2_shell
 ```
 
 Below is the screenshot showing successful launch:
+
 ![icc2_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/bdde7302-8767-483e-be55-30c340129b24)
 
 </details>
@@ -54,6 +55,7 @@ dc_shell
 ```
 
 Below is the screenshot showing the successful launch:
+
 ![dc_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/31975dde-6064-406b-b8c4-9a17dfcacd35)
 
 </details>
@@ -71,6 +73,7 @@ lc_shell
 ```
 
 Below is the screenshot showing the successful launch:
+
 ![lc_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ca41cbf2-c37c-4de0-92d2-dc6b6db5ffe4)
 
  
@@ -109,6 +112,7 @@ iverilog
 ```
 
 Below is the screenshot showing the successful launch:
+
 ![iverilog_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8e64e2a7-2631-4397-8999-0ad33daddebe)
 
 </details>
