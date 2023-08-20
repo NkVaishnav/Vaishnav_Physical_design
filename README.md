@@ -45,7 +45,7 @@ Below is the screenshot showing the successful launch:
 </details>
 
 <details>
- <summary> DC_Compiler </summary>
+ <summary> Design_Compiler </summary>
 
 The Design Compiler (DC) tool by Synopsys is a renowned electronic design automation solution. Serving as a vital component in the ASIC and FPGA design flow, DC excels in transforming RTL (Register Transfer Level) descriptions into optimized gate-level representations. Leveraging advanced synthesis algorithms, it enables engineers to achieve superior performance, lower power consumption, and reduced area utilization. With its rich feature set and comprehensive optimizations, the DC tool empowers designers to achieve faster time-to-results and meet stringent design specifications. Synopsys' Design Compiler remains a cornerstone in modern chip design, driving innovation and efficiency across the semiconductor industry.
 
@@ -57,7 +57,7 @@ dc_shell
 
 Below is the screenshot showing the successful launch:
 
-![dc_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/31975dde-6064-406b-b8c4-9a17dfcacd35)
+<img width="1085" alt="dc" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/31975dde-6064-406b-b8c4-9a17dfcacd35">
 
 </details>
 
@@ -75,8 +75,7 @@ lc_shell
 
 Below is the screenshot showing the successful launch:
 
-![lc_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ca41cbf2-c37c-4de0-92d2-dc6b6db5ffe4)
-
+<img width="1085" alt="lc" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ca41cbf2-c37c-4de0-92d2-dc6b6db5ffe4">
  
 </details>
 
@@ -94,7 +93,7 @@ pt_shell
 
 Below is the screenshot showing the successful launch:
 
-![pt_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/7c4d4aab-5e4d-4e05-98bf-465d6b74b3f5)
+<img width="1085" alt="pt" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/7c4d4aab-5e4d-4e05-98bf-465d6b74b3f5">
 
 </details>
 
@@ -114,7 +113,8 @@ iverilog
 
 Below is the screenshot showing the successful launch:
 
-![iverilog_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8e64e2a7-2631-4397-8999-0ad33daddebe)
+
+<img width="1085" alt="iverilog" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8e64e2a7-2631-4397-8999-0ad33daddebe">
 
 </details>
 
@@ -133,7 +133,8 @@ yosys
 ```
 
 Below is the screenshot showing the successful launch:
-![Yosys_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/455d39b9-0825-4c4b-9b1c-a540e192c426)
+![Yosys_snapshot]()
+<img width="1085" alt="yosys" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/455d39b9-0825-4c4b-9b1c-a540e192c426">
 
 
 </details>
@@ -165,7 +166,7 @@ Day 1 summarises the information about the working of the Icarus Verilog with GT
 
 We give inputs to the Design under Test and observe the output with the help of Testbench. The image below illustrates the way in which it is done:
 
-![DUT_TB](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/863ff72f-fc74-4fd3-8c38-23095f5e9ef5)
+<img width="1085" alt="DUT_TB" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/863ff72f-fc74-4fd3-8c38-23095f5e9ef5">
 
 The commands that were used to run the simulation of the Icarus Verilog are mentioned below one by one :
 ```
@@ -174,14 +175,21 @@ iverilog main.v tb_main.v
 The above command is used to call the top verilog and its respective testbench and generated an a.out file
 
 Below is the screenshot the image that shows the the output of the above command 
+
 ![iverilog_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a59cefef-9ab6-4efa-8a41-f138be2ab50b)
+<img width="1085" alt="iverilog1" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a59cefef-9ab6-4efa-8a41-f138be2ab50b">
+
+
 ```
 ./a.out 
 ```
 The above command is used to call the generated a.out file which in turn generates the .vcd file
 
 Below is the screenshot the image that shows the the output of the above command 
-![iverilog_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/339db2cf-1222-48eb-bf6b-773e726a3ca3)
+
+<img width="1085" alt="iverilog2" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/339db2cf-1222-48eb-bf6b-773e726a3ca3">
+
+
 ```
 gtkwave tb_main.vcd
 ```
