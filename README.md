@@ -9,13 +9,14 @@ This github repository summarizes the progress made in the Samsung PD training. 
 ## Day0_Installation
  <summary> Summary </summary>
 Invoking the tools mentioned below:
- 
+ <details>
 1. [IC2 Compiler (icc2).](#1.IC2_Compiler)
 2. [Design Compiler (dc).](#2.DC_Compiler)
 3. [Library Compiler (lc).](#3.Library_Compiler)
 4. [Primetime (pt).](#4.Primetime)
 5. [Icarus Verilog (iverilog).](#5.Icarus_Verilog)
 6. [Yosys (yosys).](#6.Yosys)
+  </details>
 1.IC2_Compiler
 <details>
 ICC2 is a cutting-edge tool developed by Synopsys, a leading electronic design automation company. It stands as an integral part of the digital design process, specializing in place-and-route optimization for complex integrated circuits. ICC2 leverages advanced algorithms to achieve high-performance, low-power, and area-efficient designs. With its intuitive interface, it empowers semiconductor engineers to streamline the physical implementation process, delivering faster time-to-market for innovative chip designs. Synopsys' ICC2 tool plays a pivotal role in shaping the future of semiconductor design by enhancing efficiency and enabling the creation of intricate, high-performance electronic devices.
