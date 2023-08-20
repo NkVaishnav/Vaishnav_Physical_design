@@ -146,7 +146,7 @@ Day 1 summarises the information about the working of the Icarus Verilog with GT
 </details>
 	
  <details>
- <summary> iverilog and GTKwave </summary>
+ <summary> Icarus Verilog and GTKwave </summary>
 
 
 1. Top Verilog File (Design under test or DUT): The top Verilog file contains the RTL description of the digital design you want to simulate. This file defines the structure and functionality of your design's modules and their interconnections.
