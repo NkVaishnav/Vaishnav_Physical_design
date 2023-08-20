@@ -9,7 +9,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 ## Day0_Installation
 <details>
  <summary> Summary </summary>
-Day0 summarises the brief info about the tool and how to invoke the tool with the respective screenshot:
+Day0 summarises the information about the tool and how to invoke the tool with the respective commands and screenshots used:
   
 - IC2 Compiler (icc2).
 
