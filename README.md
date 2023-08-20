@@ -7,6 +7,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1--Introduction-to-Verilog-RTL-design-and-Synthesis)
 
 ## Day0_Installation
+<details>
  <summary> Summary </summary>
 Invoking the tools mentioned below:
   
@@ -21,9 +22,13 @@ Invoking the tools mentioned below:
 - [Icarus Verilog (iverilog).]
     
 - [Yosys (yosys).]
+</details>
 
+<details>
+ 
  <summary> IC2_Compiler </summary>
 
+<details>
 ICC2 is a cutting-edge tool developed by Synopsys, a leading electronic design automation company. It stands as an integral part of the digital design process, specializing in place-and-route optimization for complex integrated circuits. ICC2 leverages advanced algorithms to achieve high-performance, low-power, and area-efficient designs. With its intuitive interface, it empowers semiconductor engineers to streamline the physical implementation process, delivering faster time-to-market for innovative chip designs. Synopsys' ICC2 tool plays a pivotal role in shaping the future of semiconductor design by enhancing efficiency and enabling the creation of intricate, high-performance electronic devices.
 </details>
 
