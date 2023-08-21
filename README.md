@@ -248,7 +248,7 @@ Throughout these stages, Yosys provides extensive options for controlling optimi
 
 By automating these processes, Yosys empowers designers to create efficient gate-level netlists from high-level RTL descriptions, enabling further steps in the design flow like place-and-route and physical design.
 
-The image below shows the flow, inputs and the outputs of the Yosys tool:
+The image below shows the flow, inputs and the outputs of a Synthesis tool:
 
 ![Yosys_workflow](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2eb86b55-ca32-4283-84d0-9095f0e1bd3c)
 
