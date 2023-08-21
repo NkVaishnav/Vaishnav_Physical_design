@@ -22,6 +22,9 @@ Day0 summarises the information about the tool and how to invoke the tool with t
 - Icarus Verilog (iverilog).
     
 - Yosys (yosys).
+
+- GTKwave (gtkwave).
+  
 </details>
 
 <details>
