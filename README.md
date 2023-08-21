@@ -40,6 +40,7 @@ icc2_shell
 Below is the screenshot showing the successful launch:
 
 <img width="1085" alt="icc2" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/bdde7302-8767-483e-be55-30c340129b24">
+
 ![icc2_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/54a3feed-76bd-410c-9db3-947d563a0ec4)
 
 
