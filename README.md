@@ -4,7 +4,7 @@
 This github repository summarizes the progress made in the Samsung PD training. Quick links:
 
 - [Day0_Installation](#Day-0-Installation)
-- [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1--Introduction-to-Verilog-RTL-design-and-Synthesis)
+- [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1-Introduction-to-Verilog-RTL-design-and-Synthesis)
 
 ## Day 0: Installation
 <details>
@@ -22,6 +22,9 @@ Day0 summarises the information about the tool and how to invoke the tool with t
 - Icarus Verilog (iverilog).
     
 - Yosys (yosys).
+
+- GTKwave (gtkwave).
+  
 </details>
 
 <details>
@@ -39,7 +42,7 @@ icc2_shell
 
 Below is the screenshot showing the successful launch:
 
-<img width="1085" alt="icc2" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/bdde7302-8767-483e-be55-30c340129b24">
+![icc2_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/54a3feed-76bd-410c-9db3-947d563a0ec4)
 
 
 </details>
@@ -57,7 +60,9 @@ dc_shell
 
 Below is the screenshot showing the successful launch:
 
-<img width="1085" alt="dc" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/31975dde-6064-406b-b8c4-9a17dfcacd35">
+
+![dc_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/e518a9e9-0cd6-4ac0-829b-77f864892429)
+
 
 </details>
 
@@ -75,7 +80,8 @@ lc_shell
 
 Below is the screenshot showing the successful launch:
 
-<img width="1085" alt="lc" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ca41cbf2-c37c-4de0-92d2-dc6b6db5ffe4">
+![lc_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b56094cb-6572-4522-ac0f-92c1921b3c03)
+
  
 </details>
 
@@ -93,14 +99,15 @@ pt_shell
 
 Below is the screenshot showing the successful launch:
 
-<img width="1085" alt="pt" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/7c4d4aab-5e4d-4e05-98bf-465d6b74b3f5">
+![pt_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/7b5d8dca-771b-48e4-8c31-b2dee77b1f53)
+
 
 </details>
 
 
 <details>
  
-<summary> Icarus_Verilog </summary>
+<summary> Icarus_Verilog  </summary>
  
 Icarus Verilog is an open-source hardware description language (HDL) compiler and simulator. This tool is widely used for digital circuit design and verification, allowing engineers to write and test designs written in the Verilog hardware description language. Icarus Verilog offers a fast and efficient simulation environment for complex digital systems, aiding in the verification process before actual implementation. Its open-source nature promotes collaboration and customization within the hardware design community. With Icarus Verilog, designers can gain insights into their designs' functionality, behavior, and timing, contributing to the development of reliable and optimized digital circuits.
 
@@ -112,8 +119,27 @@ iverilog
 
 Below is the screenshot showing the successful launch:
 
+![iverilog_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/920bd687-f9f8-4fcd-80d8-8ab0a539fc9a)
 
-<img width="1085" alt="iverilog" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8e64e2a7-2631-4397-8999-0ad33daddebe">
+
+</details>
+
+<details>
+ 
+<summary> GTKwave  </summary>
+
+GTKWave is a popular open-source waveform viewer used in digital circuit design and simulation. It provides a graphical representation of signal behaviors over time, helping engineers visualize and analyze simulation results. With a user-friendly interface, GTKWave supports a variety of waveform formats, making it compatible with various simulation tools and languages. Engineers can zoom, pan, and navigate through waveforms, enabling in-depth inspection of signal transitions and interactions. Its features include support for hierarchical designs, signal coloring, and annotation, making GTKWave an essential tool for debugging and verifying digital designs.
+
+I invoked the GTKwave with the following command:
+
+```
+gtkwave
+```
+
+Below is the screenshot showing the successful launch:
+
+![gtkwave_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/30a5633e-57f0-40cf-a9ac-d005077d2161)
+
 
 </details>
 
@@ -132,7 +158,8 @@ yosys
 
 Below is the screenshot showing the successful launch:
 
-<img width="1085" alt="yosys" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/455d39b9-0825-4c4b-9b1c-a540e192c426">
+![Yosys_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f2b01fff-9b57-4e16-a7b7-ca0ca40af167)
+
 
 </details>
 
@@ -186,7 +213,11 @@ Day 1 summarises the information about the working of the Icarus Verilog with GT
 
 We give inputs to the Design under Test and observe the output with the help of Testbench. The image below illustrates the way in which it is done:
 
-<img width="1085" alt="DUT_TB" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/863ff72f-fc74-4fd3-8c38-23095f5e9ef5">
+
+
+![DUT_TB](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c7637883-f4e0-4ac2-ae32-853840676b8e)
+
+
 
 The commands that were used to run the simulation of the Icarus Verilog are mentioned below one by one :
 ```
@@ -196,7 +227,10 @@ The above command is used to call the top verilog and its respective testbench a
 
 Below is the screenshot the image that shows the output of the above command 
 
-<img width="1085" alt="iverilog1" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a59cefef-9ab6-4efa-8a41-f138be2ab50b">
+
+
+![iverilog_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5e883fe6-4d79-47b6-a383-03b9bfc1e190)
+
 
 ```
 ./a.out 
@@ -205,7 +239,9 @@ The above command is used to call the generated a.out file which in turn generat
 
 Below is the screenshot the image that shows the output of the above command 
 
-<img width="1085" alt="iverilog2" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/339db2cf-1222-48eb-bf6b-773e726a3ca3">
+
+
+![iverilog_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/71e595bb-933b-441b-a851-d330fc792e9d)
 
 
 ```
@@ -216,7 +252,10 @@ The above command opens the graphical window for us to view the changes in the v
  
 Below is the screenshot of the image that shows the output of the above command 
 
-<img width="1085" alt="iverilog3" src="https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f3284ff4-5aeb-43b6-98d8-e218d9a2b745">
+
+
+![iverilog_good_mux_working](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b4a93c10-7ab7-4433-ad30-141274eaa103)
+
 
  Here is the list of all the commands together :
  
@@ -248,6 +287,72 @@ Throughout these stages, Yosys provides extensive options for controlling optimi
 
 By automating these processes, Yosys empowers designers to create efficient gate-level netlists from high-level RTL descriptions, enabling further steps in the design flow like place-and-route and physical design.
 
+The image below shows the flow, inputs and the outputs of a Synthesis tool:
+
+![Yosys_workflow](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b3a00766-b9b0-4d53-a10f-1ecfa1c47f21)
+
+
+Commands that were used to get the netlist are mentioned below :
+
+```
+read_liberty -lib /Pathtolib
+```
+This command is used to get the path to the library and respective image after the execution of the code is given below
+
+![yosys1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/585932b3-f5b3-4247-80a5-3eca9754d021)
+
+
+```
+read_verilog main.v
+```
+This command is used to read teh verilog file and the image after the execution of this step is mentioned below
+
+![yosys2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c3976c80-33cb-4df4-96a2-5e95cdba8248)
+
+
+```
+synth -top good_mux
+```
+This command is used to mention the top module of the design and the image after the execution is mentioned below
+
+
+![yosys3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/742aa577-b6ff-43f8-a80a-63b58275ed05)
+
+```
+abc -liberty /Pathtolib
+```
+This command is used to map the cells in design to the cells in the library and the image after the execution is mentioned below
+
+![yosys4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a5f20073-554f-47c2-80c7-fc64ec68c0ef)
+
+
+```
+show
+```
+This command shows the view of which cells have been used in the design and the image after the execution is mentioned below
+
+![yosys5](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/6d403601-e9aa-48bb-9ad4-e8d5acdcb319)
+
+
+```
+write_verilog -noattr main_netlist.v
+```
+This command writes out the netlist and the image after the execution is mentioned below
+
+  
+![yosys6](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/95b20b01-366b-4b81-b4f1-fb0e4b10a71d)
+
+  Here is the list of all the commands together :
+  
+ ```
+read_liberty -lib /Pathtolib
+read_verilog main.v
+synth -top good_mux
+abc -liberty /Pathtolib
+show
+write_verilog -noattr main_netlist.v
+```
+	
  </details>
 
 
