@@ -405,5 +405,21 @@ This image shows the unate ness of the AND gate as we know an AND gate is an exa
  
   </details>
   
+<details>
+	
+<sumamry>Hierarchical vs Falt Synthesis</summary>
 
+Hierarchical and flat synthesis are two contrasting approaches in digital circuit design. 
+
+Hierarchical synthesis involves dividing the design into smaller modules or blocks, which are individually synthesized and then integrated into the larger design. This method promotes modularity, ease of verification, and design reusability.
+
+Flat synthesis, on the other hand, involves synthesizing the entire design as a single unit without breaking it into smaller modules. This approach can lead to efficient optimizations across the entire design but may lack modularity and can become unwieldy for complex designs.
+
+Hierarchical synthesis is suitable for large and complex designs, enhancing collaboration among design teams and enabling easier debugging. Flat synthesis, often preferred for simpler designs, may offer better overall performance optimizations due to a holistic perspective on the entire design.
+
+The choice between these two approaches depends on the design's complexity, the design team's workflow, and the optimization goals of the project.
+
+Hierarchical Synthesis
+
+</details>
 
