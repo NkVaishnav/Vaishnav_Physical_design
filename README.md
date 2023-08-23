@@ -362,6 +362,8 @@ write_verilog -noattr main_netlist.v
  <summary> Summary </summary>
 Day2 summarises the information about the timing libs used for synthesis, the way we read timing libs, difference between the hierarchical and the flat synthesis, various flop synthesis styles and few optimizations that happen during synthesis:
 
+</details>
+
  <details>
 	 
 <summary>Timing Libs</summary>
