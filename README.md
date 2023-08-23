@@ -374,7 +374,8 @@ Skywater Timing Library : Skywater Timing Library, developed by Google, is a ver
  PVT Variations : Process, Voltage, and Temperature (PVT) variations are crucial factors influencing integrated circuits performance and reliability. Process variations stem from manufacturing inconsistencies, leading to differences in transistor properties. Voltage fluctuations impact a circuit's behavior, affecting speed and power consumption. Temperature changes further compound these effects, altering transistor characteristics. Engineers address PVT variations by designing circuits with margins to accommodate worst-case scenarios. Advanced techniques, such as dynamic voltage and frequency scaling, help mitigate these variations in modern semiconductor designs, ensuring stable and optimal operation across different conditions.
 I have taken some screenshots of the Skywater library and tried to explain some of the details mentioned in it 
 
-IMAGE LIB1
+![LIB1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2c69ffbe-4e83-4b6a-b337-0f48186c52fd)
+
 
 Some info that is mentioned in the timing library are mentioned below : 
 
@@ -400,18 +401,26 @@ Some info that is mentioned in the timing library are mentioned below :
   
 The above mentioned info is about the Header that is present in the library which is constant for all the cells present in the library. Now I am considering a specific cell (AND gate) for the better understanding of the other terms 
 
-IMAGE LIB2
+![lib2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/3fb07eed-d609-419b-9978-7bc52950f653)
+
+
 Now as shown in the above image i have considered a 2 input and gate and its verilog file which has been instantated using gate modelling. As the number of inputs of this gate are two the total number of combinations of inputs that can form are 2pow2 i.e. 4 so the leakage is mentioned for all the combinations of these inputs and the specific combination is mentioned in the library.
 
-IMAGE LIB3
+![LIB3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/9245bc8a-95d0-4965-ad0e-b88bc44863b8)
+
+
 
 Now I have considered the same 2 input and gate with different gate strength as the strength of the cells increases the Area of the cell increases, delay decreases and power consumed also increases. This is clearly evident in the image shown above.
 
-IMAGE LIB4
+![LIB4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c2d93dc0-cb81-4d43-a25b-d236a827f7ea)
+
+
 
 Now consider a single and gate and it has the info about the input pins and the output pins i.e. the capacitance, direction, internal power(which inturn contains of rise and fall power), max_tansistion and the capacitance.
 
-IMAGE LIB7
+![LIB7](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8dbcb34a-5b58-4d3e-ba0e-80586f2aba6f)
+
+
 
 This image shows the unate ness of the AND gate as we know an AND gate is an example of a positive unate gate. In a positive unate function, increasing any input variable always leads to an increase in the output. For an AND gate, as you increase the inputs from 0 to 1, the output also increases from 0 to 1, making it a positive unate function. The timing_type is combinational as the and gate is combinational
  The same thing is mentioned in the above image apart from this the cell rise and fall transitions are mentioned in an LUT table in which the parameters of the index_1 and index_2 are Input capacitance and the output load.
@@ -444,11 +453,13 @@ write_verilog -noattr multiple_modules_hier.v
 
 After the execution of the above commands while we enter show we get we get the hierarchical image of the cells without actually introducing the cells which is given below
 
-IMAGE MULTIPLE-MODULE_HIER
+![Multiple_module_hier_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2d77baa0-6c67-4d43-b0c7-5f4e633de491)
+
 
 The relavant image of the verilog file is mentioned below 
 
-IMAGE SCRNSHT_41
+![Screenshot from 2023-08-22 07-01-41](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b1821a28-e51c-4469-a594-d3c5d629acc7)
+
 
 Commands used for the Flat synthesis 
 
@@ -463,11 +474,13 @@ write_verilog -noattr multiple_modules_hier.v
 ```
 After the execution of the above commands while we enter show we get we get the flat image of the cells without actually introducing the cells which is given below
 
-IMAGE MULTIPLE-MODULE_FLAT
+![Multipkle_modules_flat](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4308cc1c-1c82-4b09-95d8-f13fbb06ebb9)
+
 
 The relavant image of the verilog file is mentioned below 
 
-IMAGE SCRNSHT_41
+![M_M_F](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/3d6add43-4ee4-437b-8429-a27ba202e7e5)
+
 
 </details>
 
