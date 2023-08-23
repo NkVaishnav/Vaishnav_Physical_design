@@ -407,7 +407,7 @@ This image shows the unate ness of the AND gate as we know an AND gate is an exa
   
 <details>
 	
-<sumamry>Hierarchical vs Falt Synthesis</summary>
+<summary>Hierarchical vs Falt Synthesis</summary>
 
 Hierarchical and flat synthesis are two contrasting approaches in digital circuit design. 
 
@@ -419,7 +419,42 @@ Hierarchical synthesis is suitable for large and complex designs, enhancing coll
 
 The choice between these two approaches depends on the design's complexity, the design team's workflow, and the optimization goals of the project.
 
-Hierarchical Synthesis
+Commands used for the Hierarchical synthesis are :
+```
+read_liberty -lib /home/nk.vaishnav/GIT_CLONES/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog multiple_modules.v
+synth -top multiple_modules
+abc -liberty /home/nk.vaishnav/GIT_CLONES/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show multiple_modules
+write_verilog -noattr multiple_modules_hier.v
+```
+
+After the execution of the above commands while we enter show we get we get the hierarchical image of the cells without actually introducing the cells which is given below
+
+IMAGE MULTIPLE-MODULE_HIER
+
+The relavant image of the verilog file is mentioned below 
+
+IMAGE SCRNSHT_41
+
+Commands used for the Flat synthesis 
+
+```
+read_liberty -lib /home/nk.vaishnav/GIT_CLONES/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog multiple_modules.v
+synth -top multiple_modules
+abc -liberty /home/nk.vaishnav/GIT_CLONES/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+flatten
+show multiple_modules
+write_verilog -noattr multiple_modules_hier.v
+```
+After the execution of the above commands while we enter show we get we get the flat image of the cells without actually introducing the cells which is given below
+
+IMAGE MULTIPLE-MODULE_FLAT
+
+The relavant image of the verilog file is mentioned below 
+
+IMAGE SCRNSHT_41
 
 </details>
 
