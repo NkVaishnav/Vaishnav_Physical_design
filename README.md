@@ -377,16 +377,27 @@ I have taken some screenshots of the Skywater library and tried to explain some 
 IMAGE LIB1
 
 Some info that is mentioned in the timing library are mentioned below : 
-Process : Typical typical (tt).
-Voltage : 1V80 (1.8V)
-Temprature : 025C (25 Centigrade)
-Technology used : CMOS
-delay model : LUT
-Time units : 1ns
-Voltage units : 1volt
-Leakage power units : 1nW
-Current units : 1mA
-Resistance units : 1Kohm
+
+- Process : Typical typical (tt).
+  
+- Voltage : 1V80 (1.8V).
+
+- Temprature : 025C (25 Centigrade).
+  
+- Technology used : CMOS.
+
+- delay model : LUT.
+  
+- Time units : 1ns.
+  
+- Voltage units : 1volt.
+  
+- Leakage power units : 1nW.
+  
+- Current units : 1mA.
+  
+- Resistance units : 1Kohm.
+  
 The above mentioned info is about the Header that is present in the library which is constant for all the cells present in the library. Now I am considering a specific cell (AND gate) for the better understanding of the other terms 
 
 IMAGE LIB2
