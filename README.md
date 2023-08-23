@@ -3,8 +3,10 @@
 # Vaishnav_PD_Samsung
 This github repository summarizes the progress made in the Samsung PD training. Quick links:
 
-- [Day0_Installation](#Day-0-Installation)
+- [Day-0-Installation](#Day-0-Installation)
 - [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1-Introduction-to-Verilog-RTL-design-and-Synthesis)
+- [Day-2-Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](Day-2:-Timing-libs,-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
+  
 
 ## Day 0: Installation
 <details>
@@ -354,5 +356,39 @@ write_verilog -noattr main_netlist.v
 ```
 	
  </details>
+ 
+## Day 2: Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
+<details>
+ <summary> Summary </summary>
+Day2 summarises the information about the timing libs used for synthesis, the way we read timing libs, difference between the hierarchical and the flat synthesis, various flop synthesis styles and few optimizations that happen during synthesis:
 
+ <details>
+<summary>Timing Libs</summary>
+	Skywater Timing Library : Skywater Timing Library, developed by Google, is a versatile tool for digital design engineers. This library aids in the precise characterization and timing analysis of integrated circuits. By providing a comprehensive set of timing models, Skywater assists in accurate performance predictions and optimization of chip designs. Its integration with open-source Electronic Design Automation (EDA) tools enhances accessibility and collaboration within the hardware design community. Google's Skywater Timing Library plays a pivotal role in advancing the field of digital circuit design by offering essential resources for efficient and reliable chip development. This specific libraary has been used as an input for synthesis in Yosys
+ 	PVT Variations : Process, Voltage, and Temperature (PVT) variations are crucial factors influencing integrated circuits' performance and reliability. Process variations stem from manufacturing inconsistencies, leading to differences in transistor properties. Voltage fluctuations impact a circuit's behavior, affecting speed and power consumption. Temperature changes further compound these effects, altering transistor characteristics. Engineers address PVT variations by designing circuits with margins to accommodate worst-case scenarios. Advanced techniques, such as dynamic voltage and frequency scaling, help mitigate these variations in modern semiconductor designs, ensuring stable and optimal operation across different conditions.
+I have taken some screenshots of the Skywater library and tried to explain some of the details mentioned in it 
+
+	 IMAGE LIB1
+
+Some info that is mentioned in the timing library are mentioned below : 
+Process : Typical typical (tt).
+Voltage : 1V80 (1.8V)
+Temprature : 025C (25 Centigrade)
+Technology used : CMOS
+delay model : LUT
+Time units : 1ns
+Voltage units : 1volt
+Leakage power units : 1nW
+Current units : 1mA
+Resistance units : 1Kohm
+The above mentioned info is about the Header that is present in the library which is constant for all the cells present in the library. Now I am considering a specific cell (AND gate) for the better understanding of the other terms 
+
+IMAGE LIB2
+Now as shown in the above image i have considered an and gat e
+
+
+
+
+  </details>
+</details>
 
