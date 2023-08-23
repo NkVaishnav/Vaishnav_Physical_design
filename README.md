@@ -404,5 +404,6 @@ This image shows the unate ness of the AND gate as we know an AND gate is an exa
  The same thing is mentioned in the above image apart from this the cell rise and fall transitions are mentioned in an LUT table in which the parameters of the index_1 and index_2 are Input capacitance and the output load.
  
   </details>
-</details>
+  
+
 
