@@ -625,32 +625,41 @@ And the synthesized version of the same looks as below
 
 ## Day-3-Combinational and Sequential optimizations
 
+<details>
+	
 <summary>Summary</summary>
 
-<details>
+
 
 </details>
 
+<details>
+	
 <summary>Introduction to optimizations</summary>
 
-<details>
+
 
 </details>
+
+
+<details>
 
 <summary>Combinational logic optimizations</summary>
 
-<details>
-
 </details>
+
+<details>
 
 <summary>Sequential logic optimizations</summary>
 
-<details>
+
 
 </details>
 
+<details>
+
 <summary>Sequential logic optimizations for unused outputs</summary>
 
-<details>
+
 
 </details>
