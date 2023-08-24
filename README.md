@@ -6,6 +6,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-0-Installation](#Day-0-Installation)
 - [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1-Introduction-to-Verilog-RTL-design-and-Synthesis)
 - [Day-2-Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](Day-2:-Timing-libs,-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
+- [Day-3-Combinational and Sequential optimizations](Day-3-Combinational-and-Sequential-optimizations)
   
 
 ## Day 0: Installation
@@ -619,5 +620,37 @@ the final output is aa without any cell usage
 And the synthesized version of the same looks as below 
 
 ![mult_81](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/083cd483-131d-42af-9bef-842b26765993)
+
+</details>
+
+## Day-3-Combinational and Sequential optimizations
+
+<summary>Summary</summary>
+
+<details>
+
+</details>
+
+<summary>Introduction to optimizations</summary>
+
+<details>
+
+</details>
+
+<summary>Combinational logic optimizations</summary>
+
+<details>
+
+</details>
+
+<summary>Sequential logic optimizations</summary>
+
+<details>
+
+</details>
+
+<summary>Sequential logic optimizations for unused outputs</summary>
+
+<details>
 
 </details>
