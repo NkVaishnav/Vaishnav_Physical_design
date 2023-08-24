@@ -33,7 +33,6 @@ Day0 summarises the information about the tool and how to invoke the tool with t
  
  <summary> IC Compiler II </summary>
 
-
 ICC2 is a cutting-edge tool developed by Synopsys, a leading electronic design automation company. It stands as an integral part of the digital design process, specializing in place-and-route optimization for complex integrated circuits. ICC2 leverages advanced algorithms to achieve high-performance, low-power, and area-efficient designs. With its intuitive interface, it empowers semiconductor engineers to streamline the physical implementation process, delivering faster time-to-market for innovative chip designs. Synopsys' ICC2 tool plays a pivotal role in shaping the future of semiconductor design by enhancing efficiency and enabling the creation of intricate, high-performance electronic devices.
 
 I invoked the ICC2 with the following command:
@@ -45,7 +44,6 @@ icc2_shell
 Below is the screenshot showing the successful launch:
 
 ![icc2_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/54a3feed-76bd-410c-9db3-947d563a0ec4)
-
 
 </details>
 
@@ -62,9 +60,7 @@ dc_shell
 
 Below is the screenshot showing the successful launch:
 
-
 ![dc_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/e518a9e9-0cd6-4ac0-829b-77f864892429)
-
 
 </details>
 
@@ -84,7 +80,6 @@ Below is the screenshot showing the successful launch:
 
 ![lc_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b56094cb-6572-4522-ac0f-92c1921b3c03)
 
- 
 </details>
 
 <details>
@@ -103,9 +98,7 @@ Below is the screenshot showing the successful launch:
 
 ![pt_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/7b5d8dca-771b-48e4-8c31-b2dee77b1f53)
 
-
 </details>
-
 
 <details>
  
@@ -122,7 +115,6 @@ iverilog
 Below is the screenshot showing the successful launch:
 
 ![iverilog_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/920bd687-f9f8-4fcd-80d8-8ab0a539fc9a)
-
 
 </details>
 
@@ -142,7 +134,6 @@ Below is the screenshot showing the successful launch:
 
 ![gtkwave_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/30a5633e-57f0-40cf-a9ac-d005077d2161)
 
-
 </details>
 
 <details>
@@ -150,7 +141,6 @@ Below is the screenshot showing the successful launch:
 <summary> Yosys </summary>
  
 Yosys is a powerful open-source framework for Verilog RTL synthesis and formal verification. It's widely utilized in digital design automation to convert RTL descriptions into optimized gate-level representations. Yosys stands out for its versatility, offering a range of synthesis and optimization algorithms to enhance circuit performance, reduce area utilization, and minimize power consumption. Beyond synthesis, Yosys also integrates formal verification capabilities, enabling engineers to rigorously verify the correctness of their designs. Its open nature and active community make Yosys a valuable resource for advancing digital circuit design and verification practices.
-
 
 I invoked the DC Compiler with the following command:
 
@@ -162,16 +152,14 @@ Below is the screenshot showing the successful launch:
 
 ![Yosys_snapshot](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f2b01fff-9b57-4e16-a7b7-ca0ca40af167)
 
-
 </details>
-
 
 ## Day 1: Introduction to Verilog RTL design and Synthesis
 
 <details>
  <summary> Summary </summary>
 
- RTL (Register Transfer Level) design and synthesis are essential steps in modern digital circuit development:
+RTL (Register Transfer Level) design and synthesis are essential steps in modern digital circuit development:
 
 RTL Design: RTL design is the process of creating a high-level description of a digital circuit using a hardware description language (HDL) like Verilog or VHDL. It focuses on specifying the functionality of the design, including data flow and control logic, using registers and combinational logic blocks.
 
@@ -198,8 +186,8 @@ Day 1 summarises the information about the working of the Icarus Verilog with GT
 </details>
 	
  <details>
+	 
  <summary> Icarus Verilog and GTKwave </summary>
-
 
 1. Top Verilog File (Design under test or DUT): The top Verilog file contains the RTL description of the digital design you want to simulate. This file defines the structure and functionality of your design's modules and their interconnections.
    
@@ -215,11 +203,7 @@ Day 1 summarises the information about the working of the Icarus Verilog with GT
 
 We give inputs to the Design under Test and observe the output with the help of Testbench. The image below illustrates the way in which it is done:
 
-
-
 ![DUT_TB](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c7637883-f4e0-4ac2-ae32-853840676b8e)
-
-
 
 The commands that were used to run the simulation of the Icarus Verilog are mentioned below one by one :
 ```
@@ -229,10 +213,7 @@ The above command is used to call the top verilog and its respective testbench a
 
 Below is the screenshot the image that shows the output of the above command 
 
-
-
 ![iverilog_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5e883fe6-4d79-47b6-a383-03b9bfc1e190)
-
 
 ```
 ./a.out 
@@ -241,10 +222,7 @@ The above command is used to call the generated a.out file which in turn generat
 
 Below is the screenshot the image that shows the output of the above command 
 
-
-
 ![iverilog_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/71e595bb-933b-441b-a851-d330fc792e9d)
-
 
 ```
 gtkwave tb_main.vcd
@@ -254,10 +232,7 @@ The above command opens the graphical window for us to view the changes in the v
  
 Below is the screenshot of the image that shows the output of the above command 
 
-
-
 ![iverilog_good_mux_working](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b4a93c10-7ab7-4433-ad30-141274eaa103)
-
 
  Here is the list of all the commands together :
  
@@ -268,9 +243,8 @@ gtkwave tb_main.vcd
 ```
 </details>	
 
-
-	
  <details>
+	 
  <summary> Yosys </summary>
 
 Yosys, an open-source RTL synthesis tool, operates by converting Register Transfer Level (RTL) descriptions written in hardware description languages like Verilog or VHDL into optimized gate-level representations. It follows these steps:
@@ -293,58 +267,57 @@ The image below shows the flow, inputs and the outputs of a Synthesis tool:
 
 ![Yosys_workflow](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b3a00766-b9b0-4d53-a10f-1ecfa1c47f21)
 
-
 Commands that were used to get the netlist are mentioned below :
 
 ```
 read_liberty -lib /Pathtolib
 ```
+
 This command is used to get the path to the library and respective image after the execution of the code is given below
 
 ![yosys1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/585932b3-f5b3-4247-80a5-3eca9754d021)
 
-
 ```
 read_verilog main.v
 ```
+
 This command is used to read teh verilog file and the image after the execution of this step is mentioned below
 
 ![yosys2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c3976c80-33cb-4df4-96a2-5e95cdba8248)
 
-
 ```
 synth -top good_mux
 ```
-This command is used to mention the top module of the design and the image after the execution is mentioned below
 
+This command is used to mention the top module of the design and the image after the execution is mentioned below
 
 ![yosys3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/742aa577-b6ff-43f8-a80a-63b58275ed05)
 
 ```
 abc -liberty /Pathtolib
 ```
+
 This command is used to map the cells in design to the cells in the library and the image after the execution is mentioned below
 
 ![yosys4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a5f20073-554f-47c2-80c7-fc64ec68c0ef)
 
-
 ```
 show
 ```
+
 This command shows the view of which cells have been used in the design and the image after the execution is mentioned below
 
 ![yosys5](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/6d403601-e9aa-48bb-9ad4-e8d5acdcb319)
 
-
 ```
 write_verilog -noattr main_netlist.v
 ```
+
 This command writes out the netlist and the image after the execution is mentioned below
 
-  
 ![yosys6](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/95b20b01-366b-4b81-b4f1-fb0e4b10a71d)
 
-  Here is the list of all the commands together :
+Here is the list of all the commands together :
   
  ```
 read_liberty -lib /Pathtolib
@@ -354,20 +327,21 @@ abc -liberty /Pathtolib
 show
 write_verilog -noattr main_netlist.v
 ```
-	
+
  </details>
  
 ## Day 2: Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
 <details>
+	
  <summary> Summary </summary>
+ 
 Day2 summarises the information about the timing libs used for synthesis, the way we read timing libs, difference between the hierarchical and the flat synthesis, various flop synthesis styles and few optimizations that happen during synthesis:
 
 </details>
 
- <details>
-	 
+<details> 
+	
 <summary>Timing Libs</summary>
-
 
 Skywater Timing Library : Skywater Timing Library, developed by Google, is a versatile tool for digital design engineers. This library aids in the precise characterization and timing analysis of integrated circuits. By providing a comprehensive set of timing models, Skywater assists in accurate performance predictions and optimization of chip designs. Its integration with open-source Electronic Design Automation (EDA) tools enhances accessibility and collaboration within the hardware design community. Google's Skywater Timing Library plays a pivotal role in advancing the field of digital circuit design by offering essential resources for efficient and reliable chip development. This specific libraary has been used as an input for synthesis in Yosys
 
@@ -375,7 +349,6 @@ Skywater Timing Library : Skywater Timing Library, developed by Google, is a ver
 I have taken some screenshots of the Skywater library and tried to explain some of the details mentioned in it 
 
 ![LIB1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2c69ffbe-4e83-4b6a-b337-0f48186c52fd)
-
 
 Some info that is mentioned in the timing library are mentioned below : 
 
@@ -403,25 +376,20 @@ The above mentioned info is about the Header that is present in the library whic
 
 ![lib2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/3fb07eed-d609-419b-9978-7bc52950f653)
 
-
 Now as shown in the above image i have considered a 2 input and gate and its verilog file which has been instantated using gate modelling. As the number of inputs of this gate are two the total number of combinations of inputs that can form are 2pow2 i.e. 4 so the leakage is mentioned for all the combinations of these inputs and the specific combination is mentioned in the library.
 
 ![LIB3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/9245bc8a-95d0-4965-ad0e-b88bc44863b8)
 
-
-
 Now I have considered the same 2 input and gate with different gate strength as the strength of the cells increases the Area of the cell increases, delay decreases and power consumed also increases. This is clearly evident in the image shown above.
 
 ![LIB4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c2d93dc0-cb81-4d43-a25b-d236a827f7ea)
-
-
 
 Now consider a single and gate and it has the info about the input pins and the output pins i.e. the capacitance, direction, internal power(which inturn contains of rise and fall power), max_tansistion and the capacitance.
 
 ![LIB7](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8dbcb34a-5b58-4d3e-ba0e-80586f2aba6f)
 
 This image shows the unate ness of the AND gate as we know an AND gate is an example of a positive unate gate. In a positive unate function, increasing any input variable always leads to an increase in the output. For an AND gate, as you increase the inputs from 0 to 1, the output also increases from 0 to 1, making it a positive unate function. The timing_type is combinational as the and gate is combinational
- The same thing is mentioned in the above image apart from this the cell rise and fall transitions are mentioned in an LUT table in which the parameters of the index_1 and index_2 are Input capacitance and the output load.
+The same thing is mentioned in the above image apart from this the cell rise and fall transitions are mentioned in an LUT table in which the parameters of the index_1 and index_2 are Input capacitance and the output load.
  
   </details>
   
@@ -440,6 +408,7 @@ Hierarchical synthesis is suitable for large and complex designs, enhancing coll
 The choice between these two approaches depends on the design's complexity, the design team's workflow, and the optimization goals of the project.
 
 Commands used for the Hierarchical synthesis are :
+
 ```
 read_liberty -lib /home/nk.vaishnav/GIT_CLONES/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog multiple_modules.v
@@ -453,11 +422,9 @@ After the execution of the above commands while we enter show we get we get the 
 
 ![Multiple_module_hier_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2d77baa0-6c67-4d43-b0c7-5f4e633de491)
 
-
 The relavant image of the verilog file is mentioned below 
 
 ![Screenshot from 2023-08-22 07-01-41](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b1821a28-e51c-4469-a594-d3c5d629acc7)
-
 
 Commands used for the Flat synthesis 
 
@@ -470,19 +437,19 @@ flatten
 show multiple_modules
 write_verilog -noattr multiple_modules_hier.v
 ```
+
 After the execution of the above commands while we enter show we get we get the flat image of the cells without actually introducing the cells which is given below
 
 ![Multipkle_modules_flat](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4308cc1c-1c82-4b09-95d8-f13fbb06ebb9)
-
 
 The relavant image of the verilog file is mentioned below 
 
 ![M_M_F](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/3d6add43-4ee4-437b-8429-a27ba202e7e5)
 
-
 </details>
 
 <details>
+	
 <summary>Flop coding styles and optimizations</summary>
 
 Synchronous and Asynchronous Set and Reset, often referred to as "Set" and "Reset" or "S" and "R" operations, are fundamental concepts in digital electronics and sequential logic circuits. They are used to control the state of flip-flops and other memory elements in digital systems. These operations play a crucial role in designing circuits that can store and manipulate binary data.
@@ -496,8 +463,7 @@ Synchronous Reset (R): Similarly, the synchronous Reset input forces the flip-fl
 
 Synchronous set and reset operations are commonly used in applications where precise timing and control are critical. However, they can also introduce issues like glitches and hazards due to the combination of multiple signals during the clock edge.
 
-Asynchronous Set and Reset:
-Asynchronous set and reset operations are not tied to a clock signal. Instead, they can be activated independently of the clock, making them more immediate and less constrained by timing considerations.
+Asynchronous Set and Reset: Asynchronous set and reset operations are not tied to a clock signal. Instead, they can be activated independently of the clock, making them more immediate and less constrained by timing considerations.
 
 Asynchronous Set (S): When the asynchronous Set input is activated, the flip-flop's output is immediately set to '1', regardless of the clock state. This immediate change can introduce potential problems, such as unpredictable transitions if not properly managed.
 
@@ -505,8 +471,7 @@ Asynchronous Reset (R): Similarly, the asynchronous Reset input immediately forc
 
 Asynchronous set and reset operations are often used in situations where rapid response is necessary, but they can lead to issues such as race conditions, where the outcome depends on the timing relationship between signals.
 
-Considerations:
-Designers need to carefully choose between synchronous and asynchronous set and reset operations based on the specific requirements of their digital circuit. Synchronous operations provide better control over timing and are less prone to certain types of glitches, but they are dependent on the clock signal. Asynchronous operations offer faster responses but can introduce challenges related to timing uncertainty and potential hazards.
+Considerations: Designers need to carefully choose between synchronous and asynchronous set and reset operations based on the specific requirements of their digital circuit. Synchronous operations provide better control over timing and are less prone to certain types of glitches, but they are dependent on the clock signal. Asynchronous operations offer faster responses but can introduce challenges related to timing uncertainty and potential hazards.
 
 In many cases, a combination of both types of operations can be used to achieve the desired behavior while mitigating the drawbacks of each approach. Proper synchronization and careful consideration of the potential issues are essential to create reliable and functional digital circuits.
 
@@ -540,6 +505,7 @@ dfflibmap -liberty /home/nk.vaishnav/vsd/VLSI/sky130RTLDesignAndSynthesisWorksho
 abc -liberty /home/nk.vaishnav/vsd/VLSI/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show dff_async_set
 ```
+
 Image obtained after the run is given below
 
 ![Asynctimg2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2ea63739-c8b4-48cf-9fe5-83641367f504)
@@ -549,7 +515,6 @@ D flipflop with Asynchronous reset : A D flip-flop with asynchronous reset is a 
 Below is the image showing the whole testbench output
 
 ![Asyncrst](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/7fb974c6-5813-4e24-949a-f8f2fbdcea10)
-
 
 Below is the image where we can see the proper working of the Asynchronous reset 
 
@@ -570,7 +535,6 @@ Image obtained after the run is given below
 
 ![Asyncrst2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/980f59de-3c05-4b0a-96d5-5ccb5fa27689)
 
-
 D flipflop with Synchronous reset : A D flip-flop with synchronous reset is a vital component in digital circuits, used to store a single binary state. It includes a data input (D) for capturing input data and a synchronous reset input (R) that functions only during a clock signal transition. When the reset input is activated along with the clock, the flip-flop's output is set to '0', ensuring controlled and synchronized state changes. This synchronous reset feature helps avoid timing issues and glitches, maintaining circuit stability. The D flip-flop's primary purpose is data storage, while the synchronous reset input ensures reliable and well-timed resets within the clock cycle.
 
 Below is the image showing the whole testbench output
@@ -581,7 +545,6 @@ Below is the image showing the whole testbench output
 Below is the image where we can see the proper working of the Synchronous reset
 
 ![Syncrst2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/aa101bf4-5561-4614-b0ff-a30755a997dd)
-
 
 Commands used for the display of the cellular view on yosys
 
@@ -598,15 +561,12 @@ Image obtained after the run is given below
 
 ![Synrst4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f1247f7e-52ac-4c0a-80b3-24c632cfe179)
 
-
 D flipflp with both Asynchronous and Synchronous reset : 
 A D flip-flop featuring both asynchronous and synchronous reset inputs is a versatile building block in digital design. It includes a data input (D) for data storage and can be reset through either an asynchronous reset (R) or a synchronous reset input, activated during clock transitions. The asynchronous reset allows immediate state changes, while the synchronous reset ensures controlled resets synchronized with the clock. This combination offers flexibility in managing resets, catering to both quick responses and precise timing requirements. The D flip-flop's primary role is data capture, and the dual reset inputs enhance its adaptability in various circuit scenarios.
 
 Below is the image showing the whole testbench output
 
 ![Asysynrst](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/18e4ff77-71df-41db-b7cb-200a4ec2905d)
-
-
 
 Below is the image where we can see the proper working of the Asynchronous and Synchronous reset
 
@@ -615,8 +575,8 @@ Thie image below shows the Asynchronous reset
 ![Asysynrat1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/eec10352-f04f-4cb3-b06a-51f5d6fa27e6)
 
 The image below shows the synchronous reset
-![Asysynrst2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/e3833e0d-6b7c-49b0-94e6-05a7fed366f3)
 
+![Asysynrst2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/e3833e0d-6b7c-49b0-94e6-05a7fed366f3)
 
 Commands used for the display of the cellular view on yosys
 
@@ -637,9 +597,9 @@ Intresting optimizations have been observed in the multiplication with 2 and 9 b
 
 Multiplication with 2 :
 
- The verilog file used for the synthesis is given below in the image 
+The verilog file used for the synthesis is given below in the image 
 
- ![Mult_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c479e65c-3491-4417-9214-a02d09950df1)
+![Mult_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c479e65c-3491-4417-9214-a02d09950df1)
 
 As we know multiplication with two is left shift by appending 0 at the LSB so after the synthesis it is expected to just append 0 at the LSB without any extra cell usage from the library
 
@@ -660,6 +620,4 @@ And the synthesized version of the same looks as below
 
 ![mult_81](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/083cd483-131d-42af-9bef-842b26765993)
 
-
 </details>
-
