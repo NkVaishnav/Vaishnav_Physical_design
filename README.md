@@ -158,6 +158,7 @@ Below is the screenshot showing the successful launch:
 ## Day 1: Introduction to Verilog RTL design and Synthesis
 
 <details>
+
  <summary> Summary </summary>
 
 RTL (Register Transfer Level) design and synthesis are essential steps in modern digital circuit development:
