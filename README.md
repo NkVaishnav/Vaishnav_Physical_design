@@ -332,6 +332,7 @@ write_verilog -noattr main_netlist.v
  </details>
  
 ## Day 2: Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
+
 <details>
 	
  <summary> Summary </summary>
