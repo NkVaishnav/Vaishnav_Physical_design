@@ -5,7 +5,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 
 - [Day-0-Installation](#Day-0-Installation)
 - [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1-Introduction-to-Verilog-RTL-design-and-Synthesis)
-- [Day-2-Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](#Day-2:-Timing-libs,-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
+- [Day-2-Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-2-timing-libs-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
 - [Day-3-Combinational and Sequential optimizations](Day-3-Combinational-and-Sequential-optimizations)
   
 
