@@ -1,4 +1,4 @@
-![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f628a015-5fa8-41b7-b697-33cc13226b86)# Vaishnav_Physical_design
+# Vaishnav_Physical_design
 
 # Vaishnav_PD_Samsung
 This github repository summarizes the progress made in the Samsung PD training. Quick links:
