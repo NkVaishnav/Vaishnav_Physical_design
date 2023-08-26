@@ -659,10 +659,37 @@ When the above image is observed if we consider the condition of having A=0 then
 
   ![Boolean1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/74717b7a-713d-4c7b-9ef8-cc25e09c07ac)
 
+When the above image is observed we can see the exact description of logic been differentiated according to the conditions used
 
   ![Boolean2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/486a06bc-c8fe-465b-80c0-febacdc5d437)
 
+Now if we clearly observe the above image we can see the expected result for synthesis and the final result after optimization came out to be a single xnor gate.
 
+Sequential logic optimization:
+
+- Basic (Constant propagation)
+
+![Seq1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4a47c1df-9377-47aa-ab77-36c7871ebc75)
+
+When we observe the above image Q is always set to 0 ad this is sequential constant.
+
+![Seq2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/128192aa-a952-484d-b715-a8c91237b480)
+
+When we observe the above image Q goes to 1 asynchronously but goes to 0 synchronously hence we cannot say Q=set and no further optimization can be done.
+
+Hence for the Sequential optimization to be done Q pin should always have a constant value.
+
+- Advanced (State optimization, Logic cloning, Retiming)
+
+  State optimization is the optimization of the unused states.
+
+Logic cloning is done during physical aware synthesis when there is a large +ve slack availiable
+
+![Seq_clone (1)](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4e16a8f0-2422-4c45-8da6-0f3c3a1f6738)
+
+Retiming is done when there is a uneven distribution of the combinational logic between the consequent flops we transfer some of the combinational logic to the next logic cone to increase the frequency of operation.
+
+![Seq_retime](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1e0e2477-3122-4643-a6f4-479d62f1a5db)
 
 </details>
 
