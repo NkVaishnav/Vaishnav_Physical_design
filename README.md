@@ -744,6 +744,8 @@ module opt_check4 (input a , input b , input c , output y);
  endmodule
 ```
 
+![opt_check4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ce4c6700-2f94-48f0-9449-5760f8442f00)
+
 </details>
 
 <details>
