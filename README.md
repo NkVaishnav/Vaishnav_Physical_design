@@ -736,6 +736,14 @@ The above code is actually supposed to get two multiplexers but after the optimi
 ![opt_check3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/923c626e-643d-4b19-bc96-b5c75bc14d27)
 
 
+Example 4: 
+
+```
+module opt_check4 (input a , input b , input c , output y);
+ assign y = a?(b?(a & c ):c):(!c);
+ endmodule
+```
+
 </details>
 
 <details>
