@@ -698,6 +698,16 @@ Retiming is done when there is a uneven distribution of the combinational logic 
 
 <summary>Combinational logic optimizations</summary>
 
+Now let us consider some examples to observe the Combinational logic optimizations in much more detail. 
+
+Example 1: 
+
+```
+module opt_check (input a , input b , output y);
+	assign y = a?b:0;
+endmodule
+```
+
 </details>
 
 <details>
