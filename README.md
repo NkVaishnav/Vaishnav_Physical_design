@@ -726,6 +726,16 @@ The above code is the verilog file of equation y = a'b + a but according to the 
 
 Example 3: 
 
+```
+module opt_check3 (input a , input b, input c , output y);
+	assign y = a?(c?b:0):0;
+endmodule
+```
+The above code is actually supposed to get two multiplexers but after the optimization it scales down to a 3 input and gate as shown below
+
+![opt_check3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/923c626e-643d-4b19-bc96-b5c75bc14d27)
+
+
 </details>
 
 <details>
