@@ -631,13 +631,36 @@ And the synthesized version of the same looks as below
 	
 <summary>Summary</summary>
 
-
+Day3 summarises the effective optimizations that happen in the synthesis in combinational and sequential logic circuits with few examples explained in detail
 
 </details>
 
 <details>
 	
 <summary>Introduction to optimizations</summary>
+
+This logic optimizations are mainly of two types:
+
+- Combinational logic optimizations.
+
+- Sequential logic optimizations.
+
+  Combinational logic optimizations :
+
+- Squeezing the logic to get the most optimized version of the output (i.e. Area and power savings)
+
+- Constant propagation (Direct optimization)
+
+  ![Constant (1)](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/64ad4faa-d98d-4459-ac34-3a9023630f37)
+
+When the above image is observed if we consider the condition of having A=0 then according to the optimization observed in the above image the output is reduced to C' and we need only 2 MOS tansistors instead of 6 MOS according to the original circuit that is used.
+
+- Boolean logic optimization (Kmap, Quine McCluskey)
+
+  ![Boolean1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/74717b7a-713d-4c7b-9ef8-cc25e09c07ac)
+
+
+  ![Boolean2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/486a06bc-c8fe-465b-80c0-febacdc5d437)
 
 
 
