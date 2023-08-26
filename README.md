@@ -657,11 +657,11 @@ When the above image is observed if we consider the condition of having A=0 then
 
 - Boolean logic optimization (Kmap, Quine McCluskey)
 
-  ![Boolean1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/74717b7a-713d-4c7b-9ef8-cc25e09c07ac)
+ ![Boolean2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/486a06bc-c8fe-465b-80c0-febacdc5d437)
 
 When the above image is observed we can see the exact description of logic been differentiated according to the conditions used
 
-  ![Boolean2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/486a06bc-c8fe-465b-80c0-febacdc5d437)
+ ![Boolean1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/74717b7a-713d-4c7b-9ef8-cc25e09c07ac)
 
 Now if we clearly observe the above image we can see the expected result for synthesis and the final result after optimization came out to be a single xnor gate.
 
