@@ -1135,6 +1135,7 @@ endmodule
 ```
 
 The above code has been simulated with a testbench for getting the exact optimization requirement and the output is mentioned below 
+Here the reset actually acts as a set 
 
 ![dff_const5_iv](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/19e7519c-e6c4-4914-87c0-2e71cc75c47f)
 
