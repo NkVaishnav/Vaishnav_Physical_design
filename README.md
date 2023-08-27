@@ -711,6 +711,10 @@ The above code scales down to a simple and gate
 
 ![opt_check1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/096a1ce1-83bc-47d2-94c6-a6d8d5350e9f)
 
+Explanation for the above optimization is given in the image below 
+
+![opt_chk_exp](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/9f19805b-3b2b-4651-b73d-27e4f016e011)
+
 
 Example 2:
 
@@ -722,6 +726,11 @@ endmodule
 The above code is the verilog file of equation y = a'b + a but according to the Absorption law this is equal to a + b hence after optimization the synthesised result would be a simple or gate.
 
 ![opt_check2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5812962c-3c55-4714-a32b-23f5b67e9630)
+
+Explanation for the above optimization is given in the image below 
+
+![opt1_chk2_exp](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/db245e98-7569-4813-b91c-efe1f51e636a)
+
 
 
 Example 3: 
@@ -735,6 +744,10 @@ The above code is actually supposed to get two multiplexers but after the optimi
 
 ![opt_check3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/923c626e-643d-4b19-bc96-b5c75bc14d27)
 
+Explanation for the above optimization is given in the image below 
+
+![opt_chk3_exp](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/6505f292-9b92-47a2-8f93-a3b4374e88ed)
+
 
 Example 4: 
 
@@ -745,6 +758,11 @@ module opt_check4 (input a , input b , input c , output y);
 ```
 
 ![opt_check4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ce4c6700-2f94-48f0-9449-5760f8442f00)
+
+Explanation for the above optimization is given in the image below 
+
+![opt_chk4_exp](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/38b122ab-6c11-4fd7-9aaa-2eddac679896)
+
 
 Example 5:
 
@@ -773,6 +791,11 @@ endmodule
 
 ![multi_mod1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4583993f-cb1b-4682-8fad-b201327a511b)
 
+Explanation for the above optimization is given in the image below 
+
+![multimod_exp](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/7afd3897-c4d8-4e59-b803-5ac583aedceb)
+
+
 Example 6:
 
 ```
@@ -796,6 +819,9 @@ endmodule
 
 ![multi_mod2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1253354f-1211-4a71-b85b-c654880247be)
 
+Explanation for the above optimization is given in the image below 
+
+![multi_mod2_exp](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ab7c0e19-07df-4fd3-b151-34904cd1f119)
 
 
 
@@ -1136,6 +1162,10 @@ endmodule
 ```
 ![counter_opt1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/49250a27-a286-4863-9453-e35d4d8ca54a)
 
+As the 0 bit is only used for the output we can see that during the synthesis only one flipflop is generated with inverter for the toggle function and remaining bits are unused so their respective flops are not even generated the same is shown in the below image 
+
+![counter_opt_exp](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/0a60779c-48bb-4ed4-b709-b5e02a2fa43a)
+
 
 Example 2:
 
@@ -1157,4 +1187,5 @@ endmodule
 
 ![counter_opt2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1fbfc2c6-121a-46b8-9ae4-643488ad780b)
 
+As all the bits of the output are used no further optimizations on the flops can be done so the whole design remains intact.
 </details>
