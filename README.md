@@ -1,4 +1,4 @@
-# Vaishnav_Physical_design
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/531a9ba1-e253-4aa9-95a6-ff51373049d1)# Vaishnav_Physical_design
 
 # Vaishnav_PD_Samsung
 This github repository summarizes the progress made in the Samsung PD training. Quick links:
@@ -805,6 +805,310 @@ endmodule
 
 <summary>Sequential logic optimizations</summary>
 
+We have considered multiple examples for the following optimizations to be explained properly 
+
+Example 1: 
+
+```
+##RTL code
+module dff_const1(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b0;
+	else
+		q <= 1'b1;
+end
+
+endmodule
+
+##Testbench
+
+`timescale 2ns / 1ps
+module tb_dff_const1;
+	// Inputs
+	reg clk, reset   ;
+	// Output
+	wire q;
+
+        // Instantiate the Unit Under Test (UUT)
+	dff_const1 uut (
+		.clk(clk),
+		.reset(reset),
+		.q(q)
+	);
+
+	initial begin
+	$dumpfile("tb_dff_const1.vcd");
+	$dumpvars(0,tb_dff_const1);
+	// Initialize Inputs
+	clk = 0;
+	reset = 1;
+	#3000 $finish;
+	end
+
+always #10 clk = ~clk;
+always #1547 reset=~reset;
+endmodule
+```
+The above code has been simulated with a testbench for getting the exact optimization requirement and the output is mentioned below 
+
+![dff_const1_iv](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/3f88d9fc-79e9-4651-a2dd-d4ec6bb5203b)
+
+The synthesis has been performed for the same to look for the optimizations and we have found the following result as shown below 
+
+![dff_const1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/cf33cbb7-947c-4aa1-8b28-f53da04bae1c)
+
+Example 2:
+
+```
+##RTL code
+module dff_const2(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b1;
+	else
+		q <= 1'b1;
+end
+
+endmodule
+
+##Testbench
+
+
+`timescale 1ns / 1ps
+module tb_dff_const2;
+	// Inputs
+	reg clk, reset   ;
+	// Output
+	wire q;
+
+        // Instantiate the Unit Under Test (UUT)
+	dff_const2 uut (
+		.clk(clk),
+		.reset(reset),
+		.q(q)
+	);
+
+	initial begin
+	$dumpfile("tb_dff_const2.vcd");
+	$dumpvars(0,tb_dff_const2);
+	// Initialize Inputs
+	clk = 0;
+	reset = 1;
+	#3000 $finish;
+	end
+
+always #10 clk = ~clk;
+always #1547 reset=~reset;
+endmodule
+
+```
+
+The above code has been simulated with a testbench for getting the exact optimization requirement and the output is mentioned below 
+
+![dff_const2_iv](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4d7baf77-df62-48c3-b966-4e56dbde2283)
+
+The synthesis has been performed for the same to look for the optimizations and we have found the following result as shown below 
+
+![dff_const2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/e0394ab3-997b-4b9a-8aa9-fbba6680ac12)
+
+
+Example 3:
+
+```
+#RTL code
+
+module dff_const3(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+
+#Testbench
+
+
+`timescale 1ns / 1ps
+module tb_dff_const3;
+	// Inputs
+	reg clk, reset   ;
+	// Output
+	wire q;
+
+        // Instantiate the Unit Under Test (UUT)
+	dff_const3 uut (
+		.clk(clk),
+		.reset(reset),
+		.q(q)
+	);
+
+	initial begin
+	$dumpfile("tb_dff_const3.vcd");
+	$dumpvars(0,tb_dff_const3);
+	// Initialize Inputs
+	clk = 0;
+	reset = 1;
+	#3000 $finish;
+	end
+
+always #10 clk = ~clk;
+always #1547 reset=~reset;
+endmodule
+
+```
+
+The above code has been simulated with a testbench for getting the exact optimization requirement and the output is mentioned below 
+
+![dff_const3_iv](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/dcf54126-6412-4e92-b92d-90874152e278)
+
+
+The synthesis has been performed for the same to look for the optimizations and we have found the following result as shown below 
+
+![dff_const3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/65a42110-f4d2-40a8-aa46-ffe5a7fb6344)
+
+
+Example 4: 
+
+```
+##RTL code
+module dff_const4(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b1;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+
+
+##Testbench
+
+
+`timescale 1ns / 1ps
+module tb_dff_const4;
+	// Inputs
+	reg clk, reset   ;
+	// Output
+	wire q;
+
+        // Instantiate the Unit Under Test (UUT)
+	dff_const4 uut (
+		.clk(clk),
+		.reset(reset),
+		.q(q)
+	);
+
+	initial begin
+	$dumpfile("tb_dff_const4.vcd");
+	$dumpvars(0,tb_dff_const4);
+	// Initialize Inputs
+	clk = 0;
+	reset = 1;
+	#3000 $finish;
+	end
+
+always #10 clk = ~clk;
+always #1547 reset=~reset;
+endmodule
+
+```
+The above code has been simulated with a testbench for getting the exact optimization requirement and the output is mentioned below 
+
+
+![dff_const4_iv](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/304dcaaf-13c8-4de2-bd22-14ed8a960670)
+
+The synthesis has been performed for the same to look for the optimizations and we have found the following result as shown below 
+
+![dff_const4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1ebe738c-92e2-4b9a-ba87-007af87d750d)
+
+
+Example 5:
+
+```
+##RTL code
+module dff_const5(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b0;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+
+#Testbench
+
+
+`timescale 1ns / 1ps
+module tb_dff_const5;
+	// Inputs
+	reg clk, reset   ;
+	// Output
+	wire q;
+
+        // Instantiate the Unit Under Test (UUT)
+	dff_const5 uut (
+		.clk(clk),
+		.reset(reset),
+		.q(q)
+	);
+
+	initial begin
+	$dumpfile("tb_dff_const5.vcd");
+	$dumpvars(0,tb_dff_const5);
+	// Initialize Inputs
+	clk = 0;
+	reset = 1;
+	#3000 $finish;
+	end
+
+always #10 clk = ~clk;
+always #1547 reset=~reset;
+endmodule
+
+```
+
+The above code has been simulated with a testbench for getting the exact optimization requirement and the output is mentioned below 
+
+![dff_const5_iv](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/19e7519c-e6c4-4914-87c0-2e71cc75c47f)
+
+
+The synthesis has been performed for the same to look for the optimizations and we have found the following result as shown below 
+
+![dff_const5](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5cc156b8-c01e-4222-a3bd-d42cf84d5869)
 
 
 </details>
