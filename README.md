@@ -877,6 +877,8 @@ always #10 clk = ~clk;
 always #1547 reset=~reset;
 endmodule
 ```
+As we know the above code is for a d flipflop with an asynchronous reset this is used to reset the system asynchronously but the system comes into normal funtionality for next 1 synchronously so this system cannot be further optimized and a flipflop is generated instead of inverter as expected
+
 The above code has been simulated with a testbench for getting the exact optimization requirement and the output is mentioned below 
 
 ![dff_const1_iv](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/3f88d9fc-79e9-4651-a2dd-d4ec6bb5203b)
@@ -932,6 +934,8 @@ endmodule
 
 ```
 
+ This is system is actually a set condition but the naimg is given as reset here the optimization can be done as the q value is always 1 hence no flop is generated and the optimization is done 
+ 
 The above code has been simulated with a testbench for getting the exact optimization requirement and the output is mentioned below 
 
 ![dff_const2_iv](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4d7baf77-df62-48c3-b966-4e56dbde2283)
@@ -996,6 +1000,7 @@ always #1547 reset=~reset;
 endmodule
 
 ```
+Q1 will go to 1 after a clock to q delay of the flipflop so the second flipflop also samples 0. So, no optimization can be done in this 
 
 The above code has been simulated with a testbench for getting the exact optimization requirement and the output is mentioned below 
 
