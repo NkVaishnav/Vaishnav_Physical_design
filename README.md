@@ -1117,6 +1117,44 @@ The synthesis has been performed for the same to look for the optimizations and 
 
 <summary>Sequential logic optimizations for unused outputs</summary>
 
+Example 1:
 
+```
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = count[0];
+
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+
+endmodule
+```
+![counter_opt1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/49250a27-a286-4863-9453-e35d4d8ca54a)
+
+
+Example 2:
+
+```
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = (count[2:0] == 3'b100);
+
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+
+endmodule
+```
+
+![counter_opt2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1fbfc2c6-121a-46b8-9ae4-643488ad780b)
 
 </details>
