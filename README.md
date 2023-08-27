@@ -1134,6 +1134,8 @@ endmodule
 
 ```
 
+Here no further optimizations can be done as the outputs are holding a constant value in all conditions hence two flipflops are expected to be generated 
+
 The above code has been simulated with a testbench for getting the exact optimization requirement and the output is mentioned below 
 
 
