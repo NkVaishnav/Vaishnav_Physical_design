@@ -788,6 +788,7 @@ assign y = c | (b & n1);
 
 endmodule
 ```
+Here the optimization is properly done as the output is always 1 for both the flipflops so after synthesis we are only able to see two buffers S
 
 ![multi_mod1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4583993f-cb1b-4682-8fad-b201327a511b)
 
@@ -816,6 +817,7 @@ sub_module U4 (.a(n3), .b(n1) , .y(y));
 
 endmodule
 ```
+
 
 ![multi_mod2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1253354f-1211-4a71-b85b-c654880247be)
 
