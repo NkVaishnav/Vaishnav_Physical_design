@@ -1321,16 +1321,6 @@ and when we observe the next two lines {q=q0;q0=d;} first q0 is assigned to q an
 <details>
 <summary>Labs on GLS Synthesis and Simulation mismatch</summary>
 
-L1 Lab GLS Synth Sim mismatch part 1
-
-L2 Lab GLS SYnth Sim mismatch part 2
-
-</details>
-
-<details>
-	
-<summary>Labs on Synthesis Simulation mismatch for Blocking statement</summary>
-
 **Lab Synth Sim mismatch blocking statement**
 
 Commands used for all the below Simulations and Synthesis 
@@ -1536,5 +1526,9 @@ We get the following image as a result which shows the functionality of a MUX
 Now we can observe that the RTL simulation and GLS is totally different 
 
 
+</details>
 
+<details>
+	
+<summary>Labs on Synthesis Simulation mismatch for Blocking statement</summary>
 </details>
