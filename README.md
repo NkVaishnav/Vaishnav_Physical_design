@@ -1323,6 +1323,8 @@ and when we observe the next two lines {q=q0;q0=d;} first q0 is assigned to q an
 
 **Lab Synth Sim mismatch blocking statement**
 
+<br>
+
 Commands used for all the below Simulations and Synthesis 
 
 ```
@@ -1349,7 +1351,7 @@ gtkwave tb_code.vcd
 
 Now let us consider three mux coding styles as examples and let us write out the netlist and do GLS for the same and compare the RTL and Netlist output tested for the same test bench
 
-( <br> )
+<br>
 
 Style 1:
 
@@ -1437,7 +1439,7 @@ We get the following image as a result which shows the functionality of a MUX
 
 Now we can observe that the RTL simulation and GLS is same so this style of coding is proper and preferred
 
-( <br> )
+<br>
 
 Style 2:
 
