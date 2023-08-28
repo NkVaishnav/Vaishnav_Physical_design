@@ -1204,6 +1204,7 @@ As all the bits of the output are used no further optimizations on the flops can
 ## Day 4: GLS, Blocking v/s Non Blocking and Synthesis Simulation mismatch
 <details>
 <summary>Summary</summary>
+Day 4 summarises the information about the Synthesis and Simulation mismatch that happens and the Gate Level Simulations that are done with the same testbench that is being used for the RTL to check the proper functionality without any Synthesis Simulation mismatch. Netlist is logically same as the RTL so using the same testbench should give the same output as the output for the RTL code in case of netlist. It also ensures the timing of design is met  which required to be run on delay annotaion in the gate level verilog model. Gate level verilog models are basically of two types Timing aware (Checks both for timing and functionality) and functional (Checks for functionality) This is required because there can be Synthesis and Simulation mismatches
 
 </details>
 
@@ -1216,7 +1217,79 @@ GLS Concepts and flow using iverilog :
 
 Synthesis Simulation mismatch : 
 
-Blocking and Non Blocking statements in verilog 
+	Types of Synthesis Simulation mismatches 
+ 
+ - Missing Sensitivity list
+ - Blocking and Non Blocking assignments
+ - Non Standard Verilog coding
+
+Missing Sensitivity list : Simulator works if there is any activity i.e. change in input. If there is an activity the output might change based on activity else outpu tremains constant 
+
+Now let us consider the following code given below :
+```
+##Bad mux
+module mux (input i0 , input i1 , input sel , output reg y);
+always @ (sel)
+begin
+	if(sel)
+		y <= i1;
+	else 
+		y <= i0;
+end
+endmodule
+```
+Here in the above code the always block is evaluated only during the change of the select so changes in i0 @ sel = 0  and i1 @ sel = 1 are not evaluated hence we get a double edge flipflop working as the output in a simulator.
+
+Now let us consider the correct way of writing a mux 
+```
+##Good mux
+module mux (input i0 , input i1 , input sel , output reg y);
+always @ (*)
+begin
+	if(sel)
+		y <= i1;
+	else 
+		y <= i0;
+end
+endmodule
+```
+Here in the above code the output gets evaluated for any changes. Hence we get a MUX with this code as an output 
+
+
+Blocking and Non Blocking statements in verilog : Blocking and non-blocking statements are fundamental concepts in Verilog used to model the behavior of digital circuits during simulation:
+
+1. **Blocking Statements:**
+   Blocking assignments (`=`) are executed in sequence and block the execution of subsequent statements until they are completed. They represent immediate updates to variables and reflect the values after the assignments right away.
+
+2. **Non-blocking Statements:**
+   Non-blocking assignments (`<=`) allow concurrent execution and do not block subsequent statements. They are used to model parallel behavior, such as the behavior of flip-flops and registers.
+
+3. **Sequential Execution:**
+   Blocking statements are executed sequentially in the order they appear, reflecting the changes instantly. This makes them suitable for modeling combinational logic.
+
+4. **Concurrent Execution:**
+   Non-blocking assignments are used for modeling registers and flip-flops where updates occur concurrently. They simulate the behavior of these elements in hardware.
+
+5. **Race Conditions:**
+   Using blocking assignments in always blocks with multiple assignments can lead to race conditions, where the order of assignments affects the outcome.
+
+6. **Recommended Usage:**
+   Non-blocking assignments are commonly used inside always blocks modeling sequential logic, ensuring predictable behavior without race conditions.
+
+7. **Combinational Logic:**
+   Blocking assignments are preferred for modeling combinational logic, as their immediate update reflects real-world logic behavior.
+
+8. **Parallel Execution:**
+   Non-blocking assignments allow for parallel execution, which is crucial for modeling clocked elements like registers in hardware.
+
+9. **Delta Cycles:**
+   Blocking assignments execute within the same delta cycle, while non-blocking assignments execute in the next delta cycle. This distinction affects simulation behavior.
+
+10. **Simulation vs. Synthesis:**
+    Non-blocking assignments are used for simulation accuracy and behavioral modeling. During synthesis, they are often inferred as sequential storage elements in hardware.
+
+
+
 
 Caveats with Blocking statements
 
