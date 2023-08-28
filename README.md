@@ -1285,9 +1285,6 @@ Here in the above code the output gets evaluated for any changes. Hence we get a
 10. Simulation vs. Synthesis:
     Non-blocking assignments are used for simulation accuracy and behavioral modeling. During synthesis, they are often inferred as sequential storage elements in hardware.
 
-
-
-
 **Caveats with Blocking statements** : 
 
 </details>
