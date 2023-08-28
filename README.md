@@ -1217,7 +1217,7 @@ GLS Concepts and flow using iverilog :
 
 Synthesis Simulation mismatch : 
 
-	Types of Synthesis Simulation mismatches 
+Types of Synthesis Simulation mismatches 
  
  - Missing Sensitivity list
  - Blocking and Non Blocking assignments
