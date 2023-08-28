@@ -1287,6 +1287,36 @@ Blocking and Non Blocking statements in verilog : Blocking and non-blocking stat
 
 Caveats with Blocking statements : 
 
+Our aim is to get the below-stated circuit
+
+PASTE IMAGE
+
+Now let us consider the code given below
+
+
+```
+#Blocking Assignment
+module code (input clk,reset,d,output reg q);
+reg q0;
+always@(posedge clk, posedge reset)
+  begin
+    if(reset)
+	begin
+	  q0 = 1'b0;
+	  q=1'b0;
+        end
+    else
+        begin
+	  q=q0;
+	  q0=d;
+        end
+emdmodule	 
+```
+When we observe this code two lines {q0 = 1'b0;q=1'b0;} generates a asynchronous reset to the flop/s
+and when we observe the next two lines {q=q0;q0=d;} first q0 is assigned to q and then d gets assigned to q0 so we reqiure two storage elements i.e. 2 flops but if we consider the same two lines in a reverse manner i.e. {q0=d;q=q0;} only one storage element or flop is required as q0 is assigned to the value d first and then it is assigned to q hence the aim that we are interested is not shown as output during  simulation but the Synthesis in both cases gives the two flop structure 
+
+**HENCE USE NON BLOCKING FOR WRITING SEQUENTIAL CIRCUITS**
+
 </details>
 
 <details>
