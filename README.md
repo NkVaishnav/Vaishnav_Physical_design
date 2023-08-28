@@ -1204,7 +1204,7 @@ As all the bits of the output are used no further optimizations on the flops can
 ## Day 4: GLS, Blocking v/s Non Blocking and Synthesis Simulation mismatch
 <details>
 <summary>Summary</summary>
-Day 4 summarises the information about the Synthesis and Simulation mismatch that happens and the Gate Level Simulations that are done with the same testbench that is being used for the RTL to check the proper functionality without any Synthesis Simulation mismatch. Netlist is logically same as the RTL so using the same testbench should give the same output as the output for the RTL code in case of netlist. It also ensures the timing of design is met  which required to be run on delay annotaion in the gate level verilog model. Gate level verilog models are basically of two types Timing aware (Checks both for timing and functionality) and functional (Checks for functionality) This is required because there can be Synthesis and Simulation mismatches
+Day 4 summarises the information about GLS, Blocking v/s Non Blocking and Synthesis Simulation mismatch that happens in a design and how they could be validated with in the scope
 
 </details>
 
@@ -1212,12 +1212,9 @@ Day 4 summarises the information about the Synthesis and Simulation mismatch tha
 	
 <summary>Synthesis, Simulation mismatch and Blocking / Non Blocking statements</summary> 
 
+GLS Concepts and flow using iverilog : When the Synthesis and Simulation mismatch that happens and the Gate Level Simulations that are done with the same testbench that is being used for the RTL to check the proper functionality without any Synthesis Simulation mismatch. Netlist is logically same as the RTL so using the same testbench should give the same output as the output for the RTL code in case of netlist. It also ensures the timing of design is met  which required to be run on delay annotaion in the gate level verilog model. Gate level verilog models are basically of two types Timing aware (Checks both for timing and functionality) and functional (Checks for functionality) This is required because there can be Synthesis and Simulation mismatches
 
-GLS Concepts and flow using iverilog : 
-
-Synthesis Simulation mismatch : 
-
-Types of Synthesis Simulation mismatches 
+Synthesis Simulation mismatch : Types of Synthesis Simulation mismatches 
  
  - Missing Sensitivity list
  - Blocking and Non Blocking assignments
