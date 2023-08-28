@@ -1349,7 +1349,7 @@ gtkwave tb_code.vcd
 
 Now let us consider three mux coding styles as examples and let us write out the netlist and do GLS for the same and compare the RTL and Netlist output tested for the same test bench
 
-<details>
+( <br> )
 
 Style 1:
 
@@ -1436,9 +1436,9 @@ We get the following image as a result which shows the functionality of a MUX
 ![ter_mux_synth_img](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a78f7391-6cdc-48d6-baf8-be9c0b07f98f)
 
 Now we can observe that the RTL simulation and GLS is same so this style of coding is proper and preferred
-</details>
 
-<details>
+( <br> )
+
 Style 2:
 
 ```
@@ -1529,7 +1529,7 @@ We get the following image as a result which shows the functionality of a MUX
 ![bad_mux_synth_img](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/cea020da-85f0-472c-be8d-b588f0cc7a99)
 
 Now we can observe that the RTL simulation and GLS is totally different 
-</details>
+
 
 </details>
 
