@@ -1223,7 +1223,7 @@ Types of Synthesis Simulation mismatches
  - Blocking and Non Blocking assignments
  - Non Standard Verilog coding
 
-Missing Sensitivity list : Simulator works if there is any activity i.e. change in input. If there is an activity the output might change based on activity else outpu tremains constant 
+**Missing Sensitivity list** : Simulator works if there is any activity i.e. change in input. If there is an activity the output might change based on activity else outpu tremains constant 
 
 Now let us consider the following code given below :
 ```
@@ -1256,42 +1256,42 @@ endmodule
 Here in the above code the output gets evaluated for any changes. Hence we get a MUX with this code as an output 
 
 
-Blocking and Non Blocking statements in verilog : Blocking and non-blocking statements are fundamental concepts in Verilog used to model the behavior of digital circuits during simulation:
+**Blocking and Non Blocking statements in verilog** : Blocking and non-blocking statements are fundamental concepts in Verilog used to model the behavior of digital circuits during simulation:
 
-1. **Blocking Statements:**
+1. Blocking Statements:
    Blocking assignments (`=`) are executed in sequence and block the execution of subsequent statements until they are completed. They represent immediate updates to variables and reflect the values after the assignments right away.
 
-2. **Non-blocking Statements:**
+2. Non-blocking Statements:
    Non-blocking assignments (`<=`) allow concurrent execution and do not block subsequent statements. They are used to model parallel behavior, such as the behavior of flip-flops and registers.
 
-3. **Sequential Execution:**
+3. Sequential Execution:
    Blocking statements are executed sequentially in the order they appear, reflecting the changes instantly. This makes them suitable for modeling combinational logic.
 
-4. **Concurrent Execution:**
+4. Concurrent Execution:
    Non-blocking assignments are used for modeling registers and flip-flops where updates occur concurrently. They simulate the behavior of these elements in hardware.
 
-5. **Race Conditions:**
+5. Race Conditions:
    Using blocking assignments in always blocks with multiple assignments can lead to race conditions, where the order of assignments affects the outcome.
 
-6. **Recommended Usage:**
+6. Recommended Usage:
    Non-blocking assignments are commonly used inside always blocks modeling sequential logic, ensuring predictable behavior without race conditions.
 
-7. **Combinational Logic:**
+7. Combinational Logic:
    Blocking assignments are preferred for modeling combinational logic, as their immediate update reflects real-world logic behavior.
 
-8. **Parallel Execution:**
+8. Parallel Execution:
    Non-blocking assignments allow for parallel execution, which is crucial for modeling clocked elements like registers in hardware.
 
-9. **Delta Cycles:**
+9. Delta Cycles:
    Blocking assignments execute within the same delta cycle, while non-blocking assignments execute in the next delta cycle. This distinction affects simulation behavior.
 
-10. **Simulation vs. Synthesis:**
+10. Simulation vs. Synthesis:
     Non-blocking assignments are used for simulation accuracy and behavioral modeling. During synthesis, they are often inferred as sequential storage elements in hardware.
 
 
 
 
-Caveats with Blocking statements
+**Caveats with Blocking statements** : 
 
 </details>
 
