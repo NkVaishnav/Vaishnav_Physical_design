@@ -1321,6 +1321,8 @@ and when we observe the next two lines {q=q0;q0=d;} first q0 is assigned to q an
 <details>
 <summary>Labs on GLS Synthesis and Simulation mismatch</summary>
 
+<br>
+
 **Lab Synth Sim mismatch blocking statement**
 
 <br>
