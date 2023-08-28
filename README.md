@@ -1208,16 +1208,34 @@ As all the bits of the output are used no further optimizations on the flops can
 </details>
 
 <details>
+	
 <summary>Synthesis, Simulation mismatch and Blocking / Non Blocking statements</summary> 
 
-GLS Concepts and flow using iverilog : 
 
+GLS Concepts and flow using iverilog : 
 
 Synthesis Simulation mismatch : 
 
 Blocking and Non Blocking statements in verilog 
 
 Caveats with Blocking statements
+
 </details>
 
+<details>
+<summary>Labs on GLS Synthesis and Simulation mismatch</summary>
 
+L1 Lab GLS Synth Sim mismatch part 1
+
+L2 Lab GLS SYnth Sim mismatch part 2
+
+</details>
+
+<details>
+<summary>Labs on Synthesis Simulation mismatch for Blocking statement
+
+L1 Lab Synth Sim mismatch blocking statement part 1
+
+L2 Lab Synth Sim mismatch blocking statement part 2
+
+</details>
