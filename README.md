@@ -3,7 +3,7 @@
 # Vaishnav_PD_Samsung
 This github repository summarizes the progress made in the Samsung PD training. Quick links:
 
-- [Day-0-Installation](#Day-0-Installation)
+- [Day-0-Installation](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-0-installation)
 - [Day-1-Introduction to Verilog RTL design and Synthesis](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-1-introduction-to-verilog-rtl-design-and-synthesis)
 - [Day-2-Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-2-timing-libs-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
 - [Day-3-Combinational and Sequential optimizations](Day-3-Combinational-and-Sequential-optimizations)
