@@ -1434,6 +1434,8 @@ We get the following image as a result which shows the functionality of a MUX
 ![ter_mux_synth_img](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a78f7391-6cdc-48d6-baf8-be9c0b07f98f)
 
 Now we can observe that the RTL simulation and GLS is same so this style of coding is proper and preferred
+
+
 Style 2:
 
 ```
