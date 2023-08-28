@@ -1687,7 +1687,11 @@ endmodule
 
 ```
 
+![blk_sim](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/9c24f870-fb98-4e4d-8841-68252d4434e4)
 
+
+
+![blk_synth](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1341873b-b22d-40dd-b0f7-83e5323e2f61)
 
 ```
 ##Netlist
@@ -1715,5 +1719,7 @@ module blocking_caveat(a, b, c, d);
   assign d = _4_;
 endmodule
 ```
+
+![blk_synth_img](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/dbb250e5-ef67-48bc-941c-f3b180af8b7c)
 
 </details>
