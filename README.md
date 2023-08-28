@@ -7,6 +7,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-1-Introduction to Verilog RTL design and Synthesis](#Day-1-Introduction-to-Verilog-RTL-design-and-Synthesis)
 - [Day-2-Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-2-timing-libs-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
 - [Day-3-Combinational and Sequential optimizations](Day-3-Combinational-and-Sequential-optimizations)
+- [Day-4-GLS, Blocking v/s Non Blocking and Synthesis Simulation mismatch](Day-4:-GLS,-Blocking-v/s-Non-Blocking-and-Synthesis-Simulation-mismatch)
   
 
 ## Day 0: Installation
@@ -1198,4 +1199,12 @@ endmodule
 ![counter_opt2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1fbfc2c6-121a-46b8-9ae4-643488ad780b)
 
 As all the bits of the output are used no further optimizations on the flops can be done so the whole design remains intact.
+</details>
+
+## Day 4: GLS, Blocking v/s Non Blocking and Synthesis Simulation mismatch
+<details>
+<summary>Summary</summary>
+
+
+
 </details>
