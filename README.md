@@ -1205,8 +1205,11 @@ As all the bits of the output are used no further optimizations on the flops can
 <details>
 <summary>Summary</summary>
 
-<summary>Synthesis, Simulation mismatch and Blocking/ Non Blocking statements</summary> 
-<details>
 </details>
 
+<details>
+<summary>Synthesis, Simulation mismatch and Blocking/ Non Blocking statements</summary> 
+
 </details>
+
+
