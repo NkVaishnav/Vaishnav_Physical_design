@@ -1232,7 +1232,8 @@ L2 Lab GLS SYnth Sim mismatch part 2
 </details>
 
 <details>
-<summary>Labs on Synthesis Simulation mismatch for Blocking statement
+	
+<summary>Labs on Synthesis Simulation mismatch for Blocking statement</summary>
 
 L1 Lab Synth Sim mismatch blocking statement part 1
 
