@@ -1851,10 +1851,13 @@ In conclusion, synthesis is a critical step in the VLSI design flow, bridging th
 
 We are using the Design Compiler by Synopsys for the Synthesis and Design Vision to view the Schematic in these labs. We have used the sky 130nm library as target and link library in our Synopsys tool.
 
-
-/home/nk.vaishnav/GIT_CLONES/Vaishnav_Physical_design/Vaishnav_Physical_design_#day6/images/Lab1_1
-
 The Synopsys tool reads library in .db format only so we cannot use .lib for the same
+</details>
+
+<details>
+<summmary>Labs on TCL Scripting</summmary>
+
+
 </details>
 
 </details>
