@@ -1846,5 +1846,12 @@ Synthesis is a pivotal step in the VLSI (Very Large Scale Integration) design fl
 In conclusion, synthesis is a critical step in the VLSI design flow, bridging the gap between high-level hardware descriptions and gate-level implementations. It involves mapping and optimizing the design, ensuring timing constraints are met, estimating area and power, and producing a gate-level netlist that serves as the foundation for the physical realization of the integrated circuit. Effective synthesis is essential for achieving the desired performance, power efficiency, and reliability of VLSI designs.
   
 </details>
+<details>
+<summmary>Labs on Logical Synthesis</summmary>
+
+We are using the Design Compiler by Synopsys for the Synthesis and Design Vision to view the Schematic in these labs. We have used the sky 130nm library as target and link library in our Synopsys tool.
+The Synopsys tool reads library in .db format only so we cannot use .lib for the same
+</details>
+
 </details>
 
