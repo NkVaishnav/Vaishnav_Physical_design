@@ -9,7 +9,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-3-Combinational and Sequential optimizations](Day-3-Combinational-and-Sequential-optimizations)
 - [Day-4-GLS, Blocking v/s Non Blocking and Synthesis Simulation mismatch](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-4-gls-blocking-vs-non-blocking-and-synthesis-simulation-mismatch)
 - [Day-5-DFT](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-5-dft)
-- [Day-6-Introduction to Logical Synthesis]()
+- [Day-6-Introduction to Logical Synthesis](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-6-introduction-to-logical-synthesis)
   
 
 ## Day 0: Installation
