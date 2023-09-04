@@ -1728,3 +1728,20 @@ Now let us observe the above image for the GLS we can see the output is clearly 
 
 Due to This kind of issues we are supposed to run the GLS (check the circuit obtained and and match with the expected outputs), make sure there are no Synthesis and SImulation mismatches 
 </details>
+
+## Day 5: DFT
+<details>
+ <summary> Summary </summary>
+
+  
+</details>
+</details>
+
+## Day 6: Introduction to Logical Synthesis
+<details>
+ <summary> Summary </summary>
+
+  
+</details>
+</details>
+
