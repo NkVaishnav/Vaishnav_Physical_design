@@ -1852,6 +1852,115 @@ In conclusion, synthesis is a critical step in the VLSI design flow, bridging th
 We are using the Design Compiler by Synopsys for the Synthesis and Design Vision to view the Schematic in these labs. We have used the sky 130nm library as target and link library in our Synopsys tool.
 
 The Synopsys tool reads library in .db format only so we cannot use .lib for the same
+Commands used in order with a detailed explanation
+```
+csh
+dc_shell
+echo $target_library
+echo $link_library
+```
+When we consider the above commands csh is used to invoke the c compiler 
+dc_shell is used to invoke the dc shell 
+Now we have two libraries that are used for the Synthesis i.e. target library and link library 
+When we echo for both the libraries it showed your_library.db for both this is a imaginary library that tool takes when we do no mention the library explicitly
+Now let us move forward and check what would happen if we run synthesis with this imaginary library
+
+```
+read_verilog /Path_to_verilogfile
+```
+The above command reads the RTL verilog file as an input for the synthesis run
+The used verilog file is as mentioned below 
+```
+module lab1_flop_with_en(input clk, input reset,input en,input d, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b0;
+	else if(en)
+		q <= d;
+end
+
+endmodule
+```
+If we observe the tool took gtch.db and standard.sldb which are virtual libraries of the dc tool which is used to understand the design
+```
+write -f verilog -out file.v
+```
+Above command is used to write the verilog file out and the written out file is as mentioned below
+```
+module lab1_flop_with_en ( clk, reset, en, d, q );
+  input clk, reset, en, d;
+  output q;
+
+
+  \**SEQGEN**  q_reg ( .clear(reset), .preset(1'b0), .next_state(d), 
+        .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(q), .synch_clear(
+        1'b0), .synch_preset(1'b0), .synch_toggle(1'b0), .synch_enable(en) );
+endmodule
+
+```
+Now let us try to give the db file of skywater as input to the tool
+command used is shown below
+
+```
+read_db /Path_to_library(.db)
+write -f verilog -out file.v
+```
+After reading the .db file letus write the netlist out and the written netlist is as follows 
+```
+module lab1_flop_with_en ( clk, reset, en, d, q );
+  input clk, reset, en, d;
+  output q;
+
+
+  \**SEQGEN**  q_reg ( .clear(reset), .preset(1'b0), .next_state(d), 
+        .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(q), .synch_clear(
+        1'b0), .synch_preset(1'b0), .synch_toggle(1'b0), .synch_enable(en) );
+endmodule
+
+```
+As we can clearly see the skywater 130 library is not been invoked even after reading the db of it 
+now we are actually supposed to update the target and link library appropriately and link them for the proper functionality of the same the commands are as shown below
+```
+set target_library /Path_to_library(.db)
+set link_library {* /Path_to_library(.db)}
+link
+compile
+write -f verilog -out file.v
+write -f ddc -out file.ddc
+```
+The written out netlist is as given below 
+
+```
+module lab1_flop_with_en ( clk, reset, en, d, q );
+  input clk, reset, en, d;
+  output q;
+  wire   n2, n3;
+
+  sky130_fd_sc_hd__dfrtp_1 q_reg ( .D(n3), .CLK(clk), .RESET_B(n2), .Q(q) );
+  sky130_fd_sc_hd__mux2_1 U5 ( .A0(q), .A1(d), .S(en), .X(n3) );
+  sky130_fd_sc_hd__clkinv_1 U6 ( .A(reset), .Y(n2) );
+endmodule
+```
+
+Now let us see how the design vision is used to view the schematic 
+Let us work in two different windows by reading verilog in one and ddc in another
+Commands for these are mentioned below
+
+```
+csh
+design_vision
+start_gui
+read_ddc /Path_to_ddc OR read_verilog /Path_to_verilog
+```
+
+We have multiple .db files and we cannot miss them everywhere setting link and target libraries is cumbersome and errorprone hence to avoid the mistakes while working on synthesis and repetitive steps we have an option of placing the commands in **.synopsys_dc.setup**
+DC finds for these in two locations 
+1. DC installation area
+2. Where the DC is invoked
+If DC finds this in 2 then it wont check for the 1st option hence we can place this .synopsys_dc.setup file in the run area and reduce these errors.
+ **NOTE** : This name of .synopsys_dc.setup is specific and shouldnot be changed else tool wont pick the libraries placed
+   
 </details>
 
 <details>
