@@ -1972,8 +1972,10 @@ mv .synopsys_dc.setup .synopsys_dc_setup
 
 <details>
 <summary>Labs on TCL Scripting</summary>
-
- Below is the script including all the programms runned in the shell
+This is used for writing the sdc and it is understood by the tool internally
+	
+ Below is the script including all the programms runned in the dc shell
+ 
 ```
 #my_script.tcl
 echo "Printing the multiplication table"
@@ -2019,7 +2021,11 @@ foreach_in_collection my_var [get_lib_cells */*and*] {
 			}
 
 ```
+https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB2_1.png
 
+https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB2_3.png
+https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB2_3.png
+https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB2_4.png
 </details>
 
 </details>
