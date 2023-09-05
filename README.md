@@ -2000,14 +2000,17 @@ This is used for writing the sdc and it is understood by the tool internally
 ```
 #my_script.tcl
 echo "Printing the multiplication table"
-set i 10;
-set j 1;
+set i 10;# setting the value of i as 10
+set j 1;# setting the value of j as 1
+#here we can exaclty see how the command expr and normal; multiplication works expr evaluates the expression bu tnormal multiplication just prints the same multiplication as a whole
 while {$j < 21} {
-echo $i*$j = [expr $i*$j];
+echo $i*$j = [expr $i*$j]; 
 incr j ;
 }
-set my_list [list a b c d e f]
-foreach myvar $my_list {
+# Name of the list is my_list and list is a key word which is written inside the list
+set my_list [list a b c d e f] 
+#myvar is a variable that is assigned to the element in the list and evaluated accordingly in the loop
+foreach myvar $my_list { 
 echo $my_var;
 }
 echo $my_list;
@@ -2016,6 +2019,7 @@ set i 0
 echo $i
 incr i
 echo $i
+ # Syntax of the for loop is a bit different than that seen in C language or python but can be understood normally
 for {set i 0} {$i < 12} {incr i} {
 	echo $i;
 	}
@@ -2034,19 +2038,34 @@ foreach my_variable $my_list {
 	echo $my_variable
 	}
 echo $target_library
+#Generally we see the below code gives a result of the pointer that is pointing it 
 foreach_in_collection my_var [get_lib_cells */*and*] {
 	echo $my_var;
 	}
+#To dereference the pointer that is showing we need to set it to a variable as shown below and then echo the variable set
 foreach_in_collection my_var [get_lib_cells */*and*] {
 			set my_var_name [get_object_name $my_var]; echo $my_var_name;
 			}
 
 ```
+The outputs for the following script given above is mentioned below 
 ![Lab2_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB2_1.png)
 
 ![Lab2_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB2_3.png)
 ![Lab2_3](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB2_3.png)
 ![Lab2_4](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB2_4.png)
+
+**Points to remember** : 
+1. set is used for creating and storing information in the variables
+2. We use $ to use any variable that is set when required to be seen in action
+3. Square brackets are used for nesting the commands in TCL.
+4. Make sure there are spaces before "{" and after "}" to avoid any errors
+5. Wrong manipulation might lead to infinite loop so make sure you use the variables properly.
+6. "\" is used if we need write in next line in tcl file but to be considered as continuation of the current line according to the code.
+7.  foreach_in_collection is specific to synopsys not common in TCL.
+8.  90% of the outputs of dc are collection so when required we can use foreach_in_collection to query through it
+9.  We can only create list by ourself but collections are created by dc tool
+10.  We can differentiate between list and collection by printing them if it has {} at start and end it is a collection else it is a list.
 </details>
 
 </details>
