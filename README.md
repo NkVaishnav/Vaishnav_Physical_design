@@ -1958,6 +1958,7 @@ We have multiple .db files and we cannot miss them everywhere setting link and t
 DC finds for these in two locations 
 1. DC installation area
 2. Where the DC is invoked
+<br>
 If DC finds this in 2 then it wont check for the 1st option hence we can place this .synopsys_dc.setup file in the run area and reduce these errors.
  **NOTE** : This name of .synopsys_dc.setup is specific and shouldnot be changed else tool wont pick the libraries placed
    
