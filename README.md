@@ -1849,6 +1849,16 @@ In conclusion, synthesis is a critical step in the VLSI design flow, bridging th
 <details>
 <summary>Labs on Logical Synthesis</summary>
 
+![Lab1_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_1.png)
+![Lab1_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_2.png)
+![Lab1_3](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_3.png)
+![Lab1_4](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_4.png)
+![Lab1_5](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_4.png)
+![Lab1_6](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_6.png)
+![Lab1_7](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_7.png)
+![Lab1_8](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_8.png)
+![Lab1_9](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_9.png)
+
 We are using the Design Compiler by Synopsys for the Synthesis and Design Vision to view the Schematic in these labs. We have used the sky 130nm library as target and link library in our Synopsys tool.
 
 The Synopsys tool reads library in .db format only so we cannot use .lib for the same
