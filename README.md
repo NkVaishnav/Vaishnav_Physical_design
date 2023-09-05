@@ -1849,15 +1849,10 @@ In conclusion, synthesis is a critical step in the VLSI design flow, bridging th
 <details>
 <summary>Labs on Logical Synthesis</summary>
 
-![Lab1_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_1.png)
-![Lab1_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_2.png)
-![Lab1_3](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_3.png)
-![Lab1_4](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_4.png)
-![Lab1_5](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_4.png)
-![Lab1_6](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_6.png)
-![Lab1_7](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_7.png)
-![Lab1_8](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_8.png)
-![Lab1_9](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_9.png)
+
+
+
+
 
 We are using the Design Compiler by Synopsys for the Synthesis and Design Vision to view the Schematic in these labs. We have used the sky 130nm library as target and link library in our Synopsys tool.
 
@@ -1869,6 +1864,7 @@ dc_shell
 echo $target_library
 echo $link_library
 ```
+![Lab1_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_1.png)
 When we consider the above commands csh is used to invoke the c compiler 
 dc_shell is used to invoke the dc shell 
 Now we have two libraries that are used for the Synthesis i.e. target library and link library 
@@ -1878,6 +1874,7 @@ Now let us move forward and check what would happen if we run synthesis with thi
 ```
 read_verilog /Path_to_verilogfile
 ```
+![Lab1_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_2.png)
 The above command reads the RTL verilog file as an input for the synthesis run
 The used verilog file is as mentioned below 
 ```
@@ -1909,6 +1906,7 @@ module lab1_flop_with_en ( clk, reset, en, d, q );
 endmodule
 
 ```
+![Lab1_3](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_3.png)
 Now let us try to give the db file of skywater as input to the tool
 command used is shown below
 
@@ -1928,6 +1926,8 @@ module lab1_flop_with_en ( clk, reset, en, d, q );
         1'b0), .synch_preset(1'b0), .synch_toggle(1'b0), .synch_enable(en) );
 endmodule
 
+![Lab1_4](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_4.png)
+
 ```
 As we can clearly see the skywater 130 library is not been invoked even after reading the db of it 
 now we are actually supposed to update the target and link library appropriately and link them for the proper functionality of the same the commands are as shown below
@@ -1939,6 +1939,10 @@ compile
 write -f verilog -out file.v
 write -f ddc -out file.ddc
 ```
+
+![Lab1_5](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_4.png)
+!
+
 The written out netlist is as given below 
 
 ```
@@ -1963,6 +1967,9 @@ design_vision
 start_gui
 read_ddc /Path_to_ddc OR read_verilog /Path_to_verilog
 ```
+[Lab1_6](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_6.png)
+![Lab1_7](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_7.png)
+
 When we have used .ddc file we see that ddc file loads the verilog file, Skywater130 nm library and the info related to the designs directly but when we tried the same with the read verilog file we could see that it loads the gtech libraries instead of skywater libraries. This  means ddc file stores the info related to the current design as well as the environment in which it has been synthesized so it is good to view then whenever required.
 
 We have multiple .db files and we cannot miss them everywhere setting link and target libraries is cumbersome and errorprone hence to avoid the mistakes while working on synthesis and repetitive steps we have an option of placing the commands in **.synopsys_dc.setup**
@@ -1972,12 +1979,16 @@ DC finds for these in two locations
 <br>If DC finds this in 2 then it wont check for the 1st option hence we can place this .synopsys_dc.setup file in the run area and reduce these errors.
 
  **NOTE** : This name of .synopsys_dc.setup is specific and shouldnot be changed else tool wont pick the libraries placed
+  ![Lab1_8](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_8.png)
+ 
    Now let us check the same by changing the name of the following file to a different name and check it again if it would pick the libraries or not.
    We have used the below command to rename the file to .synopsys_dc_setup
 ```
 mv .synopsys_dc.setup .synopsys_dc_setup
 ```
    The below image shows that when we tried to echo the library names then it shows the imaginary library with name your_library hence we should be specific with the name so that there wont be any issue in picking these files
+ 
+![Lab1_9](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_9.png)
 </details>
 
 <details>
