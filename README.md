@@ -1960,6 +1960,7 @@ DC finds for these in two locations
 1. DC installation area
 2. Where the DC is invoked
 <br>If DC finds this in 2 then it wont check for the 1st option hence we can place this .synopsys_dc.setup file in the run area and reduce these errors.
+
  **NOTE** : This name of .synopsys_dc.setup is specific and shouldnot be changed else tool wont pick the libraries placed
    Now let us check the same by changing the name of the following file to a different name and check it again if it would pick the libraries or not.
    We have used the below command to rename the file to .synopsys_dc_setup
