@@ -8854,3 +8854,5 @@ source my_script_1.tcl
 #@ # -- End source my_script_1.tcl
 
 sh ksnapshot &
+get_lib_cells */* -filter "is_sequential == true"
+get_lib_cells */* -filter -nosplit "is_sequential == true"
