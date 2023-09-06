@@ -2441,9 +2441,28 @@ As we can see the image above the setup is evaluated at the rising edge of the C
 
 ```
 #my_script.tcl
-
+list_lib
+get_lib_cells */*and*
+foreach_in_collection my_lib_cell [get_lib_cells */*and*] {
+	echo $my_lib_cell;
+}
+foreach_in_collection my_lib_cell [get_lib_cells */*and*] {
+	set my_lib_cell_name [get_object_name $my_lib_cell];
+	echo $my_lib_cell_name;
+}
+get_lib_pins *CHKK*
+foreach_in_collection my_pins [get_lib_pins *CHKK*] {
+	set my_pin_name [get_object_name $my_pins];
+	set pin_dir [get_lib_attribute $my_pin_name direction];
+	echo $my_pin_name;
+	echo $pin_dir;	
+}
+get_lib_attribute *PINSSS* direction;
+get_lib_attribute *PINSSS* function;
 
 ```
+The above script has been used to get the information and the output is as shown below in the images
+
 
 
 </details>
