@@ -2073,5 +2073,9 @@ The outputs for the following script given above is mentioned below
 </details>
 </details>
 
-## Day 7 : Basics of STA
+## Day 7: Basics of STA
+<details>
+<summmary>Summary</summmary>
+	
+</details>
 
