@@ -2326,5 +2326,17 @@ Let's explore positive unate, negative unate, and non unate functions in Boolean
 
 In summary, positive unate functions exhibit consistent output increase with input increase, negative unate functions exhibit consistent output decrease with input increase, and non unate functions may show mixed behavior depending on specific input conditions. Understanding these concepts is essential in logic design, optimization, and analysis in VLSI and digital circuit design.
 
+</details>
+
+<details>
+<summary>Labs on Library Information</summary>
+
+
+
+</details>
+<details>
+<summary>Labs on Tool Commands</summary>
+
+
 
 </details>
