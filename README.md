@@ -10,6 +10,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-4-GLS, Blocking v/s Non Blocking and Synthesis Simulation mismatch](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-4-gls-blocking-vs-non-blocking-and-synthesis-simulation-mismatch)
 - [Day-5-DFT](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-5-dft)
 - [Day-6-Introduction to Logical Synthesis](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-6-introduction-to-logical-synthesis)
+- - [Day-7-Basics of STA](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-6-introduction-to-logical-synthesis)
   
 
 ## Day 0: Installation
@@ -2070,6 +2071,7 @@ The outputs for the following script given above is mentioned below
 9.  We can only create list by ourself but collections are created by dc tool
 10.  We can differentiate between list and collection by printing them if it has {} at start and end it is a collection else it is a list.
 </details>
-
 </details>
+
+## Day 7 : Basics of STA
 
