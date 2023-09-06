@@ -2419,19 +2419,19 @@ Now let us consider the pin X i.e. the output pin we can see the direction is ou
 
 Now let us consider the timing information of the same even here the we have a LUT where there are two indexes which are Input transition and Output load if there are any values in between then interpolation is done by tool to get the value of the same.
 
-![LAB1_6](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_6.png)
+![LAB1_6](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES_1/LAB1_6.png)
 
 Let us consider the above image we can observe the unateness of both the cells as positive as the and gate is a positive unate cell.
 
-![LAB1_7](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_7.png)
+![LAB1_7](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES_1/LAB1_7.png)
 
 If we look into the above image we have the info related to the output pin i.e. direction, function and timing.
 
-![LAB1_11_fplp](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_11_fplp.png)
+![LAB1_11_fplp](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES_1/LAB1_11_fplp.png)
 
 Now let us look into the info related to the flop and latches let us consider the positive flop and negaticve latch
 
-![LAB1_12_fplp](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_12_fplp.png)
+![LAB1_12_fplp](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES_1/LAB1_12_fplp.png)
 
 As we can see the image above the setup is evaluated at the rising edge of the CLK in flop and falling edge of GATE in latch.
 
