@@ -2466,11 +2466,17 @@ get_lib_attribute *PINSSS* function;
 [LAB1_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_1.png)
 
 Now let us observe the above image it shows that we have invoked the dc shell and checked for the libraries
+
 [LAB1_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_2.png)
+
 The above image shows the loaded libraries for the design
+
 [LAB1_3](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_3.png)
+
 We have written a small script for the above image as output
+
 [LAB1_4](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_4.png)
+
 We have searched for the pin related info in the above image and 1 means its an input pin and 21 means it is a output pin
 
 Now let us write a small script for getting the pin information 
