@@ -2076,7 +2076,7 @@ The outputs for the following script given above is mentioned below
 ## Day 7: Basics of STA
 <details>
 <summary>Summary</summary>
-In Day 7 we will get to know about the STA how its done and How the delays are caliculated we dive deep into the Timing arcs, Unateness, Look up Tables and finally end by having some labs on information about the libraries and work on Tool based scripting on TCL.
+In Day 7 we will get to know about the STA how its done and How the delays are caliculated we dive deep into the Water bucket Analogy, Constrains, Sampling Edges of flops and latches, Timing arcs, Unateness, Look up Tables and finally end by having some labs on information about the libraries and work on Tool based scripting on TCL.
 	
 </details>
 <details>
