@@ -2329,14 +2329,121 @@ In summary, positive unate functions exhibit consistent output increase with inp
 </details>
 
 <details>
+<summary>Sampling edges of Flops and Latches</summary>
+
+In digital design, flip-flops and latches are crucial elements for storing and transferring data within sequential logic circuits. These components have clock inputs that control when data is captured or transferred. The choice of which edge of the clock signal (rising or falling) to use for sampling data is an essential design consideration. Let's explore the concepts of sampling edges for flip-flops and latches with all combinations:
+
+**1. Rising Edge-Triggered Flip-Flops:**
+
+- **Description:** Rising edge-triggered flip-flops capture data on the rising edge (transition from 0 to 1) of the clock signal.
+
+- **Behavior:** When the clock signal transitions from low to high, the flip-flop samples the data inputs and stores the data. The stored data becomes available at the flip-flop's output.
+
+- **Use Cases:** Rising edge-triggered flip-flops are commonly used in synchronous digital designs where data stability is ensured before the rising clock edge.
+
+**2. Falling Edge-Triggered Flip-Flops:**
+
+- **Description:** Falling edge-triggered flip-flops capture data on the falling edge (transition from 1 to 0) of the clock signal.
+
+- **Behavior:** When the clock signal transitions from high to low, the flip-flop samples the data inputs and stores the data. The stored data becomes available at the flip-flop's output.
+
+- **Use Cases:** Falling edge-triggered flip-flops are used in some synchronous designs and are particularly useful when data is guaranteed to be stable before the falling clock edge.
+
+**3. Level-Sensitive Latches:**
+
+- **Description:** Level-sensitive latches capture data as long as the clock signal is held at a specific logic level (either high or low).
+
+- **Behavior:** When the clock signal is at the specified logic level (either high or low), the latch continuously samples the data inputs. As long as the clock level is maintained, the latch retains the sampled data.
+
+- **Use Cases:** Latches are used in asynchronous designs and can be sensitive to glitches and setup/hold time violations if the data changes near the clock level.
+
+**4. Dual-Edge-Triggered Flip-Flops:**
+
+- **Description:** Dual-edge-triggered flip-flops capture data on both the rising and falling edges of the clock signal.
+
+- **Behavior:** These flip-flops can sample data when the clock transitions from low to high (rising edge) and when it transitions from high to low (falling edge).
+
+- **Use Cases:** Dual-edge-triggered flip-flops are used in high-performance applications where data must be captured on both clock edges.
+
+**Combinations:**
+
+- **Rising & Falling Edge-Triggered Flip-Flops:** In some designs, both rising and falling edge-triggered flip-flops can be used, each capturing data on a different edge. This can optimize the usage of clock cycles and performance.
+
+- **Latches & Edge-Triggered Flip-Flops:** A combination of latches and flip-flops can be used in designs to balance performance and robustness. Latches may be used for rapid data transfer within a clock cycle, while flip-flops may be used for synchronization and reliable storage.
+
+In summary, the choice of sampling edge (rising, falling, or both) for flip-flops and latches depends on the specific design requirements, timing considerations, and the trade-offs between performance and robustness. Each type has its advantages and is selected based on the needs of the application.
+
+</details>
+
+
+<details>
 <summary>Labs on Library Information</summary>
+Now let us consider the sky130 nm library 
 
+[LAB1_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_1.png)
 
+As the name says tt_025C_1v80 it means the library is a typical typical library written at 25 Celsius and the Voltage of operation is 1.8V.
+
+Technology used is CMOS.
+
+The units of the
+
+- Time is in nanoseconds.
+- Leakage Power is in nanowatts.
+- Current is in milli ampere.
+- Resistance is measured in kilo Ohm.
+- Capacitance is measured in picofard.
+- There is this term called default_max_transition which is set to 1.5pf this term can be edited with the help of dc tool it is the maximum value specified by the library but we can change it based on the requirement.
+
+[LAB1_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_2.png)
+
+Now let us consider two and gates with 0 and 1 drive strengths if we observe the above image it shows all the combinations of leakage power and the pg pin info where it is connected clearly.
+
+The timing of the cell with drive strength of 2 is better than that with 1.
+
+The area consumption of the cell with drive strength of 2 is more than that with 1.
+
+The power consumption of the cell with drive strength of 2 more than that with 1.
+
+If we observe the pin A related info it shows that it is not a clock pin  and the direction is input
+
+[LAB1_3](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_3.png)
+
+Similar is the case with the pin B as mentioned in the image above 
+
+[LAB1_4](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_4.png)
+
+Now let us consider the pin X i.e. the output pin we can see the direction is output and the function as A&B for both the drive strengths next comes the info related to the power where the LUT has been used. The index 1 and index 2 variables are Input transition and Output load.
+
+[LAB1_5](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_5.png)
+
+Now let us consider the timing information of the same even here the we have a LUT where there are two indexes which are Input transition and Output load if there are any values in between then interpolation is done by tool to get the value of the same.
+
+[LAB1_6](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_6.png)
+
+Let us consider the above image we can observe the unateness of both the cells as positive as the and gate is a positive unate cell.
+
+[LAB1_7](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_7.png)
+
+If we look into the above image we have the info related to the output pin i.e. direction, function and timing.
+
+[LAB1_11_fplp](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_11_fplp.png)
+
+Now let us look into the info related to the flop and latches let us consider the positive flop and negaticve latch
+
+[LAB1_12_fplp](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_12_fplp.png)
+
+As we can see the image above the setup is evaluated at the rising edge of the CLK in flop and falling edge of GATE in latch.
 
 </details>
 <details>
 <summary>Labs on Tool Commands</summary>
 
+```
+#my_script.tcl
+
+
+```
 
 
 </details>
