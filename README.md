@@ -2380,7 +2380,7 @@ In summary, the choice of sampling edge (rising, falling, or both) for flip-flop
 <summary>Labs on Library Information</summary>
 Now let us consider the sky130 nm library 
 
-[LAB1_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_1.png)
+![LAB1_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_1.png)
 
 As the name says tt_025C_1v80 it means the library is a typical typical library written at 25 Celsius and the Voltage of operation is 1.8V.
 
@@ -2395,7 +2395,7 @@ The units of the
 - Capacitance is measured in picofard.
 - There is this term called default_max_transition which is set to 1.5pf this term can be edited with the help of dc tool it is the maximum value specified by the library but we can change it based on the requirement.
 
-[LAB1_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_2.png)
+![LAB1_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_2.png)
 
 Now let us consider two and gates with 0 and 1 drive strengths if we observe the above image it shows all the combinations of leakage power and the pg pin info where it is connected clearly.
 
@@ -2407,31 +2407,31 @@ The power consumption of the cell with drive strength of 2 more than that with 1
 
 If we observe the pin A related info it shows that it is not a clock pin  and the direction is input
 
-[LAB1_3](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_3.png)
+![LAB1_3](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_3.png)
 
 Similar is the case with the pin B as mentioned in the image above 
 
-[LAB1_4](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_4.png)
+![LAB1_4](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_4.png)
 
 Now let us consider the pin X i.e. the output pin we can see the direction is output and the function as A&B for both the drive strengths next comes the info related to the power where the LUT has been used. The index 1 and index 2 variables are Input transition and Output load.
 
-[LAB1_5](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_5.png)
+![LAB1_5](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_5.png)
 
 Now let us consider the timing information of the same even here the we have a LUT where there are two indexes which are Input transition and Output load if there are any values in between then interpolation is done by tool to get the value of the same.
 
-[LAB1_6](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_6.png)
+![LAB1_6](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_6.png)
 
 Let us consider the above image we can observe the unateness of both the cells as positive as the and gate is a positive unate cell.
 
-[LAB1_7](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_7.png)
+![LAB1_7](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_7.png)
 
 If we look into the above image we have the info related to the output pin i.e. direction, function and timing.
 
-[LAB1_11_fplp](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_11_fplp.png)
+![LAB1_11_fplp](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_11_fplp.png)
 
 Now let us look into the info related to the flop and latches let us consider the positive flop and negaticve latch
 
-[LAB1_12_fplp](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_12_fplp.png)
+![LAB1_12_fplp](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_12_fplp.png)
 
 As we can see the image above the setup is evaluated at the rising edge of the CLK in flop and falling edge of GATE in latch.
 
@@ -2463,19 +2463,19 @@ get_lib_attribute *PINSSS* function;
 ```
 **NOTE : We have already set the .synopsys_dc.setup for this lab before hand**
 
-[LAB1_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_1.png)
+![LAB1_1](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_1.png)
 
 Now let us observe the above image it shows that we have invoked the dc shell and checked for the libraries
 
-[LAB1_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_2.png)
+![LAB1_2](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_2.png)
 
 The above image shows the loaded libraries for the design
 
-[LAB1_3](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_3.png)
+![LAB1_3](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_3.png)
 
 We have written a small script for the above image as output
 
-[LAB1_4](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_4.png)
+![LAB1_4](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_4.png)
 
 We have searched for the pin related info in the above image and 1 means its an input pin and 21 means it is a output pin
 
@@ -2541,9 +2541,6 @@ foreach my_cell $my_list {
 ```
 The above script has been used to get the information and the output is as shown below in the images
 
-[LAB1_5](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_5.png)
-
-
-
+![LAB1_5](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day7/IMAGES/LAB1_5.png)
 
 </details>
