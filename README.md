@@ -1941,7 +1941,7 @@ write -f ddc -out file.ddc
 ```
 
 ![Lab1_5](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_4.png)
-!
+
 
 The written out netlist is as given below 
 
@@ -1967,7 +1967,8 @@ design_vision
 start_gui
 read_ddc /Path_to_ddc OR read_verilog /Path_to_verilog
 ```
-[Lab1_6](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_6.png)
+![Lab1_6](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_6.png)
+
 ![Lab1_7](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_7.png)
 
 When we have used .ddc file we see that ddc file loads the verilog file, Skywater130 nm library and the info related to the designs directly but when we tried the same with the read verilog file we could see that it loads the gtech libraries instead of skywater libraries. This  means ddc file stores the info related to the current design as well as the environment in which it has been synthesized so it is good to view then whenever required.
@@ -1979,6 +1980,7 @@ DC finds for these in two locations
 <br>If DC finds this in 2 then it wont check for the 1st option hence we can place this .synopsys_dc.setup file in the run area and reduce these errors.
 
  **NOTE** : This name of .synopsys_dc.setup is specific and shouldnot be changed else tool wont pick the libraries placed
+ 
   ![Lab1_8](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_8.png)
  
    Now let us check the same by changing the name of the following file to a different name and check it again if it would pick the libraries or not.
@@ -1989,6 +1991,7 @@ mv .synopsys_dc.setup .synopsys_dc_setup
    The below image shows that when we tried to echo the library names then it shows the imaginary library with name your_library hence we should be specific with the name so that there wont be any issue in picking these files
  
 ![Lab1_9](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day6/TCL_IMAGES/LAB1_9.png)
+
 </details>
 
 <details>
