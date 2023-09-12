@@ -3033,6 +3033,7 @@ By applying these constraints, you ensure that signal transitions on paths relat
 
 <details>
 <summary>Labs on the above concepts</summary>
+
 Let us consider the design having the verilog code as shown below 
 	
 ```
@@ -3062,7 +3063,7 @@ assign out_clk = clk;
 endmodule
 
 ```
-Commands used to run the Synthesis is 
+Commands used to run the Synthesis are
 
 ```
 csh
@@ -3071,7 +3072,42 @@ dc_shell
 read_verilog lab8_circuit.v
 link
 compile_ultra
+write -f ddc -out lab8_circuit.ddc
 ```
+
+Apart from the verilog code used above we have also used the modified version of it which is mentioned below
+
+```
+module lab8_circuit (input rst, input clk , input IN_A , input IN_B , output OUT_Y , output out_clk , output reg out_div_clk , input IN_C , input IN_D , output OUT_Z );
+reg REGA , REGB , REGC ; 
+
+always @ (posedge clk , posedge rst)
+begin
+	if(rst)
+	begin
+		REGA <= 1'b0;
+		REGB <= 1'b0;
+		REGC <= 1'b0;
+		out_div_clk <= 1'b0;
+	end
+	else
+	begin
+		REGA <= IN_A | IN_B;
+		REGB <= IN_A ^ IN_B;
+		REGC <= !(REGA & REGB);
+		out_div_clk <= ~out_div_clk; 
+	end
+end
+
+assign OUT_Y = ~REGC;
+
+assign out_clk = clk;
+assign OUT_Z = IN_C ^ IN_D ;
+
+
+endmodule
+```
+**ALL TOOL RELATED COMMANDS ARE MENTIONED IN THE IMAGE (Taken after run of each and evary setp in the process) ITSELF THE EXPLANATION OF THE RESPECTIVE COMMANDS IS MENTIONED IN THE ABOVE THEORY**
 
 ![1](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day8/LAB8_1.png)
 
