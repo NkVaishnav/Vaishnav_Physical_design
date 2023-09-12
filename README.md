@@ -3121,7 +3121,7 @@ endmodule
 
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/Vaishnav_Physical_design_%23day8/LAB8_6.png)
 
-![](Vaishnav_Physical_design_#day8/LAB8p2_1.png)
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/454004d41248c78af6ce9e76caa4f86cdd6a626b/Vaishnav_Physical_design_%23day8/LAB8p2_1.png)
 
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/454004d41248c78af6ce9e76caa4f86cdd6a626b/Vaishnav_Physical_design_%23day8/LAB8p2_2.png)
 
