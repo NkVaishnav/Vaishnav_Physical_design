@@ -11,7 +11,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-5-DFT](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-5-dft)
 - [Day-6-Introduction to Logical Synthesis](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-6-introduction-to-logical-synthesis)
 - [Day-7-Basics of STA](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-7-basics-of-sta)
-- [Day-8-Advanced Constraints]()
+- [Day-8-Advanced Constraints](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-8-advanced-constraints)
   
 
 ## Day 0: Installation
