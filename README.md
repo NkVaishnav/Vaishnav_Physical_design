@@ -3778,6 +3778,12 @@ The synthesis has been performed for the same to look for the optimizations and 
 
 ![dff_const5](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5cc156b8-c01e-4222-a3bd-d42cf84d5869)
 
+
+Commands used to restrict or allow the constant propagation
+```
+set compile_seqmap_propagate_constants true/false
+```
+
  
 **LABS ON SEQUENTIAL LOGIC OPTIMIZATIONS**
 
@@ -3837,6 +3843,12 @@ Boundary optimization primarily deals with optimizing the boundaries of function
 
 In summary, boundary optimization in VLSI synthesis is a critical step in the design and manufacturing of integrated circuits. It involves optimizing the physical boundaries of functional modules to achieve goals such as area reduction, improved timing, and reduced power consumption while adhering to manufacturing constraints. This process requires a combination of expertise in VLSI design principles and the use of advanced EDA tools.
 
+Command used for Boundary Optimization in Synthesis 
+
+```
+set_boundary_optimization module_name true/false
+```
+
 **LABS ON BOUNDARY OPTIMIZATIONS**
 
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABchk_bound/LABchk_bound_1.png)
@@ -3881,7 +3893,12 @@ Register retiming is an important technique in VLSI (Very Large Scale Integratio
 10. **Iterative Process**: Like other optimization techniques in VLSI, register retiming may require an iterative approach to find the best possible register placement while considering multiple factors like clock constraints and area.
 
 In summary, register retiming is a technique used in VLSI synthesis to optimize the timing and performance of digital circuits by strategically relocating registers. It can help reduce critical path delays, improve circuit performance, and potentially reduce power consumption, all while preserving circuit functionality. It is a valuable tool for achieving better results in complex digital designs.
-	
+
+Command used for retiming in the synthesis
+```
+compile_ultra -retime
+```
+ 
 **LABS ON REGISTER RETIMING**
 
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABretime/LABretime_1.png)
@@ -3923,6 +3940,12 @@ Here's a closer look at output port isolation in VLSI design:
 7. **Trade-offs**: Achieving perfect output port isolation may not always be possible or practical due to layout and area constraints. Designers must often make trade-offs between isolation and other design goals, such as area efficiency and power consumption.
 
 In conclusion, output port isolation in VLSI design is a crucial technique to ensure the proper functioning and reliability of integrated circuits by preventing unwanted interactions between output ports. It involves a combination of physical layout techniques, buffer design, timing constraints, and careful planning to meet the specific requirements of the design while minimizing signal interference and improving signal integrity.
+
+Command used for Output port isolation
+
+```
+set_isolate_ports -type buffer [port or pin]
+```
 
 **LABS ON OUTPUT PORT ISOLATION**
 
