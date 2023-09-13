@@ -3200,7 +3200,9 @@ endmodule
  
 </details>
 
-## Day 9 : Optimizations 
+
+## Day 9: Optimizations 
+
 <details>
 <summary>Summary</summary>
 </details>
