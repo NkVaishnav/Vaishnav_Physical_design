@@ -3216,6 +3216,63 @@ endmodule
  **LAB ON COMBINATIONAL LOGIC OPTIMIZATIONS**
 
 
+ Optimization 1
+ 
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LAB1/LAB1_1.png)
+
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LAB1/LAB1_2.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LAB1/LAB1_3.png)
+
+
+Optimization 2
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LABopt2/LABopt2_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LABopt2/LABopt2_2.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LABopt2/LABopt2_3.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LABopt2/LABopt2_4.png)
+
+Optimization 3
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LABopt3/LABopt3_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LABopt3/LABopt3_2.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LABopt3/LABopt3_3.png)
+
+Optimization 4
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LABopt4/LABopt4_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LABopt4/LABopt4_2.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LABopt4/LABopt4_3.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LAB1/LABopt4/LABopt4_.png)
+
+
+Resource Sharing 
+
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABresource/LABres1_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABresource/LABres1_2.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABresource/LABres1_3.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABresource/LABres1_4.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABresource/LABres1_5.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABresource/LABres1_6.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABresource/LABres1_7.png)
+
+
 </details>
 
 <details>
@@ -3223,7 +3280,31 @@ endmodule
  
 **LABS ON SEQUENTIAL LOGIC OPTIMIZATIONS**
 
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABdffconst/LABdffcode.png)
 
+Optimization 1
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABdffconst/LABdffconst1_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABdffconst/LABdffconst1_2.png)
+
+Optimization 2
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABdffconst/LABdffconst2_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABdffconst/LABdffconst2_2.png)
+
+Optimization 3
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABdffconst/LABdffconst3_1.png)
+
+Optimization 4
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABdffconst/LABdffconst4_1.png)
+
+
+Optimization 5
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABdffconst/LABdffconst5_1.png)
  
 </details>
 
@@ -3231,6 +3312,15 @@ endmodule
 <summary> Boundary Optimizations</summary>
 
 **LABS ON BOUNDARY OPTIMIZATIONS**
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABchk_bound/LABchk_bound_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABchk_bound/LABchk_bound_2.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABchk_bound/LABchk_bound_3.png)
+
+
+
 </details>
 
 <details>
@@ -3238,12 +3328,38 @@ endmodule
 	
 **LABS ON REGISTER RETIMING**
 
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABretime/LABretime_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABretime/LABretime_2.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABretime/LABretime_3.png)
+
+![]()
+
+![]()
+
+![]()
+
+![]()
+
 </details>
 
 <details>
 <summary> Output port Isolation</summary>
 
 **LABS ON OUTPUT PORT ISOLATION**
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABiso/LABiso_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABiso/LABiso_2.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABiso/LABiso_3.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABiso/LABiso_4.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABiso/LABiso_5.png)
+
+!
  
 </details>
 
@@ -3251,5 +3367,24 @@ endmodule
 <summary> Multicycle Path</summary>
 
 **LABS ON MULTICYCLE PATHS**
+
+
+ ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABmcp/LABmcp_1.png)
+
+ ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABmcp/LABmcp_2.png)
+
+ ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABmcp/LABmcp_3.png)
+
+ ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABmcp/LABmcp_4.png)
+
+ ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABmcp/LABmcp_5.png)
+
+ ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABmcp/LABmcp_6.png)
+
+ ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABmcp/LABmcp_7.png)
+
+ ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/ebce029dd4c1423a4520a41f09698c257faf28d4/Vaishnav_Physical_design_%23day9/LABmcp/LABmcp_8.png)
+
+ 
  
 </details>
