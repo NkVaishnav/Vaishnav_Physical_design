@@ -3205,4 +3205,51 @@ endmodule
 
 <details>
 <summary>Summary</summary>
+	On Day 9 we would be learning more about the optimizations that are done in Synthesis 
+</details>
+
+<details>
+<summary>Combinational Logic Optimizations</summary>
+
+
+
+ **LAB ON COMBINATIONAL LOGIC OPTIMIZATIONS**
+
+
+</details>
+
+<details>
+<summary>Sequential logic Optimizations</summary>
+ 
+**LABS ON SEQUENTIAL LOGIC OPTIMIZATIONS**
+
+
+ 
+</details>
+
+<details>
+<summary> Boundary Optimizations</summary>
+
+**LABS ON BOUNDARY OPTIMIZATIONS**
+</details>
+
+<details>
+<summary>Register retiming</summary>
+	
+**LABS ON REGISTER RETIMING**
+
+</details>
+
+<details>
+<summary> Output port Isolation</summary>
+
+**LABS ON OUTPUT PORT ISOLATION**
+ 
+</details>
+
+<details>
+<summary> Multicycle Path</summary>
+
+**LABS ON MULTICYCLE PATHS**
+ 
 </details>
