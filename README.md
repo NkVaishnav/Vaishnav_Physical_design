@@ -14,6 +14,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-8-Advanced Constraints](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-8-advanced-constraints)
 - [Day-9-Optimizations](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-9-optimizations)
 - [Day-10-QOR and Quality Checks](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-10-qor-and-quality-checks)
+- [Day-11-SOC]()
   
 
 ## Day 0: Installation
@@ -4360,6 +4361,50 @@ Ultimately, the goal is to strike a balance between pinpointing the most critica
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_28.png)
 
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_29.png)
+
+
+</details>
+
+## Day 11: SOC
+
+<summary>Summary</summary>
+
+The Qualcomm Snapdragon 765 is a mid-range mobile system-on-a-chip (SoC) designed and manufactured by Qualcomm. It was announced in late 2019 and was part of Qualcomm's Snapdragon 7-series, which is known for offering a good balance between performance and power efficiency. Here's a detailed overview of the Snapdragon 765:
+
+**CPU Architecture:**
+The Snapdragon 765 features a Kryo 475 CPU, which is an octa-core processor. This CPU is based on ARM Cortex-A76 cores, which are known for their performance. It's divided into two clusters:
+
+- **1x high-performance core**: This core is designed to handle demanding tasks and offers high single-threaded performance.
+- **1x power-efficient core**: This core is optimized for power efficiency to handle light tasks and improve battery life.
+- **6x power-efficient cores**: These cores are used for general-purpose computing and background tasks, balancing performance and efficiency.
+
+**GPU:**
+The Snapdragon 765 is equipped with the Adreno 620 GPU, which offers decent graphics performance for gaming and multimedia applications. While it's not as powerful as the GPUs found in flagship Snapdragon 800 series SoCs, it provides a satisfactory gaming experience for mid-range smartphones.
+
+**5G Connectivity:**
+One of the standout features of the Snapdragon 765 is its integrated 5G modem. It includes the Qualcomm Snapdragon X52 5G modem, which supports both sub-6GHz and mmWave 5G networks. This 5G capability brought faster download and upload speeds, reduced latency, and better network connectivity to mid-range smartphones.
+
+**AI and Machine Learning:**
+The Snapdragon 765 includes an AI Engine that supports on-device AI and machine learning tasks. It can handle functions like image recognition, voice recognition, and various AI-driven enhancements for camera and gaming experiences.
+
+**Camera and Multimedia:**
+The SoC supports cameras with impressive capabilities. It can handle up to a 192-megapixel single camera or a 36-megapixel dual-camera setup. It also supports 4K video capture and playback, HDR10+ content, and HEIF image format for efficient storage.
+
+**Display Support:**
+The Snapdragon 765 supports Full HD+ displays with high refresh rates, making it suitable for mid-range smartphones with smooth and responsive screens.
+
+**Battery Efficiency:**
+Qualcomm's chipsets are known for their power efficiency, and the Snapdragon 765 is no exception. The combination of CPU and GPU cores, AI optimizations, and the integrated 5G modem is designed to strike a balance between performance and battery life.
+
+**Manufacturing Process:**
+The Snapdragon 765 is manufactured using a 7nm process technology, which contributes to power efficiency and performance gains compared to older processes.
+
+**Availability:**
+The Snapdragon 765 was used in a variety of mid-range smartphones released in 2020 and early 2021. It helped bring 5G capabilities to a more affordable price range, making the technology more accessible to consumers.
+
+<details>
+<summary>Summary</summary>
+
 
 
 </details>
