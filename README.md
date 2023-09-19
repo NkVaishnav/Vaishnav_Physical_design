@@ -13,6 +13,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-7-Basics of STA](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-7-basics-of-sta)
 - [Day-8-Advanced Constraints](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-8-advanced-constraints)
 - [Day-9-Optimizations](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-9-optimizations)
+- [Day-10-QOR and Quality Checks]()
   
 
 ## Day 0: Installation
@@ -4088,3 +4089,14 @@ set_false_path -from [get_pins output_reg/Q] -to [get_pins input_reg/D]
 
 In this example, the `output_reg` and `input_reg` represent the source and destination registers of the false path, respectively. The `-from` and `-to` options specify the pins of these registers. By applying this false path constraint, you inform the synthesis tool that this particular path should not be considered for timing analysis, helping you achieve better control and optimization of your design.
 </details>
+
+
+
+
+## Day 10: QOR and Quality Checks
+
+<details>
+<summary>Summary</summary >
+</details>
+
+
