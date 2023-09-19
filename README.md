@@ -4362,7 +4362,6 @@ Ultimately, the goal is to strike a balance between pinpointing the most critica
 
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/LAB2_29.png)
 
-
 </details>
 
 ## Day 11: SOC
