@@ -13,7 +13,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-7-Basics of STA](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-7-basics-of-sta)
 - [Day-8-Advanced Constraints](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-8-advanced-constraints)
 - [Day-9-Optimizations](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-9-optimizations)
-- [Day-10-QOR and Quality Checks]()
+- [Day-10-QOR and Quality Checks](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-10-qor-and-quality-checks)
   
 
 ## Day 0: Installation
@@ -4096,7 +4096,100 @@ In this example, the `output_reg` and `input_reg` represent the source and desti
 ## Day 10: QOR and Quality Checks
 
 <details>
-<summary>Summary</summary >
+<summary>Summary</summary>
 </details>
 
+<details>
+<summary>Lab 1</summary>
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab1/Lab1_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab1/Lab1_2.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab1/Lab1_3.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab1/Lab1_4.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab1/Lab1_5.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab1/Lab1_6.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab1/Lab1_7.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab1/Lab1_8.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab1/Lab1_9.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab1/Lab1_10.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab1/Lab1_11.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab1/Lab1_12.png)
+
+
+</details>
+
+<details>
+<summary>Lab 2</summary>
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_2.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_3.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_4.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_5.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_6.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_7.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_8.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_9.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_10.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_11.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_12.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_13.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_14.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_15.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_16.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_17.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_18.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_19.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_20.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_21.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_22.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_23.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_24.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_25.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_26.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_27.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_28.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/84b02b418aea0a3a11d6bcfec63b64c59b56eee8/Vaishnav_Physical_design_%23day10/Lab%202/Lab2_29.png)
+
+
+</details>
 
