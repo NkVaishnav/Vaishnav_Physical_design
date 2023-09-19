@@ -14,7 +14,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-8-Advanced Constraints](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-8-advanced-constraints)
 - [Day-9-Optimizations](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-9-optimizations)
 - [Day-10-QOR and Quality Checks](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-10-qor-and-quality-checks)
-- [Day-11-SOC]()
+- [Day-11-SOC](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-11-soc)
   
 
 ## Day 0: Installation
@@ -4367,7 +4367,11 @@ Ultimately, the goal is to strike a balance between pinpointing the most critica
 
 ## Day 11: SOC
 
+<details>
+	
 <summary>Summary</summary>
+
+The chipset used in Oneplus Nord is Snapdragon 765
 
 The Qualcomm Snapdragon 765 is a mid-range mobile system-on-a-chip (SoC) designed and manufactured by Qualcomm. It was announced in late 2019 and was part of Qualcomm's Snapdragon 7-series, which is known for offering a good balance between performance and power efficiency. Here's a detailed overview of the Snapdragon 765:
 
@@ -4401,10 +4405,6 @@ The Snapdragon 765 is manufactured using a 7nm process technology, which contrib
 
 **Availability:**
 The Snapdragon 765 was used in a variety of mid-range smartphones released in 2020 and early 2021. It helped bring 5G capabilities to a more affordable price range, making the technology more accessible to consumers.
-
-<details>
-<summary>Summary</summary>
-
 
 
 </details>
