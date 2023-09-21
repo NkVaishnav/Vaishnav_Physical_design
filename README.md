@@ -4892,6 +4892,10 @@ endmodule
 ```
 The output of the following code snippet above is as shown below
 
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/8c79444b64eb1e75a1ee3286c43e47c350ea798d/Vaishnav_Physical_design_%23day11/Lab2/LAB2_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/8c79444b64eb1e75a1ee3286c43e47c350ea798d/Vaishnav_Physical_design_%23day11/Lab2/LAB2_2.png)
+
 
 </details>
 
@@ -4900,6 +4904,92 @@ The output of the following code snippet above is as shown below
 <details>
 
 <summary>Interfacing RISC V with DAC and PLL</summary>
+
+A DAC (Digital-to-Analog Converter) is an electronic device that converts digital data, typically in the form of binary numbers, into analog signals. It plays a crucial role in various applications where digital devices need to interface with analog components, such as audio equipment, video devices, communication systems, and more. Here is a brief overview of DACs and some common types:
+
+**1. Types of DACs:**
+
+   a. **Binary-Weighted DAC:**
+      - In this type of DAC, the most significant bit (MSB) carries the highest weight, and each subsequent bit carries half the weight of the previous bit.
+      - For example, in an 8-bit binary-weighted DAC, the MSB has a weight of 2^7, the next bit has a weight of 2^6, and so on.
+      - Binary-weighted DACs are relatively simple but require precise resistor values for accurate conversion.
+
+   b. **R-2R Ladder DAC:**
+      - The R-2R ladder DAC uses a network of resistors arranged in a ladder-like structure, with alternating values of R and 2R.
+      - The digital input bits control switches connecting the resistors to the output node.
+      - R-2R ladder DACs are popular due to their simplicity and good linearity.
+
+   c. **Delta-Sigma (ΔΣ) DAC:**
+      - Delta-sigma DACs use oversampling and noise-shaping techniques to achieve high-resolution and high-accuracy conversion.
+      - They are commonly used in applications demanding high precision, such as audio processing and instrumentation.
+
+   d. **Segmented DAC:**
+      - Segmented DACs combine multiple smaller DACs in parallel, each responsible for a portion of the output range.
+      - This approach can provide both high resolution and speed.
+
+   e. **Current-Steering DAC:**
+      - Current-steering DACs use a set of current sources and switches to control the output current, which is then converted to voltage.
+      - They are often used in high-speed applications like RF (radio frequency) communication systems.
+
+**2. Applications of DACs:**
+   - **Audio Systems:** DACs are crucial in audio equipment like music players, sound cards, and digital audio interfaces, where they convert digital audio signals into analog audio output.
+
+   - **Video Systems:** DACs are used in video playback devices to convert digital video signals into analog signals for display on screens or projectors.
+
+   - **Communications:** In communication systems, DACs are used to modulate digital data into analog signals for transmission and to demodulate received analog signals back into digital data.
+
+   - **Instrumentation:** High-precision DACs are used in various test and measurement instruments for generating precise voltage or current levels.
+
+   - **Motor Control:** DACs are employed in motor control applications to provide accurate control signals for motors and actuators.
+
+   - **Industrial Automation:** DACs are used in industrial automation systems for controlling analog devices like valves, heaters, and sensors.
+
+   - **Signal Processing:** DACs play a critical role in digital signal processing (DSP) applications, converting processed digital signals back into analog form for further analysis or output.
+
+In summary, DACs are essential components in modern electronics that bridge the gap between digital and analog worlds, allowing digital systems to interact with and control various analog devices and systems. The choice of DAC type depends on factors such as required resolution, speed, and the specific application's demands.
+
+A Phase-Locked Loop (PLL) is an electronic feedback control system that is widely used in various applications to generate stable and precisely controlled frequencies. PLLs are versatile and can be found in many electronic devices and systems where frequency synchronization, modulation, clock generation, or frequency synthesis is required. Here's an overview of how a PLL works and its key components:
+
+**Key Components of a PLL:**
+
+1. **Phase Detector (PD):** The phase detector compares the phase of two input signals, typically a reference signal (the desired output frequency) and a feedback signal (the current output frequency). It produces an error signal based on the phase difference between the two signals.
+
+2. **Voltage-Controlled Oscillator (VCO):** The VCO generates an output signal whose frequency can be adjusted by applying a control voltage. The output frequency of the VCO serves as the output of the PLL.
+
+3. **Low-Pass Filter (LPF):** The low-pass filter filters the error signal from the phase detector, removing high-frequency components and leaving only the DC or low-frequency components. This filtered error signal is used to adjust the control voltage of the VCO.
+
+**Operation of a PLL:**
+
+The PLL operates in a closed-loop fashion to minimize the phase difference between the reference signal and the feedback signal. Here's how it works:
+
+1. **Phase Comparison:** The phase detector continuously compares the phases of the reference signal and the feedback signal. It produces an error signal proportional to the phase difference between the two signals.
+
+2. **Filtering:** The error signal is passed through a low-pass filter to remove any high-frequency noise or fluctuations. This filtered error signal represents the steady-state phase error.
+
+3. **Control Voltage Adjustment:** The filtered error signal is then used to adjust the control voltage applied to the VCO. This control voltage determines the VCO's output frequency.
+
+4. **Frequency Adjustment:** The VCO generates an output signal whose frequency is proportional to the control voltage. As the control voltage changes, the VCO's output frequency adjusts to minimize the phase difference between the reference and feedback signals.
+
+5. **Locking:** Over time, as the PLL iteratively adjusts the control voltage, the phase difference between the reference and feedback signals approaches zero. When the phase difference becomes negligible, the PLL is said to be "locked."
+
+**Applications of PLLs:**
+
+PLLs are used in a wide range of applications, including:
+
+1. **Clock Generation:** PLLs are used to generate stable clock signals with specific frequencies for microprocessors, digital circuits, and communication systems.
+
+2. **Frequency Synthesis:** PLLs can be used to generate multiple output frequencies from a single reference frequency, making them valuable in RF (radio frequency) communication systems and synthesizers.
+
+3. **Phase Modulation and Demodulation:** PLLs are used in phase-locked loop modulators and demodulators to encode and decode phase-shift keying (PSK) and frequency-shift keying (FSK) signals.
+
+4. **Frequency and Phase Synchronization:** PLLs are used in communication systems to ensure that transmitted and received signals are synchronized in terms of frequency and phase.
+
+5. **Frequency Tracking and Correction:** PLLs are used in applications where frequency stability and tracking are essential, such as GPS receivers and atomic clocks.
+
+In summary, a Phase-Locked Loop (PLL) is a versatile control system that is widely used to generate stable and precisely controlled frequencies and phase relationships in various electronic applications. It plays a crucial role in maintaining synchronization and accuracy in many communication, control, and timing systems.
+
+Now let us look into the RISC V interfacing with the DAC and PLL
+The following codes are mentioned below which are being used for the simulation
 
 ```
 module vsdbabysoc (
@@ -5439,5 +5529,12 @@ module vsdbabysoc_tb;
 endmodule
 
 ```
- 
+
+Below are the outputs of the above code being runned on the above testbench
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/8c79444b64eb1e75a1ee3286c43e47c350ea798d/Vaishnav_Physical_design_%23day11/Lab3/LAB3_2.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/8c79444b64eb1e75a1ee3286c43e47c350ea798d/Vaishnav_Physical_design_%23day11/Lab3/LAB3_1.png)
+
+
 </details>
