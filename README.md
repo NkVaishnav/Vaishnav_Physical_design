@@ -4486,7 +4486,7 @@ endmodule
 
 The outputs of the above verilog code and the testbench are shown below
 
-
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/cf5757b3705ebb98dcb73ba92495d413ff7a6541/Vaishnav_Physical_design_%23day11/Lab1/LAB1_1.png)
 
 </details>
 
