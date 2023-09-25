@@ -5561,6 +5561,8 @@ Below are the outputs of the above code being runned on the above testbench
 <details>
 <summary>Lab on GLS for Baby SOC</summary>
 
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/f821f90e94fce26cabe484fa78b36cf121042786/Vaishnav_Physical_design_%23day12/LAB_6.png)
+
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/f821f90e94fce26cabe484fa78b36cf121042786/Vaishnav_Physical_design_%23day12/LAB_1.png)
 
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/f821f90e94fce26cabe484fa78b36cf121042786/Vaishnav_Physical_design_%23day12/LAB_2.png)
