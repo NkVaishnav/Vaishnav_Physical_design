@@ -5583,7 +5583,6 @@ Gate-level simulation is an essential part of the digital design flow as it help
 <details>
 <summary>Lab on GLS for 2*1 mux</summary>
 
-
 ```
 #RTL code used
 module multiplexer_2to1 (
@@ -5597,6 +5596,12 @@ assign Y = (S == 0) ? A : B;
 
 endmodule
 ```
+
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/4dac5cc6314bf02b024e402ad5cea4cf8bcecc29/Vaishnav_Physical_design_%23day12/LAB1_1.png)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/4dac5cc6314bf02b024e402ad5cea4cf8bcecc29/Vaishnav_Physical_design_%23day12/LAB1_2.png)
+
 ```
 #Netlist obatined
 module multiplexer_2to1 ( A, B, S, Y );
@@ -5609,19 +5614,47 @@ module multiplexer_2to1 ( A, B, S, Y );
 endmodule
 
 ```
+Below is the output of GLS that matches with the output of RTL as seen in the previous lab
 
-![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/f821f90e94fce26cabe484fa78b36cf121042786/Vaishnav_Physical_design_%23day12/LAB_1_1.png)
-
-![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/f821f90e94fce26cabe484fa78b36cf121042786/Vaishnav_Physical_design_%23day12/LAB_1_2.png)
-
-![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/f821f90e94fce26cabe484fa78b36cf121042786/Vaishnav_Physical_design_%23day12/LAB_1_3.png)
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/4dac5cc6314bf02b024e402ad5cea4cf8bcecc29/Vaishnav_Physical_design_%23day12/LAB1_3.png)
 
 </details>
 
 <details>
 <summary>Lab on GLS for Baby SOC</summary>
 
+Considering the same Baby SOC that has been used in the previous day labs we have Synthesized the mythcore using the DC Compiler But for the analog blocks of avsddac and avsdpll we have the code which cannot be synthesized hence we have used the libraries but the Synopsys doesnt understand .lib format so we have used the LC Compiler to get the .db version of our libraries.
+Below is the image showing the steps and output involved in getting the .db file
+
+```
+#Steps involved in obtaining the .db file using LC Shell
+read_lib libname.lib
+write_lib libname -f db -output libname.db
+```
+
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/f821f90e94fce26cabe484fa78b36cf121042786/Vaishnav_Physical_design_%23day12/LAB_6.png)
+
+Now let us syntheisze the design of vsdbabysoc (mythcore, avsddac, avsdpll) by using the libraries of avsddac and avsdpll and our standard sky water libraries
+
+```
+#Setup of .synopsys_dc.setup
+set target_library {path_to_sky_lib.db path_to_avsddac_lib.db path_to_avsdpll_lib.db}
+set link_library {* path_to_sky_lib.db path_to_avsddac_lib.db path_to_avsdpll_lib.db}
+```
+
+Now let echo the same and start with the Synthesis
+
+```
+echo $target_library
+echo $link_library
+read_verilog mythcore_test.v
+read_verilog vsdbabysoc.v
+current_design vsdbabysoc
+link
+compile_ultra
+write -f verilog -out vsdbabysoc_net.v
+write -f ddc -out vsdbabysoc_net.ddc
+```
 
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/f821f90e94fce26cabe484fa78b36cf121042786/Vaishnav_Physical_design_%23day12/LAB_1.png)
 
@@ -5631,6 +5664,34 @@ endmodule
 
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/f821f90e94fce26cabe484fa78b36cf121042786/Vaishnav_Physical_design_%23day12/LAB_4.png)
 
+Obtained netlist is as given below 
+
+```
+#Netlist after Synthesis 
+module vsdbabysoc ( OUT, reset, VCO_IN, ENb_CP, ENb_VCO, REF, VREFH );
+  input reset, VCO_IN, ENb_CP, ENb_VCO, REF, VREFH;
+  output OUT;
+  wire   CLK, net1;
+  wire   [9:0] RV_TO_DAC;
+
+  core core1 ( .clk(CLK), .reset(reset), .out(RV_TO_DAC) );
+  avsdpll pll ( .ENb_CP(ENb_CP), .ENb_VCO(ENb_VCO), .REF(REF), .VCO_IN(VCO_IN), 
+        .CLK(CLK) );
+  avsddac dac ( .D(RV_TO_DAC), .OUT(OUT), .VREFH(VREFH), .VREFL(net1) );
+  sky130_fd_sc_hd__conb_1 U2 ( .LO(net1) );
+endmodule
+```
+
+Now lets go ahead with the GLS part
+
+Commands used for the GLS are given below 
+```
+iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 primitives.v sky_corner.v vsdbabysoc_net.v testbench.v mythcore_net.v avsddac.v avsdpll.v
+./a.out
+gtkwave post_synth_sim.vcd
+```
+
+After executing the above steps we got the image as shown below which matches with the previous days pre synth simulation
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/f821f90e94fce26cabe484fa78b36cf121042786/Vaishnav_Physical_design_%23day12/LAB_5.png)
 
 </details>
