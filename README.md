@@ -16,6 +16,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-10-QOR and Quality Checks](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-10-qor-and-quality-checks)
 - [Day-11-SOC](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-11-soc)
 - [Day-12-Baby SOC](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-12-baby-soc)
+- [Day-13-Post Synthesis Simulation (GLS)](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-13--post-synthesis-simulation-gls)
   
 
 ## Day 0: Installation
