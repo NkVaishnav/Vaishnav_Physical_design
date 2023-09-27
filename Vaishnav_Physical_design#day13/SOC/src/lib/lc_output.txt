@@ -1,0 +1,73 @@
+ 
+                             Library Compiler (TM)
+                                 DesignWare (R)
+
+             Version T-2022.03-SP3 for linux64 - Jul 13, 2022 -SLE
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Initializing...
+lc_shell> read_lib avsddac.lib
+Reading '/home/nk.vaishnav/VSDBabySoC/src/lib/avsddac.lib' ...
+Warning: Line 27, Cell 'avsddac', The 'area' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_output_pin_rise_res' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_inout_pin_fall_res' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_inout_pin_rise_res' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_fanout_load' attribute is not specified. Using 1.00. (LBDB-172)
+Warning: Line 1, The 'default_slope_rise' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_output_pin_fall_res' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_intrinsic_rise' attribute is not specified. Using 1.00. (LBDB-172)
+Warning: Line 1, The 'default_slope_fall' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_intrinsic_fall' attribute is not specified. Using 1.00. (LBDB-172)
+Warning: Line 1, The 'default_inout_pin_cap' attribute is not specified. Using 1.00. (LBDB-172)
+Warning: Line 1, The 'default_input_pin_cap' attribute is not specified. Using 1.00. (LBDB-172)
+Warning: Line 1, The 'default_output_pin_cap' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 28, Cell 'avsddac', pin 'OUT', The 'OUT' Pin/bus on the 'avsddac' cell has no 'function' attribute.
+        The cell becomes a black box. (LIBG-16)
+Technology library 'avsddac' read successfully
+1
+lc_shell> write_lib avsddac -f db -o avsddac.db
+Wrote the 'avsddac' library to '/home/nk.vaishnav/VSDBabySoC/src/lib/avsddac.db' successfully
+1
+lc_shell> read_lib avsdpll.lib
+Reading '/home/nk.vaishnav/VSDBabySoC/src/lib/avsdpll.lib' ...
+Warning: Line 18, Cell 'avsdpll', The 'area' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_output_pin_rise_res' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_inout_pin_fall_res' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_inout_pin_rise_res' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_fanout_load' attribute is not specified. Using 1.00. (LBDB-172)
+Warning: Line 1, The 'default_slope_rise' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_output_pin_fall_res' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_intrinsic_rise' attribute is not specified. Using 1.00. (LBDB-172)
+Warning: Line 1, The 'default_slope_fall' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 1, The 'default_intrinsic_fall' attribute is not specified. Using 1.00. (LBDB-172)
+Warning: Line 1, The 'default_inout_pin_cap' attribute is not specified. Using 1.00. (LBDB-172)
+Warning: Line 1, The 'default_input_pin_cap' attribute is not specified. Using 1.00. (LBDB-172)
+Warning: Line 1, The 'default_output_pin_cap' attribute is not specified. Using 0.00. (LBDB-172)
+Warning: Line 19, Cell 'avsdpll', pin 'CLK', The 'CLK' Pin/bus on the 'avsdpll' cell has no 'function' attribute.
+        The cell becomes a black box. (LIBG-16)
+Technology library 'avsdpll' read successfully
+1
+lc_shell> write_lib avsdpll -f db -o avsdpll.db
+Wrote the 'avsdpll' library to '/home/nk.vaishnav/VSDBabySoC/src/lib/avsdpll.db' successfully
+1
+lc_shell> exit
+Maximum memory usage for this session: 106.17 MB
+CPU usage for this session:      1 seconds (  0.00 hours)
+Elapsed time for this session:    340 seconds (  0.09 hours)
+Thank you for using Library Compiler.
+

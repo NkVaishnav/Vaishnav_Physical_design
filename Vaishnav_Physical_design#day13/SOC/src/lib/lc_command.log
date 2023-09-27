@@ -1,0 +1,11 @@
+#@ # 
+#@ # Running lc_shell Version T-2022.03-SP3 for linux64 -- Jul 13, 2022
+#@ # Date:   Mon Sep 25 18:44:30 2023
+#@ # Run by: nk.vaishnav@ssirlab03
+#@ 
+
+read_lib avsddac.lib
+write_lib avsddac -f db -o avsddac.db
+read_lib avsdpll.lib
+write_lib avsdpll -f db -o avsdpll.db
+exit

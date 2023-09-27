@@ -1,0 +1,148 @@
+ 
+                             Library Compiler (TM)
+                                 DesignWare (R)
+
+             Version T-2022.03-SP3 for linux64 - Jul 13, 2022 -SLE
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Initializing...
+lc_shell> echo $target_library
+your_library.db
+lc_shell> sh gvim .synopsys_dc.setup
+lc_shell> sh gvim .synopsys_dc.setup &
+21292
+lc_shell> set target_library {sky130_fd_sc_hd__tt_025C_1v80.db avsddac.db avsdpll.db}
+sky130_fd_sc_hd__tt_025C_1v80.db avsddac.db avsdpll.db
+lc_shell> set target_library {sky130_fd_sc_hd__tt_025C_1v80.db avsddac.db avsdpll.db}
+sky130_fd_sc_hd__tt_025C_1v80.db avsddac.db avsdpll.db
+lc_shell> set link_library {* sky130_fd_sc_hd__tt_025C_1v80.db avsddac.db avsdpll.db}
+* sky130_fd_sc_hd__tt_025C_1v80.db avsddac.db avsdpll.db
+lc_shell> echo $target_library
+sky130_fd_sc_hd__tt_025C_1v80.db avsddac.db avsdpll.db
+lc_shell> echo $link_library
+* sky130_fd_sc_hd__tt_025C_1v80.db avsddac.db avsdpll.db
+lc_shell> source /home/nk.vaishnav/VSDBabySoC/src/sdc/vsdbabysoc_layout.sdc
+Error: Current block is not defined. (DES-001)
+Error: can't read "::env(CLOCK_PORT)": no such variable
+        Use error_info for more info. (CMD-013)
+Error: can't read "::env(CLOCK_PERIOD)": no such variable
+        Use error_info for more info. (CMD-013)
+Error: can't read "::env(CLOCK_PERIOD)": no such variable
+        Use error_info for more info. (CMD-013)
+Error: can't read "output_delay_value": no such variable
+        Use error_info for more info. (CMD-013)
+Error: can't read "input_delay_value": no such variable
+        Use error_info for more info. (CMD-013)
+Error: can't read "::env(SYNTH_MAX_FANOUT)": no such variable
+        Use error_info for more info. (CMD-013)
+Error: can't read "input_delay_value": no such variable
+        Use error_info for more info. (CMD-013)
+Error: can't read "output_delay_value": no such variable
+        Use error_info for more info. (CMD-013)
+Error: can't read "::env(SYNTH_DRIVING_CELL)": no such variable
+        Use error_info for more info. (CMD-013)
+Error: can't read "::env(SYNTH_CAP_LOAD)": no such variable
+        Use error_info for more info. (CMD-013)
+Error: can't read "cap_load": no such variable
+        Use error_info for more info. (CMD-013)
+Error: can't read "cap_load": no such variable
+        Use error_info for more info. (CMD-013)
+lc_shell> create_clock [get_pins {pll/CLK}] -name clk -period 11
+Error: Current block is not defined. (DES-001)
+lc_shell> ls
+.                        post_synth_sim.vcd
+..                       primitives.v
+.synopsys_dc.setup       pseudo_rand.sv
+.synopsys_dc.setup.swp   pseudo_rand_gen.sv
+a.out                    rvmyth.tlv
+alib-52                  sandpiper.vh
+avsddac.db               sandpiper_gen.vh
+avsddac.v                sky130_fd_sc_hd.v
+avsdpll.db               sky130_fd_sc_hd__tt_025C_1v80.db
+avsdpll.v                sp_default.vh
+clk_gate.v               sp_verilog.vh
+command.log              tb_mythcore_test.v
+default.svf              tb_mythcore_test.vcd
+lc_command.log           testbench.rvmyth.post-routing.v
+lc_output.txt            testbench.v
+mux_2_1.v                vsdbabysoc.v
+mythcore_test.v          vsdbabysoc_net.ddc
+mythcore_test_gen.v      vsdbabysoc_net.v
+mythcore_test_netlist.v
+lc_shell> read_verilog mythcore_test.v
+Error: unknown command 'read_verilog' (CMD-005)
+lc_shell> help *read*
+ read                 # Builtin
+ read_app_options     # Read application options
+ read_clf_antenna_properties # Read CLF file
+ read_db              # Read one or more db files
+ read_gds             # Read a single Gds or list of GDS Layout file into the current library
+ read_lef             # Read LEF files
+ read_lib             # read a .lib file
+ read_ndm             # Read an NDM file
+ read_oasis           # Read a single OASIS or list of OASIS Layout file into one library
+ read_parasitic_tech  # Read a parasitic tech file
+ read_physical_rules  # Read physical rules into library
+ read_tech_file       # Read an technology file into the current library
+ spread_objects       # Spread specified objects
+lc_shell> 
+Segmentation fault encountered. (Bad read from 0x2ac)
+
+Stack trace for crashing thread
+-------------------------------
+SNPSee_72fe6ee5e6adf88ac107a01d196ffb8ed40842348ffb0f8b+36
+SNPSee_9ea8dbbd5e74784445edf9ed12a0bc4777b489dcaefdb88f6aa47f4097fccf5e+156
+SNPSee_9ea8dbbd5e74784484d3cce2fced02c05a3783bc3b9f8fad49ba3bacacc1ac73ecf347a38534d06f+2085
+SNPSee_3da1e8e388eef22c4cad96049bb507e323902e731626b6f85a1de23e01dcfb84+286
+_L_unlock_13+52
+SNPSee_6e69fbe5cd64cca1c6703629b1e895f8+7
+SNPSee_d37906b5b637f25b+18
+SNPSee_5d373cd896410e630e5be4cb01b4f045+1452
+SNPSee_84819e9227b2e0aa9cae34dc8be3b8a5cd8f264d30f37d0c6a8e358e8cb885004984e24a8c4868b7af29ce1919d3f9852683413c29440db5024a1d284b194ff1+121
+SNPSee_81260d5446b04a0b521622ffec18badce443b967c009f82c+122
+SNPSee_e52978fb95288b35702010462a2fb7521b19e6c7de02e749f68bb351c5fdf77d77dcb6d7ca3d86dfab86a645dee82a58b2bd32436fe9252678dfa79a3e0c83bf+138
+SNPSee_b81f4656f0d7d3ca1b0bca755b60caea2cb50375ef5e9df280c2a7ba1e2ca19f7750e3d580600edd04a01dc4363d697fcd6b18c4d0ab558c+706
+SNPSee_b3a63ca9beb66366a2beecdfa325f5f850e37c16b964335ba934f8a7afefeaf1+942
+main+4366
+__libc_start_main+245
+SNPSee_d06eed713327be76+41
+
+A detailed stack trace has been captured in /home/nk.vaishnav/VSDBabySoC/src/module/Synopsys_stack_trace_21179.txt.
+
+The tool has just encountered a fatal error:
+
+If you encountered this fatal error when using the most recent
+Synopsys release, submit the above stack trace and a test case that
+reproduces the problem to the Synopsys Support Center by using
+Enter A Call at http://solvnet.synopsys.com/EnterACall.
+
+* For information about the latest software releases, go to the Synopsys
+  SolvNet Release Library at http://solvnet.synopsys.com/ReleaseLibrary.
+
+* For information about required Operating System patches, go to
+  http://www.synopsys.com/support
+
+
+Fatal: Internal system error, cannot recover.
+Error code=11
+CPU time=4
+
+Release = 'T-2022.03-SP3'  Architecture = 'linux64'  Program = 'Library Compiler'
+Exec = '/home/synopsys/lc_vT-2022.03-SP3/linux64/lc/bin/lc2_shell_exec'
+
+'142263925 167132536 140599967356464 161022887 161004450 160987068 173163385 59698634 53973034 52132674 140207230 16464268 140599842760021 16454926'
