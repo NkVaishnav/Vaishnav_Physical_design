@@ -17,6 +17,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-11-SOC](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-11-soc)
 - [Day-12-Baby SOC](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-12-baby-soc)
 - [Day-13-Post Synthesis Simulation (GLS)](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-13--post-synthesis-simulation-gls)
+- [Day-14-Synopsys DC and Timing Analysis using multiple Libraries]()
   
 
 ## Day 0: Installation
@@ -5696,3 +5697,135 @@ After executing the above steps we got the image as shown below which matches wi
 ![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/f821f90e94fce26cabe484fa78b36cf121042786/Vaishnav_Physical_design_%23day12/LAB_5.png)
 
 </details>
+
+## Day 14: Synopsys DC and Timing Analysis using the Libraries 
+
+<details>
+<summary>Summary</summary>
+In Day 14 we will be using multiple library files across different PVTs to check the timing
+</details>
+
+<details>
+<summary>Lab part 1 : Conversion of .lib to .db </summary>
+As we know Synopsys tool will be working on the .db file and will be accepting only these format as the input to the tool it is essential for us to convert the .lib to .db hence we will be using the Library Compiler for the same. We have this small script which automatically converts the .lib to .db file mentioned below 
+
+```
+#BELOW IS THE SCRIPT USED TO CONVERT THE .DB TO .LIB
+sh ls *.lib > a.txt
+set file [open "a.txt" "r"];
+set list_name {};
+set list_name_1 {};
+while { [ gets $file line ] != -1 } {
+	lappend list_name $line;
+	set modified_name [file rootname $line];
+	lappend list_name_1 $modified_name;
+}
+close $file;
+#echo $list_name;
+foreach var $list_name_1 {
+	set a "${var}.lib";
+	set b "${var}.db";
+	#echo $a;
+	read_lib $a -no_warnings >> b.txt;
+	#write_lib $var -f db -out $b;
+}
+sh grep -o 'Error: Line [0-9]\+' b.txt | awk '{print $NF}' > c.txt
+
+set file [open "c.txt" "r"];
+set line_num {};
+while {[gets $file line1] != -1} {
+lappend line_num $line1;
+}
+close $file;
+set reversedlist {};
+set chunksize 12;
+for {set k 0} {$k < [llength $line_num]} {incr k $chunksize} {
+	set chunk [lrange $line_num $k [expr {$k + $chunksize - 1}]];
+	set reversedchunk [lreverse $chunk];
+	lappend reversedlist {*}$reversedchunk;
+}
+#echo $reversedlist
+set repeatedlist {};
+foreach element $list_name {
+	for {set i 0} {$i < 12} {incr i} {
+		lappend repeatedlist $element;
+	}
+}
+#echo $repeatedlist;
+set outputfile [open "output.tcl" "w"]
+for {set j 0} {$j < [llength $repeatedlist]} {incr j} {
+	#echo "HELOO"
+	set item2 [lindex $repeatedlist $j];
+	set item1 [lindex $reversedlist $j]; 
+	set line2 "sh sed -i ${item1}d ${item2}";
+	puts $outputfile $line2;
+}
+close $outputfile;
+source output.tcl
+#echo $list_name;
+foreach var1 $list_name_1 {
+	set a1 "${var1}.lib";
+	set b1 "${var1}.db";
+	#echo $a1;
+	read_lib $a1 -no_warnings;
+	write_lib $var1 -f db -out $b1;
+}
+```
+**REQUIREMENTS OF USAGE FOR THE ABOVE SCRIPT**: This is just a plug and play script written by me just dump all the libraries in a directory and then paste this script in the same directory as a tcl file and just source the script in an lc_shell all the dbs will be generated.
+
+Now next we can make a directory of the same dbs by following teh below given command
+
+```
+mkdir DB
+cp *.db DB/.
+```
+We can use the DB folder for the next part of the LAB
+
+</details>
+
+<details>
+<summary>Lab part 2 : Generating the WNS for SETUP and HOLD</summary>
+
+Now as we got the multiple db files generated we are now supposed to run the Synthesis of each .lib file for which I have created a script and sourcing this script reports all the violations and qor into reports 
+
+```
+#SCRIPT TO RUN THE SYNTHESIS BY PICKING ALL THE LIBRARIES ONE AFTER ANOTHER 
+set common_path "/home/nk.vaishnav/VSDBabySoC/src/module"
+set common_analoglibs "[concat $commonpath/Analoglibs]"
+set common_verilogfile "[concat $commonpath/verilogfiles]"
+set common_db "[concat $commonpath/lib_db]"
+set common_sdc "[concat $commonpath/sdc]"
+set common_reports "[concat $commonpath/reports]"
+
+set db_list [glob -directory $common_db  -types f -tails *.db];
+echo $db_list;
+set avsddac "avsddac.db"
+set avsdpll "avsdpll.db"
+read_verilog [concat $common_verilogfile/mythcore_test.v];
+current_design core;
+foreach db_file $db_list {
+	set lib_file [file join $common_db $db_file ];
+	echo $lib_file
+	set avsddac_file [file join $common_analoglibs $avsddac]
+	set avsdpll_file [file join $common_analoglibs $avsdpll]
+	set target_library [concat $common_db/$db_file $avsddac_file $avsdpll_file];
+	set link_library [concat "*" $common_db/$db_file $avsddac_file $avsdpll_file ];
+	read_verilog [concat $common_verilogfile/vsdbabysoc.v];
+	current_design vsdbabysoc;
+	source sdc/vsdbabysoc_synthesis.sdc
+	#source [concat $common_sdc/vsdbabysoc_synthesis.sdc];
+	link;
+	compile_ultra;
+	report_timing >> [concat $common_reports/All_lib_timing.rpt]
+	report_qor > [concat $common_reports/$db_file.rpt];
+}
+sh grep "Design  WNS: " [concat $common_reports/*.db.rpt] >> [concat $common_reports/timing.rpt]
+sh grep "Design (Hold)  WNS:" [concat $common_reports/*.db.rpt] >> [concat $common_reports/timing.rpt]
+```
+
+**REQUIREMENTS OF USAGE FOR THE ABOVE SCRIPT**: The above script is also a plug and play script but it is recommended to mainatin the folder hierarchy according to the link given below just place the script in the directory and maintain the directores according to the hierarchy mentioned below and the outputs will be generated in the reports folder inside the directory'
+
+
+
+</details>
+
