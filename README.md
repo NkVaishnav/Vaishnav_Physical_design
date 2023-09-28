@@ -17,7 +17,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-11-SOC](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-11-soc)
 - [Day-12-Baby SOC](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-12-baby-soc)
 - [Day-13-Post Synthesis Simulation (GLS)](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-13--post-synthesis-simulation-gls)
-- [Day-14-Synopsys DC and Timing Analysis using multiple Libraries]()
+- [Day-14-Synopsys DC and Timing Analysis using multiple Libraries](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-14-synopsys-dc-and-timing-analysis-using-the-libraries)
   
 
 ## Day 0: Installation
@@ -5833,6 +5833,37 @@ sh grep "Design (Hold)  WNS:" [concat $common_reports/*.db.rpt] >> [concat $comm
 The grephed output is pasted in reports/timing.rpt file and the worst case violations are mentioned in the All_timing.rpt in the reports folder
 
 The output is as shown below in the sheet 
+
+PVT	WNS	TNS	Violating Paths
+sky130_fd_sc_hd__ff_100C_1v65	0	0	0
+sky130_fd_sc_hd__ff_100C_1v95	0	0	0
+sky130_fd_sc_hd__ff_n40C_1v56	0.07	39.81	892
+sky130_fd_sc_hd__ff_n40C_1v65	0	0	0
+sky130_fd_sc_hd__ff_n40C_1v76	0	0	0
+sky130_fd_sc_hd__ss_100C_1v40	3.28	3418.61	1121
+sky130_fd_sc_hd__ss_100C_1v60	1.82	1864.84	1115
+sky130_fd_sc_hd__ss_n40C_1v28	8.46	9191.95	1192
+sky130_fd_sc_hd__ss_n40C_1v35	5.57	5999.65	1192
+sky130_fd_sc_hd__ss_n40C_1v40	4.66	4940.82	1191
+sky130_fd_sc_hd__ss_n40C_1v44	3.83	4030.1	1147
+sky130_fd_sc_hd__ss_n40C_1v76	1.11	1112.04	1106
+sky130_fd_sc_hd__tt_025C_1v80	0.15	125.12	1004
+
+
+PVT	WNS(HOLD)	TNS	Violating Paths
+sky130_fd_sc_hd__ff_100C_1v65	0.15	48.69	1073
+sky130_fd_sc_hd__ff_100C_1v95	0.2	130.78	1156
+sky130_fd_sc_hd__ff_n40C_1v56	0.11	6.7	149
+sky130_fd_sc_hd__ff_n40C_1v65	0.15	44.24	1068
+sky130_fd_sc_hd__ff_n40C_1v76	0.18	87.18	1089
+sky130_fd_sc_hd__ss_100C_1v40	0	0	0
+sky130_fd_sc_hd__ss_100C_1v60	0	0	0
+sky130_fd_sc_hd__ss_n40C_1v28	0	0	0
+sky130_fd_sc_hd__ss_n40C_1v35	0	0	0
+sky130_fd_sc_hd__ss_n40C_1v40	0	0	0
+sky130_fd_sc_hd__ss_n40C_1v44	0	0	0
+sky130_fd_sc_hd__ss_n40C_1v76	0	0	0
+sky130_fd_sc_hd__tt_025C_1v80	0.09	5.45	80
 
 
 
