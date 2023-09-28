@@ -5703,6 +5703,82 @@ After executing the above steps we got the image as shown below which matches wi
 <details>
 <summary>Summary</summary>
 In Day 14 we will be using multiple library files across different PVTs to check the timing
+
+Detailed description of the SkyWater library and the associated PVT conditions for your report:
+
+---
+
+## SkyWater Library Overview
+
+The SkyWater library, denoted by the prefix "sky130_fd_sc_hd," is a set of semiconductor technology libraries used in the design and fabrication of integrated circuits. These libraries are essential for digital logic designers and chip architects to create efficient and reliable electronic systems. SkyWater Technology Foundry, often abbreviated as SkyWater, is known for its open-source approach to semiconductor manufacturing and provides these libraries for various design needs.
+
+### PVT Conditions
+
+In semiconductor design, PVT conditions refer to a set of parameters that describe the operating environment in which an integrated circuit is expected to function reliably. PVT stands for Process, Voltage, and Temperature. Let's break down these parameters:
+
+1. **Process (P)**: The "process" parameter represents the specific manufacturing process or technology node used to create the integrated circuit. In the case of the SkyWater library, "sky130_fd_sc_hd" denotes the process technology. It encompasses the physical characteristics and manufacturing steps employed to create the semiconductor devices on the chip.
+
+2. **Voltage (V)**: The "voltage" parameter indicates the supply voltage levels at which the integrated circuit operates. Different voltage levels can significantly impact power consumption, performance, and overall functionality. The SkyWater library includes variations denoted by voltage levels such as "1v65," "1v95," "1v56," and so on, allowing designers to choose the appropriate voltage for their specific application.
+
+3. **Temperature (T)**: The "temperature" parameter represents the operating temperature range of the integrated circuit. Integrated circuits must perform reliably across a range of temperatures, including both high and low extremes. SkyWater provides libraries optimized for different temperature conditions, as indicated by "100C" for 100 degrees Celsius and "n40C" for -40 degrees Celsius.
+
+## Library Variants
+
+### Flip-Flop (FF)
+
+The "ff" library variant primarily consists of flip-flop cells. Flip-flops are fundamental building blocks in digital circuits, used for data storage and synchronization. Designers can select flip-flop cells from this library for their sequential logic designs.
+
+### Static Synchronous (SS)
+
+The "ss" library variant likely includes static synchronous logic cells. Static synchronous logic is a design style where all logic gates are clocked with a common clock signal, ensuring synchronous operation. This library variant is suitable for synchronous circuit designs.
+
+### Transport-Triggered (TT)
+
+The "tt" library variant may encompass cells designed based on transport-triggered architectures. Transport-triggered architectures emphasize data transport and manipulation, making them suitable for applications such as processors and microcontrollers.
+
+In summary, the SkyWater library offers a comprehensive set of semiconductor libraries tailored for different design styles and optimized for varying PVT conditions. Designers can choose the appropriate library variant, voltage level, and temperature range to meet the specific requirements of their integrated circuit designs, ensuring reliable performance and functionality across a wide range of operating conditions.
+
+Detailed description of each PVT condition mentioned in our list:
+
+1. **sky130_fd_sc_hd__ff_100C_1v65**:
+   - **Process (P)**: This refers to the specific semiconductor manufacturing process or technology node, which is represented by "sky130_fd_sc_hd."
+   - **Voltage (V)**: The supply voltage level is set at 1.65 volts (1v65). This voltage determines the power consumption and performance of the integrated circuits designed using this library.
+   - **Temperature (T)**: The operating temperature for this PVT condition is 100 degrees Celsius (100C). Integrated circuits must reliably function under this temperature range.
+
+2. **sky130_fd_sc_hd__ff_100C_1v95**:
+   - **Process (P)**: Same as the previous condition, this refers to the manufacturing process represented by "sky130_fd_sc_hd."
+   - **Voltage (V)**: The supply voltage level is set at 1.95 volts (1v95). The voltage level directly impacts the power requirements and performance characteristics of the integrated circuits.
+   - **Temperature (T)**: The operating temperature remains at 100 degrees Celsius (100C).
+
+3. **sky130_fd_sc_hd__ff_n40C_1v56**:
+   - **Process (P)**: It's the same manufacturing process as before, denoted by "sky130_fd_sc_hd."
+   - **Voltage (V)**: The supply voltage level is set to 1.56 volts (1v56).
+   - **Temperature (T)**: This PVT condition operates at a lower temperature of -40 degrees Celsius (n40C), making it suitable for applications requiring reliability in colder environments.
+
+4. **sky130_fd_sc_hd__ff_n40C_1v65**:
+   - **Process (P)**: Again, it's the same semiconductor manufacturing process represented by "sky130_fd_sc_hd."
+   - **Voltage (V)**: The supply voltage level is 1.65 volts (1v65).
+   - **Temperature (T)**: This condition also operates at -40 degrees Celsius (n40C), providing a slightly different voltage option at the same lower temperature range.
+
+5. **sky130_fd_sc_hd__ff_n40C_1v76**:
+   - **Process (P)**: Utilizes the "sky130_fd_sc_hd" manufacturing process.
+   - **Voltage (V)**: The supply voltage level is set at 1.76 volts (1v76).
+   - **Temperature (T)**: This condition operates at -40 degrees Celsius (n40C), combining a specific voltage level with a lower temperature environment.
+
+6. **sky130_fd_sc_hd__ss_100C_1v40**:
+   - **Process (P)**: Employing the same semiconductor manufacturing process, "sky130_fd_sc_hd."
+   - **Voltage (V)**: The supply voltage level is 1.40 volts (1v40).
+   - **Temperature (T)**: Operating at 100 degrees Celsius (100C), this PVT condition offers a different voltage level suitable for specific design requirements.
+
+7. **sky130_fd_sc_hd__ss_100C_1v60** to **sky130_fd_sc_hd__ss_n40C_1v76**:
+   - These conditions follow the same pattern as above but offer variations in voltage levels and temperature conditions. They all utilize the "ss" library variant, designed for static synchronous logic.
+
+8. **sky130_fd_sc_hd__tt_025C_1v80**:
+   - **Process (P)**: Utilizes the "sky130_fd_sc_hd" manufacturing process.
+   - **Voltage (V)**: The supply voltage level is set at 1.80 volts (1v80).
+   - **Temperature (T)**: Operating at a lower temperature of 25 degrees Celsius (025C), this PVT condition provides a different temperature-voltage combination suitable for specific design needs. It belongs to the "tt" library variant designed for transport-triggered architectures.
+
+In summary, each PVT condition combines specific manufacturing processes, voltage levels, and temperature ranges to provide designers with a range of options tailored to their integrated circuit design requirements. These conditions enable designers to optimize their designs for different environmental conditions and performance characteristics.
 </details>
 
 <details>
@@ -5781,6 +5857,12 @@ Now next we can make a directory of the same dbs by following teh below given co
 mkdir DB
 cp *.db DB/.
 ```
+Images showing succesful run of the scripts 
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/20335441b11120ab19cbae5833206685e5cf21b9/Vaishnav_Physical_design%23day13/IMAGES/LAB1_1)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/20335441b11120ab19cbae5833206685e5cf21b9/Vaishnav_Physical_design%23day13/IMAGES/LAB1_2)
+
 We can use the DB folder for the next part of the LAB
 
 </details>
@@ -5827,6 +5909,11 @@ sh grep "Design (Hold)  WNS:" [concat $common_reports/*.db.rpt] >> [concat $comm
 
 **REQUIREMENTS OF USAGE FOR THE ABOVE SCRIPT**: The above script is also a plug and play script but it is recommended to mainatin the folder hierarchy according to the link given below just place the script in the directory and maintain the directores according to the hierarchy mentioned below and the outputs will be generated in the reports folder inside the directory
 
+Images showing the functionality of the scripts in shell
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/20335441b11120ab19cbae5833206685e5cf21b9/Vaishnav_Physical_design%23day13/IMAGES/LAB2_1)
+
+![](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/20335441b11120ab19cbae5833206685e5cf21b9/Vaishnav_Physical_design%23day13/IMAGES/LAB2_2)
 
 **DIRECTORY LOCATION IS MENTIONED HERE** [CLICK_HERE](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master/Vaishnav_Physical_design%23day13/Final_module)
 
@@ -5834,38 +5921,166 @@ The grephed output is pasted in reports/timing.rpt file and the worst case viola
 
 The output is as shown below in the sheet 
 
-PVT	WNS	TNS	Violating Paths
-sky130_fd_sc_hd__ff_100C_1v65	0	0	0
-sky130_fd_sc_hd__ff_100C_1v95	0	0	0
-sky130_fd_sc_hd__ff_n40C_1v56	0.07	39.81	892
-sky130_fd_sc_hd__ff_n40C_1v65	0	0	0
-sky130_fd_sc_hd__ff_n40C_1v76	0	0	0
-sky130_fd_sc_hd__ss_100C_1v40	3.28	3418.61	1121
-sky130_fd_sc_hd__ss_100C_1v60	1.82	1864.84	1115
-sky130_fd_sc_hd__ss_n40C_1v28	8.46	9191.95	1192
-sky130_fd_sc_hd__ss_n40C_1v35	5.57	5999.65	1192
-sky130_fd_sc_hd__ss_n40C_1v40	4.66	4940.82	1191
-sky130_fd_sc_hd__ss_n40C_1v44	3.83	4030.1	1147
-sky130_fd_sc_hd__ss_n40C_1v76	1.11	1112.04	1106
-sky130_fd_sc_hd__tt_025C_1v80	0.15	125.12	1004
+Here's the SETUP timing data for each library, along with the Worst Negative Slack (WNS), Total Negative Slack (TNS), and the number of Violating Paths:
+
+| PVT                                   | WNS   | TNS      | Violating Paths |
+|---------------------------------------|-------|----------|-----------------|
+| sky130_fd_sc_hd__ff_100C_1v65        | 0.00  | 0.00     | 0               |
+| sky130_fd_sc_hd__ff_100C_1v95        | 0.00  | 0.00     | 0               |
+| sky130_fd_sc_hd__ff_n40C_1v56        | 0.07  | 39.81    | 892             |
+| sky130_fd_sc_hd__ff_n40C_1v65        | 0.00  | 0.00     | 0               |
+| sky130_fd_sc_hd__ff_n40C_1v76        | 0.00  | 0.00     | 0               |
+| sky130_fd_sc_hd__ss_100C_1v40        | 3.28  | 3418.61  | 1121            |
+| sky130_fd_sc_hd__ss_100C_1v60        | 1.82  | 1864.84  | 1115            |
+| sky130_fd_sc_hd__ss_n40C_1v28        | 8.46  | 9191.95  | 1192            |
+| sky130_fd_sc_hd__ss_n40C_1v35        | 5.57  | 5999.65  | 1192            |
+| sky130_fd_sc_hd__ss_n40C_1v40        | 4.66  | 4940.82  | 1191            |
+| sky130_fd_sc_hd__ss_n40C_1v44        | 3.83  | 4030.10  | 1147            |
+| sky130_fd_sc_hd__ss_n40C_1v76        | 1.11  | 1112.04  | 1106            |
+| sky130_fd_sc_hd__tt_025C_1v80        | 0.15  | 125.12   | 1004            |
+
+This table provides SETUP timing information, including the Worst Negative Slack (WNS), Total Negative Slack (TNS), and the number of Violating Paths for each PVT condition in your design. The data reflects the results of the timing analysis for SETUP constraints.
+
+Detailed explanation for each PVT condition in the SETUP timing category, including the Worst Negative Slack (WNS) and Total Negative Slack (TNS) values, along with possible reasons for these results:
+
+1. **sky130_fd_sc_hd__ff_100C_1v65 (SETUP)**:
+   - **WNS**: 0.00
+   - **TNS**: 0.00
+   - **Reason**: In this PVT condition for SETUP timing, there are no setup time violations detected. All paths in the design meet their setup time requirements, resulting in WNS and TNS values of zero.
+
+2. **sky130_fd_sc_hd__ff_100C_1v95 (SETUP)**:
+   - **WNS**: 0.00
+   - **TNS**: 0.00
+   - **Reason**: Similar to the previous condition, there are no setup time violations in this scenario. All paths satisfy their setup time constraints.
+
+3. **sky130_fd_sc_hd__ff_n40C_1v56 (SETUP)**:
+   - **WNS**: 0.07
+   - **TNS**: 39.81
+   - **Reason**: The WNS value of 0.07 indicates a minor setup time violation on the most critical path in this PVT condition. The TNS value of 39.81 suggests that there are several paths in the design with negative slack for setup timing. Possible reasons for these violations may include temperature-related delays, voltage variations, or design complexities that affect setup times.
+
+4. **sky130_fd_sc_hd__ff_n40C_1v65 (SETUP)**:
+   - **WNS**: 0.00
+   - **TNS**: 0.00
+   - **Reason**: There are no setup time violations in this PVT condition. The design paths meet their setup time requirements adequately.
+
+5. **sky130_fd_sc_hd__ff_n40C_1v76 (SETUP)**:
+   - **WNS**: 0.00
+   - **TNS**: 0.00
+   - **Reason**: Similar to the previous condition, there are no setup time violations. The design paths satisfy the setup time constraints.
+
+6. **sky130_fd_sc_hd__ss_100C_1v40 (SETUP)**:
+   - **WNS**: 3.28
+   - **TNS**: 3418.61
+   - **Reason**: The WNS value of 3.28 indicates a significant setup time violation on the most critical path in this PVT condition. The TNS value of 3418.61 suggests that numerous paths in the design have negative slack for setup timing. Complex logic structures, high fanout, or clock domain crossings may contribute to these violations.
+
+7. **sky130_fd_sc_hd__ss_100C_1v60 (SETUP)** to **sky130_fd_sc_hd__ss_n40C_1v76 (SETUP)**:
+   - These conditions exhibit varying levels of WNS and TNS, indicating different degrees of setup time violations. The reasons can include variations in temperature, voltage, and the inherent characteristics of static synchronous logic designs.
+
+8. **sky130_fd_sc_hd__tt_025C_1v80 (SETUP)**:
+   - **WNS**: 0.15
+   - **TNS**: 125.12
+   - **Reason**: The WNS value of 0.15 indicates a minor setup time violation on the most critical path in this PVT condition. The TNS value of 125.12 suggests that several paths in the design have negative slack for setup timing. Transport-triggered architectures may introduce complexities contributing to these violations.
+
+In summary, each PVT condition for SETUP timing analysis reveals varying levels of setup time violations (WNS and TNS) due to temperature, voltage, and design complexity factors. Setup time violations can result in issues such as data corruption or incorrect operation of the integrated circuits, and designers must address these issues through timing optimization techniques to ensure reliable operation under different PVT conditions.
+
+Here's the HOLD timing data for each library, including the Worst Negative Slack (WNS), Total Negative Slack (TNS), and the number of Violating Paths:
+
+Here's the HOLD timing information for each library, including the Worst Negative Slack (WNS), Total Negative Slack (TNS), and the number of Violating Paths, to be included in your README file:
+
+| PVT                                    | WNS   | TNS     | Violating Paths |
+|----------------------------------------|-------|---------|-----------------|
+| sky130_fd_sc_hd__ff_100C_1v65 (HOLD)   | 0.15  | 48.69   | 1073            |
+| sky130_fd_sc_hd__ff_100C_1v95 (HOLD)   | 0.20  | 130.78  | 1156            |
+| sky130_fd_sc_hd__ff_n40C_1v56 (HOLD)   | 0.11  | 6.70    | 149             |
+| sky130_fd_sc_hd__ff_n40C_1v65 (HOLD)   | 0.15  | 44.24   | 1068            |
+| sky130_fd_sc_hd__ff_n40C_1v76 (HOLD)   | 0.18  | 87.18   | 1089            |
+| sky130_fd_sc_hd__ss_100C_1v40 (HOLD)   | 0.00  | 0.00    | 0               |
+| sky130_fd_sc_hd__ss_100C_1v60 (HOLD)   | 0.00  | 0.00    | 0               |
+| sky130_fd_sc_hd__ss_n40C_1v28 (HOLD)   | 0.00  | 0.00    | 0               |
+| sky130_fd_sc_hd__ss_n40C_1v35 (HOLD)   | 0.00  | 0.00    | 0               |
+| sky130_fd_sc_hd__ss_n40C_1v40 (HOLD)   | 0.00  | 0.00    | 0               |
+| sky130_fd_sc_hd__ss_n40C_1v44 (HOLD)   | 0.00  | 0.00    | 0               |
+| sky130_fd_sc_hd__ss_n40C_1v76 (HOLD)   | 0.00  | 0.00    | 0               |
+| sky130_fd_sc_hd__tt_025C_1v80 (HOLD)   | 0.09  | 5.45    | 80              |
+
+This table provides HOLD timing information, including WNS, TNS, and the number of Violating Paths for each PVT condition in your design. The data reflects the results of the timing analysis for HOLD constraints.
+
+Certainly, let's provide detailed explanations for each PVT condition in the HOLD timing category, including the Worst Negative Slack (WNS) and Total Negative Slack (TNS) values, along with possible reasons for these results:
+
+1. **sky130_fd_sc_hd__ff_100C_1v65 (HOLD)**:
+   - **WNS**: 0.15
+   - **TNS**: 48.69
+   - **Reason**: In this PVT condition for HOLD timing, there is a hold time violation on the most critical path with a WNS of 0.15. The TNS of 48.69 suggests that multiple paths across the design have negative slack for hold timing. The violation could be due to variations in temperature, voltage levels, or design complexities impacting hold times.
+
+2. **sky130_fd_sc_hd__ff_100C_1v95 (HOLD)**:
+   - **WNS**: 0.20
+   - **TNS**: 130.78
+   - **Reason**: Similar to the previous condition, there are hold time violations in this PVT scenario. The WNS of 0.20 indicates a more critical hold time violation on the most critical path. The TNS value of 130.78 suggests that numerous paths in the design have negative slack for hold timing. Temperature and voltage variations may contribute to these violations.
+
+3. **sky130_fd_sc_hd__ff_n40C_1v56 (HOLD)**:
+   - **WNS**: 0.11
+   - **TNS**: 6.70
+   - **Reason**: This PVT condition experiences a hold time violation with a WNS of 0.11 on the most critical path. The TNS of 6.70 indicates that there are a few paths with negative slack for hold timing. The violation may be attributed to temperature-related delays or slight variations in voltage levels.
+
+4. **sky130_fd_sc_hd__ff_n40C_1v65 (HOLD)**:
+   - **WNS**: 0.15
+   - **TNS**: 44.24
+   - **Reason**: There is a hold time violation with a WNS of 0.15 on the most critical path in this PVT condition. The TNS of 44.24 suggests that several paths in the design have negative slack for hold timing. Temperature fluctuations and voltage variations could be contributing factors.
+
+5. **sky130_fd_sc_hd__ff_n40C_1v76 (HOLD)**:
+   - **WNS**: 0.18
+   - **TNS**: 87.18
+   - **Reason**: This PVT condition exhibits hold time violations, with a WNS of 0.18 on the most critical path. The TNS of 87.18 indicates that many paths in the design have negative slack for hold timing. Variations in temperature and voltage levels may be impacting hold times.
+
+6. **sky130_fd_sc_hd__ss_100C_1v40 (HOLD)** to **sky130_fd_sc_hd__ss_n40C_1v76 (HOLD)**:
+   - These conditions show WNS and TNS values of zero, indicating no hold time violations. The design paths meet their hold time requirements adequately under these specific PVT conditions.
+
+7. **sky130_fd_sc_hd__tt_025C_1v80 (HOLD)**:
+   - **WNS**: 0.09
+   - **TNS**: 5.45
+   - **Reason**: In this PVT condition, there is a minor hold time violation on the most critical path with a WNS of 0.09. The TNS of 5.45 suggests that a few paths in the design have negative slack for hold timing. The violation may be due to the characteristics of transport-triggered architectures or subtle temperature and voltage variations.
+
+In summary, the HOLD timing analysis for each PVT condition reveals varying levels of hold time violations (WNS and TNS) due to temperature, voltage, and design complexity factors. Addressing these violations is crucial to ensure the reliable operation of integrated circuits under different PVT conditions.
+
+Detailed explanations for each PVT condition in the HOLD timing category, including the Worst Negative Slack (WNS) and Total Negative Slack (TNS) values, along with possible reasons for these results:
+
+1. **sky130_fd_sc_hd__ff_100C_1v65 (HOLD)**:
+   - **WNS**: 0.15
+   - **TNS**: 48.69
+   - **Reason**: In this PVT condition for HOLD timing, there is a hold time violation on the most critical path with a WNS of 0.15. The TNS of 48.69 suggests that multiple paths across the design have negative slack for hold timing. The violation could be due to variations in temperature, voltage levels, or design complexities impacting hold times.
+
+2. **sky130_fd_sc_hd__ff_100C_1v95 (HOLD)**:
+   - **WNS**: 0.20
+   - **TNS**: 130.78
+   - **Reason**: Similar to the previous condition, there are hold time violations in this PVT scenario. The WNS of 0.20 indicates a more critical hold time violation on the most critical path. The TNS value of 130.78 suggests that numerous paths in the design have negative slack for hold timing. Temperature and voltage variations may contribute to these violations.
+
+3. **sky130_fd_sc_hd__ff_n40C_1v56 (HOLD)**:
+   - **WNS**: 0.11
+   - **TNS**: 6.70
+   - **Reason**: This PVT condition experiences a hold time violation with a WNS of 0.11 on the most critical path. The TNS of 6.70 indicates that there are a few paths with negative slack for hold timing. The violation may be attributed to temperature-related delays or slight variations in voltage levels.
+
+4. **sky130_fd_sc_hd__ff_n40C_1v65 (HOLD)**:
+   - **WNS**: 0.15
+   - **TNS**: 44.24
+   - **Reason**: There is a hold time violation with a WNS of 0.15 on the most critical path in this PVT condition. The TNS of 44.24 suggests that several paths in the design have negative slack for hold timing. Temperature fluctuations and voltage variations could be contributing factors.
+
+5. **sky130_fd_sc_hd__ff_n40C_1v76 (HOLD)**:
+   - **WNS**: 0.18
+   - **TNS**: 87.18
+   - **Reason**: This PVT condition exhibits hold time violations, with a WNS of 0.18 on the most critical path. The TNS of 87.18 indicates that many paths in the design have negative slack for hold timing. Variations in temperature and voltage levels may be impacting hold times.
+
+6. **sky130_fd_sc_hd__ss_100C_1v40 (HOLD)** to **sky130_fd_sc_hd__ss_n40C_1v76 (HOLD)**:
+   - These conditions show WNS and TNS values of zero, indicating no hold time violations. The design paths meet their hold time requirements adequately under these specific PVT conditions.
+
+7. **sky130_fd_sc_hd__tt_025C_1v80 (HOLD)**:
+   - **WNS**: 0.09
+   - **TNS**: 5.45
+   - **Reason**: In this PVT condition, there is a minor hold time violation on the most critical path with a WNS of 0.09. The TNS of 5.45 suggests that a few paths in the design have negative slack for hold timing. The violation may be due to the characteristics of transport-triggered architectures or subtle temperature and voltage variations.
+
+In summary, the HOLD timing analysis for each PVT condition reveals varying levels of hold time violations (WNS and TNS) due to temperature, voltage, and design complexity factors. Addressing these violations is crucial to ensure the reliable operation of integrated circuits under different PVT conditions.
 
 
-PVT	WNS(HOLD)	TNS	Violating Paths
-sky130_fd_sc_hd__ff_100C_1v65	0.15	48.69	1073
-sky130_fd_sc_hd__ff_100C_1v95	0.2	130.78	1156
-sky130_fd_sc_hd__ff_n40C_1v56	0.11	6.7	149
-sky130_fd_sc_hd__ff_n40C_1v65	0.15	44.24	1068
-sky130_fd_sc_hd__ff_n40C_1v76	0.18	87.18	1089
-sky130_fd_sc_hd__ss_100C_1v40	0	0	0
-sky130_fd_sc_hd__ss_100C_1v60	0	0	0
-sky130_fd_sc_hd__ss_n40C_1v28	0	0	0
-sky130_fd_sc_hd__ss_n40C_1v35	0	0	0
-sky130_fd_sc_hd__ss_n40C_1v40	0	0	0
-sky130_fd_sc_hd__ss_n40C_1v44	0	0	0
-sky130_fd_sc_hd__ss_n40C_1v76	0	0	0
-sky130_fd_sc_hd__tt_025C_1v80	0.09	5.45	80
-
-
+**ALL THE REPORTS ARE MENTIONED HERE** [CLICK_HERE](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master/Vaishnav_Physical_design%23day13/Final_module/reports)
 
 </details>
 
