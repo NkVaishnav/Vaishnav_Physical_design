@@ -16,7 +16,10 @@ foreach var $list_name_1 {
 	read_lib $a -no_warnings >> b.txt;
 	#write_lib $var -f db -out $b;
 }
-sh grep -o 'Error: Line [0-9]\+' b.txt | awk '{print $NF}' > c.txt
+
+
+sh grep -o 'Error: Line \[0-9]*' b.txt | awk '{print \$NF}' > c.txt;
+
 
 set file [open "c.txt" "r"];
 set line_num {};
@@ -55,5 +58,6 @@ foreach var1 $list_name_1 {
 	set b1 "${var1}.db";
 	echo $a1;
 	read_lib $a1 -no_warnings;
+	echo "done"
 	write_lib $var1 -f db -out $b1;
 }
