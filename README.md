@@ -5960,6 +5960,16 @@ Here's the SETUP timing data for each library, along with the Worst Negative Sla
 
 This table provides SETUP timing information, including the Worst Negative Slack (WNS), Total Negative Slack (TNS), and the number of Violating Paths for each PVT condition in your design. The data reflects the results of the timing analysis for SETUP constraints.
 
+**PVT vs WNS**
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1ff466b7-4e88-473a-ab11-1e23acc21bf1)
+
+**PVT vs TNS**
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f1437b97-28f6-436c-b340-a0c06da38d4f)
+
+
+
 Detailed explanation for each PVT condition in the SETUP timing category, including the Worst Negative Slack (WNS) and Total Negative Slack (TNS) values, along with possible reasons for these results:
 
 1. **sky130_fd_sc_hd__ff_100C_1v65 (SETUP)**:
@@ -6023,6 +6033,17 @@ Here's the HOLD timing information for each library, including the Worst Negativ
 | sky130_fd_sc_hd__tt_025C_1v80 (HOLD)   | 0.09  | 5.45    | 80              |
 
 This table provides HOLD timing information, including WNS, TNS, and the number of Violating Paths for each PVT condition in your design. The data reflects the results of the timing analysis for HOLD constraints.
+
+**PVT vs WNS**
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b96bd3b5-cf28-4111-9bee-74754daf9603)
+
+**PVT vs TNS**
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f86cff0c-684d-4f9e-bb68-74a3a935ccb3)
+
+
+
 
 Certainly, let's provide detailed explanations for each PVT condition in the HOLD timing category, including the Worst Negative Slack (WNS) and Total Negative Slack (TNS) values, along with possible reasons for these results:
 
