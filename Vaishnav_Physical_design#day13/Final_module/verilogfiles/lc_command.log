@@ -1,0 +1,19 @@
+#@ # 
+#@ # Running lc_shell Version T-2022.03-SP3 for linux64 -- Jul 13, 2022
+#@ # Date:   Tue Sep 26 10:27:49 2023
+#@ # Run by: nk.vaishnav@ssirlab03
+#@ 
+
+echo $target_library
+sh gvim .synopsys_dc.setup
+sh gvim .synopsys_dc.setup &
+set target_library {sky130_fd_sc_hd__tt_025C_1v80.db avsddac.db avsdpll.db}
+set target_library {sky130_fd_sc_hd__tt_025C_1v80.db avsddac.db avsdpll.db}
+set link_library {* sky130_fd_sc_hd__tt_025C_1v80.db avsddac.db avsdpll.db}
+echo $target_library
+echo $link_library
+source /home/nk.vaishnav/VSDBabySoC/src/sdc/vsdbabysoc_layout.sdc
+create_clock [get_pins {pll/CLK}] -name clk -period 11
+ls
+read_verilog mythcore_test.v
+help *read*

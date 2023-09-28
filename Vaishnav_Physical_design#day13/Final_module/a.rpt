@@ -1,0 +1,900 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:28:46 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ff_100C_1v65   Library: sky130_fd_sc_hd__ff_100C_1v65
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_rd_a3_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_src2_value_a3_reg[30]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_rd_a3_reg[2]/CLK (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.00 #     1.00 r
+  core1/CPU_rd_a3_reg[2]/Q (sky130_fd_sc_hd__dfxtp_2)     0.26       1.26 f
+  core1/U1087/Y (sky130_fd_sc_hd__xnor2_1)                0.11       1.37 r
+  core1/U1088/Y (sky130_fd_sc_hd__nand2_1)                0.05       1.42 f
+  core1/U1089/Y (sky130_fd_sc_hd__nor2_1)                 0.06       1.48 r
+  core1/U1093/Y (sky130_fd_sc_hd__nand2_1)                0.05       1.53 f
+  core1/U544/Y (sky130_fd_sc_hd__inv_2)                   0.05       1.58 r
+  core1/U542/Y (sky130_fd_sc_hd__nand2_4)                 0.06       1.64 f
+  core1/U591/Y (sky130_fd_sc_hd__nand3_1)                 0.07       1.71 r
+  core1/U1101/Y (sky130_fd_sc_hd__inv_2)                  0.06       1.77 f
+  core1/U1106/Y (sky130_fd_sc_hd__nand2_1)                0.06       1.83 r
+  core1/U1107/Y (sky130_fd_sc_hd__inv_1)                  0.08       1.91 f
+  core1/U1412/Y (sky130_fd_sc_hd__inv_1)                  0.10       2.01 r
+  core1/U3777/Y (sky130_fd_sc_hd__nor2_1)                 0.04       2.04 f
+  core1/U3780/Y (sky130_fd_sc_hd__nor4_1)                 0.18       2.22 r
+  core1/U3781/X (sky130_fd_sc_hd__and4_1)                 0.16       2.38 r
+  core1/U3782/Y (sky130_fd_sc_hd__o21ai_1)                0.03       2.41 f
+  core1/CPU_src2_value_a3_reg[30]/D (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.00       2.41 f
+  data arrival time                                                  2.41
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_src2_value_a3_reg[30]/CLK (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.00       2.50 r
+  library setup time                                     -0.09       2.41
+  data required time                                                 2.41
+  --------------------------------------------------------------------------
+  data required time                                                 2.41
+  data arrival time                                                 -2.41
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:29:10 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ff_100C_1v95   Library: sky130_fd_sc_hd__ff_100C_1v95
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_src1_value_a3_reg[15]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_src2_value_a3_reg[31]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_src1_value_a3_reg[15]/CLK (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.00 #     1.00 r
+  core1/CPU_src1_value_a3_reg[15]/Q (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.24       1.24 r
+  core1/U189/X (sky130_fd_sc_hd__xor2_1)                  0.24       1.48 r
+  core1/U353/Y (sky130_fd_sc_hd__inv_1)                   0.03       1.51 f
+  core1/U354/Y (sky130_fd_sc_hd__nand2_1)                 0.05       1.56 r
+  core1/U355/X (sky130_fd_sc_hd__o211a_1)                 0.08       1.63 r
+  core1/U356/Y (sky130_fd_sc_hd__nand2_1)                 0.03       1.66 f
+  core1/U187/Y (sky130_fd_sc_hd__inv_1)                   0.04       1.70 r
+  core1/U194/X (sky130_fd_sc_hd__o21a_1)                  0.08       1.78 r
+  core1/U94/X (sky130_fd_sc_hd__o21a_2)                   0.08       1.86 r
+  core1/U107/X (sky130_fd_sc_hd__o21a_1)                  0.09       1.95 r
+  core1/U888/Y (sky130_fd_sc_hd__a21oi_2)                 0.03       1.98 f
+  core1/U889/Y (sky130_fd_sc_hd__nand2_2)                 0.05       2.02 r
+  core1/U890/Y (sky130_fd_sc_hd__o21ai_2)                 0.04       2.06 f
+  core1/U891/Y (sky130_fd_sc_hd__xnor2_2)                 0.11       2.17 f
+  core1/U914/Y (sky130_fd_sc_hd__a21oi_2)                 0.09       2.26 r
+  core1/U915/X (sky130_fd_sc_hd__buf_6)                   0.11       2.37 r
+  core1/U964/Y (sky130_fd_sc_hd__o211ai_1)                0.05       2.43 f
+  core1/CPU_src2_value_a3_reg[31]/D (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.00       2.43 f
+  data arrival time                                                  2.43
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_src2_value_a3_reg[31]/CLK (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.00       2.50 r
+  library setup time                                     -0.07       2.43
+  data required time                                                 2.43
+  --------------------------------------------------------------------------
+  data required time                                                 2.43
+  data arrival time                                                 -2.43
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:31:00 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ff_n40C_1v56   Library: sky130_fd_sc_hd__ff_n40C_1v56
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_src1_value_a3_reg[13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_src2_value_a3_reg[19]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_src1_value_a3_reg[13]/CLK (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.00 #     1.00 r
+  core1/CPU_src1_value_a3_reg[13]/Q (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.30       1.30 f
+  core1/U1315/Y (sky130_fd_sc_hd__nor2_2)                 0.11       1.42 r
+  core1/U3083/Y (sky130_fd_sc_hd__nand2_1)                0.05       1.47 f
+  core1/U3665/Y (sky130_fd_sc_hd__o211ai_2)               0.06       1.53 r
+  core1/U2684/Y (sky130_fd_sc_hd__inv_2)                  0.05       1.58 f
+  core1/U2614/Y (sky130_fd_sc_hd__nand3_2)                0.06       1.64 r
+  core1/U2613/Y (sky130_fd_sc_hd__inv_2)                  0.04       1.67 f
+  core1/U1007/Y (sky130_fd_sc_hd__nand3_2)                0.08       1.76 r
+  core1/U1006/Y (sky130_fd_sc_hd__inv_2)                  0.04       1.80 f
+  core1/U2630/Y (sky130_fd_sc_hd__nand2_4)                0.09       1.89 r
+  core1/U1170/Y (sky130_fd_sc_hd__nand3_4)                0.07       1.96 f
+  core1/U1169/Y (sky130_fd_sc_hd__xnor2_1)                0.12       2.08 f
+  core1/U3129/Y (sky130_fd_sc_hd__nand2_1)                0.06       2.14 r
+  core1/U2345/Y (sky130_fd_sc_hd__nand3_2)                0.07       2.21 f
+  core1/U2344/Y (sky130_fd_sc_hd__inv_2)                  0.08       2.29 r
+  core1/U5996/Y (sky130_fd_sc_hd__inv_2)                  0.05       2.34 f
+  core1/U226/Y (sky130_fd_sc_hd__nand2_2)                 0.04       2.39 r
+  core1/U225/Y (sky130_fd_sc_hd__nand4_1)                 0.04       2.43 f
+  core1/CPU_src2_value_a3_reg[19]/D (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       2.43 f
+  data arrival time                                                  2.43
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_src2_value_a3_reg[19]/CLK (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       2.50 r
+  library setup time                                     -0.14       2.36
+  data required time                                                 2.36
+  --------------------------------------------------------------------------
+  data required time                                                 2.36
+  data arrival time                                                 -2.43
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.07
+
+
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:32:09 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ff_n40C_1v65   Library: sky130_fd_sc_hd__ff_n40C_1v65
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_src1_value_a3_reg[9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_Xreg_value_a4_reg[29][23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_src1_value_a3_reg[9]/CLK (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.00 #     1.00 r
+  core1/CPU_src1_value_a3_reg[9]/Q (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.27       1.27 r
+  core1/U40/X (sky130_fd_sc_hd__buf_1)                    0.15       1.43 r
+  core1/U2595/Y (sky130_fd_sc_hd__nand2_1)                0.07       1.49 f
+  core1/U2770/Y (sky130_fd_sc_hd__nand4_1)                0.06       1.56 r
+  core1/U2772/Y (sky130_fd_sc_hd__nand3_1)                0.08       1.63 f
+  core1/U2024/Y (sky130_fd_sc_hd__nand3_4)                0.11       1.74 r
+  core1/U491/Y (sky130_fd_sc_hd__nand2_2)                 0.05       1.79 f
+  core1/U624/Y (sky130_fd_sc_hd__nor2_1)                  0.10       1.89 r
+  core1/U3369/Y (sky130_fd_sc_hd__inv_1)                  0.03       1.92 f
+  core1/U835/Y (sky130_fd_sc_hd__nand3_1)                 0.05       1.98 r
+  core1/U1986/X (sky130_fd_sc_hd__o211a_1)                0.10       2.07 r
+  core1/U3372/Y (sky130_fd_sc_hd__o211ai_2)               0.05       2.12 f
+  core1/U539/Y (sky130_fd_sc_hd__inv_2)                   0.07       2.19 r
+  core1/U537/X (sky130_fd_sc_hd__buf_6)                   0.13       2.32 r
+  core1/U3829/Y (sky130_fd_sc_hd__o22ai_1)                0.04       2.35 f
+  core1/CPU_Xreg_value_a4_reg[29][23]/D (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.00       2.35 f
+  data arrival time                                                  2.35
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_Xreg_value_a4_reg[29][23]/CLK (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.00       2.50 r
+  library setup time                                     -0.15       2.35
+  data required time                                                 2.35
+  --------------------------------------------------------------------------
+  data required time                                                 2.35
+  data arrival time                                                 -2.35
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:32:58 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ff_n40C_1v76   Library: sky130_fd_sc_hd__ff_n40C_1v76
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_src2_value_a3_reg[6]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_Xreg_value_a4_reg[27][30]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_src2_value_a3_reg[6]/CLK (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.00 #     1.00 r
+  core1/CPU_src2_value_a3_reg[6]/Q (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.22       1.22 r
+  core1/U570/Y (sky130_fd_sc_hd__inv_1)                   0.03       1.25 f
+  core1/U267/Y (sky130_fd_sc_hd__nand2_1)                 0.08       1.33 r
+  core1/U125/Y (sky130_fd_sc_hd__nand2_2)                 0.05       1.38 f
+  core1/U599/Y (sky130_fd_sc_hd__nand2_1)                 0.04       1.43 r
+  core1/U600/Y (sky130_fd_sc_hd__inv_1)                   0.03       1.46 f
+  core1/U612/Y (sky130_fd_sc_hd__o21ai_1)                 0.05       1.51 r
+  core1/U613/Y (sky130_fd_sc_hd__nand3_1)                 0.07       1.58 f
+  core1/U614/Y (sky130_fd_sc_hd__nand2_1)                 0.05       1.63 r
+  core1/U615/Y (sky130_fd_sc_hd__nand2_1)                 0.04       1.68 f
+  core1/U801/Y (sky130_fd_sc_hd__nand2_1)                 0.06       1.73 r
+  core1/U804/Y (sky130_fd_sc_hd__nand2_1)                 0.04       1.77 f
+  core1/U221/X (sky130_fd_sc_hd__o21a_2)                  0.16       1.93 f
+  core1/U810/X (sky130_fd_sc_hd__clkbuf_1)                0.08       2.01 f
+  core1/U933/Y (sky130_fd_sc_hd__nand2_1)                 0.04       2.05 r
+  core1/U934/X (sky130_fd_sc_hd__o31a_2)                  0.07       2.12 r
+  core1/U353/Y (sky130_fd_sc_hd__nand3_2)                 0.06       2.19 f
+  core1/U1896/Y (sky130_fd_sc_hd__inv_1)                  0.16       2.35 r
+  core1/U4495/Y (sky130_fd_sc_hd__o22ai_1)                0.03       2.38 f
+  core1/CPU_Xreg_value_a4_reg[27][30]/D (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.00       2.38 f
+  data arrival time                                                  2.38
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_Xreg_value_a4_reg[27][30]/CLK (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.00       2.50 r
+  library setup time                                     -0.12       2.38
+  data required time                                                 2.38
+  --------------------------------------------------------------------------
+  data required time                                                 2.38
+  data arrival time                                                 -2.38
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:34:13 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_100C_1v40   Library: sky130_fd_sc_hd__ss_100C_1v40
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_src1_value_a3_reg[13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_src2_value_a3_reg[26]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_src1_value_a3_reg[13]/CLK (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.00 #     1.00 r
+  core1/CPU_src1_value_a3_reg[13]/Q (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.86       1.86 f
+  core1/U1416/Y (sky130_fd_sc_hd__nand2_2)                0.18       2.04 r
+  core1/U887/Y (sky130_fd_sc_hd__nand2_2)                 0.15       2.19 f
+  core1/U1418/Y (sky130_fd_sc_hd__nand2_2)                0.13       2.33 r
+  core1/U818/Y (sky130_fd_sc_hd__nand3_2)                 0.15       2.47 f
+  core1/U809/Y (sky130_fd_sc_hd__inv_1)                   0.13       2.61 r
+  core1/U1419/Y (sky130_fd_sc_hd__nand2_2)                0.14       2.75 f
+  core1/U935/Y (sky130_fd_sc_hd__nor2_2)                  0.23       2.98 r
+  core1/U1008/Y (sky130_fd_sc_hd__nand2_1)                0.18       3.16 f
+  core1/U1004/Y (sky130_fd_sc_hd__inv_1)                  0.13       3.29 r
+  core1/U725/Y (sky130_fd_sc_hd__nand2_2)                 0.19       3.48 f
+  core1/U723/Y (sky130_fd_sc_hd__nand3_2)                 0.19       3.67 r
+  core1/U573/Y (sky130_fd_sc_hd__nand2_1)                 0.18       3.84 f
+  core1/U722/Y (sky130_fd_sc_hd__xnor2_1)                 0.30       4.14 f
+  core1/U230/Y (sky130_fd_sc_hd__a21oi_1)                 0.28       4.42 r
+  core1/U325/Y (sky130_fd_sc_hd__nand2_1)                 0.21       4.63 f
+  core1/U194/Y (sky130_fd_sc_hd__inv_2)                   0.20       4.83 r
+  core1/U5429/Y (sky130_fd_sc_hd__inv_1)                  0.16       4.99 f
+  core1/U5469/Y (sky130_fd_sc_hd__nand2_1)                0.12       5.11 r
+  core1/U5492/Y (sky130_fd_sc_hd__nand3_1)                0.16       5.27 f
+  core1/CPU_src2_value_a3_reg[26]/D (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       5.27 f
+  data arrival time                                                  5.27
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_src2_value_a3_reg[26]/CLK (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       2.50 r
+  library setup time                                     -0.51       1.99
+  data required time                                                 1.99
+  --------------------------------------------------------------------------
+  data required time                                                 1.99
+  data arrival time                                                 -5.27
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -3.28
+
+
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:35:34 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_100C_1v60   Library: sky130_fd_sc_hd__ss_100C_1v60
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_src1_value_a3_reg[19]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_src2_value_a3_reg[28]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_src1_value_a3_reg[19]/CLK (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.00 #     1.00 r
+  core1/CPU_src1_value_a3_reg[19]/Q (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.70       1.70 r
+  core1/U450/Y (sky130_fd_sc_hd__inv_4)                   0.13       1.83 f
+  core1/U519/Y (sky130_fd_sc_hd__nand2_4)                 0.13       1.96 r
+  core1/U1010/Y (sky130_fd_sc_hd__nand4_4)                0.20       2.16 f
+  core1/U63/Y (sky130_fd_sc_hd__nor2_1)                   0.24       2.39 r
+  core1/U1124/Y (sky130_fd_sc_hd__nand2_2)                0.14       2.53 f
+  core1/U1405/Y (sky130_fd_sc_hd__inv_2)                  0.12       2.66 r
+  core1/U640/Y (sky130_fd_sc_hd__nor2_2)                  0.09       2.75 f
+  core1/U430/Y (sky130_fd_sc_hd__nand3_1)                 0.09       2.84 r
+  core1/U936/Y (sky130_fd_sc_hd__inv_1)                   0.10       2.94 f
+  core1/U675/Y (sky130_fd_sc_hd__inv_2)                   0.11       3.06 r
+  core1/U685/Y (sky130_fd_sc_hd__o211ai_2)                0.17       3.23 f
+  core1/U1039/Y (sky130_fd_sc_hd__nor2_2)                 0.17       3.39 r
+  core1/U526/Y (sky130_fd_sc_hd__nand3_2)                 0.19       3.58 f
+  core1/U2003/Y (sky130_fd_sc_hd__inv_2)                  0.14       3.72 r
+  core1/U5710/Y (sky130_fd_sc_hd__inv_2)                  0.11       3.83 f
+  core1/U152/Y (sky130_fd_sc_hd__nand2_2)                 0.08       3.91 r
+  core1/U5827/Y (sky130_fd_sc_hd__nand3_1)                0.11       4.02 f
+  core1/CPU_src2_value_a3_reg[28]/D (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       4.02 f
+  data arrival time                                                  4.02
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_src2_value_a3_reg[28]/CLK (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       2.50 r
+  library setup time                                     -0.30       2.20
+  data required time                                                 2.20
+  --------------------------------------------------------------------------
+  data required time                                                 2.20
+  data arrival time                                                 -4.02
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.82
+
+
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:38:47 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_n40C_1v28   Library: sky130_fd_sc_hd__ss_n40C_1v28
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_src1_value_a3_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_Xreg_value_a4_reg[2][16]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_src1_value_a3_reg[5]/CLK (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.00 #     1.00 r
+  core1/CPU_src1_value_a3_reg[5]/Q (sky130_fd_sc_hd__dfxtp_2)
+                                                          2.36       3.36 r
+  core1/U1036/Y (sky130_fd_sc_hd__inv_2)                  0.33       3.69 f
+  core1/U2100/Y (sky130_fd_sc_hd__nand2_4)                0.35       4.04 r
+  core1/U1925/Y (sky130_fd_sc_hd__nand3_2)                0.36       4.40 f
+  core1/U295/Y (sky130_fd_sc_hd__inv_2)                   0.20       4.60 r
+  core1/U3195/Y (sky130_fd_sc_hd__nor2_1)                 0.10       4.70 f
+  core1/U2683/Y (sky130_fd_sc_hd__nand2_1)                0.28       4.98 r
+  core1/U1388/Y (sky130_fd_sc_hd__inv_2)                  0.23       5.21 f
+  core1/U1986/Y (sky130_fd_sc_hd__nand2_4)                0.36       5.58 r
+  core1/U1889/Y (sky130_fd_sc_hd__nand2_4)                0.33       5.91 f
+  core1/U1890/Y (sky130_fd_sc_hd__nand2_8)                0.44       6.35 r
+  core1/U2179/Y (sky130_fd_sc_hd__nand3_2)                0.41       6.76 f
+  core1/U2043/Y (sky130_fd_sc_hd__nand2_4)                0.41       7.17 r
+  core1/U2042/Y (sky130_fd_sc_hd__xnor2_1)                0.61       7.78 r
+  core1/U163/Y (sky130_fd_sc_hd__nand2_1)                 0.56       8.34 f
+  core1/U162/Y (sky130_fd_sc_hd__nand3_2)                 0.39       8.72 r
+  core1/U4378/Y (sky130_fd_sc_hd__inv_2)                  0.25       8.97 f
+  core1/U6298/Y (sky130_fd_sc_hd__inv_1)                  0.71       9.68 r
+  core1/U1978/Y (sky130_fd_sc_hd__nand2_1)                0.54      10.22 f
+  core1/U1975/Y (sky130_fd_sc_hd__nand2_1)                0.25      10.47 r
+  core1/CPU_Xreg_value_a4_reg[2][16]/D (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00      10.47 r
+  data arrival time                                                 10.47
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_Xreg_value_a4_reg[2][16]/CLK (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       2.50 r
+  library setup time                                     -0.50       2.00
+  data required time                                                 2.00
+  --------------------------------------------------------------------------
+  data required time                                                 2.00
+  data arrival time                                                -10.47
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -8.46
+
+
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:41:01 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_n40C_1v35   Library: sky130_fd_sc_hd__ss_n40C_1v35
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_src2_value_a3_reg[7]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_Xreg_value_a4_reg[27][31]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_src2_value_a3_reg[7]/CLK (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00 #     1.00 r
+  core1/CPU_src2_value_a3_reg[7]/Q (sky130_fd_sc_hd__dfxtp_4)
+                                                          1.68       2.68 r
+  core1/U1194/Y (sky130_fd_sc_hd__nand2b_4)               0.53       3.21 r
+  core1/U324/Y (sky130_fd_sc_hd__nand3_2)                 0.25       3.46 f
+  core1/U1162/Y (sky130_fd_sc_hd__nand2_2)                0.25       3.72 r
+  core1/U1161/Y (sky130_fd_sc_hd__nand3_2)                0.29       4.00 f
+  core1/U1976/Y (sky130_fd_sc_hd__nor2_2)                 0.46       4.46 r
+  core1/U2097/Y (sky130_fd_sc_hd__nand3_2)                0.35       4.81 f
+  core1/U2949/Y (sky130_fd_sc_hd__nand3_4)                0.37       5.18 r
+  core1/U1373/Y (sky130_fd_sc_hd__nand2_2)                0.28       5.46 f
+  core1/U1371/Y (sky130_fd_sc_hd__nand2_1)                0.20       5.67 r
+  core1/U1033/Y (sky130_fd_sc_hd__nand2_1)                0.18       5.84 f
+  core1/U388/Y (sky130_fd_sc_hd__inv_2)                   0.17       6.01 r
+  core1/U1056/Y (sky130_fd_sc_hd__nand3_2)                0.21       6.22 f
+  core1/U2355/Y (sky130_fd_sc_hd__clkinv_4)               0.28       6.50 r
+  core1/U2859/Y (sky130_fd_sc_hd__inv_1)                  0.20       6.70 f
+  core1/U2864/Y (sky130_fd_sc_hd__nand2_1)                0.20       6.90 r
+  core1/U7620/Y (sky130_fd_sc_hd__nand2_1)                0.14       7.04 f
+  core1/CPU_Xreg_value_a4_reg[27][31]/D (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       7.04 f
+  data arrival time                                                  7.04
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_Xreg_value_a4_reg[27][31]/CLK (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       2.50 r
+  library setup time                                     -1.03       1.47
+  data required time                                                 1.47
+  --------------------------------------------------------------------------
+  data required time                                                 1.47
+  data arrival time                                                 -7.04
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -5.57
+
+
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:42:38 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_n40C_1v40   Library: sky130_fd_sc_hd__ss_n40C_1v40
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_src1_value_a3_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_src2_value_a3_reg[31]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_src1_value_a3_reg[12]/CLK (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00 #     1.00 r
+  core1/CPU_src1_value_a3_reg[12]/Q (sky130_fd_sc_hd__dfxtp_4)
+                                                          1.41       2.41 r
+  core1/U225/Y (sky130_fd_sc_hd__nand2_2)                 0.22       2.64 f
+  core1/U238/Y (sky130_fd_sc_hd__inv_2)                   0.14       2.78 r
+  core1/U1639/Y (sky130_fd_sc_hd__nand2_2)                0.13       2.91 f
+  core1/U1902/Y (sky130_fd_sc_hd__nand3_2)                0.22       3.13 r
+  core1/U1635/Y (sky130_fd_sc_hd__inv_2)                  0.15       3.28 f
+  core1/U204/Y (sky130_fd_sc_hd__nand3_2)                 0.16       3.44 r
+  core1/U203/Y (sky130_fd_sc_hd__nand3_2)                 0.18       3.62 f
+  core1/U211/Y (sky130_fd_sc_hd__inv_2)                   0.15       3.77 r
+  core1/U254/Y (sky130_fd_sc_hd__nand3_2)                 0.22       3.99 f
+  core1/U237/Y (sky130_fd_sc_hd__nand2_2)                 0.25       4.23 r
+  core1/U212/Y (sky130_fd_sc_hd__nand3_2)                 0.26       4.50 f
+  core1/U1043/Y (sky130_fd_sc_hd__nand3_2)                0.30       4.80 r
+  core1/U274/Y (sky130_fd_sc_hd__nand2_2)                 0.18       4.98 f
+  core1/U314/Y (sky130_fd_sc_hd__nand3_2)                 0.16       5.14 r
+  core1/U2378/Y (sky130_fd_sc_hd__inv_1)                  0.11       5.25 f
+  core1/U2377/Y (sky130_fd_sc_hd__nand3_2)                0.19       5.44 r
+  core1/U2381/Y (sky130_fd_sc_hd__nand3_2)                0.22       5.67 f
+  core1/U3450/Y (sky130_fd_sc_hd__inv_2)                  0.21       5.88 r
+  core1/U3451/Y (sky130_fd_sc_hd__inv_2)                  0.14       6.01 f
+  core1/U2187/Y (sky130_fd_sc_hd__nand2_2)                0.14       6.15 r
+  core1/U6954/Y (sky130_fd_sc_hd__nand4_1)                0.17       6.32 f
+  core1/CPU_src2_value_a3_reg[31]/D (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       6.32 f
+  data arrival time                                                  6.32
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_src2_value_a3_reg[31]/CLK (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       2.50 r
+  library setup time                                     -0.84       1.66
+  data required time                                                 1.66
+  --------------------------------------------------------------------------
+  data required time                                                 1.66
+  data arrival time                                                 -6.32
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -4.66
+
+
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:44:35 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_n40C_1v44   Library: sky130_fd_sc_hd__ss_n40C_1v44
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_src1_value_a3_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_src2_value_a3_reg[31]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_src1_value_a3_reg[8]/CLK (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.00 #     1.00 r
+  core1/CPU_src1_value_a3_reg[8]/Q (sky130_fd_sc_hd__dfxtp_2)
+                                                          1.19       2.19 r
+  core1/U2890/Y (sky130_fd_sc_hd__inv_2)                  0.21       2.40 f
+  core1/U1051/Y (sky130_fd_sc_hd__clkinv_4)               0.14       2.54 r
+  core1/U981/Y (sky130_fd_sc_hd__nand2_2)                 0.10       2.64 f
+  core1/U198/Y (sky130_fd_sc_hd__o21ai_2)                 0.12       2.76 r
+  core1/U197/Y (sky130_fd_sc_hd__inv_1)                   0.18       2.94 f
+  core1/U196/Y (sky130_fd_sc_hd__nand3_2)                 0.19       3.12 r
+  core1/U2821/Y (sky130_fd_sc_hd__inv_1)                  0.12       3.25 f
+  core1/U1994/Y (sky130_fd_sc_hd__nand2_2)                0.14       3.39 r
+  core1/U1993/Y (sky130_fd_sc_hd__nand2_1)                0.14       3.53 f
+  core1/U2857/Y (sky130_fd_sc_hd__nand3_2)                0.21       3.74 r
+  core1/U2856/Y (sky130_fd_sc_hd__nand2_1)                0.18       3.92 f
+  core1/U2077/Y (sky130_fd_sc_hd__inv_2)                  0.20       4.12 r
+  core1/U1861/Y (sky130_fd_sc_hd__nand2_4)                0.14       4.26 f
+  core1/U1983/Y (sky130_fd_sc_hd__nand2_4)                0.23       4.49 r
+  core1/U1894/Y (sky130_fd_sc_hd__nand3_2)                0.18       4.67 f
+  core1/U2599/Y (sky130_fd_sc_hd__nand3_2)                0.17       4.85 r
+  core1/U2954/Y (sky130_fd_sc_hd__nand3_2)                0.19       5.04 f
+  core1/U3160/Y (sky130_fd_sc_hd__clkinv_1)               0.17       5.21 r
+  core1/U3895/Y (sky130_fd_sc_hd__inv_2)                  0.13       5.34 f
+  core1/U2093/Y (sky130_fd_sc_hd__nand2_2)                0.14       5.48 r
+  core1/U717/Y (sky130_fd_sc_hd__nand4_1)                 0.15       5.63 f
+  core1/CPU_src2_value_a3_reg[31]/D (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       5.63 f
+  data arrival time                                                  5.63
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_src2_value_a3_reg[31]/CLK (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       2.50 r
+  library setup time                                     -0.70       1.80
+  data required time                                                 1.80
+  --------------------------------------------------------------------------
+  data required time                                                 1.80
+  data arrival time                                                 -5.63
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -3.83
+
+
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:46:04 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_n40C_1v76   Library: sky130_fd_sc_hd__ss_n40C_1v76
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_src1_value_a3_reg[10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_Xreg_value_a4_reg[1][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_src1_value_a3_reg[10]/CLK (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.00 #     1.00 r
+  core1/CPU_src1_value_a3_reg[10]/Q (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.48       1.48 f
+  core1/U1579/Y (sky130_fd_sc_hd__nor2_2)                 0.16       1.64 r
+  core1/U2840/Y (sky130_fd_sc_hd__nand2_1)                0.11       1.75 f
+  core1/U2873/Y (sky130_fd_sc_hd__nand3_2)                0.11       1.86 r
+  core1/U2872/Y (sky130_fd_sc_hd__inv_2)                  0.07       1.93 f
+  core1/U3120/Y (sky130_fd_sc_hd__nand3_2)                0.08       2.00 r
+  core1/U3834/Y (sky130_fd_sc_hd__nand2_2)                0.09       2.09 f
+  core1/U2851/Y (sky130_fd_sc_hd__nor2_4)                 0.18       2.27 r
+  core1/U544/Y (sky130_fd_sc_hd__nand2_2)                 0.10       2.37 f
+  core1/U1541/Y (sky130_fd_sc_hd__inv_2)                  0.10       2.47 r
+  core1/U1508/Y (sky130_fd_sc_hd__nand2_4)                0.08       2.55 f
+  core1/U1506/Y (sky130_fd_sc_hd__nand2_1)                0.08       2.63 r
+  core1/U187/Y (sky130_fd_sc_hd__nand2_1)                 0.06       2.69 f
+  core1/U186/Y (sky130_fd_sc_hd__clkinv_1)                0.05       2.75 r
+  core1/U3138/Y (sky130_fd_sc_hd__nand4_1)                0.09       2.84 f
+  core1/U3141/Y (sky130_fd_sc_hd__inv_1)                  0.10       2.94 r
+  core1/U268/Y (sky130_fd_sc_hd__nand3_2)                 0.11       3.04 f
+  core1/U4135/Y (sky130_fd_sc_hd__inv_1)                  0.13       3.17 r
+  core1/U2830/Y (sky130_fd_sc_hd__inv_2)                  0.08       3.25 f
+  core1/U2929/Y (sky130_fd_sc_hd__nand2_1)                0.08       3.33 r
+  core1/U2928/Y (sky130_fd_sc_hd__nand2_1)                0.05       3.38 f
+  core1/CPU_Xreg_value_a4_reg[1][18]/D (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       3.38 f
+  data arrival time                                                  3.38
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_Xreg_value_a4_reg[1][18]/CLK (sky130_fd_sc_hd__dfxtp_4)
+                                                          0.00       2.50 r
+  library setup time                                     -0.23       2.27
+  data required time                                                 2.27
+  --------------------------------------------------------------------------
+  data required time                                                 2.27
+  data arrival time                                                 -3.38
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.11
+
+
+1
+Information: Updating design information... (UID-85)
+Warning: Design 'vsdbabysoc' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : vsdbabysoc
+Version: T-2022.03-SP5-1
+Date   : Wed Sep 27 18:47:25 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: tt_025C_1v80   Library: sky130_fd_sc_hd__tt_025C_1v80
+Wire Load Model Mode: top
+
+  Startpoint: core1/CPU_rd_a3_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core1/CPU_src2_value_a3_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  core1/CPU_rd_a3_reg[3]/CLK (sky130_fd_sc_hd__dfxtp_2)
+                                                          0.00 #     1.00 r
+  core1/CPU_rd_a3_reg[3]/Q (sky130_fd_sc_hd__dfxtp_2)     0.31       1.31 f
+  core1/U1832/Y (sky130_fd_sc_hd__xnor2_1)                0.14       1.44 r
+  core1/U1830/Y (sky130_fd_sc_hd__nand4_1)                0.09       1.54 f
+  core1/U2861/Y (sky130_fd_sc_hd__inv_1)                  0.07       1.60 r
+  core1/U385/Y (sky130_fd_sc_hd__nand2_2)                 0.07       1.68 f
+  core1/U384/Y (sky130_fd_sc_hd__nand3_2)                 0.12       1.80 r
+  core1/U2119/Y (sky130_fd_sc_hd__inv_2)                  0.08       1.88 f
+  core1/U2620/Y (sky130_fd_sc_hd__nand2_4)                0.20       2.08 r
+  core1/U3811/X (sky130_fd_sc_hd__o22a_1)                 0.16       2.23 r
+  core1/U210/Y (sky130_fd_sc_hd__nand4_1)                 0.08       2.32 f
+  core1/U2703/Y (sky130_fd_sc_hd__inv_1)                  0.05       2.37 r
+  core1/U3817/Y (sky130_fd_sc_hd__o21ai_1)                0.05       2.42 f
+  core1/U3818/Y (sky130_fd_sc_hd__nor2_1)                 0.08       2.49 r
+  core1/U3835/Y (sky130_fd_sc_hd__nand2_1)                0.04       2.54 f
+  core1/CPU_src2_value_a3_reg[6]/D (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.00       2.54 f
+  data arrival time                                                  2.54
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             1.00       3.00
+  clock uncertainty                                      -0.50       2.50
+  core1/CPU_src2_value_a3_reg[6]/CLK (sky130_fd_sc_hd__dfxtp_1)
+                                                          0.00       2.50 r
+  library setup time                                     -0.11       2.39
+  data required time                                                 2.39
+  --------------------------------------------------------------------------
+  data required time                                                 2.39
+  data arrival time                                                 -2.54
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.15
+
+
+1
