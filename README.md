@@ -5729,7 +5729,9 @@ foreach var $list_name_1 {
 	read_lib $a -no_warnings >> b.txt;
 	#write_lib $var -f db -out $b;
 }
-sh grep -o 'Error: Line [0-9]\+' b.txt | awk '{print $NF}' > c.txt
+
+sh grep -o 'Error: Line \[0-9]*' b.txt | awk '{print \$NF}' > c.txt;
+
 
 set file [open "c.txt" "r"];
 set line_num {};
@@ -5823,7 +5825,14 @@ sh grep "Design  WNS: " [concat $common_reports/*.db.rpt] >> [concat $common_rep
 sh grep "Design (Hold)  WNS:" [concat $common_reports/*.db.rpt] >> [concat $common_reports/timing.rpt]
 ```
 
-**REQUIREMENTS OF USAGE FOR THE ABOVE SCRIPT**: The above script is also a plug and play script but it is recommended to mainatin the folder hierarchy according to the link given below just place the script in the directory and maintain the directores according to the hierarchy mentioned below and the outputs will be generated in the reports folder inside the directory'
+**REQUIREMENTS OF USAGE FOR THE ABOVE SCRIPT**: The above script is also a plug and play script but it is recommended to mainatin the folder hierarchy according to the link given below just place the script in the directory and maintain the directores according to the hierarchy mentioned below and the outputs will be generated in the reports folder inside the directory
+
+
+**DIRECTORY LOCATION IS MENTIONED HERE** [CLICK_HERE](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master/Vaishnav_Physical_design%23day13/Final_module)
+
+The grephed output is pasted in reports/timing.rpt file and the worst case violations are mentioned in the All_timing.rpt in the reports folder
+
+The output is as shown below in the sheet 
 
 
 
