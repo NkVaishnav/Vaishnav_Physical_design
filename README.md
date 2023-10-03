@@ -18,6 +18,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-12-Baby SOC](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-12-baby-soc)
 - [Day-13-Post Synthesis Simulation (GLS)](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-13--post-synthesis-simulation-gls)
 - [Day-14-Synopsys DC and Timing Analysis using multiple Libraries](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-14-synopsys-dc-and-timing-analysis-using-the-libraries)
+- [Day-15-Inception of EDA and PDK]()
   
 
 ## Day 0: Installation
@@ -6119,8 +6120,344 @@ Detailed explanations for each PVT condition in the HOLD timing category, includ
 
 In summary, the HOLD timing analysis for each PVT condition reveals varying levels of hold time violations (WNS and TNS) due to temperature, voltage, and design complexity factors. Addressing these violations is crucial to ensure the reliable operation of integrated circuits under different PVT conditions.
 
-
 **ALL THE REPORTS ARE MENTIONED HERE** [CLICK_HERE](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master/Vaishnav_Physical_design%23day13/Final_module/reports)
 
 </details>
+
+## Day 15: Inception of EDA and PDK
+
+<details>
+<summary>Summary</summary>
+Day 15, We will be working more on Advanced Physical design using open source tools and open source PDKS with self written RTL Codes
+</details>
+
+<details>
+<summary>Inception of opensource EDA, Openlane and Sky 130 PDK</summary>
+
+Talking to computers involves interacting with their hardware components and often requires understanding various interfaces and protocols. Let's discuss two key aspects: processors and their interfacing, and packages like the one found in the Arduino microcontroller.
+
+**1. Processor and Interfacing:**
+
+A processor, also known as a central processing unit (CPU), is the brain of a computer. It executes instructions and performs calculations. To communicate with a processor, you need to understand its architecture, instruction set, and how it interfaces with other components.
+
+**Key Components of Processor Interfacing:**
+
+- **Bus**: Processors communicate with other hardware components through a data bus and address bus. The data bus transfers data between the processor and memory/storage, while the address bus specifies the location of the data.
+
+- **Registers**: Processors have internal registers to store temporary data and control information. You can interact with these registers through assembly or machine code instructions.
+
+- **I/O Ports**: Processors often have special ports for input and output operations. These ports allow the processor to communicate with external devices like sensors, displays, or other microcontrollers.
+
+- **Interrupts**: Processors can handle interrupts, which are signals that temporarily suspend normal program execution to handle specific events. Interrupts are crucial for real-time interactions and multitasking.
+
+- **Memory Mapping**: Understanding how memory is organized and mapped in a processor's architecture is essential. This includes RAM, ROM, and other memory types.
+
+- **Peripheral Interfaces**: Processors may have specific interfaces like SPI (Serial Peripheral Interface), I2C (Inter-Integrated Circuit), GPIO (General-Purpose Input/Output), UART (Universal Asynchronous Receiver-Transmitter), etc., to communicate with external devices.
+
+**2. Package (e.g., Arduino):**
+
+In the context of microcontrollers like Arduino, a "package" refers to the physical and electrical packaging of the integrated circuit (IC) that contains the microcontroller. Here's how to interact with an Arduino, a popular example:
+
+- **Hardware Components**: Arduino boards typically consist of an ATmega microcontroller, various input/output pins (digital and analog), power supply components, and a USB interface.
+
+- **Programming**: You communicate with an Arduino by writing code using the Arduino IDE (Integrated Development Environment). You can use a simplified version of C/C++ to control the microcontroller's behavior.
+
+- **APIs and Libraries**: Arduino provides a set of libraries and APIs that simplify interfacing with hardware components like sensors, displays, and communication modules. These libraries abstract low-level details, making it easier for developers.
+
+- **Serial Communication**: Most Arduinos support serial communication via USB. You can send data to and receive data from your Arduino through the serial port.
+
+- **Upload Code**: To communicate with your Arduino, you upload your code to the microcontroller via the USB connection. The Arduino IDE handles the compilation and uploading process.
+
+- **Feedback and Output**: Arduinos can provide feedback through LEDs, displays, and other output devices. You can read sensor data and control actuators (e.g., motors) through the Arduino's pins.
+
+- **Debugging**: Debugging tools are available for Arduino, which help identify and fix issues in your code or hardware connections.
+
+In summary, communicating with computers involves understanding the architecture of the processor and its interfacing components. For microcontrollers like Arduino, you interact through a simplified programming environment, libraries, and hardware connections within the package to control various devices and sensors.
+
+The Quad Flat No-Lead (QFN) 48 package is a type of surface-mount integrated circuit (IC) package commonly used for a variety of electronic components, including microcontrollers, memory chips, power management ICs, and more. It belongs to the family of QFN packages, which are known for their compact size, excellent thermal performance, and ease of manufacturing. Here are some key characteristics and features of the QFN 48 package:
+
+**1. Package Dimensions:**
+   - The "48" in QFN 48 indicates that this package has 48 pins or leads.
+   - QFN packages have a square or rectangular shape, and the number of pins can vary depending on the specific application and chip design.
+
+**2. No-Lead Design:**
+   - QFN packages are characterized by their "no-lead" design, which means that they do not have traditional wire leads protruding from the package. Instead, the package has exposed metal pads on the bottom, which make direct contact with the PCB (Printed Circuit Board).
+   - This no-lead design offers several advantages, including improved electrical performance, reduced parasitic inductance, and enhanced thermal conductivity.
+
+**3. Thermal Performance:**
+   - QFN packages are known for their excellent thermal performance. The exposed metal pad on the bottom of the package acts as a heat sink, allowing for efficient heat dissipation from the IC.
+   - This thermal advantage is crucial for high-power components or those operating in demanding environments, as it helps prevent overheating and ensures the long-term reliability of the device.
+
+**4. Compact Size:**
+   - QFN packages are compact and have a low profile, which makes them suitable for space-constrained applications where size is a critical factor.
+   - The small footprint of the QFN 48 package contributes to reduced PCB real estate usage.
+
+**5. Soldering and Assembly:**
+   - QFN packages are typically assembled using reflow soldering techniques, where solder paste is applied to the exposed metal pads, and the IC is then placed onto the PCB.
+   - The absence of traditional leads simplifies the soldering process and reduces the risk of solder joint failures.
+
+**6. Electrical Performance:**
+   - QFN packages offer excellent electrical performance due to their short electrical path between the chip and the PCB.
+   - They provide low parasitic capacitance and inductance, which is important for high-speed and high-frequency applications.
+
+**7. Versatility:**
+   - QFN 48 packages are versatile and can be found in a wide range of electronic devices, from consumer electronics to industrial equipment and automotive applications.
+   - They are compatible with various chip technologies, including microcontrollers, analog ICs, and digital signal processors.
+
+In summary, the QFN 48 package is a popular choice in the electronics industry due to its compact size, excellent thermal properties, and ease of assembly. It provides a reliable and efficient way to mount integrated circuits onto PCBs, making it suitable for a wide range of applications where space, thermal performance, and electrical performance are important considerations.
+
+Wire Bonds:
+Wire bonding is a semiconductor assembly technique used to connect the electrical leads (pads) on an integrated circuit (IC) die to the corresponding external pins or package leads. Here's a brief overview:
+
+1. **Wire Bonding Process:** 
+   - During wire bonding, thin wires (typically made of aluminum, gold, or copper) are used to make electrical connections between the die and the package.
+   - The wire bonding process involves using ultrasonic or thermosonic energy to create a metallurgical bond between the wire and the pad.
+
+2. **Types of Wire Bonding:**
+   - There are two main types of wire bonding: ball bonding and wedge bonding.
+   - Ball bonding involves creating a small ball at one end of the wire, attaching it to the pad, and then using ultrasonic energy to bond it. This method is often used in fine-pitch applications.
+   - Wedge bonding involves directly attaching the wire to the pad and then forming a wedge bond. This method is suitable for high-power applications.
+
+3. **Applications:**
+   - Wire bonding is commonly used in the assembly of ICs, especially for packages like dual in-line packages (DIPs) and surface-mount devices (SMDs).
+   - It is a cost-effective and reliable method for connecting ICs to the external world.
+
+IO Pads (Input/Output Pads):
+IO pads are the interface between the internal circuitry of an IC and the external world. They serve as connection points for signals entering or leaving the chip. Key points about IO pads include:
+
+1. **Types of IO Pads:**
+   - IO pads come in various types, including input pads (for receiving signals), output pads (for transmitting signals), and bidirectional pads (for both input and output).
+   - They may have different voltage levels, protection features, and other functionalities depending on the application.
+
+2. **Voltage Levels:**
+   - IO pads must be designed to handle the voltage levels and signal requirements of the specific application.
+   - Voltage levels may be compatible with standard logic levels (e.g., 3.3V, 5V) or designed for specialized applications (e.g., low-voltage, high-voltage, mixed-signal).
+
+Core:
+In semiconductor design, the "core" typically refers to the central processing unit (CPU) or the primary computational and control unit of an integrated circuit. Key points about cores include:
+
+1. **Central Processing Unit (CPU):**
+   - The core often represents the CPU in a microprocessor or microcontroller.
+   - It executes instructions and performs arithmetic and logic operations.
+
+2. **Multicore Processors:**
+   - Modern processors may have multiple cores on a single chip, allowing for parallel processing and improved performance in multitasking environments.
+
+Macros:
+In semiconductor design, "macros" refer to predefined blocks of reusable intellectual property (IP) that can be integrated into a larger chip design. Key points about macros include:
+
+1. **Reusable Blocks:**
+   - Macros are pre-designed and pre-verified blocks of logic or functionality that can be easily incorporated into custom chip designs.
+   - They can save time and effort in chip development by providing tested and optimized functions.
+
+Foundry IPs (Intellectual Property):
+Foundry IPs are intellectual property blocks provided by semiconductor foundries (manufacturers) to aid in the design and production of integrated circuits. Key points about foundry IPs include:
+
+1. **Standard Libraries:**
+   - Foundry IPs often include standard cell libraries, which consist of predefined logic gates, flip-flops, and other building blocks.
+   - These libraries help chip designers create custom logic circuits efficiently.
+
+2. **Specialized IPs:**
+   - Foundries may offer specialized IPs for analog functions, memory blocks, high-speed interfaces (e.g., USB, PCIe), and more.
+   - These IPs can help chip designers meet specific functionality and performance requirements.
+
+In summary, wire bonds are used to connect IC dies to package leads, IO pads provide the interface for signals, cores represent the CPU in chip designs, macros are reusable logic blocks, and foundry IPs include standard and specialized design blocks provided by semiconductor foundries. These components play crucial roles in semiconductor design and manufacturing.
+
+
+</details>
+
+<details>
+<summary>Introduction to RISCV</summary>
+Introduction to RISC-V:
+
+RISC-V is a revolutionary and open-source instruction set architecture (ISA) that has gained significant prominence in the world of computing and semiconductor design. Unlike traditional proprietary ISAs, RISC-V is not owned by any single entity, making it an accessible, customizable, and versatile foundation for a wide range of applications. This open-source nature, along with its elegant design principles, has led to a rapid adoption and enthusiastic community support.
+
+At its core, RISC-V stands for "Reduced Instruction Set Computer - Five." The "Five" in its name signifies the five standard privilege levels, which offer a flexible and robust security framework, a crucial aspect in modern computing systems. What sets RISC-V apart is its modular structure, which allows for various extensions to cater to specific application needs, such as floating-point arithmetic, vector operations, and cryptography.
+
+RISC-V's simplicity, scalability, and adaptability have made it an ideal choice for a wide array of applications, from small embedded devices and microcontrollers to high-performance computing systems and data centers. Its open nature invites innovation, enabling developers and engineers to design customized processors and accelerators, and its well-defined ecosystem includes compilers, operating systems, and development tools.
+
+In this ever-evolving technological landscape, RISC-V has emerged as a disruptive force, democratizing the ISA landscape by offering a free and open alternative to proprietary architectures. Its principles of openness, flexibility, and community collaboration have the potential to shape the future of computing and accelerate innovation across various domains. This introduction serves as a gateway to explore the fascinating world of RISC-V, a game-changer that empowers individuals and organizations to push the boundaries of what's possible in computing.
+
+The RISC-V (pronounced "risk-five") 32I is a specific variant of the RISC-V instruction set architecture (ISA) that is widely recognized and adopted within the computing industry. RISC-V is an open-source ISA, designed with simplicity, scalability, and flexibility in mind. The "32I" designation indicates several key features of this particular configuration.
+
+First, "32" signifies the standard word size for data and instructions, which is 32 bits. This means that the architecture primarily deals with 32-bit data and instruction words, which are common in many modern computing systems.
+
+"I" stands for "integer," indicating that this RISC-V variant focuses on integer operations, making it suitable for general-purpose computing tasks. While RISC-V supports various extensions for specialized tasks like floating-point arithmetic (e.g., "F" for single-precision floating-point) or digital signal processing (e.g., "M" for integer multiplication and division), the "32I" core primarily addresses fundamental integer-based computation.
+
+The RISC-V 32I architecture is characterized by its simplicity, reduced instruction set, and a small number of core instructions. This design philosophy streamlines hardware implementation and compiler development, making it a popular choice for embedded systems, microcontrollers, and educational purposes. Furthermore, its open-source nature encourages innovation and customization, allowing designers to tailor it to their specific requirements without licensing constraints.
+
+In summary, RISC-V 32I represents a 32-bit, integer-focused variant of the RISC-V instruction set architecture. Its open-source nature, simplicity, and scalability have made it an attractive choice for a wide range of applications, from small embedded systems to large-scale computing platforms, fostering a thriving ecosystem of RISC-V-based hardware and software development.
+
+The execution of a C language program on hardware involves several stages, starting from writing the code to running it on a computer. Here's an overview of how a C program is executed on hardware:
+
+**1. Writing the Code:**
+   - The process begins with writing the C program using a text editor or an Integrated Development Environment (IDE) like Visual Studio, Code::Blocks, or others.
+   - In the program, you define variables, write functions, and implement the desired logic to achieve a specific task.
+
+**2. Compilation:**
+   - Once the code is written, it needs to be translated into machine code that the hardware can understand and execute.
+   - The C compiler (e.g., GCC for Unix-like systems or Microsoft Visual C++ for Windows) is used to compile the source code into an executable binary file.
+   - During compilation, the C code is analyzed for syntax errors and translated into assembly language, and then further into machine code.
+
+**3. Linking:**
+   - In more complex programs, multiple source files may be involved. The linker is responsible for combining these files and resolving external references.
+   - Libraries containing precompiled code (such as standard C libraries) are linked to the program to provide essential functions like input/output and memory management.
+
+**4. Object Code Generation:**
+   - The result of compilation and linking is an executable file (often with extensions like .exe, .out, or no extension on Unix-like systems).
+   - This file contains machine code instructions that are specific to the target hardware architecture.
+
+**5. Loading:**
+   - Before execution, the operating system's loader loads the executable program into memory from the storage device (e.g., hard drive or SSD).
+   - The loader also performs address relocation, ensuring that the program's memory references are adjusted to the correct locations in physical memory.
+
+**6. Execution:**
+   - The CPU (Central Processing Unit) of the hardware is responsible for executing the program.
+   - The CPU fetches each instruction from memory, decodes it, performs the specified operation (e.g., arithmetic, logic, or control flow), and updates the program counter to move to the next instruction.
+   - Input and output operations, like reading from the keyboard or writing to the screen, are handled by the operating system, which may communicate with hardware devices and drivers.
+
+**7. Memory Management:**
+   - During execution, the C program uses memory to store data, including variables, arrays, and dynamically allocated memory.
+   - The hardware's memory management unit (MMU) ensures proper memory protection, allocation, and deallocation.
+
+**8. Termination:**
+   - The program continues executing until it reaches its end or encounters an error.
+   - When the program terminates, it may return a status code to the operating system, indicating whether it completed successfully or encountered an issue.
+
+In summary, the execution of a C language program on hardware involves several steps, including code writing, compilation, linking, loading, and execution. At each stage, different components of the hardware and software stack work together to translate and execute the program's instructions on the underlying hardware, producing the desired output or result.
+
+</details>
+
+<details>
+<summary>SOC Design and Openlane</summary>
+The main input componenets of the ASIC design flow are RTL Codes, EDA Tools, PDK Data
+
+**RTL Codes (libcores.org, opencores.org, github.com):**
+   - RTL (Register Transfer Level) codes are the digital hardware descriptions written in hardware description languages (HDLs) like VHDL or Verilog.
+   - libcores.org and opencores.org are online platforms where you can find open-source hardware IP cores and RTL designs contributed by the community.
+   - GitHub, a widely used platform for version control and collaborative development, hosts numerous repositories containing RTL code for various ASIC and FPGA projects.
+   - RTL code sources like these provide valuable resources for ASIC designers, allowing them to leverage pre-designed and tested blocks in their projects, saving time and effort.
+
+**EDA Tools (Q flow, openroad, openlane):**
+   - Electronic Design Automation (EDA) tools are software applications used for various stages of ASIC design, from synthesis to physical design.
+   - Q flow, openroad, and openlane are specific EDA toolchains that facilitate different aspects of the ASIC design flow.
+   - Q flow is known for its comprehensive approach to ASIC design, offering tools for logic synthesis, placement, and routing, as well as various analysis and verification tasks.
+   - OpenROAD (Open Router for ASIC Design) is an open-source project aimed at creating a complete EDA toolchain, including physical design tools like placement and routing.
+   - OpenLane, developed by Efabless, is an automated RTL-to-GDSII (Graphic Design System II) toolchain that focuses on open-source ASIC design.
+
+**PDK Data (Skywater 130):**
+   - Process Design Kit (PDK) data is essential for ASIC design, as it provides information about the semiconductor manufacturing process and design rules.
+   - Skywater 130 is a specific PDK developed by SkyWater Technology Foundry. It includes data related to their 130nm CMOS process technology.
+   - PDKs like Skywater 130 include standard cell libraries, which contain logic gates and flip-flops optimized for the chosen process. They also provide information on transistor characteristics, interconnect layers, design rules, and more.
+   - ASIC designers use PDK data to ensure that their designs are compatible with the manufacturing process, meeting the foundry's specifications and constraints.
+
+In the context of ASIC design, combining RTL codes from open-source repositories with the use of specific EDA toolchains like Q flow, openroad, and openlane, along with the guidance of PDK data like Skywater 130, allows designers to create customized integrated circuits efficiently. These resources promote collaboration, innovation, and cost-effectiveness in the ASIC design process, making it accessible to a broader community of developers and engineers.
+
+</details>
+
+<details>
+<summary>RTL to GDS flow</summary>
+The RTL to GDS (Register Transfer Level to Graphic Design System) flow is a complex and highly structured process used in the design and fabrication of Application-Specific Integrated Circuits (ASICs). It encompasses several stages to transform a high-level RTL (Register Transfer Level) description of a digital circuit into a physical layout that can be fabricated on a semiconductor wafer. Here's a detailed overview of the RTL to GDS flow:
+
+**1. RTL Design:**
+   - The process starts with the RTL design, where engineers specify the functionality of the digital circuit using an RTL description language like VHDL or Verilog.
+   - RTL describes the behavior and data flow within the circuit but does not provide any information about its physical implementation.
+
+**2. Functional Verification:**
+   - Before proceeding further, the RTL code undergoes rigorous functional verification through simulation, formal methods, and other techniques to ensure that it behaves correctly according to the design specifications.
+
+**3. Synthesis:**
+   - In this stage, the RTL code is synthesized into a gate-level netlist, which represents the logic gates and their interconnections.
+   - The synthesis tool (e.g., Synopsys Design Compiler) maps RTL constructs to library cells, optimizing for factors like area, power, and performance.
+   - Timing constraints, power budgets, and area targets set in the design specifications are taken into account.
+
+**4. Gate-Level Simulation:**
+   - The gate-level netlist is simulated to validate its correctness and to verify that it meets the desired timing and functional requirements.
+
+**5. Floorplanning:**
+   - Engineers create a floorplan that defines the overall placement of different functional blocks and IP cores within the chip's physical area.
+   - Important considerations include power distribution, signal routing, and proximity to input/output (I/O) pads.
+
+**6. Placement:**
+   - During placement, the synthesized gates are positioned within the chip's physical area, adhering to the floorplan.
+   - Placement tools, such as those in the Cadence Innovus or Synopsys IC Compiler suites, optimize for wirelength, timing, and congestion.
+
+**7. Clock Tree Synthesis (CTS):**
+   - CTS tools create a clock distribution network that ensures consistent and synchronized clock signals throughout the chip.
+   - Minimizing clock skew is crucial for proper circuit operation.
+
+**8. Routing:**
+   - Routing tools determine the physical interconnections (metal traces) between gates and components, following the placement.
+   - These tools adhere to design rules specified by the foundry's Process Design Kit (PDK).
+
+**9. Design Rule Checking (DRC):**
+   - DRC tools verify that the layout adheres to the foundry's manufacturing process design rules, which specify minimum feature sizes, spacing, and other constraints.
+
+**10. Layout vs. Schematic (LVS) Check:**
+    - LVS tools compare the extracted layout with the original gate-level netlist to ensure that they match, indicating that the layout accurately reflects the RTL description.
+
+**11. Physical Verification:**
+    - In addition to DRC and LVS checks, physical verification includes checks for issues like antenna effects, electromigration, and other manufacturing-related concerns.
+
+**12. Timing Closure:**
+    - Timing closure is crucial to meet the specified clock frequencies and hold times. Iterative optimization is performed on the design to achieve this.
+
+**13. GDSII File Generation:**
+    - Once the layout is finalized, a GDSII file (Graphic Design System II) is generated. GDSII is a standard file format used to represent the physical layout of an integrated circuit.
+
+**14. Mask Data Preparation:**
+    - The GDSII data is further processed to create the mask data used in the semiconductor fabrication process. This involves converting the layout data into a format suitable for photomask production.
+
+**15. Semiconductor Fabrication:**
+    - The mask data is used to create photomasks, which are used to pattern the semiconductor wafer. The wafer undergoes a series of photolithography and etching steps to create the physical IC.
+
+**16. Assembly and Packaging:**
+    - Once the semiconductor wafer is fabricated, it is cut into individual chips. These chips are then assembled into packages with appropriate connections to external pins.
+
+**17. Testing and Quality Assurance:**
+    - The fabricated chips undergo extensive testing to ensure they meet functional and performance specifications.
+
+The RTL to GDS flow is a meticulous and iterative process involving a combination of software tools, hardware expertise, and semiconductor manufacturing techniques. It's essential for developing custom integrated circuits tailored to specific applications, from microcontrollers and consumer electronics to high-performance computing devices.
+
+</details>
+
+<details>
+<summary>Introduction to Openlane and Strive Chipsets</summary>
+**OpenLane:**
+
+OpenLane is an innovative and open-source toolchain for designing custom Application-Specific Integrated Circuits (ASICs). It has gained prominence within the semiconductor industry for its ability to democratize chip design by providing a comprehensive suite of EDA (Electronic Design Automation) tools and scripts that streamline the ASIC design flow from RTL (Register Transfer Level) to GDSII (Graphic Design System II). OpenLane promotes accessibility, collaboration, and customization in the creation of integrated circuits, enabling a wide range of developers, from hobbyists to professionals, to design and manufacture custom chips tailored to their specific needs. By offering a transparent and community-driven approach, OpenLane has become a driving force in advancing ASIC design capabilities and reducing barriers to entry in this traditionally complex field.
+
+**Strive Chipsets:**
+
+Strive chipsets represent a new era of semiconductor technology, focused on advancing the boundaries of performance, power efficiency, and innovation. These chipsets are meticulously designed to excel in various applications, including high-performance computing, artificial intelligence, networking, and more. Strive chipsets embody the relentless pursuit of excellence, aiming to deliver cutting-edge solutions that empower devices and systems to achieve new levels of efficiency and capability. With a focus on optimizing every aspect of semiconductor design, Strive chipsets aim to provide industry-leading performance and reliability, catering to the ever-evolving demands of modern technology. Whether in data centers, edge devices, or emerging technologies, Strive chipsets stand as a testament to the relentless pursuit of technological advancement.
+
+**Design Preperation Steps** : After following the instructions given and setup the VM Box we have this folder called work that is created in the Desktop area now lets run a trail synthesis on the same and obsetrve the flop ratio 
+
+```
+#Commands tobe executed in order
+/flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+run_synthesis
+```
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/141a42ce-9f0b-4e2e-92f8-053ab9647a52)
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1c34d97b-a204-43d8-b839-1407dce95749)
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/de364cbb-f281-4092-8011-c200ec10ef20)
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4d332f00-873b-40d5-9f69-6503f3d6e986)
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8898eb97-29e3-4f4b-869c-9df5cbf87387)
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5043a4e3-bfbd-41e6-b212-ec64f8d956b9)
+
+From the above image we get the flop ratio to be Number of flops / Total number of cells = 1613/14876 = 0.1084 (10.84%)
+
+</details>
+
+
+
+
 
