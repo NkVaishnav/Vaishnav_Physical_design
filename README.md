@@ -6664,6 +6664,38 @@ In summary, power planning, decoupling capacitors, ground bounce, voltage droop,
 <details>
 <summary>Openlane for Floorplan</summary>
 
+The Following Images given below give a clear picture about how the floorplan is done in Openlane and how the directories look before and after the run
+
+![Lab1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c1daf282-7382-421c-aaef-fb5649292da0)
+
+![Lab2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8128aa92-dd49-433b-abf4-6dda80d8e149)
+
+![Lab3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ff247696-444d-404e-aa07-dff2ffde5679)
+
+![Lab4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/683ea244-ee77-4531-9cde-b0b8e6e7b961)
+
+![Lab5](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/62b2654e-03e0-43d5-a473-cb5ba07f00a2)
+
+![Lab6](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/029bf231-021b-4655-a4e1-88ca92a6306f)
+
+![Lab7](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/98fd7c71-85e8-4d36-93cc-3ad13928910d)
+
+![Lab8](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4e05a5aa-b3dc-4d57-880f-d3bb7bd90ff2)
+
+![Lab9](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b97470c0-357c-443b-9ae5-3b009adb4564)
+
+![Lab10](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/70971462-7e80-4baa-93bc-fb1b9719a7c8)
+
+![Lab11](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/33ef5618-71a9-45fd-800b-76195e59117f)
+
+![Lab12](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/106f0f4e-99f0-4f61-8a0a-3b4623c4b1fb)
+
+![Lab13](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/bb706e52-0806-4712-9513-13b24e8863d9)
+
+![Lab14](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/110d8511-d613-48cf-94a6-1bbe7a58161f)
+
+
+
 
 </details>
 
