@@ -20,6 +20,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-14-Synopsys DC and Timing Analysis using multiple Libraries](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-14-synopsys-dc-and-timing-analysis-using-the-libraries)
 - [Day-15-Inception of EDA and PDK](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-15-inception-of-eda-and-pdk)
 - [Day-16-Understand importance of good floorplan vs bad floor plan and introduction to library cells](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-16-understand-importance-of-good-floorplan-vs-bad-floor-plan-and-introduction-to-library-cells)
+- [Day-17-Design and characterise one library cell using Layout tool and spice simulator]()
   
 
 ## Day 0: Installation
@@ -7134,4 +7135,86 @@ The characterization flow for timing, noise, and power in VLSI (Very Large Scale
      - Data for ensuring that the design meets power-related constraints and goals.
 
 In summary, the typical characterization flow for timing, noise, and power in VLSI design involves analyzing the electrical behavior of integrated circuits to ensure that they meet performance, noise, and power specifications. These characterizations are essential for validating and optimizing the design for reliable and efficient operation.
+</details>
+
+
+## Day 17: Design and characterise one library cell using Layout tool and spice simulator
+
+<details>
+<summary>Summary</summary>
+ 
+</details>
+
+
+<details>
+<summary>Lab on Spice deck generation of CMOS Inverter</summary>
+ 
+</details>
+
+
+<details>
+<summary>Labs on Analysis of transfer characterstics of an Inverter</summary>
+ 
+</details>
+
+
+<details>
+<summary>Labs on Magic for DRC Clean up</summary>
+
+![1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/16f05b54-bf71-428a-8dd2-7799c8739c37)
+
+![2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4f878ade-ed3c-4bc9-bfae-f7d20b3b7251)
+
+![3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/948191a6-a336-4fcd-9c20-9e7813f514c9)
+
+![4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a716e75f-f7e1-4b34-b2f6-5e9aa2eb7d7c)
+
+![5](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a18baa7d-f390-497e-902e-321efe2b99de)
+
+![6](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2de42db2-726d-4f5c-ae71-7fa2f0b47a04)
+
+![7](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8010b7aa-e5fd-4e75-a34d-44361dcf6ba9)
+
+![8](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/990b6b2a-aee7-4dff-a1f4-276fe0b802e3)
+
+![9](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/41e075be-e5e0-4d16-97ec-648a4ab8e560)
+
+![10](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8336e6b3-f8a3-4923-af33-daf852005240)
+
+![11](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/60c8c1c1-c163-49be-a256-4b99506174b4)
+
+![12](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/12cf130f-5aab-4a26-aca3-abbcb9afd1ad)
+
+![13](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/41646784-32d1-4b33-aae0-9eb88cc258b1)
+
+![14](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a3f80339-c329-4800-ab54-7d65b857f142)
+
+![15](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/09a83965-05d8-441b-aa2b-eb87053751d1)
+
+![16](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c7249fb6-568c-40b2-acb1-706ba0b72401)
+
+![17](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/56be7fc8-78f2-49a6-a565-49b2d757c751)
+
+![18](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/223c019a-a947-4112-9da8-359dddf16269)
+
+![19](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f522b01a-c122-44de-8639-a36b36c8fb31)
+
+![20](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2a64c6ee-4803-49d4-bab8-0e2bdeef8f25)
+
+![21](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1d56f76a-fd46-4bc0-8a75-ca3daee4ebb9)
+
+![22](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f72e86a8-30cd-4caa-98d0-5f1373e2d044)
+
+![23](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ea9638b5-d44c-48ce-a026-8f84eaeb86c8)
+
+![24](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/826fc4f6-a87c-4257-b52d-4e86e4fe9968)
+
+![25](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8225970c-5da9-47ef-88b4-595d7e530f84)
+
+![26](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/efce17ad-27ac-4d1a-99d6-93410851ba8a)
+
+
+
+
+
 </details>
