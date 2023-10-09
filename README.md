@@ -20,7 +20,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-14-Synopsys DC and Timing Analysis using multiple Libraries](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-14-synopsys-dc-and-timing-analysis-using-the-libraries)
 - [Day-15-Inception of EDA and PDK](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-15-inception-of-eda-and-pdk)
 - [Day-16-Understand importance of good floorplan vs bad floor plan and introduction to library cells](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-16-understand-importance-of-good-floorplan-vs-bad-floor-plan-and-introduction-to-library-cells)
-- [Day-17-Design and characterise one library cell using Layout tool and spice simulator]()
+- [Day-17-Design and characterise one library cell using Layout tool and spice simulator](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-17-design-and-characterise-one-library-cell-using-layout-tool-and-spice-simulator)
   
 
 ## Day 0: Installation
@@ -7142,18 +7142,312 @@ In summary, the typical characterization flow for timing, noise, and power in VL
 
 <details>
 <summary>Summary</summary>
- 
+
+**Parameters for Characterisation of a Cell** :  : In semiconductor device and circuit characterization, parameters like Rise Delay, Fall Delay, Rise Transition, and Fall Transition are used to describe the timing behavior of a digital cell or gate. These parameters are essential for understanding how a cell behaves in terms of signal propagation and switching characteristics. Let's define and explain each of these parameters:
+
+1. **Rise Delay (t_rise)**:
+   - Rise Delay, often denoted as t_rise, represents the time it takes for the output signal of a cell to transition from a logic low (0) to a logic high (1).
+   - It measures the delay incurred when an input changes from a low to a high level, and the output responds by transitioning from low to high.
+
+2. **Fall Delay (t_fall)**:
+   - Fall Delay, typically denoted as t_fall, is the time it takes for the output signal of a cell to transition from a logic high (1) to a logic low (0).
+   - It measures the delay when the input changes from a high to a low level, and the output follows by transitioning from high to low.
+
+3. **Rise Transition (t_0.1 to t_0.9)**:
+   - Rise Transition refers to the time interval between the point where the output signal crosses 10% (t_0.1) of its full voltage swing (from low to high) and the point where it crosses 90% (t_0.9) of the voltage swing.
+   - This parameter helps characterize the speed at which a signal rises from a low to a high logic level. It's often used to assess the slew rate and signal integrity of the output.
+
+4. **Fall Transition (t_0.1 to t_0.9)**:
+   - Fall Transition is similar to Rise Transition but for the transition from a high to a low logic level. It measures the time interval between the 10% (t_0.1) and 90% (t_0.9) points of the voltage swing during the fall of the output signal.
+   - Like Rise Transition, Fall Transition is used to evaluate the signal's slew rate and integrity during the falling edge.
+
+These parameters are crucial in digital circuit characterization, especially for designing and optimizing digital circuits for speed, power consumption, and overall performance. Engineers use these timing parameters to ensure that signals meet the required setup and hold times, avoid signal integrity issues such as overshoot or undershoot, and ultimately achieve proper functionality in digital systems.
+
+Characterization data for cells, often stored in libraries or models, includes these timing parameters and helps designers make informed decisions about the placement and timing of cells in their digital designs, contributing to the successful operation of complex digital systems.
+
+**SPICE DECK Parameters** : A SPICE deck, also known as a SPICE netlist or simply a SPICE file, is a text-based input file used to describe an electronic circuit to a SPICE simulator. SPICE (Simulation Program with Integrated Circuit Emphasis) is a widely used simulation tool in electronics engineering that allows engineers to analyze and simulate the behavior of electronic circuits. A SPICE deck contains information about the components in the circuit, their connections, and various simulation parameters. Here's an overview of what a typical SPICE deck includes and some of the essential parameters:
+
+1. **Components and Connections**:
+   - **Resistors**: Described with the letter "R" and defined by their resistance value.
+   - **Capacitors**: Described with the letter "C" and defined by their capacitance value.
+   - **Inductors**: Described with the letter "L" and defined by their inductance value.
+   - **Voltage Sources**: Described with the letter "V" and defined by their voltage values.
+   - **Current Sources**: Described with the letter "I" and defined by their current values.
+   - **Diodes**: Described with the letter "D" and characterized by their model parameters.
+   - **Transistors**: Described with specific models (e.g., MOSFETs as "M" or BJTs as "Q") and characterized by their model parameters.
+
+2. **Connections and Topology**:
+   - The SPICE deck defines the interconnections between components using node numbers or names.
+   - The circuit's topology, including how components are connected, is specified in the SPICE file.
+
+3. **Simulation Commands**:
+   - **Analysis Type**: Specifies the type of simulation, such as DC, AC, transient, or other specialized analyses.
+   - **Simulation Time**: Defines the simulation time or frequency range for AC analysis.
+   - **Initial Conditions**: Specifies the initial conditions for components like capacitors and inductors.
+   - **Output Specifications**: Determines what simulation results are of interest, e.g., node voltages or branch currents.
+   - **Control Statements**: Include directives for setting up the simulation, like tolerances, integration methods, and convergence options.
+
+4. **Model Parameters**:
+   - Many components in a SPICE deck rely on models with parameters. These parameters define the behavior of devices like transistors or diodes and are specified within the deck.
+
+5. **Transient Analysis Settings**:
+   - For transient simulations, additional parameters such as the time step and stop time are specified.
+   - You can also define initial conditions for voltage and current sources.
+
+6. **AC Analysis Settings**:
+   - For AC analysis, you specify the frequency range of interest and the number of frequency points to evaluate.
+   - AC analysis is used to analyze the frequency response of a circuit.
+
+7. **DC Sweep Settings**:
+   - DC sweep simulations involve varying one or more voltage sources over a range of values.
+   - You specify the sweep type, start, stop, and increment values.
+
+8. **Operating Point Analysis**:
+   - This analyzes the DC steady-state conditions of the circuit.
+
+9. **Temperature and Process Variations**:
+   - Some SPICE simulators support modeling temperature and process variations by defining specific parameters.
+
+10. **Specialized Features**:
+    - Depending on the SPICE simulator, additional specialized features may be available, such as Monte Carlo analysis, sensitivity analysis, or noise analysis.
+
+A well-structured SPICE deck provides all the necessary information for a SPICE simulator to perform accurate circuit simulations. Engineers can use the simulation results to assess circuit behavior, optimize designs, troubleshoot issues, and predict how a circuit will perform under different operating conditions.
+
+
+**Transfer Characterstics of a CMOS Inverter** : The transfer characteristics of a CMOS (Complementary Metal-Oxide-Semiconductor) inverter describe how the output voltage of the inverter (Vout) varies in response to changes in the input voltage (Vin). The CMOS inverter is a fundamental building block in digital electronics and consists of a complementary pair of MOSFETs (Metal-Oxide-Semiconductor Field-Effect Transistors): one p-channel MOSFET (PMOS) and one n-channel MOSFET (NMOS). The operation of a CMOS inverter can be divided into three regions on its transfer characteristics curve: the cutoff region, the linear region, and the saturation region.
+
+1. **Cutoff Region**:
+   - In the cutoff region, both the PMOS and NMOS transistors are off (i.e., in the non-conductive state).
+   - When the input voltage (Vin) is at a logic low level (typically 0V), both transistors are non-conductive, and the output voltage (Vout) is at a logic high level (usually VDD, the supply voltage).
+   - The region to the left of the threshold voltage for the NMOS transistor on the transfer characteristics curve represents the cutoff region.
+
+2. **Linear Region**:
+   - The linear region is the transition region between the cutoff and saturation regions.
+   - As the input voltage (Vin) starts to increase from a logic low level, the NMOS transistor begins to conduct, allowing a current to flow from the drain to the source.
+   - Simultaneously, the PMOS transistor is still off, and the output voltage (Vout) starts to drop.
+   - The linear region typically spans the range of input voltages between the NMOS transistor's threshold voltage (Vt_n) and the point where the NMOS transistor is fully turned on.
+
+3. **Saturation Region**:
+   - In the saturation region, the NMOS transistor is fully on, while the PMOS transistor remains off.
+   - As the input voltage (Vin) continues to increase above the threshold voltage for the NMOS transistor, the output voltage (Vout) approaches a logic low level.
+   - The output voltage (Vout) in this region is close to ground (0V).
+   - The region to the right of the NMOS threshold voltage on the transfer characteristics curve represents the saturation region.
+
+The transfer characteristics curve for a CMOS inverter is typically symmetric around the midpoint between the supply voltage (VDD) and ground (0V). This symmetry ensures that the inverter has symmetric rise and fall times.
+
+The key characteristics and points of interest on the transfer characteristics curve include:
+
+- **Threshold Voltage (Vt)**: The input voltage at which the transition between the cutoff and saturation regions occurs. For the NMOS transistor, it is Vt_n, and for the PMOS transistor, it is -Vt_p (negative because it's a p-channel device).
+
+- **Noise Margins**: The voltage levels (high and low) in the linear region provide noise margins, which represent the tolerance of the inverter to variations in input voltage.
+
+- **Gain**: The slope of the transfer characteristics curve in the linear region represents the gain of the inverter. CMOS inverters typically have high voltage gain in this region.
+
+Understanding the transfer characteristics of a CMOS inverter is crucial for designing and analyzing digital circuits, ensuring reliable logic signal propagation, and optimizing power consumption in digital systems.
+
+
+ **16 Mask CMOS Process** : A 16-mask CMOS (Complementary Metal-Oxide-Semiconductor) process refers to a semiconductor manufacturing technology used to create integrated circuits (ICs) like microprocessors, memory chips, and various digital and analog devices. The "16-mask" designation indicates that 16 distinct photomasks are used in the fabrication process to define and pattern different layers of the semiconductor material. Each mask represents a separate step in the manufacturing process, and the precise alignment of these masks is crucial to achieving high-quality ICs.
+
+Here's an overview of the key steps and layers typically involved in a 16-mask CMOS process:
+
+1. **Substrate Preparation**: The process begins with a silicon wafer, which serves as the foundation for the ICs. The silicon wafer is usually highly purified and can be either p-type or n-type, depending on the design requirements.
+
+2. **Well Formation**: Doping is performed to create isolated regions within the silicon wafer, known as wells. These wells are used to create the active regions for nMOS and pMOS transistors.
+
+3. **Gate Oxide Formation (Mask 1)**: The first mask, also known as Mask 1, is used to define the areas where gate oxide will be grown. Gate oxide is a thin insulating layer beneath the transistor gates.
+
+4. **Polysilicon Deposition and Etching (Mask 2)**: Polysilicon is deposited and patterned using Mask 2 to create the gates of the CMOS transistors.
+
+5. **Source/Drain Formation (Mask 3)**: Mask 3 defines the regions where the source and drain regions of the transistors will be formed. Ion implantation or diffusion is typically used for this step.
+
+6. **First Interconnect Layer (Mask 4-8)**: Multiple masks are used to create the first metal layer, which connects various components on the chip. Each of these masks defines specific metal paths and vias for electrical connections.
+
+7. **Gate Formation (Mask 9)**: Mask 9 defines the precise shape of the transistor gates.
+
+8. **Intermetal Dielectric and Contact Formation (Mask 10-12)**: These masks are used to create insulating layers between metal interconnects and to define contact points for vias to connect different metal layers.
+
+9. **Metal Layer 2 (Mask 13-16)**: Four additional masks are used to create the second metal layer and its associated interconnections.
+
+10. **Passivation**: A passivation layer is deposited to protect the IC and provide electrical insulation.
+
+11. **Testing and Packaging**: After completing the manufacturing process, the wafers are tested to ensure that the ICs meet quality and functionality specifications. Once tested and verified, the individual ICs are cut from the wafer and packaged for distribution.
+
+A 16-mask CMOS process is relatively advanced and allows for the fabrication of complex and high-performance integrated circuits. The number of masks required for a specific CMOS process can vary depending on the technology node and design requirements, with more advanced nodes typically requiring a greater number of masks for finer feature sizes and improved performance.
 </details>
 
 
 <details>
 <summary>Lab on Spice deck generation of CMOS Inverter</summary>
+
+```
+#Commands used
+magic -T sky130A.tech sky130_inv.mag &
+#in tkcon window
+extract all
+ext2spice cthresh 0 rthresh 0
+ext2spice 
+```
+
+Extracted Spice File
+
+```
+* SPICE3 file created from sky130_inv.ext - technology: sky130A
+
+.option scale=10m
+
+.subckt sky130_inv A Y VPWR VGND
+X0 Y A VGND VGND sky130_fd_pr__nfet_01v8 ad=1.44n pd=0.152m as=1.37n ps=0.148m w=35 l=23
+X1 Y A VPWR VPWR sky130_fd_pr__pfet_01v8 ad=1.44n pd=0.152m as=1.52n ps=0.156m w=37 l=23
+C0 VPWR Y 0.117f
+C1 A Y 0.0754f
+C2 A VPWR 0.0774f
+C3 Y VGND 0.279f
+C4 A VGND 0.45f
+C5 VPWR VGND 0.781f
+.ends
+```
+
+Spice File after edit
+
+```
+* SPICE3 file created from sky130_inv.ext - technology: sky130A
+
+.option scale=0.01u
+.include ./libs/pshort.lib
+.include ./libs/nshort.lib
+
+//.subckt sky130_inv A Y VPWR VGND
+M1000 Y A VGND VGND nshort_model.0 ad=1.44n pd=0.152m as=1.37n ps=0.148m w=35 l=23
+M1001 Y A VPWR VPWR pshort_model.0 ad=1.44n pd=0.152m as=1.52n ps=0.156m w=37 l=23
+VDD VPWR 0 3.3V
+VSS VGND 0 0V
+Va A VGND PULSE (0V 3.3V 0 0.1ns 0.1ns 2ns 4ns)
+C0 VPWR Y 0.117f
+C1 A Y 0.0754f
+C2 A VPWR 0.0774f
+C3 Y VGND 2f
+C4 A VGND 0.45f
+C5 VPWR VGND 0.781f
+//.ends
+
+
+
+.tran 1n 20n
+.control
+run
+.endc
+.end
+
+```
+
+
+```
+#Commands used to un the ngspice
+ngspice
+source file.spice
+plot out vs time a 
+```
+
+Images showing the Output
+
+![1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ee164b0e-8c94-41d9-b00a-8729739c218e)
+
+![2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/00bf2742-14f2-43ac-910a-2192c41f4a4f)
+
+![3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/9cbfac29-354d-4a38-972c-1993e5bd6713)
+
+![4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/28687d7b-0c38-4685-824b-582dd30f75d4)
+
+![5](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/d2a7f78e-7a8d-4dcd-9189-16f45c4227aa)
+
+The RISE Delay, FALL Delay, RISE Transition, FALL Transition are got from the above graph easily as explained above 
+
+RISE Delay : 2.21-2.15 ns= 60 ps
+FALL Delay : 4.0735 - 4.048 ns = 25.5 ps
+RISE Transition : 2.23 - 2.18 ns= 50 ps
+Fall Transition : 4.0942 - 4.05 ns = 42 ps
+
+**ALL THE ABOVE VALUES ARE OBTAINED FORM THE GRAPH SHOWN ABOVE **
  
 </details>
 
 
 <details>
 <summary>Labs on Analysis of transfer characterstics of an Inverter</summary>
+
+```
+#Commands Used
+ngspice
+source file.spice
+setplot dc
+display
+plot out vs in 
+```
+
+
+```
+#Spice file used for the first simulation of the out vs in
+* SPICE4 file created from sky130_inv.ext - technology: sky130A
+
+.option scale=0.01u
+.include ./../libs/pshort.lib
+.include ./../libs/nshort.lib
+
+//.subckt sky130_inv A Y VPWR VGND
+M1000 Y A VGND VGND nshort_model.0 ad=1.44n pd=0.152m as=1.37n ps=0.148m w=35 l=23
+M1001 Y A VPWR VPWR pshort_model.0 ad=1.44n pd=0.152m as=1.52n ps=0.156m w=35 l=23
+VDD VPWR 0 3.3V
+VSS VGND 0 0V
+Va A VGND PULSE (0V 3.3V 0 0.1ns 0.1ns 2ns 4ns)
+C0 VPWR Y 0.117f
+C1 A Y 0.0754f
+C2 A VPWR 0.0774f
+C3 Y VGND 2f
+C4 A VGND 0.45f
+C5 VPWR VGND 0.781f
+//.ends
+
+.op
+.dc Va 0 3.3 0.05
+.end
+```
+
+Image of the output that is obtained after the first simulation 
+
+![1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4b2880d1-c093-440d-98fd-51c1e794cc86)
+
+
+
+```
+#Spice file used for the second simulation of the out vs in
+* SPICE4 file created from sky130_inv.ext - technology: sky130A
+
+.option scale=0.01u
+.include ./../libs/pshort.lib
+.include ./../libs/nshort.lib
+
+//.subckt sky130_inv A Y VPWR VGND
+M1000 Y A VGND VGND nshort_model.0 ad=1.44n pd=0.152m as=1.37n ps=0.148m w=35 l=23
+M1001 Y A VPWR VPWR pshort_model.0 ad=1.44n pd=0.152m as=1.52n ps=0.156m w=88 l=23
+VDD VPWR 0 3.3V
+VSS VGND 0 0V
+Va A VGND PULSE (0V 3.3V 0 0.1ns 0.1ns 2ns 4ns)
+C0 VPWR Y 0.117f
+C1 A Y 0.0754f
+C2 A VPWR 0.0774f
+C3 Y VGND 2f
+C4 A VGND 0.45f
+C5 VPWR VGND 0.781f
+//.ends
+
+.op
+.dc Va 0 3.3 0.05
+.end
+```
+Image of the output that is obtained after the second simulation 
+
+![2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/4981163c-e80e-4893-a0f4-ca2a8dd9ec80)
+
  
 </details>
 
