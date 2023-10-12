@@ -7507,8 +7507,212 @@ Image of the output that is obtained after the second simulation
 
 ![26](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/efce17ad-27ac-4d1a-99d6-93410851ba8a)
 
+</details>
 
 
+## Day 18: Pre-layout timing analysis and importance of good clock tree
 
+
+<details>
+<summary>Lab on Conversion of Inverter Mag file to LEF file</summary>
+
+Let us Consider the tech and mag file that are related to the skywater and inverter respectively as shown in the image given below 
+
+Below commands to be used in the directory having both the .mag and .tech files 
+
+```
+magic -T sky130A.tech sky130_inv.mag &
+```
+
+![1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/61b9b6de-a7ca-429a-a553-53e641105f66)
+
+Now let us write out the mag file on our name  as shown in the image given below 
+
+Below commands to be used in the tkcon window that has been opened
+
+```
+grid 0.46um 0.34um 0.23um 0.17um
+save sky130_inv_vaishnav.mag
+exit
+```
+
+![2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/802fdf93-e237-446c-876a-d0e05c5f6cbc)
+
+Now let us open the layout again with the mag file that has been written in the previous step
+
+![3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/6431e257-889b-4b12-b1e9-4f5996c58ea9)
+
+Below commands are used to run the mag file generated above
+
+```
+#In terminal having the both tech and newly generated mag file
+magic -T sky130A.tech sky130_inv_vaishnav
+#In tkcon window
+lef write
+exit
+```
+
+</details>
+
+
+<details>
+<summary>Lab on Running the Synth PNR flow by using the cell that we created through LEF</summary>
+
+Now after generating the LEF file let us plugin this into the picorv32a flow and watch if the tool picks up the info or not 
+
+Now let us place the lef and tech file in the  ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src location to make the further steps 
+
+We are supposed to take care in editing the name of the sky130_vsdinv that is already present in the library to sky130_inv_vaishnav
+
+```
+#In the openlane directory
+docker
+#Opens a Bash shell
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+run_synthesis
+echo $::env(SYNTH_STRATEGY)
+set ::env(SYNTH_STRATEGY) "DELAY 0"
+echo $::env(SYNTH_STRATEGY)
+echo $::env(SYNTH_BUFFERING)
+echo $::env(SYNTH_SIZING)
+set ::env(SYNTH_SIZING) 1
+echo $::env(SYNTH_SIZING)
+echo $::env(SYNTH_DRIVING_CELL)
+```
+
+Config file that we are using in the design is given below
+
+```
+#Config file used in the design
+# Design
+set ::env(DESIGN_NAME) "picorv32a"
+#set ::env(OPENLANE_ROOT) "./designs/picorv32a/src/picorv32a.v"
+
+set ::env(VERILOG_FILES) "./designs/picorv32a/src/picorv32a.v"
+set ::env(SDC_FILE) "./designs/picorv32a/src/picorv32a.sdc"
+
+set ::env(CLOCK_PERIOD) "5.000"
+set ::env(CLOCK_PORT) "clk"
+
+
+set ::env(CLOCK_NET) $::env(CLOCK_PORT)
+
+set ::env(LIB_SYNTH) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib"
+set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib"
+set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
+
+#echo $LIB_FASTEST
+set filename $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/$::env(PDK)_$::env(STD_CELL_LIBRARY)_config.tcl
+if { [file exists $filename] == 1} {
+        source $filename
+}
+```
+
+![4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1ce9c8b8-6597-4eb7-a112-e5109819a4db)
+
+Now we are supppsoed to the edit the following files by commenting the lines mentioned below 
+
+```
+/Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands -> comment the basic_macro_placement 
+
+/Desktop/work/tools/openlane_working_dir/openlane/scripts/openroad -> comment the  macro_placement -global $::env(TMP_DIR)/glb.cfg 
+
+```
+
+```
+#In the openlane bash shell availiable
+run_floorplan
+run_placement
+```
+
+![5](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2939024d-020c-4bd9-89e7-52bd6552a984)
+
+Below Image shows the Final def that has been loaded using the command given below 
+
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/results/placement
+magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def
+```
+
+![6](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/eda2539e-8228-4dfc-80ff-3913c14cb4d6)
+
+As we can see the below image in which the tool invoked the sky130_inv_vaishnav made by us 
+
+![7](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8d7578bb-d8c8-4831-9d08-1a66e0f42f8d)
+
+Now this is the lef file that has been loaded
+
+![8](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ecdd7ba3-c965-4607-81dd-3d9983ac24e4)
+
+![9](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f1a80b0c-c5db-451e-b9c7-a4e0857a777f)
+
+
+</details>
+
+<details>
+<summary>Running the PRE STA on the whole design</summary>
+	
+We are supposed to the pre_sta.conf in openlane directory as given below
+
+```
+#Pre_Sta.config
+set_cmd_units -time ns -capacitance pF -current mA -voltage V -resistance kOhm -distance um
+read_liberty -min /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib
+read_liberty -max /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib
+read_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/12-10_17-02/results/synthesis/picorv32a.synthesis.v
+link_design picorv32a
+read_sdc /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/my_base.sdc
+report_checks -path_delay min_max -fields {slew trans net cap input_pin}
+report_tns
+report_wns
+```
+We are supposed to make a sdc file in the src file of the design with a name of my_base.sdc as given below
+
+```
+#This is the sdc that has been written for the design
+set ::env(CLOCK_PORT) clk 
+set ::env(CLOCK_PERIOD) 12
+set ::env(SYNTH_DRIVING_CELL) sky130_inv_vaishnav 
+set ::env(SYNTH_DRIVING_CELL_PIN) Y 
+set ::env(SYNTH_CAP_LOAD) 17.65 
+create_clock [get_ports $::env(CLOCK_PORT)] -name $::env(CLOCK_PORT) -period $::env(CLOCK_PERIOD)
+set ::env(IO_PCT) 0.2
+set input_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+set output_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
+puts "\[INFO\]: Setting output delay to: $output_delay_value" 
+puts "\[INFO\]: Setting input delay to: $input_delay_value"
+ 
+## set max fanout S::env(SYNTH MAX FANOUT) (current design)
+set clk_indx [lsearch [all_inputs] [get_port $::env(CLOCK_PORT)]]
+
+#set rst indx [isearch (all inputs) Iget port resetn]]
+set all_inputs_wo_clk [lreplace [all_inputs] $clk_indx $clk_indx]
+
+#set all inputs wo clk rst (treplace sall inputs wo clk srst indx Srst indx] 
+set all_inputs_wo_clk_rst $all_inputs_wo_clk
+
+# correct resetn
+set_input_delay $input_delay_value -clock [get_clocks $::env(CLOCK_PORT)] $all_inputs_wo_clk_rst
+
+# set_input_delay 0.0 -clock [get clocks S::env(CLOCK PORT)] (resetn)
+set_output_delay $output_delay_value -clock [get_clocks $::env(CLOCK_PORT)] [all_outputs]
+
+# TODO set this as parameter
+set_driving_cell -lib_cell $::env(SYNTH_DRIVING_CELL) -pin $::env(SYNTH_DRIVING_CELL_PIN) [all_inputs]
+set cap_load [expr $::env(SYNTH_CAP_LOAD) / 1000.0] 
+puts "\[INFO\]: Setting load to: $cap_load" 
+set_load $cap_load [all_outputs]
+
+```
+
+Below Image shows the Final result
+
+![STA1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/60825542-8fd1-4986-ac64-df2ff87037b6)
 
 </details>
