@@ -22,7 +22,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-16-Understand importance of good floorplan vs bad floor plan and introduction to library cells](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-16-understand-importance-of-good-floorplan-vs-bad-floor-plan-and-introduction-to-library-cells)
 - [Day-17-Design and characterise one library cell using Layout tool and spice simulator](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-17-design-and-characterise-one-library-cell-using-layout-tool-and-spice-simulator)
 - [Day-18-Pre-layout timing analysis and importance of good clock tree](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-18-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
-- [Day-19-]()
+- [Day-19-](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-19-final-steps-for-rtl2gds)
   
 
 ## Day 0: Installation
@@ -7721,9 +7721,30 @@ Below Image shows the Final result
 
 
 <details>
-<summary>Summary</summary>
+<summary>Synthesis Optimizations</summary>
+Now let us do some optimizations in the synthesis by reducing the trivial fanout from 6 to 4 using following below commands 
 
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane
+echo $::env(SYNTH_MAX_FANOUT)
+set ::env(SYNTH_MAX_FANOUT) 4
+```
+Now let us perform the sta run by using the same script as done above to find the timing 
+
+ ![2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ecd226ef-339e-41fd-a65c-43e581db0465)
+
+ Let us try to further optimize this timing by replacing any one of the cell in the design with that of higher strength to improve the slack
+
+ We will use the below commands for the same in the openlane root directory
+
+
+```
+sta pre_sta.conf
+
+```
  
+![3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/165316fa-e921-400c-bd9d-6a861ac3c574)
+
 </details>
 
 <details>
