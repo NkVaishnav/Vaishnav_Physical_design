@@ -7740,34 +7740,147 @@ Now let us perform the sta run by using the same script as done above to find th
 
 ```
 sta pre_sta.conf
-
+report_net -connections mem_la_write
+replace_cell mem_la_write sky130_fd_sc_hd_buf_2
+report_checks -fields {net cap dlew input pins} -digits 4
+report_tns
+report_wns
 ```
- 
+
 ![3](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/165316fa-e921-400c-bd9d-6a861ac3c574)
 
+Now we can observe that the slack got improved 
+
 </details>
 
 <details>
-<summary>Summary</summary>
+<summary>CTS, TritconCTS and Signal Integrity</summary>
 
- 
+Now let us replace the verilog file by the below command in the STA terminal
+
+```
+write_verilog ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/crct2/results/synthesis/picorv32a.synthesis.v
+```
+Below image shows the above update getting reflected
+
+![4](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b427ee3f-36fd-43b1-a761-244f3f09dad3)
+
+Now let us movce further with the flow to complete the floorplan, placement, cts by the below commands
+
+```
+run_floorplan
+run_placement
+run_cts
+```
+Now let us look into some of the variable of CTS by the following below commands 
+
+```
+echo $::env(LIB_TYPICAL)
+echo $::env(CURRENT_DEF)
+echo $::env(CTS_MAX_CAP)
+echo $::env(CTS_CLK_BUFFER_LIST)
+echo $::env(CTS_ROOT_BUFFER)
+```
+Output of the above commands are given below
+
+![5](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/750b65af-4a00-493c-9da8-2ff117927c9b)
+
+
 </details>
 
 <details>
-<summary>Summary</summary>
+<summary>Considering Real Clock</summary>
 
- 
+Now let us continue with the openlane by running the below commands
+
+```
+openroad
+read_lef designs/picorv32a/runs/15-10_17-53/tmp/merged.lef
+read_def designs/picorv32a/runs/15-10_17-53/results/cts/picorv32a.cts.def
+write_db pico_cts.db
+read_db pico_cts.db
+read_verilog designs/picorv32a/runs/15-10_17-53/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty -max $::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib
+read_liberty -min $::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib
+set_propagated_clock [all_clocks]
+read_sdc designs/picorv32a/src/my_base.sdc
+report_checks -path_delay min_max -format full_clock_expanded -digits 4
+
+```
+
+Let us look into the output of the above commands we have some violations in the setup part of it 
+
+Below shows the Hold part 
+
+![6](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/e38b526f-5d5f-4d92-8463-5807860634f4)
+
+Below shows the setup part 
+
+![7](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5eb992c2-2cba-408d-be0b-1bc2275bc838)
+
+**Now let us use the proper library for the timing**
+
+Right now we are int openlane let us enter the openroad
+```
+openroad
+read_db pico_cts.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/15-10_17-53/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+link_design picorv32a
+read_sdc designs/picorv32a/src/my_base.sdc
+set_propagated_clock [all_clocks]
+report_checks -path_delay min_max -fields {slew trans net cap input pin} -format full_clock_expanded
+echo $::env(CTS_CLK_BUFFER_LIST)
+```
+After the above script let us check for the timing
+
+Below shows the hold part
+
+![8](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/6a674702-6621-4377-acbc-ee92aafcb505)
+
+Below shows the setup part
+
+![9](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/fff6a8e2-d4dc-4ce7-bf50-dcfbc638ea61)
+
+
+Now let us move ahead with the run_cts step by making some changes to look into the effect of the Bigger CTS buffers
+
+```
+exit 
+echo $::env(CTS_CLK_BUFFER_LIST)
+set ::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
+echo $::env(CURRENT_DEF)
+set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/15-10_17-53/results/placement/picorv32a.placement.def
+run_cts
+```
+
+Now lets get into the openroad again to know the timing effect by the below given commands
+
+```
+
+openroad
+read_lef /openLANE_flow/designs/picorv32a/runs/15-10_17-53/tmp/merged.lef
+read_def /openLANE_flow/designs/picorv32a/runs/15-10_17-53/results/cts/picorv32a.cts.def
+write_db pico_cts1.db
+read_db pico_cts1.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/15-10_17-53/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+link_design picorv32a
+read_sdc designs/picorv32a/src/my_base.sdc
+set_propagated_clock [all_clocks]
+report_checks -path_delay min_max -fields {slew trans net cap input pin} -format full_clock_expanded 
+
+```
+
+Below are the images showing the hold
+
+![10](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1d101d93-6c88-471f-a8b4-062562de823e)
+
+Below are the images showing the setup
+
+![11](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/afa355ad-1291-45f2-9162-a29587749160)
+
 </details>
-
-
-
-
-
-
-
-
-
-
 
 ## Day 19: Final steps for RTL2GDS
 
@@ -7788,17 +7901,39 @@ sta pre_sta.conf
 <details>
 <summary>Summary</summary>
 
- 
-</details>
-
-<details>
-<summary>Summary</summary>
+**Maze Routing Lee's Algoritms**
 
  
 </details>
 
 <details>
-<summary>Summary</summary>
+<summary>Lab on Routing</summary>
+
+Now as we are in the openlane directory let us move ahead with the below steps
+
+```
+echo $::env(CURRENT_DEF)
+gen_pdn      
+```
+
+We will be facing an error for this step as shown below 
+
+![12](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5a1d1cf9-9b39-4cb6-b22e-9f1f44bc4fc1)
+
+**Running the Global and Detailed Routing**
+
+```
+echo $::env(CURRENT_DEF) 
+echo $::env(ROUTING_STRATEGY)
+set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/15-10_17-53/results/cts/picorv32a.cts.def
+run_routing
+```
+
+Below shows the image after the execution of the above image 
+
+![13](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/bbd2972c-672e-4aca-89b1-2361f60360c4)
 
  
 </details>
+
+
