@@ -7884,25 +7884,45 @@ Below are the images showing the setup
 
 ## Day 19: Final steps for RTL2GDS
 
-
-
-<details>
-<summary>Summary</summary>
-
- 
-</details>
-
-<details>
-<summary>Summary</summary>
-
- 
-</details>
-
 <details>
 <summary>Summary</summary>
 
 **Maze Routing Lee's Algoritms**
+Lee's Algorithm, also known as the Maze Routing algorithm, is a widely used method in the field of Physical Design of Integrated Circuits. It is employed in the routing stage of the physical design process to find optimal paths for connecting various components (e.g., transistors, gates, etc.) on an integrated circuit (IC) layout, while avoiding obstacles such as other components, metal layers, or any other obstructions.
 
+Here is a detailed explanation of Lee's Algorithm in the context of IC routing:
+
+**1. Background:**
+   In the physical design of integrated circuits, routing involves creating a network of wires to connect different components, forming a complete electrical circuit. This is a crucial step to ensure that the IC functions as intended. Lee's Algorithm helps in finding the shortest or optimal paths for these wires.
+
+**2. Grid-Based Approach:**
+   Lee's Algorithm operates on a grid-based representation of the IC layout. Each grid cell can be considered a potential location for a wire. The algorithm starts from a source point and aims to reach a target point while avoiding obstacles. The grid cells represent routing resources, which can be vertical or horizontal tracks or segments.
+
+**3. Breadth-First Search (BFS):**
+   Lee's Algorithm employs a modified Breadth-First Search (BFS) technique. BFS is a graph traversal algorithm, but in the context of Lee's Algorithm, the grid is treated as a 2D graph, and cells are nodes. It explores grid cells layer by layer, starting from the source and expanding outwards until it reaches the target. This ensures that the shortest path is found.
+
+**4. Wave Expansion:**
+   The algorithm creates "waves" of exploration from the source point. Initially, a wave with a value of 0 is centered on the source. Then, for each cell in the current wave, the algorithm assigns a new wave number to all unvisited neighboring cells. This process continues until the target is reached or there is no path available.
+
+**5. Backtracking:**
+   If the algorithm encounters an obstacle or a previously visited cell, it backtracks to explore alternative paths. This backtracking process helps ensure that the algorithm explores all possible routes while searching for the shortest one.
+
+**6. Traceback:**
+   Once the target is reached, the algorithm traces back from the target to the source by following the wave numbers assigned during the expansion phase. This generates the optimal path for routing.
+
+**7. Obstacle Avoidance:**
+   Lee's Algorithm efficiently avoids obstacles because it considers them as barriers during the wave expansion, preventing the algorithm from propagating waves into obstructed areas.
+
+**8. Flexibility:**
+   Lee's Algorithm can be adapted for different routing scenarios, including multi-layer routing, detailed routing, and global routing. It can handle Manhattan and non-Manhattan grid structures and can accommodate various routing constraints such as minimum track widths and spacing rules.
+
+**9. Performance and Optimization:**
+   Lee's Algorithm is known for its efficiency in finding optimal paths, especially in cases where the obstacle density is not excessively high. However, for very dense routing environments, advanced routing algorithms may be necessary to achieve the desired results.
+
+**10. Integration:**
+   Lee's Algorithm is often integrated into larger CAD (Computer-Aided Design) tools used in IC physical design. These tools automate the entire routing process, including placement and connection of components.
+
+In conclusion, Lee's Algorithm, also known as the Maze Routing algorithm, plays a significant role in the routing stage of IC physical design. It offers an efficient and effective way to find optimal paths for connecting components while avoiding obstacles, making it an essential tool for modern semiconductor manufacturing.
  
 </details>
 
