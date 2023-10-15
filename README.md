@@ -22,6 +22,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-16-Understand importance of good floorplan vs bad floor plan and introduction to library cells](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-16-understand-importance-of-good-floorplan-vs-bad-floor-plan-and-introduction-to-library-cells)
 - [Day-17-Design and characterise one library cell using Layout tool and spice simulator](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-17-design-and-characterise-one-library-cell-using-layout-tool-and-spice-simulator)
 - [Day-18-Pre-layout timing analysis and importance of good clock tree](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-18-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
+- [Day-19-]()
   
 
 ## Day 0: Installation
@@ -7716,4 +7717,67 @@ Below Image shows the Final result
 
 ![STA1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/60825542-8fd1-4986-ac64-df2ff87037b6)
 
+</details>
+
+
+<details>
+<summary>Summary</summary>
+
+ 
+</details>
+
+<details>
+<summary>Summary</summary>
+
+ 
+</details>
+
+<details>
+<summary>Summary</summary>
+
+ 
+</details>
+
+
+
+
+
+
+
+
+
+
+
+## Day 19: Final steps for RTL2GDS
+
+
+
+<details>
+<summary>Summary</summary>
+
+ 
+</details>
+
+<details>
+<summary>Summary</summary>
+
+ 
+</details>
+
+<details>
+<summary>Summary</summary>
+
+ 
+</details>
+
+<details>
+<summary>Summary</summary>
+
+ 
+</details>
+
+<details>
+<summary>Summary</summary>
+
+ 
 </details>
