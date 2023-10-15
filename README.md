@@ -7514,6 +7514,10 @@ Image of the output that is obtained after the second simulation
 
 ## Day 18: Pre-layout timing analysis and importance of good clock tree
 
+<details>
+<summary>Summary</summary>
+ In this let us look into the Pre layout timing and CTS
+</details>
 
 <details>
 <summary>Lab on Conversion of Inverter Mag file to LEF file</summary>
