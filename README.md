@@ -1,5 +1,3 @@
-![init_design mcmm_example wuto_expaned_tcl](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/fd688046-f8ed-4153-8966-e25108e7f068)# Vaishnav_Physical_design
-
 # Vaishnav_PD_Samsung
 This github repository summarizes the progress made in the Samsung PD training. Quick links:
 
