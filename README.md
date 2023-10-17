@@ -8006,7 +8006,7 @@ The chip design process is a complex and iterative one that demands meticulous a
 </details>
 
 <details>
-<summary>Synthesis</summary>
+<summary>Performing Synthesis on DC Shell</summary>
 
 Below is the tcl script that is sourced in the DC shell to write out the required gatelevel netlist, sdc and relavant reports all the libs and lefs used are as previously edited ones during the synthesis
 
@@ -8075,7 +8075,11 @@ Now let us understand about the reports that have been genereated in more detail
 
 ![Timing_rpt](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/bb8619e4-71e0-4177-adb4-df1b66fc8e2b)
 
-**Performing the Physical Design flow on ICC2**
+</details>
+
+<details>
+
+<summary>Performing the Physical Design flow on ICC2</summary>
 
 Now let us clone the required repositories for running the flow on the ICC2
 
