@@ -8194,18 +8194,29 @@ Violations
 
 ![violations](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/34a866d5-ca69-4a78-992a-ca3a85545914)
 
+**Utilization 40% Density 0.2 Boundaries Applied as width 1200 and Height 620**
 
+Below Shows the Image of the Layout when ran with the above commands given
+
+![Layout](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/91b1f40b-0285-46d6-bc89-905c82d047ad)
+
+
+Now let us Look into the reports that are being generated 
+
+Timing
+
+![Timing](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f5682dbe-c6af-4198-a2bf-c8589ae31d93)
+
+Estimate Timing
+
+There is no estimate timnig on nets so it couldnt be generated
+
+![Estimate](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/18476990-ce2f-4a9d-b6c5-deab5f39bdda)
+
+Violations
+
+![violators](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1a972dbd-57ca-4ec2-90c6-67c9677d637f)
 
 </details>
 
-<details>
-<summary></summary>
-</details>
 
-<details>
-<summary></summary>
-</details>
-
-<details>
-<summary></summary>
-</details>
