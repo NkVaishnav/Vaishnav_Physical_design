@@ -8131,10 +8131,68 @@ gvim /home/nk.vaishnav/Physical_Design/icc2_workshop_collaterals/standaloneFlow/
 After the above mentioned changes let us get started with the icc2_shell
 
 ```
-cd /home/nk.vaishnav/Physical_Design/icc2_workshop_collaterals/standaloneFlow/
+cd /home/nk.vaishnav/Physical_Design/
+mkdir shell
+cd shell
 icc2_shell
-source top.tcl
+source /home/nk.vaishnav/Physical_Design/icc2_workshop_collaterals/standaloneFlow/top.tcl
 ```
+
+```
+set_propagated_clock [all_clocks]             (Converting clock object from ideal clock to propagated clock)
+report_timing > Timing_PD_EXPno.rpt
+estimate_timing
+report_constraints -all_violators -nosplit -verbose -significant_digits 4 > violators_Expno.rpt.rpt
+
+```
+Now let us move ahead by conducting 3 experiments
+1. Utilization is 7%
+2. Utilization is 40%
+3. Utilization is 40% Boundaries and Desities set
+
+**Utilization is 7%**
+
+Below Shows the Image of the Layout when ran with the above commands given
+
+![E1Ut7](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5126d83b-8f1c-42c3-b74b-e20929774703)
+
+Now let us Look into the reports that are being generated 
+
+Timing
+
+![TimingE1U7](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/0f61512a-0ae1-4245-9727-c487df0bc326)
+
+Estimate Timing
+
+There is no estimate timnig on nets so it couldnt be generated
+
+![Estimatetiming](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/6077262b-e9f3-4b09-b24e-c5ff191ddd9b)
+
+Violations
+
+![violations](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/471a16e9-030d-451c-9a67-33a71d7bfb47)
+
+**Utilization 40%**
+
+Below Shows the Image of the Layout when ran with the above commands given
+
+![Layout](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/95a99c3c-999c-4695-8ce6-0c9185dc72e1)
+
+Now let us Look into the reports that are being generated 
+
+Timing
+
+![Timing](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/299140fd-eb64-4698-bb47-d9cb90a4674b)
+
+Estimate Timing
+
+There is no estimate timnig on nets so it couldnt be generated
+
+![estimate](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f4eec669-1664-4734-ae48-abd8004e4e3a)
+
+Violations
+
+![violations](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/34a866d5-ca69-4a78-992a-ca3a85545914)
 
 
 
