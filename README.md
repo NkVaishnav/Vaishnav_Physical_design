@@ -1,4 +1,4 @@
-# Vaishnav_Physical_design
+![init_design mcmm_example wuto_expaned_tcl](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/fd688046-f8ed-4153-8966-e25108e7f068)# Vaishnav_Physical_design
 
 # Vaishnav_PD_Samsung
 This github repository summarizes the progress made in the Samsung PD training. Quick links:
@@ -7964,13 +7964,52 @@ Below shows the image after the execution of the above image
 ## Day 20: Floorplanning and power planning labs
 
 <details>
-<summary></summary>
+<summary>Summary</summary>
+Let's delve into various key aspects of the chip design process, including floorplanning, power planning, clock tree synthesis (CTS), routing, static timing analysis (STA), and design rule check/layout vs. schematic (DRC/LVS) as well as post-layout cleaning:
+
+1. **Floorplanning**:
+   - **Definition**: Floorplanning is the initial step in chip design where the chip's physical layout is planned. It involves defining the core area, I/O locations, power grid, and the high-level arrangement of blocks or modules.
+   - **Objective**: The primary goal is to ensure efficient use of space, minimize wirelength, and enable the orderly placement of logic blocks and I/O interfaces.
+   - **Considerations**: During floorplanning, designers must take into account power delivery, signal routing, and thermal considerations to optimize the chip's performance.
+
+2. **Power Planning**:
+   - **Definition**: Power planning involves designing the power grid and distribution networks within the chip to ensure all components receive the required power supply.
+   - **Objective**: To minimize voltage drop, ensure uniform power distribution, and manage power consumption effectively.
+   - **Techniques**: This may involve adding power rails, power gates, and optimizing the location of power pads.
+
+3. **Clock Tree Synthesis (CTS)**:
+   - **Definition**: CTS is a crucial step in chip design that involves creating a clock distribution network to deliver clock signals to all sequential elements in a synchronized and low-skew manner.
+   - **Objective**: Ensure synchronous operation and meet timing requirements while minimizing clock skew.
+   - **Methods**: Clock buffers and wires are strategically placed to distribute the clock signal evenly.
+
+4. **Routing**:
+   - **Definition**: Routing involves physically connecting the logic elements on the chip with metal layers to create a functional circuit.
+   - **Objective**: Optimize wirelength and maintain performance, power, and timing objectives.
+   - **Challenges**: Complex algorithms are used to solve routing problems, considering congestion and layer assignments.
+
+5. **Static Timing Analysis (STA)**:
+   - **Definition**: STA is the process of analyzing the timing behavior of a digital circuit to ensure that it meets specified performance constraints.
+   - **Objective**: Identify and address timing violations by verifying that the signals arrive at their destinations within the required time window.
+   - **Tools**: Specialized software is used to perform STA, which helps to refine the design by suggesting timing fixes.
+
+6. **Design Rule Check (DRC) and Layout vs. Schematic (LVS)**:
+   - **DRC**: DRC is the process of verifying that the chip layout adheres to the foundry's design rules, ensuring manufacturability.
+   - **LVS**: LVS checks that the layout corresponds accurately to the original schematic, validating the design's correctness.
+   - **Automated Tools**: DRC and LVS are typically performed using automated software tools.
+
+7. **Post-Layout Cleaning**:
+   - **Definition**: Post-layout cleaning involves addressing issues in the chip's layout that may not have been apparent during initial design stages.
+   - **Objective**: To correct design problems, reduce manufacturing defects, and ensure the chip can be fabricated successfully.
+   - **Common Issues**: Issues such as wire-end extensions, spacing violations, or metal fill may need to be addressed in this phase.
+
+The chip design process is a complex and iterative one that demands meticulous attention to detail at each stage. Efficient floorplanning, power planning, CTS, routing, STA, and rigorous DRC/LVS checks are essential for ensuring that the final chip design meets performance, power, and manufacturability requirements. Post-layout cleaning is crucial for addressing issues that may arise during the design process, ensuring a high-quality chip that can be reliably manufactured.
 </details>
 
 <details>
 <summary>Synthesis</summary>
 
-Below is the tcl script that is sourced in the DC shell to write out the required gatelevel netlist, sdc and relavant reports
+Below is the tcl script that is sourced in the DC shell to write out the required gatelevel netlist, sdc and relavant reports all the libs and lefs used are as previously edited ones during the synthesis
+
 
 ```
 set target_library [list /home/nk.vaishnav/Physical_Design/LIBS/sky130_fd_sc_hd__tt_025C_1v80.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsddac.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsdpll.db]
@@ -8012,17 +8051,87 @@ gui_start
 ```
 Below is the image of the schematic after the synthesis
 
-IMG[DC_Schematic]
+**Schematic of RVMYTH, AVSDDAC, AVSDPLL**
 
-Now let us clone the required repositories for the current lab 
+![DC_SChematic](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5df5a739-c72e-44f8-9340-f2997b2ab5ee)
+
+**Deailed Image of the RVMTH**
+
+![Rvmyth_Schematic](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/32e9582d-32e8-4eae-a02a-75a8c0423bb2)
+
+
+Now let us understand about the reports that have been genereated in more detail 
+
+**Area Report**
+
+![Area_rpt](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/7bb9a84b-77f6-4658-a75b-baf80b50ff43)
+
+
+**Power Report**
+
+![Power_Report](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/cedb19f7-b274-4869-b330-973611991c03)
+
+**Timing Report**
+
+![Timing_rpt](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/bb8619e4-71e0-4177-adb4-df1b66fc8e2b)
+
+**Performing the Physical Design flow on ICC2**
+
+Now let us clone the required repositories for running the flow on the ICC2
 
 ```
+cd /home/nk.vaishnav/Physical_Design/
 git clone https://github.com/manili/VSDBabySoC.git
 git clone https://github.com/Devipriya1921/VSDBabySoC_ICC2.git
 git clone https://github.com/bharath19-gs/synopsys_ICC2flow_130nm.git
 git clone https://github.com/kunalg123/icc2_workshop_collaterals.git
 git clone https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hd.git
 git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+```
+
+Let us open the following files to edit the flow according to our setup
+
+```
+gvim /home/nk.vaishnav/Physical_Design/icc2_workshop_collaterals/standaloneFlow/top.tcl
+gvim /home/nk.vaishnav/Physical_Design/icc2_workshop_collaterals/standaloneFlow/icc2_common_setup.tcl
+gvim /home/nk.vaishnav/Physical_Design/icc2_workshop_collaterals/standaloneFlow/icc2_dp_setup.tcl
+gvim /home/nk.vaishnav/Physical_Design/icc2_workshop_collaterals/standaloneFlow/init_design.read_parasitic_tech_example.tcl
+gvim /home/nk.vaishnav/Physical_Design/icc2_workshop_collaterals/standaloneFlow/init_design.mcmm_example.auto_expanded.tcl
+gvim /home/nk.vaishnav/Physical_Design/icc2_workshop_collaterals/standaloneFlow/pns_example.tcl
+```
+
+**Modification of the above Files**
+
+**top.tcl**
+
+![top_tcl](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/976f964d-5a27-46ea-9a39-c70ee6399a12)
+
+**icc2_common_setup.tcl**
+
+![icc2_common_setup_tcl](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f528b1fa-6450-4a90-81b2-064577568435)
+
+**icc2_dp_setup.tcl**
+
+![icc2_dp_setup_tcl](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c389132b-bc89-4f03-a660-3dba75cbf5fd)
+
+**init_design.read_parasitic_tech_example.tcl**
+
+![init_design read_parasitic_tech_example_tcl](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/d937752b-b768-4230-99a1-a62cfe3dc06d)
+
+**init_design.mcmm_example.auto_expanded.tcl**
+
+![init_design mcmm_example wuto_expaned_tcl](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/194d690d-9e97-4ec2-8301-96047086b65a)
+
+**pns_example.tcl**
+
+![pns_example_tcl](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a51ea5e4-a7ad-4933-9eda-4f9b21b2b113)
+
+After the above mentioned changes let us get started with the icc2_shell
+
+```
+cd /home/nk.vaishnav/Physical_Design/icc2_workshop_collaterals/standaloneFlow/
+icc2_shell
+source top.tcl
 ```
 
 
