@@ -23,7 +23,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-17-Design and characterise one library cell using Layout tool and spice simulator](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-17-design-and-characterise-one-library-cell-using-layout-tool-and-spice-simulator)
 - [Day-18-Pre-layout timing analysis and importance of good clock tree](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-18-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
 - [Day-19-Final steps for RTL2GDS](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-19-final-steps-for-rtl2gds)
-- [Day-20-Floorplanning and power planning labs]()
+- [Day-20-Floorplanning and power planning labs](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-20-floorplanning-and-power-planning-labs)
   
 
 ## Day 0: Installation
