@@ -23,6 +23,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-17-Design and characterise one library cell using Layout tool and spice simulator](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-17-design-and-characterise-one-library-cell-using-layout-tool-and-spice-simulator)
 - [Day-18-Pre-layout timing analysis and importance of good clock tree](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-18-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
 - [Day-19-Final steps for RTL2GDS](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-19-final-steps-for-rtl2gds)
+- [Day-20-Floorplanning and power planning labs]()
   
 
 ## Day 0: Installation
@@ -7960,4 +7961,82 @@ Below shows the image after the execution of the above image
  
 </details>
 
+## Day 20: Floorplanning and power planning labs
 
+<details>
+<summary></summary>
+</details>
+
+<details>
+<summary>Synthesis</summary>
+
+Below is the tcl script that is sourced in the DC shell to write out the required gatelevel netlist, sdc and relavant reports
+
+```
+set target_library [list /home/nk.vaishnav/Physical_Design/LIBS/sky130_fd_sc_hd__tt_025C_1v80.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsddac.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsdpll.db]
+set link_library [list /home/nk.vaishnav/Physical_Design/LIBS/sky130_fd_sc_hd__tt_025C_1v80.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsddac.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsdpll.db]
+read_verilog /home/nk.vaishnav/Physical_Design/VSDBabySoC/src/module/verilogfiles/mythcore_test.v
+read_verilog /home/nk.vaishnav/Physical_Design/VSDBabySoC/src/module/verilogfiles/vsdbabysoc.v 
+set current_design vsdbabysoc
+set_units -time ns
+create_clock [get_pins {pll/CLK}] -name clk -period 10
+set_max_area 8000;
+set_max_fanout 5 vsdbabysoc;
+set_max_transition 10 vsdbabysoc
+#set_min_delay -max 10 -clock[get_clk myclk] [get_ports OUT]
+set_max_delay 10 -from dac/OUT -to [get_ports OUT]
+set_clock_latency -source 2 [get_clocks clk];
+set_clock_latency 1 [get_clocks clk];
+set_clock_uncertainty -setup 0.5 [get_clocks clk];
+set_clock_uncertainty -hold 0.5 [get_clocks clk];
+set_input_delay -max 4 -clock [get_clocks clk] [get_ports VCO_IN];
+set_input_delay -max 4 -clock [get_clocks clk] [get_ports ENb_CP];
+set_input_delay -min 1 -clock [get_clocks clk] [get_ports VCO_IN];
+set_input_delay -min 1 -clock [get_clocks clk] [get_ports ENb_CP];
+set_input_transition -max 0.4 [get_ports ENb_CP];
+set_input_transition -max 0.4 [get_ports VCO_IN];
+set_input_transition -min 0.1 [get_ports ENb_CP];
+set_input_transition -min 0.1 [get_ports VCO_IN];
+set_load -max 0.5 [get_ports OUT];
+set_load -min 0.5 [get_ports OUT];
+link
+check_design
+compile_ultra
+file mkdir report
+write -hierarchy -format verilog -output /home/nk.vaishnav/Physical_Design/VSDBabySoC_ICC2/report/verilogfvsdbabysoc_gtlvl.v
+write_sdc -nosplit -version 2.0 /home/nk.vaishnav/Physical_Design/VSDBabySoC_ICC2/report/vsdbabysoc.sdc
+report_area -hierarchy > /home/nk.vaishnav/Physical_Design/VSDBabySoC_ICC2/report/vsdbabysoc.area
+report_timing > /home/nk.vaishnav/Physical_Design/VSDBabySoC_ICC2/report/vsdbabysoc.timing
+report_power -hierarchy > /home/nk.vaishnav/Physical_Design/VSDBabySoC_ICC2/report/vsdbabysoc.power
+gui_start
+```
+Below is the image of the schematic after the synthesis
+
+IMG[DC_Schematic]
+
+Now let us clone the required repositories for the current lab 
+
+```
+git clone https://github.com/manili/VSDBabySoC.git
+git clone https://github.com/Devipriya1921/VSDBabySoC_ICC2.git
+git clone https://github.com/bharath19-gs/synopsys_ICC2flow_130nm.git
+git clone https://github.com/kunalg123/icc2_workshop_collaterals.git
+git clone https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hd.git
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+```
+
+
+
+</details>
+
+<details>
+<summary></summary>
+</details>
+
+<details>
+<summary></summary>
+</details>
+
+<details>
+<summary></summary>
+</details>
