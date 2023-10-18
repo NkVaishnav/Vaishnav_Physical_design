@@ -8240,6 +8240,71 @@ Violations
 <details>
 <summary>Labs on Placement and CTS</summary>
 
- 
+Now if we observe the previous lab constraints we have a source and network latency but as we know that we have the pll block included in the design so there is no requirement in actual for these delays to be mentioned in the sdc because these non idealities will be actually caliculated by the tool and we can remove the same for the sdc 
+
+Now let us try to fix the violation that we got in the previous labs by removing the source and network delay as mentioned above to reduce the violations that are seen in the post pnr STA
+
+Let us source the below Updated SDC tcl script in DC Shell
+
+```
+set target_library [list /home/nk.vaishnav/Physical_Design/LIBS/sky130_fd_sc_hd__tt_025C_1v80.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsddac.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsdpll.db]
+set link_library [list /home/nk.vaishnav/Physical_Design/LIBS/sky130_fd_sc_hd__tt_025C_1v80.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsddac.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsdpll.db]
+read_verilog /home/nk.vaishnav/Physical_Design/VSDBabySoC/src/module/verilogfiles/mythcore_test.v
+read_verilog /home/nk.vaishnav/Physical_Design/VSDBabySoC/src/module/verilogfiles/vsdbabysoc.v 
+set current_design vsdbabysoc
+set_units -time ns
+create_clock [get_pins {pll/CLK}] -name clk -period 10
+set_max_area 8000;
+set_max_fanout 5 vsdbabysoc;
+set_max_transition 10 vsdbabysoc
+set_max_delay 10 -from dac/OUT -to [get_ports OUT]
+#set_clock_latency -source 2 [get_clocks clk];
+#set_clock_latency 1 [get_clocks clk];
+set_clock_uncertainty -setup 0.5 [get_clocks clk];
+set_clock_uncertainty -hold 0.5 [get_clocks clk];
+set_input_delay -max 4 -clock [get_clocks clk] [get_ports VCO_IN];
+set_input_delay -max 4 -clock [get_clocks clk] [get_ports ENb_CP];
+set_input_delay -min 1 -clock [get_clocks clk] [get_ports VCO_IN];
+set_input_delay -min 1 -clock [get_clocks clk] [get_ports ENb_CP];
+set_input_transition -max 0.4 [get_ports ENb_CP];
+set_input_transition -max 0.4 [get_ports VCO_IN];
+set_input_transition -min 0.1 [get_ports ENb_CP];
+set_input_transition -min 0.1 [get_ports VCO_IN];
+set_load -max 0.5 [get_ports OUT];
+set_load -min 0.5 [get_ports OUT];
+link
+check_design
+compile_ultra
+file mkdir report
+write -hierarchy -format verilog -output /home/nk.vaishnav/Physical_Design/VSDBabySoC_ICC2_remclk/report/verilogfvsdbabysoc_gtlvl.v
+write_sdc -nosplit -version 2.0 /home/nk.vaishnav/Physical_Design/VSDBabySoC_ICC2_remclk/report/vsdbabysoc.sdc
+report_area -hierarchy > /home/nk.vaishnav/Physical_Design/VSDBabySoC_ICC2_remclk/report/vsdbabysoc.area
+report_timing > /home/nk.vaishnav/Physical_Design/VSDBabySoC_ICC2_remclk/report/vsdbabysoc.timing
+report_power -hierarchy > /home/nk.vaishnav/Physical_Design/VSDBabySoC_ICC2_remclk/report/vsdbabysoc.power
+```
+
+Below is the image of the schematic after the synthesis
+
+**Schematic of RVMYTH, AVSDDAC, AVSDPLL**
+
+
+**Deailed Image of the RVMTH**
+
+
+
+Now let us understand about the reports that have been genereated in more detail 
+
+**Area Report**
+
+
+
+**Power Report**
+
+
+**Timing Report**
+
+**Physical Design of the Updated netlist after change in SDC**
+Make the changes as mentioned in the 
+
 </details>
 
