@@ -8138,7 +8138,7 @@ cd /home/nk.vaishnav/Physical_Design/synopsys_ICC2flow_130nm/synopsys_skywater_f
 grtgenxo -itf2TLUPlus -i skywater130.nominal.itf -o skywater130.nominal.tluplus
 ```
 
-***Steps to run om ICC2 terminal**
+***Steps to run on ICC2 terminal**
 
 ```
 cd /home/nk.vaishnav/Physical_Design/
