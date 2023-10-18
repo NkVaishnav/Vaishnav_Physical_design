@@ -8348,11 +8348,14 @@ Now let us look into the reports that are being generated
 cd /home/nk.vaishnav/Physical_Design/shell_remclk
 ```
 
+**report_port_placement.rpt**
 ```
 gvim rpts_icc2/place_pins/report_port_placement.rpt
 ```
 ![report_port_placement](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/fd9b7047-ddde-4086-8800-7d9b37f34043)
 
+
+**check_design.pre_pin_placement**
 
 ```
 gvim /rpts_icc2/place_pins/check_design.pre_pin_placement
@@ -8360,13 +8363,18 @@ gvim /rpts_icc2/place_pins/check_design.pre_pin_placement
 
 ![check_design_pre_pin_placement](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/50a47ebe-c7ec-487e-8495-75d2f76c3be4)
 
+**icc2_output.txt**
+
 ```
 gvim icc2_output.txt
 ```
+
 ![icc2_output](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a221144b-47d3-46b7-a96e-033e5e9fb177)
 
 ![icc2_output1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c8ee27d3-b608-427d-921f-d18991089fa7)
 
+
+**vsdbabysoc.post_estimated_timing.rpt**
 
 ```
 gvim rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.rpt
@@ -8374,6 +8382,7 @@ gvim rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.rpt
 
 ![vsdbabysoc post_estimated_timing](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f3a6fcd6-1503-4fb7-9733-5fdaa1e959d3)
 
+**vsdbabysoc.post_estimated_timing.qor**
 
 ```
 gvim /rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.qor
@@ -8381,6 +8390,7 @@ gvim /rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.qor
 
 ![vsdbabysoc post_estimated_timing_qor](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5071200f-34e7-46db-b2bf-8fb25aae50ea)
 
+**vsdbabysoc.post_estimated_timing.qor.sum**
 
 ```
 gvim /rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.qor.sum
@@ -8388,17 +8398,11 @@ gvim /rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.qor.sum
 
 ![vsdbabysoc post_estimated_timing_qor_sum](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f5f8d06f-f30b-4f11-893b-f5e5fd1148da)
 
-
 **CTS Image**
 
 ![CTS](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2ca818e0-63db-45c6-bfe2-b9f26cc53388)
 
-
-
-
-
-
-
+![CTS2](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/e0730fa3-0080-4e25-8a14-2ef44bceca9d)
 
 </details>
 
