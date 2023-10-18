@@ -8287,24 +8287,118 @@ Below is the image of the schematic after the synthesis
 
 **Schematic of RVMYTH, AVSDDAC, AVSDPLL**
 
+![Schematic](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/09e7fd7d-9bf3-4c85-a234-8b24fa5f2b53)
+
 
 **Deailed Image of the RVMTH**
 
+![Rvmyth_schematic](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a4d61888-87b2-40f0-9521-ccb70fa7414d)
 
 
 Now let us understand about the reports that have been genereated in more detail 
 
 **Area Report**
 
+![Area](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2a567919-8699-4680-af0e-4da2fca490f6)
 
 
 **Power Report**
 
+![power](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/33c37bc5-7a46-4f8c-b89d-a18adf259a70)
+
 
 **Timing Report**
 
+![Timing](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/140d4406-1c62-442d-82d5-4eadbd06d0db)
+
+
+
 **Physical Design of the Updated netlist after change in SDC**
-Make the changes as mentioned in the 
+
+As we have alerady made all required chanegd in the standalone folder let us copy paste the same folder and rename it to standaloneFlow1 and update the same in the scripts and also change the VSDBabySoC_ICC2 to VSDBabySoC_ICC2_remclk in all the required files as done before 
+
+```
+cd /home/nk.vaishnav/Physical_Design/
+mkdir shell_remclk
+cd shell_remclk
+icc2_shell
+source /home/nk.vaishnav/Physical_Design/icc2_workshop_collaterals/standaloneFlow1/top.tcl
+```
+
+This experiment is done only for 45% Utilization as it has the best timing in the previous experiment 
+
+Below is the image of the Layout that is seen after the run 
+
+**CORE IMAGE**
+
+![Layout](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/58df3e50-37b5-4147-8108-96207967213c)
+
+**AVSDDAC**
+
+![avsddac](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/fd10df5a-8e46-4344-a3e1-4b9436e68a34)
+
+**AVSDPLL**
+
+![avsdpll](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c1f4af0d-67e3-4db3-8768-1363d8a61bc2)
+
+
+Now let us look into the reports that are being generated 
+
+```
+cd /home/nk.vaishnav/Physical_Design/shell_remclk
+```
+
+```
+gvim rpts_icc2/place_pins/report_port_placement.rpt
+```
+![report_port_placement](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/fd9b7047-ddde-4086-8800-7d9b37f34043)
+
+
+```
+gvim /rpts_icc2/place_pins/check_design.pre_pin_placement
+```
+
+![check_design_pre_pin_placement](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/50a47ebe-c7ec-487e-8495-75d2f76c3be4)
+
+```
+gvim icc2_output.txt
+```
+![icc2_output](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a221144b-47d3-46b7-a96e-033e5e9fb177)
+
+![icc2_output1](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c8ee27d3-b608-427d-921f-d18991089fa7)
+
+
+```
+gvim rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.rpt
+```
+
+![vsdbabysoc post_estimated_timing](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f3a6fcd6-1503-4fb7-9733-5fdaa1e959d3)
+
+
+```
+gvim /rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.qor
+```
+
+![vsdbabysoc post_estimated_timing_qor](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5071200f-34e7-46db-b2bf-8fb25aae50ea)
+
+
+```
+gvim /rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.qor.sum
+```
+
+![vsdbabysoc post_estimated_timing_qor_sum](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f5f8d06f-f30b-4f11-893b-f5e5fd1148da)
+
+
+**CTS Image**
+
+![CTS](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2ca818e0-63db-45c6-bfe2-b9f26cc53388)
+
+
+
+
+
+
+
 
 </details>
 
