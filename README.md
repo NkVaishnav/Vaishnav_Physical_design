@@ -8157,7 +8157,7 @@ report_constraints -all_violators -nosplit -verbose -significant_digits 4 > viol
 ```
 Now let us move ahead by conducting 3 experiments
 1. Utilization is 7%
-2. Utilization is 40%
+2. Utilization is 45%
 3. Utilization is 40% Boundaries and Desities set
 
 **Utilization is 7%**
@@ -8182,7 +8182,7 @@ Violations
 
 ![violations](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/471a16e9-030d-451c-9a67-33a71d7bfb47)
 
-**Utilization 40%**
+**Utilization 45%**
 
 Below Shows the Image of the Layout when ran with the above commands given
 
