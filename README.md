@@ -22,6 +22,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-18-Pre-layout timing analysis and importance of good clock tree](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-18-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
 - [Day-19-Final steps for RTL2GDS](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-19-final-steps-for-rtl2gds)
 - [Day-20-Floorplanning and power planning labs](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-20-floorplanning-and-power-planning-labs)
+- [Day-21-Powerplan and CTS labs]()
   
 
 ## Day 0: Installation
@@ -8130,6 +8131,15 @@ gvim /home/nk.vaishnav/Physical_Design/icc2_workshop_collaterals/standaloneFlow/
 
 After the above mentioned changes let us get started with the icc2_shell
 
+**Steps to generate tluplus files from itf files**
+
+```
+cd /home/nk.vaishnav/Physical_Design/synopsys_ICC2flow_130nm/synopsys_skywater_flow_nominal/itf_files
+grtgenxo -itf2TLUPlus -i skywater130.nominal.itf -o skywater130.nominal.tluplus
+```
+
+***Steps to run om ICC2 terminal**
+
 ```
 cd /home/nk.vaishnav/Physical_Design/
 mkdir shell
@@ -8219,4 +8229,17 @@ Violations
 
 </details>
 
+## Day 21: Placement and CTS Labs
+
+<details>
+<summary>Summary</summary>
+
+ 
+</details>
+
+<details>
+<summary>Labs on Placement and CTS</summary>
+
+ 
+</details>
 
