@@ -8433,7 +8433,7 @@ gvim /rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.qor.sum
 </details>
 
 
-##Day 22: Analysis of the CTS Labs
+## Day 22: Analysis of the CTS Labs
 
 <details>
 <summary>Summary</summary>
