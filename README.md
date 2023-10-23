@@ -8626,7 +8626,21 @@ Below shows the output of the **reprot_timing**
 
 This slack issue can be fixed in the ECO stage in the next lab
 
+**BUT THE LIBRARY OVER HERE IS NOT HAVING THE PROPER ICG CELLS HENCE WE CAN SEE THAT THE TOOL IS TAKING UP SNPS_CLOCK_GATE_HIGH_core_CELL FOR THE RUN**
 
+Now let us consider a small script to write out the cells in the design and source the below script in the *icc2_shell*
+
+```
+foreach_in_collection my_cell [get_cell core1/*] {
+set rname [get_attribute [get_cells $my_cell] ref_name
+echo $my_name ":" $rname >> qwer.txt
+}
+sh gvim qwer.txt
+```
+
+Below shows the image of the clockgating cells been taken from the Synopsys GTECH Library in our design
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2a0d66e6-b6ff-4744-9a13-e416153600c6)
 
 </details>
 
