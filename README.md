@@ -24,6 +24,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-20-Floorplanning and power planning labs](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-20-floorplanning-and-power-planning-labs)
 - [Day-21-Powerplan and CTS labs](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-21-placement-and-cts-labs)
 - [Day-22-Analysis of the CTS labs](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-22-analysis-of-the-cts-labs)
+- [Day-23-Clock gating Technique]()
   
 
 ## Day 0: Installation
@@ -8530,3 +8531,102 @@ report_clock_timing -type transition
 
  
 </details>
+
+
+
+## Day 23: Clock gating technique
+
+<details>
+<summary>Summary</summary>
+
+Integrated Clock Gating is a power-saving technique used in digital integrated circuits, especially in the context of modern semiconductor design. Its primary purpose is to reduce dynamic power consumption by disabling or "gating" the clock signal to certain parts of a circuit when they are not actively performing useful work. This technique is essential in low-power design strategies, which have become increasingly important in the world of portable devices, IoT (Internet of Things), and high-performance computing, as it helps extend battery life and reduces heat generation in electronic systems.
+
+Here's a detailed explanation of Integrated Clock Gating:
+
+**1. Basic Principle:**
+   Integrated Clock Gating is based on the fundamental concept that many digital circuits only need the clock signal when they are actively performing computations or when data needs to be transferred. When a circuit is idle, clocking its components consumes power unnecessarily. By selectively disabling the clock to idle components, you can significantly reduce power consumption.
+
+**2. How It Works:**
+   Clock gating is typically implemented using logic gates that act as "gates" for the clock signal. When these gates are enabled, the clock signal can pass through and drive the associated logic elements. When disabled, the clock signal is effectively blocked. These gates are controlled by various conditions or signals that indicate whether the circuit should be active or idle.
+
+**3. Types of Clock Gating:**
+   There are two primary types of clock gating techniques:
+
+   a. **Static Clock Gating:** In this approach, the clock gating conditions are determined during design time, and the gating logic remains fixed. This method is suitable for circuits with predictable and static gating conditions.
+
+   b. **Dynamic Clock Gating:** Here, the gating conditions can change dynamically during the operation of the circuit. This approach is more versatile and is often used in complex designs with variable clock gating requirements.
+
+**4. Benefits:**
+   Integrated Clock Gating offers several advantages:
+
+   a. **Power Savings:** By reducing clock distribution to inactive parts of a circuit, dynamic power consumption is minimized, leading to energy-efficient designs.
+
+   b. **Heat Reduction:** Lower power consumption also translates to reduced heat generation, which can extend the lifespan of the device and improve reliability.
+
+   c. **Extended Battery Life:** In portable devices, such as smartphones and IoT devices, where battery life is crucial, clock gating can significantly prolong the time between charges.
+
+**5. Challenges and Considerations:**
+   While Integrated Clock Gating is effective in reducing power consumption, it's not without its challenges:
+
+   a. **Timing Issues:** Care must be taken to ensure that clock gating doesn't introduce timing violations or affect the circuit's functionality.
+
+   b. **Verification and Validation:** Designers must thoroughly validate and test clock gating conditions to avoid potential issues, such as glitches or race conditions.
+
+   c. **Complexity:** Implementing clock gating logic can increase the complexity of the design, which may require additional effort in terms of design, verification, and testing.
+
+**6. Use Cases:**
+   Integrated Clock Gating is commonly employed in various digital systems, including microprocessors, ASICs (Application-Specific Integrated Circuits), GPUs (Graphics Processing Units), and FPGAs (Field-Programmable Gate Arrays).
+
+**7. Tools and Methodologies:**
+   Design tools and methodologies, including electronic design automation (EDA) software, are used to automate the process of adding clock gating to a circuit while minimizing potential issues.
+
+In conclusion, Integrated Clock Gating is a crucial technique in low-power and energy-efficient digital circuit design. It offers substantial power savings, which is vital for modern electronic devices and helps address the ever-increasing demand for energy efficiency and longer battery life in the world of technology.
+
+</details>
+
+<details>
+<summary>Lab on Clock gating</summary>
+For this Lab we are supposed to make slight change in the synthesis side we need to include the following changes in the vsdbabysoc.tcl
+
+```
+compile_ultra to be replaced by compile_ultra -incremental -gate_clock
+```
+
+Now let us report the clockgating with **report_clock_gating** command
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c3f17513-bed3-4203-9aeb-b8a0d1890b07)
+
+As we can see  the inclusion of the registers being gated in the design i means the cells have been clock gated 
+
+Now Let us move ahead to the physical design part We need to make some changes in the top.tcl to get this script working for the clock opt and place opt 
+
+we need to Update the top.tcl as shown below
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/e250f34c-1a53-4fd8-8ee4-e1830bd3d092)
+
+We need to update the mcmm file to the 1.8 volts as the skywater 130 is meant to work for 1.8 volts
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/838d4be5-f9ba-410b-897b-bf57d26ce33f)
+
+Below shows the final snippet of the Layout 
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2bf11437-cde7-47b3-8375-6068a5fae867)
+
+Below shows the image of the Clock tree getting built witht appropriate buffers used 
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/84a8547f-2634-477d-ab8d-9c1feaabd350)
+
+Below image shows the usage of the ICG cells 
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/d75972be-5f67-4723-b27c-c4de6baa230d)
+
+Below shows the output of the **reprot_timing**
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/9bc1eba5-7d1d-4836-b58d-58bd3161bf50)
+
+This slack issue can be fixed in the ECO stage in the next lab
+
+
+
+</details>
+
