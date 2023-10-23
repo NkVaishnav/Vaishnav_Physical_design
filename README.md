@@ -24,7 +24,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-20-Floorplanning and power planning labs](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-20-floorplanning-and-power-planning-labs)
 - [Day-21-Powerplan and CTS labs](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-21-placement-and-cts-labs)
 - [Day-22-Analysis of the CTS labs](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-22-analysis-of-the-cts-labs)
-- [Day-23-Clock gating Technique]()
+- [Day-23-Clock gating Technique](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-23-clock-gating-technique)
   
 
 ## Day 0: Installation
