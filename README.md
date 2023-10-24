@@ -8642,5 +8642,15 @@ Below shows the image of the clockgating cells been taken from the Synopsys GTEC
 
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2a0d66e6-b6ff-4744-9a13-e416153600c6)
 
+**NOW AS WE HAVE FACED THIS IMAGE WE TRIED TO DEBUG MORE ON THE SAME IN THE DC SHELL IT SHOWS THAT THE SNPS_CLOCK_HIGH_AS THE REFNAME AND WHEN WE TRIED TO OBSERVE THE SAME IN THE DC SHELL WE GOT THE BELOW IMAGE**
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ff5be953-cb54-4cfc-b73d-3fd6fbcd9357)
+
+As mentioned above regarding the latches that were supposed to get picked in the clock gating stage the gated latch clock on the right in the above design is the required latch which acts as the gating element and the flipflops acts as the gated elements which is shown clearly in the below image 
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/9c87e50e-8637-4e34-88cd-03bd0e141409)
+
+There are 32 other similar latches (33 in total) as shown in the above report obtained by using *report_clock_gating* above reg in the above image is the registers which are clocked
+
 </details>
 
