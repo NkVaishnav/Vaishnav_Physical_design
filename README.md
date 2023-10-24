@@ -25,6 +25,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-21-Powerplan and CTS labs](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-21-placement-and-cts-labs)
 - [Day-22-Analysis of the CTS labs](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-22-analysis-of-the-cts-labs)
 - [Day-23-Clock gating Technique](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-23-clock-gating-technique)
+- [Day-24-Timing Violations and ECO]()
   
 
 ## Day 0: Installation
@@ -8651,6 +8652,52 @@ As mentioned above regarding the latches that were supposed to get picked in the
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/9c87e50e-8637-4e34-88cd-03bd0e141409)
 
 There are 32 other similar latches (33 in total) as shown in the above report obtained by using *report_clock_gating* Reg in the above image is the registers which are gated elements 
+
+</details>
+
+## Day 24: Timing Violations and ECO
+
+<details>
+<summary>Summary</summary>
+Timing violations and ECO (Engineering Change Order) are crucial aspects of the semiconductor design and manufacturing process, particularly in the realm of digital integrated circuits. Understanding these concepts is essential for ensuring the functionality and performance of complex electronic systems.
+
+**Timing Violations:**
+
+Timing violations, in the context of digital design, refer to instances where the actual signal propagation through a digital circuit does not meet the specified timing requirements. These violations can occur due to a variety of factors, such as:
+
+1. **Setup and Hold Time Violations:** These are the most common types of timing violations. A setup time violation occurs when the input to a flip-flop changes too close to the clock edge, preventing the flip-flop from capturing the data correctly. A hold time violation happens when the input changes too soon after the clock edge, causing the flip-flop to store incorrect data.
+
+2. **Clock-to-Q (Clock-to-Output) Violations:** These violations pertain to the time it takes for a signal to propagate from an input to an output through a combinational logic path. If the clock-to-Q delay exceeds the specified limits, it can result in a timing violation.
+
+3. **Max and Min Pulse Width Violations:** Violations can also occur when the minimum or maximum pulse width of a signal is not met. This can be problematic for generating stable clock signals or data transfer.
+
+4. **Hold-Flop to Setup-Flop Timing Violations:** In some cases, the data must be transferred from one flip-flop to another within a specific time window. Violations in this context can result in data corruption.
+
+5. **Global and Local Timing Issues:** Timing violations can be at the chip level (global) or within specific blocks (local). Global timing issues may require significant changes to the entire design, while local issues can often be resolved with localized fixes.
+
+**Engineering Change Order (ECO):**
+
+ECO is a process used to make modifications to an existing chip design after it has been partially or completely implemented, verified, and even manufactured. ECOs are typically required to address issues like timing violations, functionality changes, power optimization, or fixing design errors identified late in the development cycle. The key steps involved in ECO are as follows:
+
+1. **Problem Identification:** The design team identifies the issue, often through post-synthesis or post-layout analysis, which may include timing violations or other problems.
+
+2. **Change Proposal:** A change proposal is created that outlines the necessary modifications to the design, such as adding, removing, or modifying logic gates, signals, or routing.
+
+3. **Impact Analysis:** The design team evaluates the potential consequences of the proposed changes on the chip's functionality, performance, and power consumption. This is a critical step to ensure that the ECO doesn't introduce new problems.
+
+4. **Implementation:** The proposed changes are implemented in the design, and the modified design is synthesized and undergoes other stages of the design flow.
+
+5. **Verification:** The modified design is thoroughly verified using simulation and other validation techniques to ensure that it meets all design specifications, including timing requirements.
+
+6. **Documentation:** Detailed documentation of the ECO and the changes made is essential for maintaining transparency and ensuring proper manufacturing and testing.
+
+7. **Manufacturing and Testing:** Once the ECO is successfully implemented and verified, the chip can proceed to the manufacturing stage. Testing processes may need to be updated to accommodate the ECO changes.
+
+Timing violations are a common trigger for ECOs because they can significantly impact the chip's performance and functionality. The ECO process is a vital tool for making necessary design changes while minimizing delays and cost overruns in semiconductor development projects.
+</details>
+
+<details>
+<summary>Labs on Timing Violations and ECO</summary>
 
 </details>
 
