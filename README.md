@@ -8650,7 +8650,7 @@ As mentioned above regarding the latches that were supposed to get picked in the
 
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/9c87e50e-8637-4e34-88cd-03bd0e141409)
 
-There are 32 other similar latches (33 in total) as shown in the above report obtained by using *report_clock_gating* above reg in the above image is the registers which are clocked
+There are 32 other similar latches (33 in total) as shown in the above report obtained by using *report_clock_gating* Reg in the above image is the registers which are gated elements 
 
 </details>
 
