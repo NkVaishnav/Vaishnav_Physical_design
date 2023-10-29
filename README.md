@@ -8707,5 +8707,67 @@ Now let us look into the path that has been seen in the max delay constraint bel
 
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/72f35058-b48d-43a5-884a-fc8bb0dc6421)
 
+```
+size_cell instancename changed_lib_cell_name
+```
+
+we have used the command
+
+**Timing check with size_cell**
+
+```
+report_timing -nosplit -cap -input_pins -tran 
+```
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8bc8d688-1346-4100-879e-c9debd492fa9)
+
+When we observe the above image we got to know that the buf_4 is having an increment of 0.5792 which is being changed to 0.2556 by replacing the buffer with a higher drive strength one 
+
+There are no hold violations in the design 
+IF there were any in the design we are supposed to size up the cell in the arrival path to increase the delay so that the violation will get fixed 
+
+**Check for violations with the below commands**
+
+```
+report_constraints -max_transistion -all_violators
+```
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8939717b-ea0a-4bb9-99c7-a3f4bbcd729a)
+
+The image above shows that the area has incresaed after we sized up the cell this is valid as the Size of *16 buffer is higher than *4 
+
+**Power Reports**
+
+Now let us report the power by replacing the buffer cells with the decap cells 
+
+Decap cells, short for decoupling capacitor cells, play a crucial role in VLSI (Very Large Scale Integration) design by providing a more efficient and effective solution for addressing power distribution and noise issues than traditional filler cells. The use of decap cells has become increasingly important as VLSI technology has advanced and integrated circuits have become more densely packed with millions or even billions of transistors.
+
+Here's a closer look at the usage of decap cells instead of filler cells in VLSI design:
+
+1. **Power Delivery Network (PDN) Stabilization:** In VLSI design, a stable and reliable power supply is critical for proper circuit operation. Decap cells are strategically placed within the layout to act as reservoirs for charge, ensuring that the voltage levels remain constant. These cells help in mitigating voltage droops and fluctuations that can occur when a large number of transistors switch simultaneously. On the other hand, filler cells are primarily used to occupy empty spaces in the layout and do not contribute to PDN stabilization.
+
+2. **Improved Noise Immunity:** Decap cells are specifically designed to minimize noise on the power grid, reducing the impact of simultaneous switching noise (SSN) and crosstalk. The capacitors within the decap cells absorb and release charge quickly, helping to maintain a stable and noise-free power supply for the integrated circuits. Filler cells, while they do add capacitance to the design, are not optimized for noise reduction in the same way that decap cells are.
+
+3. **Layout Density and Timing Closure:** The integration of decap cells into the design allows for a more optimized placement of capacitors. As a result, designers can achieve higher layout densities, reduce the overall silicon area, and improve timing closure. Filler cells, while they contribute to density to some extent, are not designed to specifically target the power delivery and noise issues, which can lead to challenges in achieving high-performance VLSI designs.
+
+4. **Cost-Efficiency:** Decap cells are strategically placed where they are needed the most, based on the analysis of the power grid and the characteristics of the design. This targeted approach to adding capacitance can be more cost-effective than indiscriminately adding filler cells throughout the chip, which may lead to increased manufacturing costs and power consumption.
+
+5. **Customization and Scalability:** Decap cells can be customized to match the specific requirements of a given VLSI design, allowing for scalability and adaptability to the unique characteristics of the chip. Filler cells, on the other hand, are typically generic and not tailored to the chip's power delivery needs.
+
+In summary, the usage of decap cells instead of filler cells in VLSI design offers several advantages, particularly in terms of power grid stabilization, noise reduction, layout density, and cost-efficiency. As VLSI technology continues to advance, the strategic placement and optimization of decap cells have become an essential part of the design process, ensuring the reliable and efficient operation of modern integrated circuits.
+
+```
+report_power
+```
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/89491247-c734-405c-9a86-e8a3c4d781c4)
+
+The above image clearly shows the power has been reduced by the usage of the decap cells 
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f447092e-11d3-488a-948c-754facd5012c)
+
+Above shows the image of the replacement of the filler cells with the decap cells for the power reduction
+
+
+Hence by this we have improved all the QOR parameters with this in this ECO phase 
 </details>
 
