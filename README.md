@@ -8698,6 +8698,14 @@ Timing violations are a common trigger for ECOs because they can significantly i
 
 <details>
 <summary>Labs on Timing Violations and ECO</summary>
+ 
+Below shows the image of the Layout after the PNR Run
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1a497964-7b77-49ca-b054-65fecdf3582f)
+
+Now let us look into the path that has been seen in the max delay constraint below
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/72f35058-b48d-43a5-884a-fc8bb0dc6421)
 
 </details>
 
