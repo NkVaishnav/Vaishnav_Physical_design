@@ -8885,5 +8885,17 @@ Addressing cross talk is essential in mixed-signal designs, as it can impact the
 <details>
 <summary>Lab on Mixed Signal and Cross talk</summary>
 
- 
+Commands to be used to get the verilog netlist for a PT run 
+After sourcing the top.tcl we get the write_data_dir folder created and in it we have a folder createed on the name of our design inside it we have a gz file which we are supposed to extract with the following given commands below
+
+```
+gzip -d vsdbabysoc.pt.v.gz
+```
+The above commands unzips the netlist file 
+
+Now let us open a PT shell and source the below script 
+
+```
+
+```
 </details>
