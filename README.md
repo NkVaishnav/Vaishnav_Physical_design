@@ -8891,17 +8891,27 @@ Addressing cross talk is essential in mixed-signal designs, as it can impact the
 Commands to be used to get the verilog netlist for a PT run 
 After sourcing the top.tcl we get the write_data_dir folder created and in it we have a folder createed on the name of our design inside it we have a gz file which we are supposed to extract with the following given commands below
 
-Now as we have made changes in our netlist we will try to write out the netlist again with the below given command (This is mandatory because we have made changes in our netlist after the run of the top.tcl and we need this changes toget reflected in our current netlist )
+Now as we have made changes in our netlist we will try to write out the netlist again with the below given command (This is mandatory because we have made changes in our netlist after the run of the top.tcl and we need this changes toget reflected in our current netlist ), To be done in icc2_shell
 
 ```
 write_verilog -compress gzip -exclude {scalar_wire_declarations leaf_module_declarations end_cap_cells well_tap_cells filler_cells pad_spacer_cells physical_only_cells cover_cells supply_statements pg_netlist} -hierarchy all ${path_dir}/${block_refname_no_label}.pt.v
 ```
 
+Now let us write out the spef file by the below commands in icc2_shell
+
+```
+update_timing
+write_parasitics -format spef -output vsdbabysoc_spef
+```
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1690957a-afed-4734-a00a-949c3358b797)
+
+
 The below commands unzips the netlist and the sdc file
 
 ```
 gzip -d /home/nk.vaishnav/Physical_Design/shell/write_data_dir/vsdbabysocvsdbabysoc.pt.v.gz
-gzip -d /home/nk.vaishnav/Physical_Design/shell/write_data_dir/vsdbabysoc/vsdbabysoc/vsdbabysoc.sdc.gz
+gzip -d /home/nk.vaishnav/Physical_Design/shell/write_data_dir/vsdbabysoc/vsdbabysoc/func1.sdc.gz
 ```
  
 Now let us open a PT shell and source the below script 
@@ -8913,6 +8923,16 @@ read_verilog /home/nk.vaishnav/Physical_Design/shell/write_data_dir/vsdbabysoc/v
 link_design
 current_design
 ```
+After the above script is sourced let us provide the tool generated constraints to the PT shell by the following command
+
+```
+read_sdc /home/nk.vaishnav/Physical_Design/shell/write_data_dir/vsdbabysoc/func1.sdc
+set_app_var si_enable_analysis true
+
+```
+
+
+
 
 By sourcing the above script we get the Design that has been obtained from the icc shell linked and ready to use
 </details>
