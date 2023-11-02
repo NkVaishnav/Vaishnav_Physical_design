@@ -8720,10 +8720,20 @@ report_timing -nosplit -cap -input_pins -tran
 ```
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8bc8d688-1346-4100-879e-c9debd492fa9)
 
+Image showing no setup violations 
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/9dc2513d-9fbc-4f11-868d-2820fda35dc3)
+
+
 When we observe the above image we got to know that the buf_4 is having an increment of 0.5792 which is being changed to 0.2556 by replacing the buffer with a higher drive strength one 
 
 There are no hold violations in the design 
 IF there were any in the design we are supposed to size up the cell in the arrival path to increase the delay so that the violation will get fixed 
+
+Image showing no hold violations 
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5f24d910-ba8c-4aa6-961e-0a7428cb812c)
+
 
 **Check for violations with the below commands**
 
@@ -8734,6 +8744,11 @@ report_constraints -max_transistion -all_violators
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8939717b-ea0a-4bb9-99c7-a3f4bbcd729a)
 
 The image above shows that the area has incresaed after we sized up the cell this is valid as the Size of *16 buffer is higher than *4 
+
+Image showing no violations 
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/cf5abc05-4254-448e-ba9d-2cda96bf0af7)
+
 
 **Power Reports**
 
