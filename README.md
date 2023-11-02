@@ -8923,15 +8923,31 @@ read_verilog /home/nk.vaishnav/Physical_Design/shell/write_data_dir/vsdbabysoc/v
 link_design
 current_design
 ```
-After the above script is sourced let us provide the tool generated constraints to the PT shell by the following command
+
+After the above script is sourced let us provide the tool generated constraints and the spef to the PT shell by the following command
 
 ```
 read_sdc /home/nk.vaishnav/Physical_Design/shell/write_data_dir/vsdbabysoc/func1.sdc
 set_app_var si_enable_analysis true
 read_parasitics -keep_capacitive_coupling /home/nk.vaishnav/Physical_Design/shell/vsdbabysoc_spef.temp1_25.spef
+check_timing
 ```
 
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/50e67167-7ec5-415f-b11c-2fa9f41511c0)
 
+Now let us report the bottle necks in our designs for the crosstalk effects
+
+```
+report_si_bottleneck              (Report of the nets that have the largest crosstalk effects)
+report_bottleneck                 (Report of multiple min/max delay violation)
+report_si_delay_analysis
+report_si_aggressor_exclusion
+report_si_noise_analysis
+```
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1ba0938b-dced-4959-854e-52efe988d562)
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/07241ea1-dbe9-474f-a1d0-780da1cdc0e5)
 
 
 By sourcing the above script we get the Design that has been obtained from the icc shell linked and ready to use
