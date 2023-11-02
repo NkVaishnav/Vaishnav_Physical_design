@@ -8928,7 +8928,7 @@ After the above script is sourced let us provide the tool generated constraints 
 ```
 read_sdc /home/nk.vaishnav/Physical_Design/shell/write_data_dir/vsdbabysoc/func1.sdc
 set_app_var si_enable_analysis true
-
+read_parasitics -keep_capacitive_coupling /home/nk.vaishnav/Physical_Design/shell/vsdbabysoc_spef.temp1_25.spef
 ```
 
 
