@@ -8786,3 +8786,102 @@ Above shows the image of the replacement of the filler cells with the decap cell
 Hence by this we have improved all the QOR parameters with this in this ECO phase 
 </details>
 
+## Day 25: RISC-V core RTL2GDS flow
+
+<details>
+<summary>Summary</summary>
+The RTL to GDS (Register-Transfer Level to Graphic Data System) flow is a crucial process in the design and fabrication of integrated circuits (ICs) or microchips. This flow encompasses a series of steps and tools that enable engineers to transform a high-level hardware description of a digital design into a physical layout that can be manufactured in a semiconductor foundry. Below is an overview of the RTL to GDS flow:
+
+1. RTL Design:
+   The process begins with the creation of the RTL (Register-Transfer Level) design, which represents the logical functionality of the digital circuit using high-level hardware description languages like VHDL or Verilog. Designers define the behavior of the circuit in terms of registers, combinational logic, and data paths.
+
+2. Functional Verification:
+   Before proceeding, the RTL design is subjected to functional verification to ensure that it behaves as intended. This step involves simulation and testing to catch any logical errors or functional issues in the design.
+
+3. Synthesis:
+   Synthesis is the process of converting the RTL description into a gate-level netlist. During synthesis, a tool like Synopsys Design Compiler or Cadence Genus optimizes the design for area, power, and timing by mapping the RTL elements to standard cells in a technology library.
+
+4. Design Constraints:
+   Design constraints are established to define the required performance metrics, such as clock frequency, power consumption, and area. These constraints guide the subsequent steps in the flow.
+
+5. Technology Libraries:
+   The ASIC (Application-Specific Integrated Circuit) or FPGA (Field-Programmable Gate Array) designer selects the appropriate technology library, which includes information about standard cells, flip-flops, and other essential components available in the manufacturing process.
+
+6. Placement:
+   In this step, a placement tool like Cadence Innovus or Synopsys ICC places the synthesized gates onto the chip's silicon area. The goal is to minimize wirelength and optimize for the constraints while meeting the performance targets.
+
+7. Clock Tree Synthesis (CTS):
+   The clock tree is an essential part of digital designs, ensuring that clock signals reach all parts of the chip with minimal skew and jitter. CTS tools generate the clock distribution network and optimize it for clocking requirements.
+
+8. Routing:
+   Routing tools are used to connect the placed gates with wires. These tools create the physical interconnections between gates while adhering to design constraints and minimizing signal delay.
+
+9. Design Rule Check (DRC):
+   A DRC is performed to ensure that the layout adheres to the manufacturing process's design rules. These rules include constraints related to minimum feature sizes, spacing, and other fabrication requirements.
+
+10. Layout vs. Schematic (LVS) Check:
+    The LVS check compares the physical layout with the schematic representation (netlist) to verify that they are consistent. Any discrepancies are flagged and resolved.
+
+11. Timing Analysis:
+    Timing analysis is performed to ensure that the design meets its performance goals, such as clock frequency and setup/hold times.
+
+12. Sign-off:
+    After successfully completing all the checks, the design is ready for sign-off, indicating that it is ready for fabrication.
+
+13. GDSII Generation:
+    The final step in the RTL to GDS flow is to generate the GDSII file, which contains the geometric layout information of the chip. This file is sent to the semiconductor foundry for manufacturing.
+
+The RTL to GDS flow is a complex and highly automated process, and it is a critical part of semiconductor chip design. It requires the collaboration of design, verification, physical design, and semiconductor manufacturing teams to ensure that the final product meets the desired specifications and can be mass-produced.
+ 
+</details>
+
+## Day 26: Introduction to mixed-signal flow
+
+<details>
+<summary>Summary</summary>
+Mixed-Signal Flow:
+Mixed-signal design involves combining both analog and digital components on the same integrated circuit (IC). This allows for the integration of analog functions like sensors, amplifiers, and analog-to-digital converters (ADCs) with digital logic, memory, and processing units. The mixed-signal flow encompasses several design stages:
+
+1. Specification: In this phase, the requirements for both the analog and digital portions of the design are defined. Designers need to consider factors like power consumption, speed, accuracy, and the interface between the analog and digital components.
+
+2. System-Level Design: At the system level, designers create a high-level representation of the mixed-signal system, defining the various analog and digital blocks and their interactions.
+
+3. Mixed-Signal Simulation: Designers perform mixed-signal simulation to verify the behavior of the entire system. This simulation ensures that the analog and digital parts work together as expected and meet the specified requirements.
+
+4. Analog Design: Analog design involves the design of analog components like voltage references, analog filters, and amplifiers. This requires a deep understanding of analog electronics and the use of analog design tools.
+
+5. Digital Design: The digital portion includes the design of digital logic, processors, and memory elements. Digital designers use hardware description languages (HDLs) like VHDL or Verilog to design these components.
+
+6. Integration: Integrating the analog and digital components is a critical step, ensuring that they can communicate effectively. The interface between the two domains, known as the analog-to-digital interface (ADI), is a key consideration.
+
+7. Mixed-Signal Verification: Comprehensive verification of the mixed-signal design is crucial to ensure that it meets the desired specifications. This includes both functional and performance verification.
+
+8. Layout: The physical layout of the mixed-signal chip is created, considering the placement and routing of both analog and digital components.
+
+9. Manufacture: Once the design is complete and verified, it proceeds to the fabrication process in a semiconductor foundry.
+
+Cross Talk:
+Cross talk refers to unwanted interference or coupling of signals between adjacent or nearby conductive elements on an integrated circuit or a printed circuit board. It can occur in both digital and analog designs and can lead to various issues, including signal degradation, increased noise, and potential data errors. Cross talk can be classified into two main types:
+
+1. Capacitive Cross Talk: Capacitive coupling occurs when two conductive traces or lines are close to each other but not electrically connected. When one line changes its voltage or signal, it induces an undesired voltage change in the neighboring line due to the capacitive effect. This can lead to signal distortion and affect signal integrity.
+
+2. Inductive Cross Talk: Inductive coupling happens when two conductive lines share a magnetic field due to their proximity. When there is a change in current flow in one line, it induces an electromotive force (EMF) in the adjacent line, causing cross talk. This is more common in high-frequency or fast-switching digital circuits.
+
+To mitigate cross talk, designers employ various techniques, including:
+
+- Proper routing and separation: Careful layout and spacing of traces or conductive lines to minimize capacitive and inductive coupling.
+- Shielding: Using ground planes, shielding layers, or grounded metal layers between sensitive lines to reduce interference.
+- Differential signaling: Implementing differential pairs, where the signal is transmitted on two lines with opposite polarities, can significantly reduce the impact of cross talk.
+- Proper termination: Matching terminations at the receiver end of the signal lines can help reduce signal reflections and cross talk effects.
+- Grounding and power distribution: Ensuring proper grounding and power distribution techniques to minimize noise in the system.
+- Simulation and analysis: Using specialized EDA (Electronic Design Automation) tools to simulate and analyze cross talk effects during the design phase, allowing designers to identify and address potential issues early.
+
+Addressing cross talk is essential in mixed-signal designs, as it can impact the accuracy and reliability of both analog and digital components on the same chip or board.
+ 
+</details>
+
+<details>
+<summary>Lab on Mixed Signal and Cross talk</summary>
+
+ 
+</details>
