@@ -8784,6 +8784,9 @@ The above image clearly shows the power has been reduced by the usage of the dec
 
 Above shows the image of the replacement of the filler cells with the decap cells for the power reduction
 
+**After all the changes make sure to legalize the placement by the below given command as the resize of the cells changes the frame and might lead to overlap violations**
+
+Above mentioned changes can be reflected into the netlist by *legalize_placement*
 
 Hence by this we have improved all the QOR parameters with this in this ECO phase 
 </details>
@@ -8888,14 +8891,28 @@ Addressing cross talk is essential in mixed-signal designs, as it can impact the
 Commands to be used to get the verilog netlist for a PT run 
 After sourcing the top.tcl we get the write_data_dir folder created and in it we have a folder createed on the name of our design inside it we have a gz file which we are supposed to extract with the following given commands below
 
-```
-gzip -d vsdbabysoc.pt.v.gz
-```
-The above commands unzips the netlist file 
+Now as we have made changes in our netlist we will try to write out the netlist again with the below given command (This is mandatory because we have made changes in our netlist after the run of the top.tcl and we need this changes toget reflected in our current netlist )
 
+```
+write_verilog -compress gzip -exclude {scalar_wire_declarations leaf_module_declarations end_cap_cells well_tap_cells filler_cells pad_spacer_cells physical_only_cells cover_cells supply_statements pg_netlist} -hierarchy all ${path_dir}/${block_refname_no_label}.pt.v
+```
+
+The below commands unzips the netlist and the sdc file
+
+```
+gzip -d /home/nk.vaishnav/Physical_Design/shell/write_data_dir/vsdbabysocvsdbabysoc.pt.v.gz
+gzip -d /home/nk.vaishnav/Physical_Design/shell/write_data_dir/vsdbabysoc/vsdbabysoc/vsdbabysoc.sdc.gz
+```
+ 
 Now let us open a PT shell and source the below script 
 
 ```
-
+set target_library [list /home/nk.vaishnav/Physical_Design/LIBS/sky130_fd_sc_hd__tt_025C_1v80.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsddac.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsdpll.db]
+set link_library [list /home/nk.vaishnav/Physical_Design/LIBS/sky130_fd_sc_hd__tt_025C_1v80.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsddac.db /home/nk.vaishnav/Physical_Design/Analoglibs/avsdpll.db]
+read_verilog /home/nk.vaishnav/Physical_Design/shell/write_data_dir/vsdbabysoc/vsdbabysoc.pt.v
+link_design
+current_design
 ```
+
+By sourcing the above script we get the Design that has been obtained from the icc shell linked and ready to use
 </details>
