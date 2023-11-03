@@ -8991,9 +8991,9 @@ Now let us report the bottle necks in our designs for the crosstalk effects
 ```
 report_si_bottleneck              (Report of the nets that have the largest crosstalk effects)
 report_bottleneck                 (Report of multiple min/max delay violation)
-report_si_delay_analysis
-report_si_aggressor_exclusion
-report_si_noise_analysis
+report_si_delay_analysis	  (Report provides insights into the delay analysis specific to Signal Integrity)
+report_si_aggressor_exclusion	  (Reports the nets excluding aggressor nets from crosstalk analysis)
+report_si_noise_analysis	  (Repoets about noise analysis)
 ```
 
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1ba0938b-dced-4959-854e-52efe988d562)
