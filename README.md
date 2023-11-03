@@ -28,6 +28,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-24-Timing Violations and ECO](https://github.com/NkVaishnav/Vaishnav_Physical_design/tree/master#day-24-timing-violations-and-eco)
 - [Day-25-RISC-V core RTL2GDS flow](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-25-risc-v-core-rtl2gds-flow)
 - [Day-26-Introduction to mixed-signal flow](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-26-introduction-to-mixed-signal-flow)
+- [Day-27-Introduction to crosstalk - glitch and delta delay](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-27-introduction-to-crosstalk---glitch-and-delta-delay)
   
 
 ## Day 0: Installation
