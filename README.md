@@ -29,6 +29,7 @@ This github repository summarizes the progress made in the Samsung PD training. 
 - [Day-25-RISC-V core RTL2GDS flow](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-25-risc-v-core-rtl2gds-flow)
 - [Day-26-Introduction to mixed-signal flow](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-26-introduction-to-mixed-signal-flow)
 - [Day-27-Introduction to crosstalk - glitch and delta delay](https://github.com/NkVaishnav/Vaishnav_Physical_design/blob/master/README.md#day-27-introduction-to-crosstalk---glitch-and-delta-delay)
+- [Day-28-Introduction to DRC/LVS ]()
   
 
 ## Day 0: Installation
@@ -9002,4 +9003,21 @@ report_si_noise_analysis	  (Repoets about noise analysis)
 
 
 By sourcing the above script we get the Design that has been obtained from the icc shell linked and ready to use
+</details>
+
+
+## Day 28: Introduction to DRC/LVS 
+
+<details>
+<summary>Summary</summary>
+
+
+ 
+</details>
+
+<details>
+<summary>Labs on DRC/LVS</summary>
+
+
+ 
 </details>
