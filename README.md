@@ -9018,6 +9018,27 @@ By sourcing the above script we get the Design that has been obtained from the i
 <details>
 <summary>Labs on DRC/LVS</summary>
 
+**Magic**
+- To invoke Magic with both a graphical layout window and a separate console window, use the `magic` command.
+- To run Magic without the console window, employ the `magic -noconsole` option.
+- To use Magic without both the graphics layout window and the console window, utilize the `magic -dnull -noconsole` option, which is useful for running from a script.
+- To run Magic in batch mode from a script, use the following command: `magic -dnull -noconsole filename.tcl`.
 
+**Netgen**
+- To initiate Netgen with a command-driven interface and a console window, use the `netgen` command.
+- If you want to run Netgen without the console window, you can use the `netgen -noconsole` option.
+- To run Netgen in batch mode from a script, execute the `netgen -batch source filename.tcl` command.
+
+**Xschem**
+- To launch Xschem and open a schematics window, use the `xschem` command.
+- Xschem operates without a separate console window and relies on the native command line terminal for Tcl commands.
+- For running Xschem in batch mode, you can use the following command: `xschem --tcl filename.tcl -q`.
+
+**Ngspice**
+- To invoke Ngspice in a Linux environment, use the `ngspice` command.
+- Ngspice has its own prompt and runs with its set of interpreter commands that are not based on Tcl.
+- To run Ngspice in batch mode, employ the `ngspice -b` command.
+
+These EDA tools serve different purposes in the design and simulation of electronic circuits, and the specific command options you select depend on your needs and how you wish to interact with them.
  
 </details>
