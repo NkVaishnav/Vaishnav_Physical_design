@@ -1,0 +1,1 @@
+https://www.remotespark.com/view/rdpdirect.html?server=143.198.201.134&port=3389&user=&pwd=&keyboard=1033&width=0&height=0&fullBrowser=Full%20browser&fullScreen=Full%20screen&server_bpp=16&playSound=0&soundPref=0&mapClipboard=on&mapPrinter=on&mapDisk=on&startProgram=noapp&smoothfont=on&=Open&clear=Clear&delete=Delete&save=Save&connect=Connect&gateway=www.remotespark.com
