@@ -9040,5 +9040,79 @@ By sourcing the above script we get the Design that has been obtained from the i
 - To run Ngspice in batch mode, employ the `ngspice -b` command.
 
 These EDA tools serve different purposes in the design and simulation of electronic circuits, and the specific command options you select depend on your needs and how you wish to interact with them.
- 
+
+Commands to be given on the terminal
+
+
+```
+cd /home/nk.vaishnav
+mkdir inverter
+cd inverter
+mkdir xschem
+mkdir mag
+mkdir netgen
+cd xschem
+ln -s /usr/share/pdk/sky130A/libs.tech/xschem/xschemrc
+ln -s ln -s /usr/share/pdk/sky130A/libs.tech/ngspice/spinit .spiceinit
+cd ../mag/
+ln -s /usr/share/pdk/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+cd ../netgen/
+ln -s /usr/share/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl setup.tcl
+```
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/0e447010-238f-4739-a814-ba45884e9fe1)
+
+
+**XSCHEM**
+
+```
+xschem
+```
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ad8d5ffe-f262-4a5e-aa8c-cb5b6ffb438c)
+
+This brings up a display for xschem with a lot of example schematics, SKY130 devices are shown in xschem as below.
+Note: Examples can be accessed by clicking the relevant rectangle and pressing the "E" key on the keyboard. We can return to the menu by pressing "CTRL+E". The "F" key resizes the schematic to fit the window.
+
+**Example**
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1580d842-c8d0-4ca1-b39d-4b99f583fbb9)
+
+
+```
+cd ../mag/
+magic
+```
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/8963cee3-1b3c-4242-b715-4c01b32404a2)
+
+```
+magic -d XR     (To invoke a cairo graphics package that uses 3D acceleration to get better rendering than the default graphics)
+```
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f064d02f-cb17-422a-aa3d-fe220323ecfd)
+
+Useful Magic Shortcuts:
+
+- Left and right mouse buttons --> to adjust the cursor box
+- Shift+Z --> to zoom out
+- Middle mouse button/P --> to select a layer (also known as painting)
+- Key E --> to erase whatever is present in the cursor box (can also be done by clicking the middle mouse button on an empty part of the layout)
+- Key V --> to view the entire layout
+- CTRL+P --> opens up the parameter options for the selected device
+- S key --> to select layers
+- Typing "what" command in the magic console --> gives information on the selected layer
+- ";" key --> to type commands in the magic console without moving between windows, until the Enter key is pressed
+- I key --> to select a device
+- M key --> to move the selected device
+
+
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c73d085b-065e-4af5-9053-d993bdf5eeac)
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5cb4a1ba-2062-442d-a591-df1229cab50a)
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b25f57c2-2586-4ee3-bbbd-1b5b99ebf7bf)
+
+
 </details>
