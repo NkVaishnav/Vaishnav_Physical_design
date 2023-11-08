@@ -9110,9 +9110,17 @@ Useful Magic Shortcuts:
 
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c73d085b-065e-4af5-9053-d993bdf5eeac)
 
-![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/5cb4a1ba-2062-442d-a591-df1229cab50a)
-
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b25f57c2-2586-4ee3-bbbd-1b5b99ebf7bf)
+
+### Usage Instructions
+
+- Press the **Insert** key to open the "Choose symbol" window.
+- Navigate to the SkyWater library directory path to access SkyWater components.
+- Select the *fd_pr* library.
+- To create an inverter, ensure you have both a basic nfet and pfet.
+- From the insert window, select the nfet and pfet devices.
+- Place them within the schematic as needed.
+
 
 
 </details>
