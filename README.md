@@ -9112,14 +9112,60 @@ Useful Magic Shortcuts:
 
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/b25f57c2-2586-4ee3-bbbd-1b5b99ebf7bf)
 
-### Usage Instructions
+**Usage Instructions**
 
-- Press the **Insert** key to open the "Choose symbol" window.
+- Press the *Insert* key to open the "Choose symbol" window.
 - Navigate to the SkyWater library directory path to access SkyWater components.
 - Select the *fd_pr* library.
 - To create an inverter, ensure you have both a basic nfet and pfet.
 - From the insert window, select the nfet and pfet devices.
 - Place them within the schematic as needed.
+
+Here's a rephrased version of the text for your README file:
+
+---
+
+**Working with Pins and Components:**
+
+Pins, which are not PDK specific, can be located in the xschem library within the insert window. You'll find them named as `ipin.sym`, `opin.sym`, and `iopin.sym`.
+
+To manage these components on the schematic:
+
+- Place the pins and use the "M" key to move components around within the schematic window.
+- Use the "C" key to copy components.
+- Press the "Del" key to delete components.
+- Utilize the "W" key to insert wires between components and establish connections.
+
+**Customizing Pins and Components:**
+
+To assign meaningful names to each pin, use the "Q" key to access the parameter window. For other components:
+
+- Select components by clicking on them.
+- Then, use the "Q" key to access the parameter window and configure the properties of the devices.
+
+**Configuring nfet and pfet Devices:**
+
+For nfet devices:
+
+- Modify the length to 0.18, as the default value of 0.15 is limited to SRAM devices only.
+- Set the number of fingers to 3, and the width of each finger to 1.
+
+Since there are 3 fingers, the total width in the parameter window must be adjusted to 4.5 (3 times the finger width).
+
+Similarly, for pfet devices:
+
+- Adjust the parameters for 3 fingers, a width of 1.5 per finger, and a length of 0.18.
+- Ensure the body is connected to the Vdd pin, as it's a 3-pin pfet.
+
+---
+
+This revised text provides instructions in a more structured and clear manner for users working with pins, components, and device configurations.
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/51e12b57-32d2-48f6-b7ff-607108684e32)
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/56500d95-4f01-437a-ac1b-4652c99f60ad)
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f3ba71c3-4df1-451a-b2a5-3b3b2aa47ddb)
 
 
 
