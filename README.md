@@ -9011,7 +9011,45 @@ By sourcing the above script we get the Design that has been obtained from the i
 <details>
 <summary>Summary</summary>
 
+## DRC (Design Rule Checking) and LVS (Layout vs. Schematic) in VLSI Design
 
+VLSI (Very Large Scale Integration) design is a complex process that involves the creation of integrated circuits with millions or even billions of transistors on a single chip. To ensure the functionality, reliability, and manufacturability of these intricate circuits, two critical steps in the design and verification process are Design Rule Checking (DRC) and Layout vs. Schematic (LVS) verification.
+
+### Design Rule Checking (DRC):
+
+DRC is a fundamental and early-stage verification process in VLSI design. It ensures that the layout of the chip adheres to a set of predefined design rules. These rules are specified by the foundry or semiconductor manufacturing process and are crucial to ensure that the chip can be manufactured without defects. Here are key aspects of DRC:
+
+1. **Geometry Rules:** DRC checks the physical dimensions, spacing, and other geometric attributes of the layout. This includes ensuring that lines, spaces, and transistor sizes meet the manufacturing process specifications.
+
+2. **Electrical Rules:** DRC also checks for electrical issues, such as short circuits and open connections. It validates that devices and interconnects are properly connected without unintended crossovers or discontinuities.
+
+3. **Process-Specific Rules:** Each semiconductor manufacturing process may have unique requirements, and DRC checks are tailored to these specific process technologies. It is essential to use the DRC rules provided by the foundry or manufacturing facility to ensure compliance.
+
+4. **Automated Checks:** DRC is typically an automated process using specialized software tools. The design layout is loaded into these tools, which then analyze it against the specified design rules. Violations and errors are flagged for correction.
+
+5. **Iterative Process:** DRC is often an iterative process. Designers run DRC checks multiple times during the layout phase, making corrections as needed until the layout is DRC-clean.
+
+6. **Critical for Manufacturing:** Passing DRC is essential for chip manufacturability. A design with unresolved DRC violations cannot proceed to the manufacturing phase.
+
+### Layout vs. Schematic (LVS):
+
+LVS is a later-stage verification process in VLSI design that ensures the consistency and correctness of the layout with respect to the schematic or logical representation of the circuit. Here are the key aspects of LVS:
+
+1. **Comparing Layout and Schematic:** LVS compares the logical design (schematic) with the physical layout to verify that they match accurately. It checks if the physical connections in the layout match the intended connections in the schematic.
+
+2. **Hierarchical Verification:** LVS is often performed hierarchically, as modern VLSI designs are highly complex and may involve multiple levels of abstraction. This ensures that each level of the design is consistent with the one above it.
+
+3. **Detecting Errors:** LVS identifies errors such as missing or extra components, incorrect connections, and other discrepancies between the layout and the schematic. These errors can be design mistakes or issues introduced during the layout process.
+
+4. **Schematic as a Reference:** The schematic serves as the reference or golden representation of the design. The layout is compared to this reference to confirm that it adheres to the original design intent.
+
+5. **Used in Post-Layout Verification:** LVS is commonly performed after the layout phase to verify that the manufactured chip will function as intended based on the original schematic design.
+
+6. **Manual Intervention:** In some cases, manual intervention may be required to resolve LVS discrepancies. This can involve making changes to the layout or the schematic to achieve a correct match.
+
+7. **Essential for Correct Functionality:** A successful LVS check is crucial for ensuring that the fabricated chip will operate as expected, with all components properly connected.
+
+In summary, DRC and LVS are vital steps in the VLSI design and verification process. DRC focuses on ensuring that the physical layout meets the manufacturing process rules, while LVS confirms the consistency between the layout and the logical schematic, ensuring that the chip functions as intended. Both processes are critical for producing reliable and manufacturable VLSI chips.
  
 </details>
 
@@ -9268,8 +9306,9 @@ The above image shows that the LVS is properly matched
 Now we are supposed to remove particular files for the further process ahead 
 
 ```
+cd /home/nk.vaishnav/inverter/mag
+rm -rf *.ext
 /usr/share/pdk/bin/cleanup_unref.py -remove .
-cp ../xschem/.spiceinit .
 ```
 
 
