@@ -9310,7 +9310,16 @@ cd /home/nk.vaishnav/inverter/mag
 rm -rf *.ext
 /usr/share/pdk/bin/cleanup_unref.py -remove .
 ```
+Now let us provide the post layout netlist for caliculation in the *ngspice*
 
+Now we are suppsoed to change the include of the circuit name to the one after the layout and also include the relavant spice file
 
+```
+cp ../xschem/.spiceinit .
+ngspice inverter_tb_nk.spice
+```
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/e65d0196-9f92-4548-912a-65697e45cdb9)
+
+This result is almost the same even during the post layout .
 
 </details>
