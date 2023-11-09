@@ -9167,6 +9167,51 @@ This revised text provides instructions in a more structured and clear manner fo
 
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f3ba71c3-4df1-451a-b2a5-3b3b2aa47ddb)
 
+**Creating Symbol**
+
+In order to perform functional validation of the schematic, it is necessary to create a testbench that is separate from the schematic. Here's a rephrased version of your text:
+
+To validate the functionality of the schematic, it is essential to establish a distinct testbench. Firstly, you should create a symbol representing the schematic, as the schematic will be represented as a symbol within the testbench. To do this, go to the Symbol menu and choose the "Make symbol from schematic" option. Subsequently, generate a testbench schematic using the "new schematic" option and insert the symbol you created from the local directory using the "Insert" command.
+
+Navigate to the "File" tab and select the "inverter.sch" under the home directory. Paste it into the schematic window.
+
+The testbench will be relatively straightforward, involving the generation of a ramp input and the observation of the output response after connecting the power supplies. To achieve this, insert two voltage sources from the default xschem library, one for the input and one for the power supply. Connect these sources and add a GND node to the supply connections. Create "ipins" and "opins" for the input and output signals to monitor in Ngspice.
+
+Set the supply voltage to 1.8 V. For the input voltage, configure the supply to follow a piece-wise linear function to generate a ramp. The PWL function will specify voltage and time values, indicating that the supply should start at 0 V and then gradually ramp up from 20 ns until it reaches its final value of 1.8 V at 900 ns.
+
+Furthermore, include two additional statements for Ngspice. Since these statements aren't specific to any particular component, they should be placed within text boxes. To insert a text box, select the "code_shown.sym" component from the xschem library.
+
+The first text box will define the location of the device models used in the device schematic. It utilizes a ".lib" statement to select a top-level file that informs Ngspice about the model locations and specifies a simulation corner for all the models. The first block specifies the typical corner with the value
+
+```.lib /usr/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt```
+
+For the second block, it specifies; 
+
+```
+value = ".control
+tran 1n 1u
+plot V(in) V(out)
+.endc"
+```
+This will tell ngspice to run a transient simulation for 1 ns and monitor voltages for the in and out pins. Therefore, a complete testbench schematic is shown as below, and save this as inverter_nk.sch
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/23f0cb59-8fa0-429f-aeb5-87fa7e6efda1)
+
+To generate the netlist, click on the Netlist button, then simulate it in Ngspice by clicking the Simulate button.
+
+The waveform confirms that the schematic behaves as an inverter as shown below.
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/d9132945-f835-4d87-b846-7cefe2cb2332)
+
+Once you've confirmed the correctness of the schematic, proceed to generate a layout for it. To achieve this, follow these steps within the inverter schematic:
+
+1. Access the Simulation menu, and from the options, select "LVS netlist: Top Level is a .subckt."
+
+2. Allow a brief moment for the process, and then revisit the Simulation menu. Check if a checkmark has appeared next to the previously selected option. This checkmark indicates that you have successfully defined a subcircuit for creating a layout cell with pins in the layout.
+
+3. Conclude the process by creating a netlist for the schematic. Click the Netlist button and then exit Xschem.
+
+
 
 
 </details>
