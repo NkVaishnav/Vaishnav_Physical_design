@@ -9211,6 +9211,66 @@ Once you've confirmed the correctness of the schematic, proceed to generate a la
 
 3. Conclude the process by creating a netlist for the schematic. Click the Netlist button and then exit Xschem.
 
+**Importing Schematic To Layout And Inverter Layout Steps**
+
+```
+cd ../mag/
+magic -d XR
+```
+
+Import the schematic to the layout in Magic by running the magic, then click on File -> Import SPICE and then select the inverter.spice file from the xschem directory. If done correctly, the following layout has been opened up in magic.
+
+Configure certain parameters that can only be adjusted during the layout process, which will enhance the overall wiring convenience.
+
+To access the parameter editing section, press the 'S' key, select the object by pressing 'I', and then use 'CTRL+P' to open the parameter options for the selected device.
+
+Adjust the "Top guard ring via coverage" to a value of 100. This action will introduce a local interconnect to Metal1 via the top of the guard ring. Additionally, for the "Source via coverage," set it to +40, and for the "Drain via coverage," set it to -40. These adjustments will split the source and drain contacts, simplifying their connection with wiring.
+
+For the nFET, establish the "Bottom guard ring via coverage" at 100, while maintaining the source and drain via coverages at +40 and -40, respectively, mirroring the settings for the pFET.
+
+Commence the process of routing wires, using Metal1 layers to connect the source of the pFET to Vdd and the source of the nFET to Vss. Subsequently, link the drains of both MOSFETs to the output. Lastly, connect the input to all the poly contacts of the gate.
+
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1dae785e-259d-4a09-bd82-385c5a0a59c4)
+
+The above image shows the final Layout that has been made
+
+Save the file and select the autowrite option.
+
+The following commands are supposed to run on the magic
+
+```
+extract do local    (Ensuring that magic writes all results to the local directory)
+extract all         (Performing the actual extraction)
+ext2spice lvs       (Simulating and setting up the netlist to hierarchical spice output in ngspice format with no parasitic components)
+ext2spice           (Generating the spice netlist)
+```
+
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/a85493a5-39f0-4e37-9409-bb568e90b8b1)
+
+```
+rm *.ext                                          (Clear any unwanted files -> .ext files are just intermediate results from the extraction)
+/usr/share/pdk/bin/cleanup_unref.py -remove .     (Clean up extra .mag files -> files containing paramaterised cells that were created and saved but not used in the design)
+netgen -batch lvs "../mag/inverter_nk.spice inverter" "../xschem/inverter_nk.spice inverter"    (Run LVS by entering the netgen subdirectory)
+```
+
+Always prioritize the layout netlist over the schematic netlist when using the netgen command, aligning the layout on the left and the schematic on the right in a side-by-side comparison.
+
+Each netlist is denoted by a pair of enclosed keywords. The first keyword indicates the location of the netlist file, while the second denotes the name of the subcircuit for comparison.
+
+The ensuing results reveal a discrepancy in the wiring, with the netlists failing to correspond. This inconsistency is attributed to wiring errors in the layout.
+
+![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/11db6d69-96a2-4182-962a-fbeffc108b7c)
+
+The above image shows that the LVS is properly matched
+
+Now we are supposed to remove particular files for the further process ahead 
+
+```
+/usr/share/pdk/bin/cleanup_unref.py -remove .
+cp ../xschem/.spiceinit .
+```
 
 
 
