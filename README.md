@@ -7494,20 +7494,6 @@ Image of the output that is obtained after the second simulation
 
 ![15](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/09a83965-05d8-441b-aa2b-eb87053751d1)
 
-![16](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/c7249fb6-568c-40b2-acb1-706ba0b72401)
-
-![17](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/56be7fc8-78f2-49a6-a565-49b2d757c751)
-
-![18](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/223c019a-a947-4112-9da8-359dddf16269)
-
-![19](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f522b01a-c122-44de-8639-a36b36c8fb31)
-
-![20](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/2a64c6ee-4803-49d4-bab8-0e2bdeef8f25)
-
-![21](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/1d56f76a-fd46-4bc0-8a75-ca3daee4ebb9)
-
-![22](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/f72e86a8-30cd-4caa-98d0-5f1373e2d044)
-
 ![23](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/ea9638b5-d44c-48ce-a026-8f84eaeb86c8)
 
 ![24](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/826fc4f6-a87c-4257-b52d-4e86e4fe9968)
@@ -9241,7 +9227,9 @@ The waveform confirms that the schematic behaves as an inverter as shown below.
 
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/d9132945-f835-4d87-b846-7cefe2cb2332)
 
+Once you've confirmed the correctness of the schematic, proceed to generate a layout for it. To achieve this, follow these steps within the inverter schematic:
 
+Access the Simulation menu, and from the options, select LVS netlist: Top Level is a .subckt. Allow a brief moment for the process, and then revisit the Simulation menu. Check if a checkmark has appeared next to the previously selected option. This checkmark indicates that you have successfully defined a subcircuit for creating a layout cell with pins in the layout. Conclude the process by creating a netlist for the schematic. Click the Netlist button and then exit Xschem.
 
 Importing Schematic To Layout And Inverter Layout Steps
 
