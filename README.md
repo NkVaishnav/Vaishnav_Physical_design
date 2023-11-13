@@ -9239,16 +9239,9 @@ To generate the netlist, click on the Netlist button, then simulate it in Ngspic
 
 The waveform confirms that the schematic behaves as an inverter as shown below.
 
-check
-
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/d9132945-f835-4d87-b846-7cefe2cb2332)
 
-check
 
-Once you've confirmed the correctness of the schematic, proceed to generate a layout for it. To achieve this, follow these steps within the inverter schematic:
-
-Access the Simulation menu, and from the options, select LVS netlist: Top Level is a .subckt. Allow a brief moment for the process, and then revisit the Simulation menu. Check if a checkmark has appeared next to the previously selected option. This checkmark indicates that you have successfully defined a subcircuit for creating a layout cell with pins in the layout. Conclude the process by hello 
-creating a netlist for the schematic. Click the Netlist button and then exit Xschem.
 
 Importing Schematic To Layout And Inverter Layout Steps
 
