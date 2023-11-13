@@ -9243,7 +9243,8 @@ The waveform confirms that the schematic behaves as an inverter as shown below.
 
 Once you've confirmed the correctness of the schematic, proceed to generate a layout for it. To achieve this, follow these steps within the inverter schematic:
 
-Access the Simulation menu, and from the options, select LVS netlist: Top Level is a .subckt. Allow a brief moment for the process, and then revisit the Simulation menu. Check if a checkmark has appeared next to the previously selected option. This checkmark indicates that you have successfully defined a subcircuit for creating a layout cell with pins in the layout. Conclude the process by creating a netlist for the schematic. Click the Netlist button and then exit Xschem.
+Access the Simulation menu, and from the options, select LVS netlist: Top Level is a .subckt. Allow a brief moment for the process, and then revisit the Simulation menu. Check if a checkmark has appeared next to the previously selected option. This checkmark indicates that you have successfully defined a subcircuit for creating a layout cell with pins in the layout. Conclude the process by hello 
+creating a netlist for the schematic. Click the Netlist button and then exit Xschem.
 
 Importing Schematic To Layout And Inverter Layout Steps
 
