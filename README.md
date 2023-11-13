@@ -1869,11 +1869,6 @@ In conclusion, synthesis is a critical step in the VLSI design flow, bridging th
 <details>
 <summary>Labs on Logical Synthesis</summary>
 
-
-
-
-
-
 We are using the Design Compiler by Synopsys for the Synthesis and Design Vision to view the Schematic in these labs. We have used the sky 130nm library as target and link library in our Synopsys tool.
 
 The Synopsys tool reads library in .db format only so we cannot use .lib for the same
