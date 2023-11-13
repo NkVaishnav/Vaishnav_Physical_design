@@ -9323,3 +9323,5 @@ ngspice inverter_tb_nk.spice
 This result is almost the same even during the post layout .
 
 </details>
+
+
