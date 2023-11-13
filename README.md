@@ -3839,27 +3839,6 @@ Boundary optimization in VLSI (Very Large Scale Integration) synthesis is a cruc
 
 Boundary optimization primarily deals with optimizing the boundaries of functional blocks and modules within an IC design. Here's a more detailed explanation of boundary optimization in VLSI synthesis:
 
-1. **Functional Blocks and Modules**: In VLSI design, an IC is typically composed of various functional blocks or modules, each performing a specific function, such as arithmetic operations, memory storage, or data transfer. These modules are interconnected to create the desired functionality.
-
-2. **Boundary Definition**: The boundaries of these modules are defined by their input and output ports. Input ports are the points where signals enter the module, while output ports are where signals exit. These boundaries are crucial for interfacing and connecting different modules together.
-
-3. **Optimization Goals**:
-   - **Area Optimization**: One of the primary goals of boundary optimization is to minimize the overall chip area. Smaller boundaries and more efficient placement of modules can reduce the overall chip size, which can lead to cost savings in manufacturing and potentially improve performance.
-   - **Timing Optimization**: Optimizing the boundaries can also help in reducing signal propagation delays between modules, improving the overall timing performance of the IC.
-   - **Power Optimization**: Efficient boundary placement can lead to reduced power consumption, which is critical in modern IC design to prolong battery life in portable devices and reduce heat dissipation.
-
-4. **Placement Algorithms**: Boundary optimization involves using placement algorithms to determine the optimal physical location of each module on the chip's layout. These algorithms consider factors like signal interconnect lengths, wire delays, and minimizing congested areas on the chip.
-
-5. **Routing Considerations**: After placement, routing algorithms are used to create the physical wires that connect the module boundaries. Proper routing is essential for meeting timing constraints and minimizing power consumption.
-
-6. **Design Rules**: Boundary optimization must adhere to manufacturing design rules and constraints imposed by the semiconductor fabrication process. These rules govern factors like minimum feature sizes, metal layers, and spacing requirements to ensure the manufacturability of the chip.
-
-7. **Iterative Process**: Boundary optimization is often an iterative process. Designers may need to make trade-offs between area, power, and timing to achieve the desired performance goals.
-
-8. **EDA Tools**: Electronic Design Automation (EDA) tools play a significant role in boundary optimization. Tools like Cadence, Synopsys, and Mentor Graphics provide features and algorithms for optimizing the placement and routing of modules on the chip.
-
-In summary, boundary optimization in VLSI synthesis is a critical step in the design and manufacturing of integrated circuits. It involves optimizing the physical boundaries of functional modules to achieve goals such as area reduction, improved timing, and reduced power consumption while adhering to manufacturing constraints. This process requires a combination of expertise in VLSI design principles and the use of advanced EDA tools.
-
 Command used for Boundary Optimization in Synthesis 
 
 ```
