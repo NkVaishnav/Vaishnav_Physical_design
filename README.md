@@ -9239,7 +9239,11 @@ To generate the netlist, click on the Netlist button, then simulate it in Ngspic
 
 The waveform confirms that the schematic behaves as an inverter as shown below.
 
+check
+
 ![image](https://github.com/NkVaishnav/Vaishnav_Physical_design/assets/142480622/d9132945-f835-4d87-b846-7cefe2cb2332)
+
+check
 
 Once you've confirmed the correctness of the schematic, proceed to generate a layout for it. To achieve this, follow these steps within the inverter schematic:
 
